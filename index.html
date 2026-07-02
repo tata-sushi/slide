@@ -265,6 +265,37 @@ html, body {
   padding-right:.2em;
 }
 .slide-list li.topic-collapse > details[open] > summary .topic-chevron { transform:rotate(270deg); }
+.mini-table {
+  margin-top:.7em;
+  width:fit-content;
+  min-width:60%;
+  border:1px solid var(--border);
+  border-radius:6px;
+  overflow:hidden;
+  font-family:"DM Sans",sans-serif;
+  font-size:clamp(11px, 1.2vw, 15px);
+}
+.mini-table .row {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1em;
+  padding:.5em .85em;
+  border-top:1px solid var(--border);
+}
+.mini-table .row:first-child { border-top:none; }
+.mini-table .label {
+  font-family:"DM Mono",monospace;
+  font-size:.85em;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--t3);
+}
+.mini-table .value {
+  font-weight:700;
+  color:var(--t1);
+  font-variant-numeric:tabular-nums;
+}
 .topic-cols {
   padding:1em 0 .2em;
   display:grid;
@@ -664,6 +695,36 @@ body.is-drawing .draw-toolbar {
                     <li>Atestados e declarações devem ser enviados nos grupos</li>
                     <li>O líder acompanha, solicita quando necessário e orienta o colaborador sobre os prazos, garantindo o envio correto da documentação</li>
                     <li>O controle da informação faz parte da responsabilidade da liderança</li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+          </li>
+          <li class="topic-collapse">
+            <details>
+              <summary>
+                <span>Gestão de Faltas e Atrasos</span>
+                <span class="topic-chevron" aria-hidden="true">›</span>
+              </summary>
+              <div class="topic-cols">
+                <div>
+                  <p class="topic-sub">Cenário atual</p>
+                  <ul class="topic-sublist">
+                    <li>Número elevado de faltas e atrasos</li>
+                    <li>Baixo registro de feedbacks e medidas disciplinares</li>
+                  </ul>
+                  <div class="mini-table" role="table" aria-label="Faltas e sanções no período">
+                    <div class="row" role="row"><span class="label">Faltas</span><span class="value">49</span></div>
+                    <div class="row" role="row"><span class="label">Sanções</span><span class="value">6</span></div>
+                  </div>
+                </div>
+                <div>
+                  <p class="topic-sub">Alinhamento</p>
+                  <ul class="topic-sublist">
+                    <li>Atuação sobre casos já foi alinhada anteriormente</li>
+                    <li>O objetivo não é aumentar punições, e sim garantir acompanhamento e gestão</li>
+                    <li>Faltas e atrasos não podem se tornar comportamentos normalizados na operação</li>
+                    <li>A liderança deve atuar preventivamente para não contaminar o time e evitar uma cultura de ausência de gestão</li>
                   </ul>
                 </div>
               </div>
