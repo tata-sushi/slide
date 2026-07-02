@@ -240,47 +240,36 @@ html, body {
 }
 .slide-list.two-col li { break-inside:avoid; }
 
-/* ── Topic card (colapso por tema) ─────────────── */
-.topic-card {
-  width:100%;
-  border:1px solid var(--border);
-  border-radius:10px;
-  overflow:hidden;
-  background:#FFFFFF;
-}
-.topic-card > summary {
+/* ── Topic collapse (item de lista expansível) ── */
+.slide-list li.topic-collapse { padding-right:0; }
+.slide-list li.topic-collapse > details { margin:0; }
+.slide-list li.topic-collapse > details > summary {
   list-style:none;
   cursor:pointer;
-  padding:.9em 1.15em;
-  background:var(--carbon);
-  color:var(--white);
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:14px;
-  font-family:"DM Sans",sans-serif;
-  font-weight:600;
-  font-size:clamp(14px, 1.7vw, 22px);
-  letter-spacing:-.005em;
   outline:none;
+  color:inherit;
 }
-.topic-card > summary::-webkit-details-marker { display:none; }
-.topic-card > summary::marker { content:""; display:none; }
-.topic-chevron {
-  display:inline-block;
-  color:var(--citric);
+.slide-list li.topic-collapse > details > summary::-webkit-details-marker { display:none; }
+.slide-list li.topic-collapse > details > summary::marker { content:""; display:none; }
+.slide-list li.topic-collapse .topic-chevron {
+  color:var(--carbon);
   font-family:"DM Mono",monospace;
-  font-size:1.4em;
+  font-size:1.3em;
   line-height:1;
   transform:rotate(90deg);
   transition:transform .25s ease;
+  padding-right:.2em;
 }
-.topic-card[open] > summary .topic-chevron { transform:rotate(270deg); }
-.topic-body {
-  padding:1.1em 1.3em 1.25em;
+.slide-list li.topic-collapse > details[open] > summary .topic-chevron { transform:rotate(270deg); }
+.topic-cols {
+  padding:1em 0 .2em;
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:1.2em 2.2em;
+  gap:1em 2.2em;
 }
 .topic-sub {
   margin:0 0 .5em;
@@ -291,7 +280,7 @@ html, body {
   text-transform:uppercase;
   color:var(--t3);
 }
-.topic-list {
+.topic-sublist {
   list-style:none;
   padding:0;
   margin:0;
@@ -300,19 +289,19 @@ html, body {
   line-height:1.4;
   color:var(--t1);
 }
-.topic-list li {
+.topic-sublist li {
   position:relative;
-  padding:.4em 0 .4em 1.2em;
+  padding:.35em 0 .35em 1.1em;
   border-top:1px solid var(--border);
 }
-.topic-list li:first-child { border-top:none; }
-.topic-list li::before {
+.topic-sublist li:first-child { border-top:none; }
+.topic-sublist li::before {
   content:"";
   position:absolute;
   left:0;
   top:.85em;
-  width:.38em;
-  height:.38em;
+  width:.34em;
+  height:.34em;
   background:var(--carbon);
   border-radius:50%;
 }
@@ -654,29 +643,33 @@ body.is-drawing .draw-toolbar {
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião de líderes</p>
         <h2 class="slide-heading">Responsabilidade Operacional</h2>
-        <details class="topic-card" open>
-          <summary>
-            <span>Gestão de Atestados e Declarações</span>
-            <span class="topic-chevron" aria-hidden="true">›</span>
-          </summary>
-          <div class="topic-body">
-            <div>
-              <p class="topic-sub">Cenário atual</p>
-              <ul class="topic-list">
-                <li>Atestados enviados fora do grupo de líderes</li>
-                <li>Envios fora do prazo correto — ou até mesmo falta de envio</li>
-              </ul>
-            </div>
-            <div>
-              <p class="topic-sub">Alinhamento</p>
-              <ul class="topic-list">
-                <li>Atestados e declarações devem ser enviados nos grupos</li>
-                <li>O líder acompanha, solicita quando necessário e orienta o colaborador sobre os prazos, garantindo o envio correto da documentação</li>
-                <li>O controle da informação faz parte da responsabilidade da liderança</li>
-              </ul>
-            </div>
-          </div>
-        </details>
+        <ul class="slide-list">
+          <li class="topic-collapse">
+            <details open>
+              <summary>
+                <span>Gestão de Atestados e Declarações</span>
+                <span class="topic-chevron" aria-hidden="true">›</span>
+              </summary>
+              <div class="topic-cols">
+                <div>
+                  <p class="topic-sub">Cenário atual</p>
+                  <ul class="topic-sublist">
+                    <li>Atestados enviados fora do grupo de líderes</li>
+                    <li>Envios fora do prazo correto ou até mesmo falta de envio</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="topic-sub">Alinhamento</p>
+                  <ul class="topic-sublist">
+                    <li>Atestados e declarações devem ser enviados nos grupos</li>
+                    <li>O líder acompanha, solicita quando necessário e orienta o colaborador sobre os prazos, garantindo o envio correto da documentação</li>
+                    <li>O controle da informação faz parte da responsabilidade da liderança</li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+          </li>
+        </ul>
       </div>
       <div class="slide-num">04</div>
     </section>
