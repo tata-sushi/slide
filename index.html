@@ -296,6 +296,34 @@ html, body {
   color:var(--t1);
   font-variant-numeric:tabular-nums;
 }
+.topic-figures {
+  grid-column:1 / -1;
+  margin-top:.4em;
+  display:grid;
+  grid-template-columns:1.6fr 1fr;
+  gap:1em;
+  align-items:start;
+}
+.topic-figures figure { margin:0; }
+.topic-figures img {
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:34vh;
+  object-fit:contain;
+  border:1px solid var(--border);
+  border-radius:6px;
+  background:var(--page-bg);
+}
+.topic-figures figcaption {
+  margin-top:.35em;
+  font-family:"DM Mono",monospace;
+  font-size:clamp(8px, .8vw, 10px);
+  font-weight:500;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--t3);
+}
 .topic-cols {
   padding:1em 0 .2em;
   display:grid;
@@ -792,7 +820,83 @@ body.is-drawing .draw-toolbar {
         <p class="slide-eyebrow">Reunião de líderes</p>
         <h2 class="slide-heading">Atualizações e Avanços</h2>
         <ul class="slide-list">
-          <!-- Conteúdo a definir -->
+          <li class="topic-collapse">
+            <details open>
+              <summary>
+                <span>Atualização no processo de R&amp;S</span>
+                <span class="topic-chevron" aria-hidden="true">›</span>
+              </summary>
+              <div class="topic-cols">
+                <div>
+                  <p class="topic-sub">Cenário atual</p>
+                  <ul class="topic-sublist">
+                    <li>Novo formato no fluxo de devolutivas</li>
+                    <li>Acompanhamento de vagas abertas</li>
+                    <li>Identificação de necessidades de ajustes ou correções</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="topic-sub">Alinhamento</p>
+                  <ul class="topic-sublist">
+                    <li>Cada departamento terá acesso às suas vagas</li>
+                    <li>Erros ou necessidades de alteração devem ser sinalizados</li>
+                    <li>O objetivo é aumentar a transparência e o acompanhamento dos processos</li>
+                    <li>A gestão da vaga passa a ser compartilhada entre RH e liderança operacional</li>
+                  </ul>
+                </div>
+                <div class="topic-figures">
+                  <figure>
+                    <img src="rs-vagas-abertas.png" alt="Painel de vagas abertas por unidade, departamento e status">
+                    <figcaption>Painel de vagas abertas</figcaption>
+                  </figure>
+                  <figure>
+                    <img src="rs-devolutiva-entrevista.png" alt="Formulário de devolutiva de entrevista com atribuição de vaga">
+                    <figcaption>Devolutiva de entrevista</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </details>
+          </li>
+          <li class="topic-collapse">
+            <details>
+              <summary>
+                <span>Módulo de Compras</span>
+                <span class="topic-chevron" aria-hidden="true">›</span>
+              </summary>
+              <div class="topic-cols">
+                <div>
+                  <p class="topic-sub">Cenário atual</p>
+                  <ul class="topic-sublist">
+                    <li>Implantação do módulo de compras</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="topic-sub">Alinhamento</p>
+                  <ul class="topic-sublist">
+                    <li>Implementação gradual</li>
+                    <li>Participação é fundamental para ajustes e melhorias</li>
+                    <li>A ferramenta busca ampliar controle, rastreabilidade e eficiência administrativa e operacional</li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+          </li>
+          <li class="topic-collapse">
+            <details>
+              <summary>
+                <span>Módulo TATÁ House</span>
+                <span class="topic-chevron" aria-hidden="true">›</span>
+              </summary>
+              <div class="topic-cols">
+                <div>
+                  <p class="topic-sub">Cenário atual</p>
+                  <ul class="topic-sublist">
+                    <li>Ferramenta em desenvolvimento para otimização e automação de processos</li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+          </li>
         </ul>
       </div>
       <div class="slide-num">05</div>
