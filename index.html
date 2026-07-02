@@ -371,6 +371,50 @@ html, body {
 }
 .data-table tbody tr:first-child td { border-top:none; }
 .data-table--compact { max-width:70%; }
+.stat-compare {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1em;
+  margin:0 0 1em;
+}
+.stat-compare:last-child { margin-bottom:0; }
+.stat-compare .stat {
+  padding:.85em 1em;
+  border:1px solid var(--border);
+  border-radius:8px;
+  background:var(--page-bg);
+}
+.stat-compare .stat-label {
+  margin:0 0 .35em;
+  font-family:"DM Mono",monospace;
+  font-size:clamp(9px, .95vw, 12px);
+  font-weight:500;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--t3);
+}
+.stat-compare .stat-value {
+  margin:0 0 .3em;
+  font-family:"DM Sans",sans-serif;
+  font-size:clamp(22px, 3.2vw, 40px);
+  font-weight:700;
+  line-height:1;
+  color:var(--t1);
+  font-variant-numeric:tabular-nums;
+}
+.stat-compare .stat-unit {
+  font-weight:500;
+  font-size:.42em;
+  color:var(--t3);
+  letter-spacing:.06em;
+  margin-left:.2em;
+}
+.stat-compare .stat-detail {
+  margin:0;
+  font-family:"DM Sans",sans-serif;
+  font-size:clamp(11px, 1.2vw, 15px);
+  color:var(--t2);
+}
 .topic-cols {
   padding:1em 0 .2em;
   display:grid;
@@ -1157,7 +1201,83 @@ body.is-drawing .draw-toolbar {
         <p class="slide-eyebrow">Reunião de líderes</p>
         <h2 class="slide-heading">Resultados da Operação</h2>
         <ul class="slide-list">
-          <!-- Conteúdo a definir -->
+          <li class="topic-collapse">
+            <details open>
+              <summary>
+                <span>Turnover</span>
+                <span class="topic-chevron" aria-hidden="true">›</span>
+              </summary>
+              <div class="topic-single">
+                <div class="stat-compare">
+                  <div class="stat">
+                    <p class="stat-label">Turnover 2025</p>
+                    <p class="stat-value">141,7<span class="stat-unit">% ao ano</span></p>
+                    <p class="stat-detail">Média mensal de 11,8%</p>
+                  </div>
+                  <div class="stat">
+                    <p class="stat-label">Turnover 2026</p>
+                    <p class="stat-value">55,6<span class="stat-unit">% ao ano</span></p>
+                    <p class="stat-detail">Média mensal de 9,2%</p>
+                  </div>
+                </div>
+                <p class="topic-text">Redução consistente ao longo de 2026: queda média de <strong>2,6% ao mês</strong> na comparação com 2025.</p>
+              </div>
+            </details>
+          </li>
+          <li class="topic-collapse">
+            <details>
+              <summary>
+                <span>Recrutamento e Seleção</span>
+                <span class="topic-chevron" aria-hidden="true">›</span>
+              </summary>
+              <div class="topic-single">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Etapa</th>
+                      <th scope="col">Agendado / Aberto</th>
+                      <th scope="col">Realizado / Fechado</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Vagas</td><td>126</td><td>109</td></tr>
+                    <tr><td>Entrevistas</td><td>953</td><td>680</td></tr>
+                    <tr><td>Testes</td><td>272</td><td>202</td></tr>
+                  </tbody>
+                </table>
+                <div class="stat-compare">
+                  <div class="stat">
+                    <p class="stat-label">Admissões</p>
+                    <p class="stat-value">94</p>
+                  </div>
+                  <div class="stat">
+                    <p class="stat-label">Demissões</p>
+                    <p class="stat-value">77</p>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </li>
+          <li class="topic-collapse">
+            <details>
+              <summary>
+                <span>Paradoxo da Oferta Excessiva</span>
+                <span class="topic-chevron" aria-hidden="true">›</span>
+              </summary>
+              <div class="topic-single">
+                <p class="topic-text">O alto volume de entrevistas e testes agendados não se traduz proporcionalmente em contratações. Muita oferta consome tempo da operação sem impacto direto no fechamento de vagas.</p>
+                <div class="topic-example">
+                  <p class="topic-sub">O que dizem os números</p>
+                  <ul class="topic-sublist">
+                    <li>Entrevistas: 273 agendadas não realizadas (29% do total)</li>
+                    <li>Testes: 70 agendados não realizados (26% do total)</li>
+                    <li>17 vagas ainda em aberto ao fim do período (126 abertas × 109 fechadas)</li>
+                  </ul>
+                </div>
+                <p class="topic-text">A abundância de candidatos exige <strong>mais critério</strong> de triagem, priorização e acompanhamento próximo, não menos.</p>
+              </div>
+            </details>
+          </li>
         </ul>
       </div>
       <div class="slide-num">09</div>
