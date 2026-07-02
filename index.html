@@ -161,6 +161,35 @@ html, body {
 }
 .intro-text + .intro-text { margin-top:1em; }
 
+/* ── Slide de pergunta reflexiva ───────────── */
+.slide-question { background:var(--white); color:var(--t1); border-left:10px solid var(--carbon); }
+.slide-question .slide-inner {
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  gap:2%;
+  padding:6% 10%;
+}
+.slide-question .slide-eyebrow {
+  font-family:"DM Mono",monospace;
+  font-size:clamp(9px, 1vw, 12px);
+  font-weight:500;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--t3);
+  margin:0 0 5%;
+}
+.slide-question .question-text {
+  font-family:"DM Sans",sans-serif;
+  font-size:clamp(20px, 3.4vw, 44px);
+  font-weight:600;
+  line-height:1.25;
+  letter-spacing:-.01em;
+  color:var(--t1);
+  max-width:82%;
+  margin:0;
+}
+
 /* ── Slides claros (conteúdo padrão) ───────── */
 .slide-light {
   background:var(--white);
@@ -782,7 +811,6 @@ body.is-drawing .draw-toolbar {
           <li>Gestão de Resultados</li>
           <li>Cultura e Engajamento</li>
           <li>Resultados da Operação</li>
-          <li>Próximas Reuniões</li>
           <li>O que fica?</li>
         </ul>
       </div>
@@ -1283,32 +1311,17 @@ body.is-drawing .draw-toolbar {
       <div class="slide-num">09</div>
     </section>
 
-    <!-- Slide 10 — Próximas Reuniões -->
-    <section class="slide slide-light" aria-label="Slide 10 · Próximas Reuniões">
+    <!-- Slide 10 — O que fica? -->
+    <section class="slide slide-question" aria-label="Slide 10 · O que fica?">
       <div class="slide-inner">
-        <p class="slide-eyebrow">Reunião de líderes</p>
-        <h2 class="slide-heading">Próximas Reuniões</h2>
-        <ul class="slide-list">
-          <!-- Conteúdo a definir -->
-        </ul>
+        <p class="slide-eyebrow">Reunião de líderes · O que fica?</p>
+        <p class="question-text">Qual comportamento, característica ou hábito preciso deixar para trás para se tornar o líder que preciso ser no próximo semestre?</p>
       </div>
       <div class="slide-num">10</div>
     </section>
 
-    <!-- Slide 11 — O que fica? -->
-    <section class="slide slide-light" aria-label="Slide 11 · O que fica?">
-      <div class="slide-inner">
-        <p class="slide-eyebrow">Reunião de líderes</p>
-        <h2 class="slide-heading">O que fica?</h2>
-        <ul class="slide-list">
-          <!-- Conteúdo a definir -->
-        </ul>
-      </div>
-      <div class="slide-num">11</div>
-    </section>
-
-    <!-- Slide 12 — Encerramento -->
-    <section class="slide slide-cover is-dark" aria-label="Slide 12 · Encerramento">
+    <!-- Slide 11 — Encerramento -->
+    <section class="slide slide-cover is-dark" aria-label="Slide 11 · Encerramento">
       <div class="slide-inner">
         <img alt="TATÁ SUSHI" class="cover-logo-full" id="closingLogo">
       </div>
