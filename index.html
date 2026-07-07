@@ -729,7 +729,7 @@ body.is-drawing .draw-toolbar {
 
 /* ── Impressão / exportar PDF ────────────────── */
 @media print {
-  @page { size: A4 landscape; margin: 0; }
+  @page { size: A4 landscape; margin: 12mm 14mm; }
   html, body {
     background: #FFFFFF !important;
     -webkit-print-color-adjust: exact !important;
@@ -756,22 +756,42 @@ body.is-drawing .draw-toolbar {
     position: relative !important;
     inset: auto !important;
     top: auto !important; left: auto !important; right: auto !important; bottom: auto !important;
-    width: 100vw !important;
-    height: 100vh !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 100vh !important;
     opacity: 1 !important;
     visibility: visible !important;
     transform: none !important;
     box-shadow: none !important;
     border-radius: 0 !important;
-    overflow: hidden !important;
+    overflow: visible !important;
     aspect-ratio: auto !important;
+    padding: 24px 24px 40px !important;
     page-break-after: always;
     break-after: page;
-    page-break-inside: avoid;
-    break-inside: avoid;
+    page-break-inside: auto !important;
+    break-inside: auto !important;
   }
   .slide:last-child { page-break-after: auto; break-after: auto; }
-  .slide-light { border-left-width: 10px !important; }
+  .slide-inner { position: static !important; padding: 0 !important; display: block !important; }
+  .slide-cover .slide-inner {
+    min-height: 88vh; display: flex !important; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+  }
+  .slide-intro .slide-inner, .slide-question .slide-inner {
+    min-height: 80vh; display: flex !important; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center; padding: 0 6% !important;
+  }
+  .slide-light, .slide-question { border-left-width: 10px !important; }
+  .slide-heading { break-after: avoid; page-break-after: avoid; margin-bottom: 14px !important; }
+  .slide-eyebrow { break-after: avoid; page-break-after: avoid; }
+  .slide-list li.topic-collapse { break-inside: avoid; page-break-inside: avoid; margin-bottom: 10px; }
+  .slide-list li.topic-collapse > details > summary .topic-chevron { display: none; }
+  .topic-cols { break-inside: avoid; page-break-inside: avoid; }
+  .data-table { break-inside: auto; page-break-inside: auto; }
+  .data-table thead { display: table-header-group; }
+  .data-table tr { break-inside: avoid; page-break-inside: avoid; }
+  .topic-figures img { max-height: 38vh !important; }
 }
 </style>
 </head>
@@ -1693,6 +1713,19 @@ body.is-drawing .draw-toolbar {
     setDrawMode(false);
     setLaserMode(false);
     window.print();
+  });
+
+  var detailsPrintState = null;
+  window.addEventListener('beforeprint', function () {
+    var all = document.querySelectorAll('details');
+    detailsPrintState = Array.prototype.map.call(all, function (d) { return d.open; });
+    Array.prototype.forEach.call(all, function (d) { d.open = true; });
+  });
+  window.addEventListener('afterprint', function () {
+    if (!detailsPrintState) return;
+    var all = document.querySelectorAll('details');
+    Array.prototype.forEach.call(all, function (d, i) { d.open = detailsPrintState[i]; });
+    detailsPrintState = null;
   });
 
   function setTool(tool) {
