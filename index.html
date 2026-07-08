@@ -484,6 +484,21 @@ html, body {
   background:var(--carbon);
   border-radius:50%;
 }
+.formula-list {
+  list-style:none;
+  margin:0;
+  padding:0;
+  font-family:"DM Mono",monospace;
+  font-size:clamp(11px, 1.2vw, 15px);
+  line-height:1.5;
+  color:var(--t1);
+}
+.formula-list li {
+  padding:.3em 0;
+  border-top:1px solid var(--border);
+}
+.formula-list li:first-child { border-top:none; }
+.formula-list li.is-final { font-weight:700; }
 
 /* ── Reveal (revelar itens progressivamente) ─── */
 .reveal-list > li {
@@ -1230,27 +1245,41 @@ body.is-drawing .draw-toolbar {
           <li class="topic-collapse">
             <details>
               <summary>
-                <span>Os 7 Indicadores</span>
+                <span>Os 10 Indicadores</span>
                 <span class="topic-chevron" aria-hidden="true">›</span>
               </summary>
               <div class="topic-single">
-                <p class="topic-text">O score é dividido em 7 grupos, cada um valendo no máximo <strong>0,71 pontos</strong> (5 &divide; 7). Cada grupo tem um valor de referência que representa 100% da penalidade daquele grupo; acima disso, a penalidade trava no máximo.</p>
+                <p class="topic-text">Nos indicadores 1 a 8, a penalidade é normalizada pelo headcount e trava em <strong>0,50 pontos</strong> ao atingir a referência. Os indicadores 9 e 10 tratam de reclamações trabalhistas e dividem esse mesmo teto de 0,50 entre abertura (30%) e procedência (70%).</p>
+                <div class="topic-example">
+                  <p class="topic-sub">Fórmula de cálculo</p>
+                  <ul class="formula-list">
+                    <li>Penalidade (1&ndash;8) = min(ocorr &divide; headcount &divide; ref ; 1) &times; 0,50</li>
+                    <li>Penalidade (9) = min(abertas ; 1) &times; 0,50 &times; 0,30</li>
+                    <li>Penalidade (10) = min(procedentes ; 1) &times; 0,50 &times; 0,70</li>
+                    <li class="is-final">Score = 5 &minus; &Sigma; penalidades</li>
+                  </ul>
+                </div>
                 <table class="data-table">
                   <thead>
                     <tr>
+                      <th scope="col">#</th>
                       <th scope="col">Indicador</th>
-                      <th scope="col">Peso máximo</th>
-                      <th scope="col">Valor de referência</th>
+                      <th scope="col">O que conta</th>
+                      <th scope="col">Referência (teto)</th>
+                      <th scope="col">Peso</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td>Faltas injustificadas</td><td>0,71 pt</td><td>1 falta por colaborador</td></tr>
-                    <tr><td>Atestados / afastamentos</td><td>0,71 pt</td><td>2 atestados por colaborador</td></tr>
-                    <tr><td>Desligamentos</td><td>0,71 pt</td><td>0,3 desligamentos por colaborador</td></tr>
-                    <tr><td>Dispensa no 1º período</td><td>0,71 pt</td><td>0,3 dispensas por colaborador</td></tr>
-                    <tr><td>Sanções disciplinares</td><td>0,71 pt</td><td>0,3 sanções por colaborador</td></tr>
-                    <tr><td>Banco de horas (saldo negativo acima de 100h)</td><td>0,71 pt</td><td>5 horas negativas por colaborador</td></tr>
-                    <tr><td>Vagas paradas há mais de 50 dias</td><td>0,71 pt</td><td>0,5 vagas por colaborador</td></tr>
+                    <tr><td>1</td><td>Faltas injustificadas</td><td>Faltas sem justificativa no mês</td><td>1 falta / colaborador</td><td>0,50</td></tr>
+                    <tr><td>2</td><td>Atestados / afastamentos</td><td>Atestados e afastamentos no mês</td><td>1 atestado / colaborador</td><td>0,50</td></tr>
+                    <tr><td>3</td><td>Desligamentos</td><td>Qualquer desligamento no mês</td><td>1 desligamento / colaborador</td><td>0,50</td></tr>
+                    <tr><td>4</td><td>Dispensa no 1º período (14d)</td><td>Colaborador desligado até o 14º dia</td><td>1 dispensa / colaborador</td><td>0,50</td></tr>
+                    <tr><td>5</td><td>Sanções disciplinares</td><td>Advertências e suspensões no mês</td><td>1 sanção / colaborador</td><td>0,50</td></tr>
+                    <tr><td>6</td><td>BCH &mdash; saldo negativo</td><td>Colaboradores com saldo negativo</td><td>1 colaborador / headcount</td><td>0,50</td></tr>
+                    <tr><td>7</td><td>BCH &mdash; saldo acima de 100h</td><td>Colaboradores com +100h positivas</td><td>1 colaborador / headcount</td><td>0,50</td></tr>
+                    <tr><td>8</td><td>Vagas paradas +50 dias</td><td>Vagas abertas sem preenchimento</td><td>0,5 vagas / colaborador</td><td>0,50</td></tr>
+                    <tr><td>9</td><td>Reclamações &mdash; Abertura</td><td>Reclamação trabalhista aberta no mês</td><td>1 reclamação / departamento</td><td>0,15 (30%)</td></tr>
+                    <tr><td>10</td><td>Reclamações &mdash; Procedente</td><td>Reclamação julgada procedente no mês</td><td>1 reclamação / departamento</td><td>0,35 (70%)</td></tr>
                   </tbody>
                 </table>
               </div>
