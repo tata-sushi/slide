@@ -250,6 +250,7 @@ html, body {
 .slide-light .slide-list::-webkit-scrollbar { width:6px; }
 .slide-light .slide-list::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px; }
 .slide-light .slide-list::-webkit-scrollbar-track { background:transparent; }
+.pauta-nav li { cursor:pointer; }
 .slide-list li {
   position:relative;
   padding:.55em 0 .55em 1.5em;
@@ -982,7 +983,7 @@ body.is-drawing .draw-toolbar {
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião de líderes</p>
         <h2 class="slide-heading">Pauta do <span class="accent">dia</span></h2>
-        <ul class="slide-list">
+        <ul class="slide-list pauta-nav">
           <li>Responsabilidade Operacional</li>
           <li>Vendas</li>
           <li>Cultura e Engajamento</li>
@@ -1650,6 +1651,23 @@ body.is-drawing .draw-toolbar {
     var parts = label.split('·');
     var title = parts.length > 1 ? parts.slice(1).join('·').trim() : label;
     return title || ('Slide ' + (index + 1));
+  }
+
+  var pautaNav = document.querySelector('.pauta-nav');
+  if (pautaNav) {
+    Array.prototype.forEach.call(pautaNav.children, function (li) {
+      var text = li.textContent.trim();
+      var targetIndex = -1;
+      for (var i = 0; i < slides.length; i++) {
+        if (slideTitle(slides[i], i) === text) { targetIndex = i; break; }
+      }
+      if (targetIndex >= 0) {
+        li.addEventListener('click', function () {
+          idx = targetIndex;
+          render();
+        });
+      }
+    });
   }
 
   function updateExportConfirmState() {
