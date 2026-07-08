@@ -243,6 +243,7 @@ html, body {
   flex:1 1 auto;
   min-height:0;
   overflow-y:auto;
+  overflow-x:hidden;
   scrollbar-width:thin;
   scrollbar-color:var(--border) transparent;
 }
@@ -397,6 +398,8 @@ html, body {
   border-top:1px solid var(--border);
   text-align:left;
   vertical-align:middle;
+  word-break:break-word;
+  overflow-wrap:break-word;
 }
 .data-table thead th {
   border-top:none;

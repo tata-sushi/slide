@@ -243,6 +243,7 @@ html, body {
   flex:1 1 auto;
   min-height:0;
   overflow-y:auto;
+  overflow-x:hidden;
   scrollbar-width:thin;
   scrollbar-color:var(--border) transparent;
 }
@@ -397,6 +398,8 @@ html, body {
   border-top:1px solid var(--border);
   text-align:left;
   vertical-align:middle;
+  word-break:break-word;
+  overflow-wrap:break-word;
 }
 .data-table thead th {
   border-top:none;
@@ -412,6 +415,12 @@ html, body {
 }
 .data-table tbody tr:first-child td { border-top:none; }
 .data-table--compact { max-width:70%; }
+.data-table--indicators { table-layout:fixed; }
+.data-table--indicators th:nth-child(1), .data-table--indicators td:nth-child(1) { width:5%; }
+.data-table--indicators th:nth-child(2), .data-table--indicators td:nth-child(2) { width:21%; }
+.data-table--indicators th:nth-child(3), .data-table--indicators td:nth-child(3) { width:36%; }
+.data-table--indicators th:nth-child(4), .data-table--indicators td:nth-child(4) { width:24%; }
+.data-table--indicators th:nth-child(5), .data-table--indicators td:nth-child(5) { width:14%; }
 .stat-compare {
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -504,6 +513,8 @@ html, body {
   font-size:clamp(11px, 1.2vw, 15px);
   line-height:1.5;
   color:var(--t1);
+  word-break:break-word;
+  overflow-wrap:break-word;
 }
 .formula-list li {
   padding:.3em 0;
@@ -1277,7 +1288,7 @@ body.is-drawing .draw-toolbar {
                     <li class="is-final">Score = 5 &minus; &Sigma; penalidades</li>
                   </ul>
                 </div>
-                <table class="data-table">
+                <table class="data-table data-table--indicators">
                   <thead>
                     <tr>
                       <th scope="col">#</th>
