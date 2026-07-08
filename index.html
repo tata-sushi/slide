@@ -421,6 +421,30 @@ html, body {
 .data-table--indicators th:nth-child(3), .data-table--indicators td:nth-child(3) { width:36%; }
 .data-table--indicators th:nth-child(4), .data-table--indicators td:nth-child(4) { width:24%; }
 .data-table--indicators th:nth-child(5), .data-table--indicators td:nth-child(5) { width:14%; }
+.data-table tr.is-current td { font-weight:700; }
+.data-table td .cell-note {
+  display:block;
+  margin-top:.15em;
+  font-family:"DM Mono",monospace;
+  font-size:.72em;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--t3);
+}
+.data-table td .tag-partial {
+  display:inline-block;
+  margin-left:.6em;
+  padding:.15em .55em;
+  border-radius:999px;
+  background:rgba(207,255,0,.38);
+  color:var(--carbon);
+  font-family:"DM Mono",monospace;
+  font-size:.7em;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  vertical-align:middle;
+}
 .stat-compare {
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -996,7 +1020,7 @@ body.is-drawing .draw-toolbar {
           <li>Atualizações e Avanços</li>
           <li>Gestão de Resultados</li>
           <li>Cultura e Engajamento</li>
-          <li>Resultados da Operação</li>
+          <li>Vendas</li>
           <li>Próximas Reuniões</li>
           <li>O que fica?</li>
         </ul>
@@ -1384,11 +1408,11 @@ body.is-drawing .draw-toolbar {
       <div class="slide-num">08</div>
     </section>
 
-    <!-- Slide 9 — Resultados da Operação -->
-    <section class="slide slide-light" aria-label="Slide 9 · Resultados da Operação">
+    <!-- Slide 9 — Vendas -->
+    <section class="slide slide-light" aria-label="Slide 9 · Vendas">
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião de líderes</p>
-        <h2 class="slide-heading">Resultados da Operação</h2>
+        <h2 class="slide-heading">Vendas</h2>
         <ul class="slide-list">
           <li class="topic-collapse">
             <details open>
@@ -1456,6 +1480,56 @@ body.is-drawing .draw-toolbar {
               <div class="topic-single">
                 <p class="topic-text">O alto volume de entrevistas e testes agendados não se traduz proporcionalmente em contratações. Muita oferta consome tempo da operação sem impacto direto no fechamento de vagas.</p>
                 <p class="topic-text">A abundância de candidatos exige <strong>mais critério</strong> de triagem, priorização e acompanhamento próximo, não menos.</p>
+              </div>
+            </details>
+          </li>
+          <li class="topic-collapse">
+            <details>
+              <summary>
+                <span>Gorjeta &mdash; Sal&atilde;o</span>
+                <span class="topic-chevron" aria-hidden="true">›</span>
+              </summary>
+              <div class="topic-cols">
+                <div>
+                  <p class="topic-sub">Itaim</p>
+                  <table class="data-table data-table--compact">
+                    <thead>
+                      <tr><th scope="col">M&ecirc;s</th><th scope="col">Gorjeta</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Agosto</td><td>R$ 63.178</td></tr>
+                      <tr><td>Setembro</td><td>R$ 72.933</td></tr>
+                      <tr><td>Outubro</td><td>R$ 64.916</td></tr>
+                      <tr><td>Novembro</td><td>R$ 75.347</td></tr>
+                      <tr><td>Dezembro</td><td>R$ 80.040</td></tr>
+                      <tr><td>Janeiro</td><td>R$ 63.178</td></tr>
+                      <tr><td>Fevereiro</td><td>R$ 78.669</td></tr>
+                      <tr><td>Mar&ccedil;o</td><td>R$ 77.423</td></tr>
+                      <tr><td>Abril</td><td>R$ 82.440</td></tr>
+                      <tr><td>Maio</td><td>R$ 73.691</td></tr>
+                      <tr class="is-current"><td>Junho</td><td>R$ 69.416</td></tr>
+                      <tr><td>Julho <span class="tag-partial">Parcial</span></td><td>R$ 24.593<span class="cell-note">R$ 2.235,72 / dia</span></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div>
+                  <p class="topic-sub">Pinheiros</p>
+                  <table class="data-table data-table--compact">
+                    <thead>
+                      <tr><th scope="col">M&ecirc;s</th><th scope="col">Gorjeta</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Dezembro</td><td>R$ 38.807</td></tr>
+                      <tr><td>Janeiro</td><td>R$ 31.058</td></tr>
+                      <tr><td>Fevereiro</td><td>R$ 41.479</td></tr>
+                      <tr><td>Mar&ccedil;o</td><td>R$ 42.638</td></tr>
+                      <tr><td>Abril</td><td>R$ 42.958</td></tr>
+                      <tr><td>Maio</td><td>R$ 38.789</td></tr>
+                      <tr class="is-current"><td>Junho</td><td>R$ 37.276</td></tr>
+                      <tr><td>Julho <span class="tag-partial">Parcial</span></td><td>R$ 13.052<span class="cell-note">R$ 1.450,00 / dia</span></td></tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </details>
           </li>
