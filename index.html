@@ -171,10 +171,6 @@ html, body {
   padding:6% 10%;
 }
 .slide-question .slide-eyebrow {
-  position:absolute;
-  top:8%;
-  left:50%;
-  transform:translateX(-50%);
   font-family:"DM Mono",monospace;
   font-size:clamp(9px, 1vw, 12px);
   font-weight:500;
@@ -183,6 +179,7 @@ html, body {
   color:var(--t3);
   margin:0;
 }
+.slide-question .slide-eyebrow-spacer { visibility:hidden; }
 .slide-question .question-text {
   font-family:"DM Sans",sans-serif;
   font-size:clamp(20px, 3.4vw, 44px);
@@ -421,6 +418,7 @@ html, body {
 }
 .data-table tbody tr:first-child td { border-top:none; }
 .data-table--compact { max-width:70%; }
+.topic-cols .data-table--compact { max-width:100%; }
 .data-table--indicators { table-layout:fixed; }
 .data-table--indicators th:nth-child(1), .data-table--indicators td:nth-child(1) { width:5%; }
 .data-table--indicators th:nth-child(2), .data-table--indicators td:nth-child(2) { width:21%; }
@@ -554,9 +552,10 @@ html, body {
 }
 .formula-list li:first-child { border-top:none; }
 .formula-list li.is-final { font-weight:700; }
+.topic-section + .topic-section { margin-top:1.1em; }
 .topic-callout {
   grid-column:1 / -1;
-  margin-top:.4em;
+  margin-top:1.1em;
   padding:.7em 1em;
   border-left:3px solid var(--carbon);
   background:rgba(207,255,0,.14);
@@ -1227,15 +1226,15 @@ body.is-drawing .draw-toolbar {
                 <span>Gestão por Dados e Informações</span>
                 <span class="topic-chevron" aria-hidden="true">›</span>
               </summary>
-              <div class="topic-cols">
-                <div>
+              <div class="topic-single">
+                <div class="topic-section">
                   <p class="topic-sub">Cenário atual</p>
                   <ul class="topic-sublist">
                     <li>Todas as informações operacionais dos departamentos passam a compor um fluxo estruturado de reporte para a diretoria</li>
                     <li>O processo ocorre de forma automática e periódica, sem intervenções ou filtros manuais</li>
                   </ul>
                 </div>
-                <div>
+                <div class="topic-section">
                   <p class="topic-sub">Alinhamento</p>
                   <ul class="topic-sublist">
                     <li>Até segunda-feira, o RH realiza a consolidação e atualização dos processos</li>
@@ -1276,8 +1275,8 @@ body.is-drawing .draw-toolbar {
                 <span>Sistema de Avaliação dos Departamentos</span>
                 <span class="topic-chevron" aria-hidden="true">›</span>
               </summary>
-              <div class="topic-cols">
-                <div>
+              <div class="topic-single">
+                <div class="topic-section">
                   <p class="topic-sub">Cenário atual</p>
                   <ul class="topic-sublist">
                     <li>Todos os departamentos e unidades passam a ter avaliação mensal baseada em indicadores de RH e Departamento Pessoal</li>
@@ -1286,7 +1285,7 @@ body.is-drawing .draw-toolbar {
                     <li>As penalizações são aplicadas proporcionalmente ao tamanho da equipe</li>
                   </ul>
                 </div>
-                <div>
+                <div class="topic-section">
                   <p class="topic-sub">Alinhamento</p>
                   <ul class="topic-sublist">
                     <li>A avaliação é consolidada automaticamente no último dia útil de cada mês</li>
@@ -1403,15 +1402,15 @@ body.is-drawing .draw-toolbar {
                 <span>Padronização e Disciplina</span>
                 <span class="topic-chevron" aria-hidden="true">›</span>
               </summary>
-              <div class="topic-cols">
-                <div>
+              <div class="topic-single">
+                <div class="topic-section">
                   <p class="topic-sub">Cenário atual</p>
                   <ul class="topic-sublist">
                     <li>Solicitações ao RH ainda chegam por canais informais (WhatsApp, e-mail, verbalmente), fora do fluxo oficial</li>
                     <li>A falta de padronização gera retrabalho, perda de histórico e atrasos nas respostas</li>
                   </ul>
                 </div>
-                <div>
+                <div class="topic-section">
                   <p class="topic-sub">Alinhamento</p>
                   <ul class="topic-sublist">
                     <li>Toda solicitação ao RH deve ser aberta pelo portal de governança, sem exceções</li>
@@ -1442,7 +1441,7 @@ body.is-drawing .draw-toolbar {
                 <span>Gorjeta &mdash; Itaim</span>
                 <span class="topic-chevron" aria-hidden="true">›</span>
               </summary>
-              <div class="topic-single">
+              <div class="topic-cols">
                 <table class="data-table data-table--compact">
                   <thead>
                     <tr><th scope="col">M&ecirc;s</th><th scope="col">Gorjeta</th></tr>
@@ -1454,6 +1453,13 @@ body.is-drawing .draw-toolbar {
                     <tr><td>Novembro</td><td>R$ 75.347</td></tr>
                     <tr><td>Dezembro</td><td>R$ 80.040</td></tr>
                     <tr><td>Janeiro</td><td>R$ 63.178</td></tr>
+                  </tbody>
+                </table>
+                <table class="data-table data-table--compact">
+                  <thead>
+                    <tr><th scope="col">M&ecirc;s</th><th scope="col">Gorjeta</th></tr>
+                  </thead>
+                  <tbody>
                     <tr><td>Fevereiro</td><td>R$ 78.669</td></tr>
                     <tr><td>Mar&ccedil;o</td><td>R$ 77.423</td></tr>
                     <tr><td>Abril</td><td>R$ 82.440</td></tr>
@@ -1471,7 +1477,7 @@ body.is-drawing .draw-toolbar {
                 <span>Gorjeta &mdash; Pinheiros</span>
                 <span class="topic-chevron" aria-hidden="true">›</span>
               </summary>
-              <div class="topic-single">
+              <div class="topic-cols">
                 <table class="data-table data-table--compact">
                   <thead>
                     <tr><th scope="col">M&ecirc;s</th><th scope="col">Gorjeta</th></tr>
@@ -1481,6 +1487,13 @@ body.is-drawing .draw-toolbar {
                     <tr><td>Janeiro</td><td>R$ 31.058</td></tr>
                     <tr><td>Fevereiro</td><td>R$ 41.479</td></tr>
                     <tr><td>Mar&ccedil;o</td><td>R$ 42.638</td></tr>
+                  </tbody>
+                </table>
+                <table class="data-table data-table--compact">
+                  <thead>
+                    <tr><th scope="col">M&ecirc;s</th><th scope="col">Gorjeta</th></tr>
+                  </thead>
+                  <tbody>
                     <tr><td>Abril</td><td>R$ 42.958</td></tr>
                     <tr><td>Maio</td><td>R$ 38.789</td></tr>
                     <tr class="is-current"><td>Junho</td><td>R$ 37.276</td></tr>
@@ -1514,6 +1527,7 @@ body.is-drawing .draw-toolbar {
       <div class="slide-inner">
         <p class="slide-eyebrow">O que fica?</p>
         <p class="question-text">Qual comportamento, característica ou hábito preciso deixar para trás para se tornar o líder que quero me tornar nos próximos meses?</p>
+        <p class="slide-eyebrow slide-eyebrow-spacer" aria-hidden="true">O que fica?</p>
       </div>
       <div class="slide-num">10</div>
     </section>
