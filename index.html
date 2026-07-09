@@ -233,6 +233,19 @@ html, body {
   margin:0 0 .5em;
 }
 .slide-text:last-of-type { margin-bottom:1em; }
+.list-intro {
+  max-height:120px;
+  opacity:1;
+  overflow:hidden;
+  flex-shrink:0;
+  transition:max-height .35s ease, opacity .3s ease;
+}
+.list-intro.is-collapsed {
+  max-height:0;
+  opacity:0;
+  pointer-events:none;
+}
+.list-intro.is-collapsed .slide-text { margin-bottom:0; }
 .slide-list {
   list-style:none;
   padding:0;
@@ -1048,6 +1061,7 @@ body.is-drawing .draw-toolbar {
   .slide-light, .slide-question { border-left-width: 10px !important; }
   .slide-heading { break-after: avoid; page-break-after: avoid; margin-bottom: 14px !important; flex-shrink: 1 !important; }
   .slide-eyebrow { break-after: avoid; page-break-after: avoid; flex-shrink: 1 !important; }
+  .list-intro { max-height: none !important; opacity: 1 !important; }
   .slide-light .slide-list {
     flex: none !important;
     min-height: 0 !important;
@@ -1261,8 +1275,10 @@ body.is-drawing .draw-toolbar {
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião de líderes · Detalhamento</p>
         <h2 class="slide-heading">Sistema de Avaliação</h2>
-        <p class="slide-text">O Sistema de Avaliação tem como objetivo acompanhar a saúde operacional dos departamentos, promovendo maior transparência, controle e melhoria contínua.</p>
-        <p class="slide-text"><strong>1º módulo:</strong> indicadores de RH e Departamento Pessoal.</p>
+        <div class="list-intro">
+          <p class="slide-text">O Sistema de Avaliação tem como objetivo acompanhar a saúde operacional dos departamentos, promovendo maior transparência, controle e melhoria contínua.</p>
+          <p class="slide-text"><strong>1º módulo:</strong> indicadores de RH e Departamento Pessoal.</p>
+        </div>
         <ul class="slide-list">
           <li class="topic-collapse">
             <details>
@@ -1973,6 +1989,17 @@ body.is-drawing .draw-toolbar {
       var otherDetails = sibling.querySelector('details');
       if (otherDetails && otherDetails.open) otherDetails.open = false;
     });
+  }, true);
+
+  document.addEventListener('toggle', function (e) {
+    var d = e.target;
+    if (!d || d.tagName !== 'DETAILS') return;
+    var slide = d.closest('.slide');
+    if (!slide) return;
+    var intro = slide.querySelector('.list-intro');
+    if (!intro) return;
+    var anyOpen = !!slide.querySelector('.slide-list details[open]');
+    intro.classList.toggle('is-collapsed', anyOpen);
   }, true);
 
   var detailsPrintState = null;
