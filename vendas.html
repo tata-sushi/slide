@@ -443,15 +443,16 @@ html, body {
 .stat-compare {
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:1em;
-  margin:0 0 1em;
+  margin:0 auto 1em;
+  max-width:72%;
+  text-align:center;
 }
 .stat-compare:last-child { margin-bottom:0; }
 .stat-compare .stat {
-  padding:.85em 1em;
-  border:1px solid var(--border);
-  border-radius:8px;
-  background:var(--page-bg);
+  padding:0 1.5em;
+}
+.stat-compare .stat + .stat {
+  border-left:1px solid var(--border);
 }
 .stat-compare .stat-label {
   margin:0 0 .35em;
