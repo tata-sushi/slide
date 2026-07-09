@@ -171,13 +171,17 @@ html, body {
   padding:6% 10%;
 }
 .slide-question .slide-eyebrow {
+  position:absolute;
+  top:8%;
+  left:50%;
+  transform:translateX(-50%);
   font-family:"DM Mono",monospace;
   font-size:clamp(9px, 1vw, 12px);
   font-weight:500;
   letter-spacing:.32em;
   text-transform:uppercase;
   color:var(--t3);
-  margin:0 0 5%;
+  margin:0;
 }
 .slide-question .question-text {
   font-family:"DM Sans",sans-serif;
@@ -200,6 +204,7 @@ html, body {
   align-items:flex-start;
   justify-content:flex-start;
   text-align:left;
+  padding-top:4.5%;
 }
 .slide-eyebrow {
   font-family:"DM Mono",monospace;
@@ -422,6 +427,7 @@ html, body {
 .data-table--indicators th:nth-child(3), .data-table--indicators td:nth-child(3) { width:36%; }
 .data-table--indicators th:nth-child(4), .data-table--indicators td:nth-child(4) { width:24%; }
 .data-table--indicators th:nth-child(5), .data-table--indicators td:nth-child(5) { width:14%; }
+.data-table--centered-nums th:not(:first-child), .data-table--centered-nums td:not(:first-child) { text-align:center; }
 .data-table tr.is-current td { font-weight:700; }
 .data-table td .cell-note {
   display:block;
@@ -548,6 +554,74 @@ html, body {
 }
 .formula-list li:first-child { border-top:none; }
 .formula-list li.is-final { font-weight:700; }
+.topic-callout {
+  grid-column:1 / -1;
+  margin-top:.4em;
+  padding:.7em 1em;
+  border-left:3px solid var(--carbon);
+  background:rgba(207,255,0,.14);
+}
+.topic-callout p {
+  margin:0;
+  font-family:"DM Sans",sans-serif;
+  font-size:clamp(12px, 1.3vw, 16px);
+  line-height:1.5;
+  color:var(--t1);
+}
+.topic-callout p strong { font-weight:700; }
+.bar-chart { margin-bottom:1.6em; }
+.bar-chart:last-child { margin-bottom:0; }
+.bar-chart-title {
+  margin:0 0 .9em;
+  font-family:"DM Mono",monospace;
+  font-size:clamp(9px, .95vw, 12px);
+  font-weight:600;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--t1);
+}
+.bar-chart-row {
+  display:flex;
+  align-items:flex-end;
+  gap:.5em;
+}
+.bar-chart-col {
+  flex:1 1 0;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.bar-chart-track {
+  width:100%;
+  height:96px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-end;
+}
+.bar-chart-value {
+  margin:0 0 .3em;
+  font-family:"DM Mono",monospace;
+  font-size:clamp(8px, .8vw, 10px);
+  font-weight:600;
+  color:var(--t1);
+  font-variant-numeric:tabular-nums;
+}
+.bar-chart-bar {
+  width:58%;
+  max-width:20px;
+  background:var(--carbon);
+  border-radius:2px 2px 0 0;
+}
+.bar-chart-month {
+  margin-top:.5em;
+  font-family:"DM Mono",monospace;
+  font-size:clamp(7px, .68vw, 9px);
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:var(--t3);
+}
 
 /* ── Reveal (revelar itens progressivamente) ─── */
 .reveal-list > li {
@@ -980,6 +1054,7 @@ body.is-drawing .draw-toolbar {
   .slide-list li.topic-collapse { break-inside: avoid; page-break-inside: avoid; margin-bottom: 10px; }
   .slide-list li.topic-collapse > details > summary .topic-chevron { display: none; }
   .topic-cols { break-inside: avoid; page-break-inside: avoid; }
+  .bar-chart { break-inside: avoid; page-break-inside: avoid; }
   .data-table { break-inside: auto; page-break-inside: auto; }
   .data-table thead { display: table-header-group; }
   .data-table tr { break-inside: avoid; page-break-inside: avoid; }
@@ -1019,7 +1094,7 @@ body.is-drawing .draw-toolbar {
         <h2 class="slide-heading">Pauta do <span class="accent">dia</span></h2>
         <ul class="slide-list pauta-nav">
           <li>Responsabilidade Operacional</li>
-          <li>Gestão de Resultados</li>
+          <li>Gestão de Resultados e Sistema de Avaliação</li>
           <li>Cultura e Engajamento</li>
           <li>Vendas</li>
           <li>Próximas Reuniões</li>
@@ -1064,7 +1139,17 @@ body.is-drawing .draw-toolbar {
                 <span class="topic-chevron" aria-hidden="true">›</span>
               </summary>
               <div class="topic-single">
-                <table class="data-table">
+                <div class="stat-compare">
+                  <div class="stat">
+                    <p class="stat-label">Admissões</p>
+                    <p class="stat-value">94</p>
+                  </div>
+                  <div class="stat">
+                    <p class="stat-label">Demissões</p>
+                    <p class="stat-value">77</p>
+                  </div>
+                </div>
+                <table class="data-table data-table--centered-nums">
                   <thead>
                     <tr>
                       <th scope="col">Etapa</th>
@@ -1078,28 +1163,50 @@ body.is-drawing .draw-toolbar {
                     <tr><td>Testes</td><td>272</td><td>202</td></tr>
                   </tbody>
                 </table>
-                <div class="stat-compare">
-                  <div class="stat">
-                    <p class="stat-label">Admissões</p>
-                    <p class="stat-value">94</p>
-                  </div>
-                  <div class="stat">
-                    <p class="stat-label">Demissões</p>
-                    <p class="stat-value">77</p>
-                  </div>
-                </div>
               </div>
             </details>
           </li>
           <li class="topic-collapse">
             <details>
               <summary>
-                <span>Paradoxo da Oferta Excessiva</span>
+                <span>Paradoxo da Oferta</span>
                 <span class="topic-chevron" aria-hidden="true">›</span>
               </summary>
               <div class="topic-single">
-                <p class="topic-text">O alto volume de entrevistas e testes agendados não se traduz proporcionalmente em contratações. Muita oferta consome tempo da operação sem impacto direto no fechamento de vagas.</p>
-                <p class="topic-text">A abundância de candidatos exige <strong>mais critério</strong> de triagem, priorização e acompanhamento próximo, não menos.</p>
+                <div class="bar-chart">
+                  <p class="bar-chart-title">Entrevistas por mês</p>
+                  <div class="bar-chart-row">
+                    <div class="bar-chart-col"><div class="bar-chart-track"><span class="bar-chart-value">84</span><span class="bar-chart-bar" style="height:30.2%"></span></div><span class="bar-chart-month">Ago/25</span></div>
+                    <div class="bar-chart-col"><div class="bar-chart-track"><span class="bar-chart-value">95</span><span class="bar-chart-bar" style="height:34.2%"></span></div><span class="bar-chart-month">Set/25</span></div>
+                    <div class="bar-chart-col"><div class="bar-chart-track"><span class="bar-chart-value">94</span><span class="bar-chart-bar" style="height:33.8%"></span></div><span class="bar-chart-month">Out/25</span></div>
+                    <div class="bar-chart-col"><div class="bar-chart-track"><span class="bar-chart-value">104</span><span class="bar-chart-bar" style="height:37.4%"></span></div><span class="bar-chart-month">Nov/25</span></div>
+                    <div class="bar-chart-col"><div class="bar-chart-track"><span class="bar-chart-value">53</span><span class="bar-chart-bar" style="height:19.1%"></span></div><span class="bar-chart-month">Dez/25</span></div>
+                    <div class="bar-chart-col"><div class="bar-chart-track"><span class="bar-chart-value">278</span><span class="bar-chart-bar" style="height:100%"></span></div><span class="bar-chart-month">Jan/26</span></div>
+                    <div class="bar-chart-col"><div class="bar-chart-track"><span class="bar-chart-value">159</span><span class="bar-chart-bar" style="height:57.2%"></span></div><span class="bar-chart-month">Fev/26</span></div>
+                    <div class="bar-chart-col"><div class="bar-chart-track"><span class="bar-chart-value">170</span><span class="bar-chart-bar" style="height:61.2%"></span></div><span class="bar-chart-month">Mar/26</span></div>
+                    <div class="bar-chart-col"><div class="bar-chart-track"><span class="bar-chart-value">130</span><span class="bar-chart-bar" style="height:46.8%"></span></div><span class="bar-chart-month">Abr/26</span></div>
+                    <div class="bar-chart-col"><div class="bar-chart-track"><span class="bar-chart-value">221</span><span class="bar-chart-bar" style="height:79.5%"></span></div><span class="bar-chart-month">Mai/26</span></div>
+                    <div class="bar-chart-col"><div class="bar-chart-track"><span class="bar-chart-value">194</span><span class="bar-chart-bar" style="height:69.8%"></span></div><span class="bar-chart-month">Jun/26</span></div>
+                    <div class="bar-chart-col"><div class="bar-chart-track"><span class="bar-chart-value">50</span><span class="bar-chart-bar" style="height:18.0%"></span></div><span class="bar-chart-month">Jul/26</span></div>
+                  </div>
+                </div>
+                <div class="bar-chart">
+                  <p class="bar-chart-title">Testes por mês</p>
+                  <div class="bar-chart-row">
+                    <div class="bar-chart-col"><div class="bar-chart-track"><span class="bar-chart-value">67</span><span class="bar-chart-bar" style="height:62.6%"></span></div><span class="bar-chart-month">Ago/25</span></div>
+                    <div class="bar-chart-col"><div class="bar-chart-track"><span class="bar-chart-value">78</span><span class="bar-chart-bar" style="height:72.9%"></span></div><span class="bar-chart-month">Set/25</span></div>
+                    <div class="bar-chart-col"><div class="bar-chart-track"><span class="bar-chart-value">53</span><span class="bar-chart-bar" style="height:49.5%"></span></div><span class="bar-chart-month">Out/25</span></div>
+                    <div class="bar-chart-col"><div class="bar-chart-track"><span class="bar-chart-value">68</span><span class="bar-chart-bar" style="height:63.6%"></span></div><span class="bar-chart-month">Nov/25</span></div>
+                    <div class="bar-chart-col"><div class="bar-chart-track"><span class="bar-chart-value">58</span><span class="bar-chart-bar" style="height:54.2%"></span></div><span class="bar-chart-month">Dez/25</span></div>
+                    <div class="bar-chart-col"><div class="bar-chart-track"><span class="bar-chart-value">107</span><span class="bar-chart-bar" style="height:100%"></span></div><span class="bar-chart-month">Jan/26</span></div>
+                    <div class="bar-chart-col"><div class="bar-chart-track"><span class="bar-chart-value">73</span><span class="bar-chart-bar" style="height:68.2%"></span></div><span class="bar-chart-month">Fev/26</span></div>
+                    <div class="bar-chart-col"><div class="bar-chart-track"><span class="bar-chart-value">73</span><span class="bar-chart-bar" style="height:68.2%"></span></div><span class="bar-chart-month">Mar/26</span></div>
+                    <div class="bar-chart-col"><div class="bar-chart-track"><span class="bar-chart-value">75</span><span class="bar-chart-bar" style="height:70.1%"></span></div><span class="bar-chart-month">Abr/26</span></div>
+                    <div class="bar-chart-col"><div class="bar-chart-track"><span class="bar-chart-value">92</span><span class="bar-chart-bar" style="height:86.0%"></span></div><span class="bar-chart-month">Mai/26</span></div>
+                    <div class="bar-chart-col"><div class="bar-chart-track"><span class="bar-chart-value">78</span><span class="bar-chart-bar" style="height:72.9%"></span></div><span class="bar-chart-month">Jun/26</span></div>
+                    <div class="bar-chart-col"><div class="bar-chart-track"><span class="bar-chart-value">25</span><span class="bar-chart-bar" style="height:23.4%"></span></div><span class="bar-chart-month">Jul/26</span></div>
+                  </div>
+                </div>
               </div>
             </details>
           </li>
@@ -1109,7 +1216,7 @@ body.is-drawing .draw-toolbar {
     </section>
 
     <!-- Slide 5 — Gestão de Resultados -->
-    <section class="slide slide-light" aria-label="Slide 5 · Gestão de Resultados">
+    <section class="slide slide-light" aria-label="Slide 5 · Gestão de Resultados e Sistema de Avaliação">
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião de líderes</p>
         <h2 class="slide-heading">Gestão de Resultados</h2>
@@ -1141,6 +1248,28 @@ body.is-drawing .draw-toolbar {
               </div>
             </details>
           </li>
+        </ul>
+      </div>
+      <div class="slide-num">05</div>
+    </section>
+
+    <!-- Slide 6 — Sistema de Avaliação · Detalhamento -->
+    <section class="slide slide-light" aria-label="Slide 6 · Sistema de Avaliação">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">Reunião de líderes · Detalhamento</p>
+        <h2 class="slide-heading">Sistema de Avaliação</h2>
+        <ul class="slide-list">
+          <li class="topic-collapse">
+            <details>
+              <summary>
+                <span>Visão Geral</span>
+                <span class="topic-chevron" aria-hidden="true">›</span>
+              </summary>
+              <div class="topic-single">
+                <p class="topic-text">Todo departamento começa com <strong>5 pontos</strong> no início de cada mês. Durante o mês, eventos negativos geram penalidades que reduzem essa pontuação. O score final reflete a saúde do departamento naquele período.</p>
+              </div>
+            </details>
+          </li>
           <li class="topic-collapse">
             <details>
               <summary>
@@ -1168,28 +1297,6 @@ body.is-drawing .draw-toolbar {
                     <li>A responsabilidade pelos resultados passa a ser compartilhada entre RH, DP e lideranças operacionais</li>
                   </ul>
                 </div>
-              </div>
-            </details>
-          </li>
-        </ul>
-      </div>
-      <div class="slide-num">05</div>
-    </section>
-
-    <!-- Slide 6 — Sistema de Avaliação · Detalhamento -->
-    <section class="slide slide-light" aria-label="Slide 6 · Sistema de Avaliação">
-      <div class="slide-inner">
-        <p class="slide-eyebrow">Reunião de líderes · Detalhamento</p>
-        <h2 class="slide-heading">Sistema de Avaliação</h2>
-        <ul class="slide-list">
-          <li class="topic-collapse">
-            <details>
-              <summary>
-                <span>Visão Geral</span>
-                <span class="topic-chevron" aria-hidden="true">›</span>
-              </summary>
-              <div class="topic-single">
-                <p class="topic-text">Todo departamento começa com <strong>5 pontos</strong> no início de cada mês. Durante o mês, eventos negativos geram penalidades que reduzem essa pontuação. O score final reflete a saúde do departamento naquele período.</p>
               </div>
             </details>
           </li>
@@ -1293,28 +1400,27 @@ body.is-drawing .draw-toolbar {
           <li class="topic-collapse">
             <details>
               <summary>
-                <span>Presença em Eventos e Ações Internas</span>
+                <span>Padronização e Disciplina</span>
                 <span class="topic-chevron" aria-hidden="true">›</span>
               </summary>
               <div class="topic-cols">
                 <div>
                   <p class="topic-sub">Cenário atual</p>
                   <ul class="topic-sublist">
-                    <li>Ausência de líderes e departamentos em eventos da empresa</li>
-                    <li>Agendas conflitantes (ex.: limpeza no dia de um aniversário)</li>
-                    <li>Eventos organizados de forma independente, sem visão global</li>
+                    <li>Solicitações ao RH ainda chegam por canais informais (WhatsApp, e-mail, verbalmente), fora do fluxo oficial</li>
+                    <li>A falta de padronização gera retrabalho, perda de histórico e atrasos nas respostas</li>
                   </ul>
                 </div>
                 <div>
                   <p class="topic-sub">Alinhamento</p>
                   <ul class="topic-sublist">
-                    <li>Eventos e ações internas precisam ser planejados e executados com visão global e participação coletiva</li>
-                    <li>Líderes têm papel fundamental na disseminação da cultura</li>
-                    <li>É necessário fortalecer o sentimento de pertencimento a uma única empresa</li>
-                    <li>Os momentos de integração fazem parte da construção da cultura organizacional</li>
-                    <li>A participação das lideranças influencia diretamente o comportamento das equipes</li>
-                    <li>A ausência recorrente nessas ações compromete o sentimento de pertencimento</li>
+                    <li>Toda solicitação ao RH deve ser aberta pelo portal de governança, sem exceções</li>
+                    <li>Respeitar o fluxo garante prioridade, prazo de resposta e rastreabilidade do pedido</li>
+                    <li>Cabe à liderança orientar a equipe e cobrar o uso correto do portal no dia a dia</li>
                   </ul>
+                </div>
+                <div class="topic-callout">
+                  <p><strong>Aviso:</strong> estarei de férias na próxima semana. Durante esse período, todas as solicitações ao RH devem ser feitas <strong>exclusivamente pelo portal de governança</strong>.</p>
                 </div>
               </div>
             </details>
@@ -1328,55 +1434,59 @@ body.is-drawing .draw-toolbar {
     <section class="slide slide-light" aria-label="Slide 8 · Vendas">
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião de líderes</p>
-        <h2 class="slide-heading">Vendas</h2>
+        <h2 class="slide-heading">Vendas Salão</h2>
         <ul class="slide-list">
           <li class="topic-collapse">
             <details>
               <summary>
-                <span>Gorjeta &mdash; Sal&atilde;o</span>
+                <span>Gorjeta &mdash; Itaim</span>
                 <span class="topic-chevron" aria-hidden="true">›</span>
               </summary>
-              <div class="topic-cols">
-                <div>
-                  <p class="topic-sub">Itaim</p>
-                  <table class="data-table data-table--compact">
-                    <thead>
-                      <tr><th scope="col">M&ecirc;s</th><th scope="col">Gorjeta</th></tr>
-                    </thead>
-                    <tbody>
-                      <tr><td>Agosto</td><td>R$ 63.178</td></tr>
-                      <tr><td>Setembro</td><td>R$ 72.933</td></tr>
-                      <tr><td>Outubro</td><td>R$ 64.916</td></tr>
-                      <tr><td>Novembro</td><td>R$ 75.347</td></tr>
-                      <tr><td>Dezembro</td><td>R$ 80.040</td></tr>
-                      <tr><td>Janeiro</td><td>R$ 63.178</td></tr>
-                      <tr><td>Fevereiro</td><td>R$ 78.669</td></tr>
-                      <tr><td>Mar&ccedil;o</td><td>R$ 77.423</td></tr>
-                      <tr><td>Abril</td><td>R$ 82.440</td></tr>
-                      <tr><td>Maio</td><td>R$ 73.691</td></tr>
-                      <tr class="is-current"><td>Junho</td><td>R$ 69.416</td></tr>
-                      <tr><td>Julho <span class="tag-partial">Parcial</span></td><td>R$ 24.593<span class="cell-note">R$ 2.235,72 / dia</span></td></tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div>
-                  <p class="topic-sub">Pinheiros</p>
-                  <table class="data-table data-table--compact">
-                    <thead>
-                      <tr><th scope="col">M&ecirc;s</th><th scope="col">Gorjeta</th></tr>
-                    </thead>
-                    <tbody>
-                      <tr><td>Dezembro</td><td>R$ 38.807</td></tr>
-                      <tr><td>Janeiro</td><td>R$ 31.058</td></tr>
-                      <tr><td>Fevereiro</td><td>R$ 41.479</td></tr>
-                      <tr><td>Mar&ccedil;o</td><td>R$ 42.638</td></tr>
-                      <tr><td>Abril</td><td>R$ 42.958</td></tr>
-                      <tr><td>Maio</td><td>R$ 38.789</td></tr>
-                      <tr class="is-current"><td>Junho</td><td>R$ 37.276</td></tr>
-                      <tr><td>Julho <span class="tag-partial">Parcial</span></td><td>R$ 13.052<span class="cell-note">R$ 1.450,00 / dia</span></td></tr>
-                    </tbody>
-                  </table>
-                </div>
+              <div class="topic-single">
+                <table class="data-table data-table--compact">
+                  <thead>
+                    <tr><th scope="col">M&ecirc;s</th><th scope="col">Gorjeta</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Agosto</td><td>R$ 63.178</td></tr>
+                    <tr><td>Setembro</td><td>R$ 72.933</td></tr>
+                    <tr><td>Outubro</td><td>R$ 64.916</td></tr>
+                    <tr><td>Novembro</td><td>R$ 75.347</td></tr>
+                    <tr><td>Dezembro</td><td>R$ 80.040</td></tr>
+                    <tr><td>Janeiro</td><td>R$ 63.178</td></tr>
+                    <tr><td>Fevereiro</td><td>R$ 78.669</td></tr>
+                    <tr><td>Mar&ccedil;o</td><td>R$ 77.423</td></tr>
+                    <tr><td>Abril</td><td>R$ 82.440</td></tr>
+                    <tr><td>Maio</td><td>R$ 73.691</td></tr>
+                    <tr class="is-current"><td>Junho</td><td>R$ 69.416</td></tr>
+                    <tr><td>Julho <span class="tag-partial">Parcial</span></td><td>R$ 24.593<span class="cell-note">R$ 2.235,72 / dia</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </li>
+          <li class="topic-collapse">
+            <details>
+              <summary>
+                <span>Gorjeta &mdash; Pinheiros</span>
+                <span class="topic-chevron" aria-hidden="true">›</span>
+              </summary>
+              <div class="topic-single">
+                <table class="data-table data-table--compact">
+                  <thead>
+                    <tr><th scope="col">M&ecirc;s</th><th scope="col">Gorjeta</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Dezembro</td><td>R$ 38.807</td></tr>
+                    <tr><td>Janeiro</td><td>R$ 31.058</td></tr>
+                    <tr><td>Fevereiro</td><td>R$ 41.479</td></tr>
+                    <tr><td>Mar&ccedil;o</td><td>R$ 42.638</td></tr>
+                    <tr><td>Abril</td><td>R$ 42.958</td></tr>
+                    <tr><td>Maio</td><td>R$ 38.789</td></tr>
+                    <tr class="is-current"><td>Junho</td><td>R$ 37.276</td></tr>
+                    <tr><td>Julho <span class="tag-partial">Parcial</span></td><td>R$ 13.052<span class="cell-note">R$ 1.450,00 / dia</span></td></tr>
+                  </tbody>
+                </table>
               </div>
             </details>
           </li>
@@ -1402,7 +1512,8 @@ body.is-drawing .draw-toolbar {
     <!-- Slide 10 — O que fica? -->
     <section class="slide slide-question" aria-label="Slide 10 · O que fica?">
       <div class="slide-inner">
-        <p class="question-text">Qual comportamento, característica ou hábito preciso deixar para trás para se tornar o líder que preciso ser no próximo semestre?</p>
+        <p class="slide-eyebrow">O que fica?</p>
+        <p class="question-text">Qual comportamento, característica ou hábito preciso deixar para trás para se tornar o líder que quero me tornar nos próximos meses?</p>
       </div>
       <div class="slide-num">10</div>
     </section>
