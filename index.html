@@ -229,7 +229,9 @@ html, body {
   line-height:1.5;
   color:var(--t2);
   max-width:80%;
+  margin:0 0 .6em;
 }
+.slide-text:last-of-type { margin-bottom:1.4em; }
 .slide-list {
   list-style:none;
   padding:0;
@@ -458,6 +460,7 @@ html, body {
   text-align:center;
 }
 .stat-compare:last-child { margin-bottom:0; }
+.topic-single .stat-compare + .data-table { margin-top:1.2em; padding-top:1.2em; border-top:1px solid var(--border); }
 .stat-compare .stat {
   padding:0 1.5em;
 }
@@ -1257,6 +1260,8 @@ body.is-drawing .draw-toolbar {
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião de líderes · Detalhamento</p>
         <h2 class="slide-heading">Sistema de Avaliação</h2>
+        <p class="slide-text">O Sistema de Avaliação tem como objetivo acompanhar a saúde operacional dos departamentos, promovendo maior transparência, controle e melhoria contínua.</p>
+        <p class="slide-text"><strong>1º módulo:</strong> indicadores de RH e Departamento Pessoal.</p>
         <ul class="slide-list">
           <li class="topic-collapse">
             <details>
@@ -1265,7 +1270,7 @@ body.is-drawing .draw-toolbar {
                 <span class="topic-chevron" aria-hidden="true">›</span>
               </summary>
               <div class="topic-single">
-                <p class="topic-text">Todo departamento começa com <strong>5 pontos</strong> no início de cada mês. Durante o mês, eventos negativos geram penalidades que reduzem essa pontuação. O score final reflete a saúde do departamento naquele período.</p>
+                <p class="topic-text">Todo departamento começa com <strong>5 pontos</strong> no início de cada mês. Durante o mês, eventos negativos geram penalidades que reduzem essa pontuação. O score final reflete a saúde do departamento naquele mês.</p>
               </div>
             </details>
           </li>
@@ -1277,23 +1282,16 @@ body.is-drawing .draw-toolbar {
               </summary>
               <div class="topic-single">
                 <div class="topic-section">
-                  <p class="topic-sub">Cenário atual</p>
-                  <ul class="topic-sublist">
-                    <li>Todos os departamentos e unidades passam a ter avaliação mensal baseada em indicadores de RH e Departamento Pessoal</li>
-                    <li>O objetivo é medir a saúde operacional e a qualidade da gestão de cada área</li>
-                    <li>Todos os departamentos iniciam o mês com 5 pontos</li>
-                    <li>As penalizações são aplicadas proporcionalmente ao tamanho da equipe</li>
-                  </ul>
-                </div>
-                <div class="topic-section">
                   <p class="topic-sub">Alinhamento</p>
                   <ul class="topic-sublist">
-                    <li>A avaliação é consolidada automaticamente no último dia útil de cada mês</li>
-                    <li>Após o fechamento, o score fica registrado e passa a compor o histórico do departamento</li>
-                    <li>Não há alterações retroativas após o fechamento mensal</li>
-                    <li>A avaliação considera sete indicadores de RH e Departamento Pessoal, detalhados no próximo slide</li>
-                    <li>O objetivo é promover acompanhamento, transparência e melhoria contínua</li>
-                    <li>A responsabilidade pelos resultados passa a ser compartilhada entre RH, DP e lideranças operacionais</li>
+                    <li>Medir a saúde operacional e a qualidade da gestão de cada área</li>
+                    <li>Departamentos iniciam o mês com 5 pontos</li>
+                    <li>Penalizações são aplicadas proporcionalmente ao tamanho da equipe</li>
+                    <li>1º módulo: avaliação mensal baseada em indicadores de RH/DP</li>
+                    <li>Avaliação consolidada automaticamente ao término de cada mês</li>
+                    <li>Score registrado passa a compor o histórico do departamento</li>
+                    <li>Sem alterações retroativas após o fechamento</li>
+                    <li>Responsabilidade compartilhada pelos resultados</li>
                   </ul>
                 </div>
               </div>
@@ -1320,41 +1318,32 @@ body.is-drawing .draw-toolbar {
           <li class="topic-collapse">
             <details>
               <summary>
-                <span>Os 10 Indicadores</span>
+                <span>Indicadores de RH/DP</span>
                 <span class="topic-chevron" aria-hidden="true">›</span>
               </summary>
               <div class="topic-single">
-                <p class="topic-text">Nos indicadores 1 a 8, a penalidade é normalizada pelo headcount e trava em <strong>0,50 pontos</strong> ao atingir a referência. Os indicadores 9 e 10 tratam de reclamações trabalhistas e dividem esse mesmo teto de 0,50 entre abertura (30%) e procedência (70%).</p>
-                <div class="topic-example">
-                  <p class="topic-sub">Fórmula de cálculo</p>
-                  <ul class="formula-list">
-                    <li>Penalidade (1&ndash;8) = min(ocorr &divide; headcount &divide; ref ; 1) &times; 0,50</li>
-                    <li>Penalidade (9) = min(abertas ; 1) &times; 0,50 &times; 0,30</li>
-                    <li>Penalidade (10) = min(procedentes ; 1) &times; 0,50 &times; 0,70</li>
-                    <li class="is-final">Score = 5 &minus; &Sigma; penalidades</li>
-                  </ul>
-                </div>
+                <p class="topic-text">Dentre os indicadores de RH/DP temos:</p>
                 <table class="data-table data-table--indicators">
                   <thead>
                     <tr>
                       <th scope="col">#</th>
                       <th scope="col">Indicador</th>
                       <th scope="col">O que conta</th>
-                      <th scope="col">Referência (teto)</th>
+                      <th scope="col">Referência</th>
                       <th scope="col">Peso</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td>1</td><td>Faltas injustificadas</td><td>Faltas sem justificativa no mês</td><td>1 falta / colaborador</td><td>0,50</td></tr>
-                    <tr><td>2</td><td>Atestados / afastamentos</td><td>Atestados e afastamentos no mês</td><td>1 atestado / colaborador</td><td>0,50</td></tr>
-                    <tr><td>3</td><td>Desligamentos</td><td>Qualquer desligamento no mês</td><td>1 desligamento / colaborador</td><td>0,50</td></tr>
-                    <tr><td>4</td><td>Dispensa no 1º período (14d)</td><td>Colaborador desligado até o 14º dia</td><td>1 dispensa / colaborador</td><td>0,50</td></tr>
-                    <tr><td>5</td><td>Sanções disciplinares</td><td>Advertências e suspensões no mês</td><td>1 sanção / colaborador</td><td>0,50</td></tr>
-                    <tr><td>6</td><td>BCH &mdash; saldo negativo</td><td>Colaboradores com saldo negativo</td><td>1 colaborador / headcount</td><td>0,50</td></tr>
-                    <tr><td>7</td><td>BCH &mdash; saldo acima de 100h</td><td>Colaboradores com +100h positivas</td><td>1 colaborador / headcount</td><td>0,50</td></tr>
-                    <tr><td>8</td><td>Vagas paradas +50 dias</td><td>Vagas abertas sem preenchimento</td><td>0,5 vagas / colaborador</td><td>0,50</td></tr>
-                    <tr><td>9</td><td>Reclamações &mdash; Abertura</td><td>Reclamação trabalhista aberta no mês</td><td>1 reclamação / departamento</td><td>0,15 (30%)</td></tr>
-                    <tr><td>10</td><td>Reclamações &mdash; Procedente</td><td>Reclamação julgada procedente no mês</td><td>1 reclamação / departamento</td><td>0,35 (70%)</td></tr>
+                    <tr><td>1</td><td>Faltas injustificadas</td><td>Faltas sem justificativa no mês</td><td>1 falta / colaborador</td><td>0,5</td></tr>
+                    <tr><td>2</td><td>Atestados</td><td>Atestados e afastamentos no mês</td><td>1 atestado / colaborador</td><td>0,5</td></tr>
+                    <tr><td>3</td><td>Desligamentos</td><td>Qualquer desligamento no mês</td><td>1 desligamento / colaborador</td><td>0,5</td></tr>
+                    <tr><td>4</td><td>Dispensa no 1º período (14d)</td><td>Colaborador desligado até o 14º dia</td><td>1 dispensa / colaborador</td><td>0,5</td></tr>
+                    <tr><td>5</td><td>Sanções disciplinares</td><td>Advertências e suspensões no mês</td><td>1 sanção / colaborador</td><td>0,5</td></tr>
+                    <tr><td>6</td><td>Colaboradores com banco negativo</td><td>Colaboradores com saldo negativo</td><td>1 colaborador / headcount</td><td>0,5</td></tr>
+                    <tr><td>7</td><td>Colaboradores com banco acima de 100h</td><td>Colaboradores com +100h positivas</td><td>1 colaborador / headcount</td><td>0,5</td></tr>
+                    <tr><td>8</td><td>Vagas paradas com +50 dias</td><td>Vagas abertas sem preenchimento</td><td>0,5 vagas / colaborador</td><td>0,5</td></tr>
+                    <tr><td>9</td><td>Reclamação trabalhista abertura</td><td>Reclamação trabalhista aberta no mês</td><td>1 reclamação / departamento</td><td>0,5</td></tr>
+                    <tr><td>10</td><td>Reclamação trabalhista procedente</td><td>Reclamação julgada procedente no mês</td><td>1 reclamação / departamento</td><td>0,5</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -1399,17 +1388,10 @@ body.is-drawing .draw-toolbar {
           <li class="topic-collapse">
             <details>
               <summary>
-                <span>Padronização e Disciplina</span>
+                <span>Padronização e Disciplina (5S)</span>
                 <span class="topic-chevron" aria-hidden="true">›</span>
               </summary>
               <div class="topic-single">
-                <div class="topic-section">
-                  <p class="topic-sub">Cenário atual</p>
-                  <ul class="topic-sublist">
-                    <li>Solicitações ao RH ainda chegam por canais informais (WhatsApp, e-mail, verbalmente), fora do fluxo oficial</li>
-                    <li>A falta de padronização gera retrabalho, perda de histórico e atrasos nas respostas</li>
-                  </ul>
-                </div>
                 <div class="topic-section">
                   <p class="topic-sub">Alinhamento</p>
                   <ul class="topic-sublist">
@@ -1417,9 +1399,6 @@ body.is-drawing .draw-toolbar {
                     <li>Respeitar o fluxo garante prioridade, prazo de resposta e rastreabilidade do pedido</li>
                     <li>Cabe à liderança orientar a equipe e cobrar o uso correto do portal no dia a dia</li>
                   </ul>
-                </div>
-                <div class="topic-callout">
-                  <p><strong>Aviso:</strong> estarei de férias na próxima semana. Durante esse período, todas as solicitações ao RH devem ser feitas <strong>exclusivamente pelo portal de governança</strong>.</p>
                 </div>
               </div>
             </details>
@@ -1514,9 +1493,9 @@ body.is-drawing .draw-toolbar {
         <p class="slide-eyebrow">Reunião de líderes</p>
         <h2 class="slide-heading">Próximas Reuniões</h2>
         <ul class="slide-list">
-          <li>Ciclo de revezamento</li>
+          <li>Ciclo de Crescimento</li>
           <li>Metodologia 5S</li>
-          <li>Módulo Compras</li>
+          <li>Módulos de Compras e TATÁ House</li>
         </ul>
       </div>
       <div class="slide-num">09</div>
