@@ -1076,6 +1076,115 @@ body.is-drawing .draw-toolbar {
   .data-table thead { display: table-header-group; }
   .data-table tr { break-inside: avoid; page-break-inside: avoid; }
   .topic-figures img { max-height: 38vh !important; }
+  .slide-cost .cost-panel { display:block !important; }
+  .slide-cost .cost-orbit { break-inside: avoid; }
+}
+
+/* ── Slide "Redução de Custos": 3 órbitas clicáveis ─── */
+.slide-cost .slide-inner { align-items:center; text-align:center; }
+.slide-cost .slide-eyebrow,
+.slide-cost .slide-heading { align-self:center; }
+.cost-orbits {
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  gap:clamp(20px, 4vw, 56px);
+  width:100%;
+  margin:1% 0 4%;
+  flex-shrink:0;
+}
+.cost-orbit {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:.9em;
+  background:none;
+  border:none;
+  padding:0;
+  cursor:pointer;
+  font-family:"DM Sans",sans-serif;
+  -webkit-tap-highlight-color:transparent;
+}
+.cost-orbit-disc {
+  width:clamp(76px, 11vw, 132px);
+  height:clamp(76px, 11vw, 132px);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:clamp(24px, 3.2vw, 44px);
+  font-weight:700;
+  color:var(--carbon);
+  background:var(--white);
+  border:2px solid var(--carbon);
+  box-shadow:0 4px 14px rgba(17,17,17,.10);
+  transition:transform .28s ease, background .28s ease, box-shadow .28s ease, color .28s ease;
+}
+.cost-orbit-label {
+  font-family:"DM Mono",monospace;
+  font-size:clamp(9px, 1vw, 12px);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--t2);
+  max-width:14ch;
+  line-height:1.3;
+  transition:color .28s ease;
+}
+.cost-orbit:hover .cost-orbit-disc { transform:translateY(-4px); box-shadow:0 10px 24px rgba(17,17,17,.16); }
+.cost-orbit.is-active .cost-orbit-disc {
+  background:var(--citric);
+  border-color:var(--citric);
+  color:var(--carbon);
+  box-shadow:0 8px 22px rgba(207,255,0,.45);
+}
+.cost-orbit.is-active .cost-orbit-label { color:var(--t1); font-weight:500; }
+.cost-stage {
+  width:100%;
+  max-width:78%;
+  flex:1 1 auto;
+  min-height:0;
+  overflow-y:auto;
+}
+.cost-panel { display:none; text-align:left; animation:costFade .35s ease; }
+.cost-panel.is-active { display:block; }
+@keyframes costFade { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+.cost-panel-title {
+  font-family:"DM Sans",sans-serif;
+  font-size:clamp(15px, 1.8vw, 24px);
+  font-weight:700;
+  color:var(--t1);
+  margin-bottom:.7em;
+  padding-bottom:.6em;
+  border-bottom:2px solid var(--citric);
+  display:inline-block;
+}
+.cost-panel-list { list-style:none; padding:0; margin:0; }
+.cost-panel-list li {
+  position:relative;
+  padding:.5em 0 .5em 1.5em;
+  font-family:"DM Sans",sans-serif;
+  font-size:clamp(13px, 1.4vw, 18px);
+  line-height:1.4;
+  color:var(--t1);
+  border-top:1px solid var(--border);
+}
+.cost-panel-list li:first-child { border-top:none; }
+.cost-panel-list li::before {
+  content:"";
+  position:absolute;
+  left:0; top:1.05em;
+  width:7px; height:7px;
+  border-radius:50%;
+  background:var(--carbon);
+}
+.cost-panel-list li strong { font-weight:700; }
+.cost-panel-hint {
+  font-family:"DM Mono",monospace;
+  font-size:clamp(10px, 1vw, 12px);
+  letter-spacing:.06em;
+  color:var(--t3);
+  margin-top:1em;
+  font-style:italic;
 }
 </style>
 </head>
@@ -1232,8 +1341,55 @@ body.is-drawing .draw-toolbar {
       <div class="slide-num">04</div>
     </section>
 
-    <!-- Slide 5 — Gestão de Resultados -->
-    <section class="slide slide-light" aria-label="Slide 5 · Gestão de Resultados e Sistema de Avaliação">
+    <!-- Slide 5 — Redução de Custos (3 órbitas clicáveis) -->
+    <section class="slide slide-light slide-cost" aria-label="Slide 5 · Redução de Custos">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">Reunião RH · Pauta principal</p>
+        <h2 class="slide-heading">Redução de <span class="accent">Custos</span></h2>
+        <div class="cost-orbits" role="tablist" aria-label="Frentes de redução de custos">
+          <button type="button" class="cost-orbit is-active" data-cost="1" role="tab" aria-selected="true" aria-controls="cost-panel-1">
+            <span class="cost-orbit-disc">1</span>
+            <span class="cost-orbit-label">Headcount RH</span>
+          </button>
+          <button type="button" class="cost-orbit" data-cost="2" role="tab" aria-selected="false" aria-controls="cost-panel-2">
+            <span class="cost-orbit-disc">2</span>
+            <span class="cost-orbit-label">Uniformes</span>
+          </button>
+          <button type="button" class="cost-orbit" data-cost="3" role="tab" aria-selected="false" aria-controls="cost-panel-3">
+            <span class="cost-orbit-disc">3</span>
+            <span class="cost-orbit-label">App Tatá Plus</span>
+          </button>
+        </div>
+        <div class="cost-stage">
+          <div class="cost-panel is-active" id="cost-panel-1" role="tabpanel" aria-label="Redução de headcount do RH">
+            <p class="cost-panel-title">Redução de headcount do RH</p>
+            <ul class="cost-panel-list">
+              <li>Estrutura enxuta do RH sem perda de entregas.</li>
+            </ul>
+            <p class="cost-panel-hint">Detalhar números e economia — a preencher.</p>
+          </div>
+          <div class="cost-panel" id="cost-panel-2" role="tabpanel" aria-label="Otimização do processo de uniforme">
+            <p class="cost-panel-title">Otimização do processo de uniforme</p>
+            <ul class="cost-panel-list">
+              <li>Internalização do processo das camisas, reduzindo custo por peça.</li>
+            </ul>
+            <p class="cost-panel-hint">Detalhar economia e ganho de processo — a preencher.</p>
+          </div>
+          <div class="cost-panel" id="cost-panel-3" role="tabpanel" aria-label="App Tatá Plus">
+            <p class="cost-panel-title">Redução de custo e melhoria do app Tatá Plus</p>
+            <ul class="cost-panel-list">
+              <li>Migração do fornecedor externo (custo de <strong>R$ X</strong>) para uma solução interna.</li>
+              <li>Além da economia, ganho de controle e evolução do app.</li>
+            </ul>
+            <p class="cost-panel-hint">Confirmar fornecedor atual e valor — a preencher.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">05</div>
+    </section>
+
+    <!-- Slide 6 — Gestão de Resultados -->
+    <section class="slide slide-light" aria-label="Slide 6 · Gestão de Resultados e Sistema de Avaliação">
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião RH</p>
         <h2 class="slide-heading">Gestão de Resultados</h2>
@@ -1259,11 +1415,11 @@ body.is-drawing .draw-toolbar {
           </li>
         </ul>
       </div>
-      <div class="slide-num">05</div>
+      <div class="slide-num">06</div>
     </section>
 
-    <!-- Slide 6 — Sistema de Avaliação · Detalhamento -->
-    <section class="slide slide-light" aria-label="Slide 6 · Sistema de Avaliação">
+    <!-- Slide 7 — Sistema de Avaliação · Detalhamento -->
+    <section class="slide slide-light" aria-label="Slide 7 · Sistema de Avaliação">
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião RH · Detalhamento</p>
         <h2 class="slide-heading">Sistema de Avaliação</h2>
@@ -1383,11 +1539,11 @@ body.is-drawing .draw-toolbar {
           </li>
         </ul>
       </div>
-      <div class="slide-num">06</div>
+      <div class="slide-num">07</div>
     </section>
 
-    <!-- Slide 7 — Cultura e Engajamento -->
-    <section class="slide slide-light" aria-label="Slide 7 · Cultura e Engajamento">
+    <!-- Slide 8 — Cultura e Engajamento -->
+    <section class="slide slide-light" aria-label="Slide 8 · Cultura e Engajamento">
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião RH</p>
         <h2 class="slide-heading">Cultura e Engajamento</h2>
@@ -1414,11 +1570,11 @@ body.is-drawing .draw-toolbar {
           <li>Dia dos Pais (09/08)</li>
         </ul>
       </div>
-      <div class="slide-num">07</div>
+      <div class="slide-num">08</div>
     </section>
 
-    <!-- Slide 8 — Vendas -->
-    <section class="slide slide-light" aria-label="Slide 8 · Vendas">
+    <!-- Slide 9 — Vendas -->
+    <section class="slide slide-light" aria-label="Slide 9 · Vendas">
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião RH</p>
         <h2 class="slide-heading">Vendas Salão</h2>
@@ -1493,11 +1649,11 @@ body.is-drawing .draw-toolbar {
           </li>
         </ul>
       </div>
-      <div class="slide-num">08</div>
+      <div class="slide-num">09</div>
     </section>
 
-    <!-- Slide 9 — Próximas Reuniões -->
-    <section class="slide slide-light" aria-label="Slide 9 · Próximas Reuniões">
+    <!-- Slide 10 — Próximas Reuniões -->
+    <section class="slide slide-light" aria-label="Slide 10 · Próximas Reuniões">
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião RH</p>
         <h2 class="slide-heading">Próximas Reuniões</h2>
@@ -1507,21 +1663,21 @@ body.is-drawing .draw-toolbar {
           <li>Módulos de Compras e TATÁ House</li>
         </ul>
       </div>
-      <div class="slide-num">09</div>
+      <div class="slide-num">10</div>
     </section>
 
-    <!-- Slide 10 — O que fica? -->
-    <section class="slide slide-question" aria-label="Slide 10 · O que fica?">
+    <!-- Slide 11 — O que fica? -->
+    <section class="slide slide-question" aria-label="Slide 11 · O que fica?">
       <div class="slide-inner">
         <p class="slide-eyebrow">O que fica?</p>
         <p class="question-text">Qual comportamento, característica ou hábito preciso deixar para trás para se tornar o líder que quero me tornar nos próximos meses?</p>
         <p class="slide-eyebrow slide-eyebrow-spacer" aria-hidden="true">O que fica?</p>
       </div>
-      <div class="slide-num">10</div>
+      <div class="slide-num">11</div>
     </section>
 
-    <!-- Slide 11 — Encerramento -->
-    <section class="slide slide-cover is-dark" aria-label="Slide 11 · Encerramento">
+    <!-- Slide 12 — Encerramento -->
+    <section class="slide slide-cover is-dark" aria-label="Slide 12 · Encerramento">
       <div class="slide-inner">
         <img alt="TATÁ SUSHI" class="cover-logo-full" id="closingLogo">
       </div>
@@ -1994,6 +2150,25 @@ body.is-drawing .draw-toolbar {
     var anyOpen = !!slide.querySelector('.slide-list details[open]');
     intro.classList.toggle('is-collapsed', anyOpen);
   }, true);
+
+  // Slide "Redução de Custos": alterna as 3 órbitas e os painéis
+  Array.prototype.forEach.call(document.querySelectorAll('.slide-cost'), function (slide) {
+    var orbits = slide.querySelectorAll('.cost-orbit');
+    var panels = slide.querySelectorAll('.cost-panel');
+    Array.prototype.forEach.call(orbits, function (orbit) {
+      orbit.addEventListener('click', function () {
+        var target = orbit.getAttribute('data-cost');
+        Array.prototype.forEach.call(orbits, function (o) {
+          var on = o === orbit;
+          o.classList.toggle('is-active', on);
+          o.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        Array.prototype.forEach.call(panels, function (p) {
+          p.classList.toggle('is-active', p.id === 'cost-panel-' + target);
+        });
+      });
+    });
+  });
 
   var detailsPrintState = null;
   window.addEventListener('beforeprint', function () {
