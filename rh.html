@@ -1081,9 +1081,8 @@ body.is-drawing .draw-toolbar {
 }
 
 /* ── Slide "Redução de Custos": 3 órbitas clicáveis ─── */
-.slide-cost .slide-inner { align-items:center; text-align:center; }
-.slide-cost .slide-eyebrow,
-.slide-cost .slide-heading { align-self:center; }
+.slide-cost .cost-orbits,
+.slide-cost .cost-stage { align-self:center; }
 .cost-orbits {
   display:flex;
   justify-content:center;
@@ -1132,10 +1131,10 @@ body.is-drawing .draw-toolbar {
 }
 .cost-orbit:hover .cost-orbit-disc { transform:translateY(-4px); box-shadow:0 10px 24px rgba(17,17,17,.16); }
 .cost-orbit.is-active .cost-orbit-disc {
-  background:var(--citric);
-  border-color:var(--citric);
-  color:var(--carbon);
-  box-shadow:0 8px 22px rgba(207,255,0,.45);
+  background:var(--carbon);
+  border-color:var(--carbon);
+  color:var(--citric);
+  box-shadow:0 8px 22px rgba(53,56,63,.35);
 }
 .cost-orbit.is-active .cost-orbit-label { color:var(--t1); font-weight:500; }
 .cost-stage {
@@ -1188,6 +1187,15 @@ body.is-drawing .draw-toolbar {
 }
 .slide-light .stat-compare { align-self:center; }
 .slide-text--center { align-self:center; text-align:center; max-width:80%; margin-top:1.4em; }
+.turnover-center {
+  flex:1 1 auto;
+  min-height:0;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
 </style>
 </head>
 <body>
@@ -1223,19 +1231,21 @@ body.is-drawing .draw-toolbar {
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião RH</p>
         <h2 class="slide-heading">Turnover</h2>
-        <div class="stat-compare">
-          <div class="stat">
-            <p class="stat-label">Turnover 2025</p>
-            <p class="stat-value">141,7<span class="stat-unit">% ao ano</span></p>
-            <p class="stat-detail">Média mensal de 11,8%</p>
+        <div class="turnover-center">
+          <div class="stat-compare">
+            <div class="stat">
+              <p class="stat-label">Turnover 2025</p>
+              <p class="stat-value">141,7<span class="stat-unit">% ao ano</span></p>
+              <p class="stat-detail">Média mensal de 11,8%</p>
+            </div>
+            <div class="stat">
+              <p class="stat-label">Turnover 2026</p>
+              <p class="stat-value">55,6<span class="stat-unit">% ao ano</span></p>
+              <p class="stat-detail">Média mensal de 9,2%</p>
+            </div>
           </div>
-          <div class="stat">
-            <p class="stat-label">Turnover 2026</p>
-            <p class="stat-value">55,6<span class="stat-unit">% ao ano</span></p>
-            <p class="stat-detail">Média mensal de 9,2%</p>
-          </div>
+          <p class="slide-text slide-text--center">Redução consistente ao longo de 2026: queda média de <strong>2,6% ao mês</strong> na comparação com 2025.</p>
         </div>
-        <p class="slide-text slide-text--center">Redução consistente ao longo de 2026: queda média de <strong>2,6% ao mês</strong> na comparação com 2025.</p>
       </div>
       <div class="slide-num">03</div>
     </section>
@@ -1243,7 +1253,7 @@ body.is-drawing .draw-toolbar {
     <!-- Slide 4 — Redução de Custos (3 órbitas clicáveis) -->
     <section class="slide slide-light slide-cost" aria-label="Slide 4 · Redução de Custos">
       <div class="slide-inner">
-        <p class="slide-eyebrow">Reunião RH · Pauta principal</p>
+        <p class="slide-eyebrow">Reunião RH</p>
         <h2 class="slide-heading">Redução de <span class="accent">Custos</span></h2>
         <div class="cost-orbits" role="tablist" aria-label="Frentes de redução de custos">
           <button type="button" class="cost-orbit is-active" data-cost="1" role="tab" aria-selected="true" aria-controls="cost-panel-1">
@@ -1290,7 +1300,7 @@ body.is-drawing .draw-toolbar {
     <!-- Slide 5 — Tatá Plus / Governança de Processos (fechamento) -->
     <section class="slide slide-light" aria-label="Slide 5 · Tatá Plus / Governança de Processos">
       <div class="slide-inner">
-        <p class="slide-eyebrow">Reunião RH · Fechamento</p>
+        <p class="slide-eyebrow">Reunião RH</p>
         <h2 class="slide-heading">Tatá Plus <span class="accent">/</span> Governança de Processos</h2>
         <ul class="slide-list">
           <li>Todo o sistema de governança de processos que já existe hoje passa a ser o eixo central da gestão.
