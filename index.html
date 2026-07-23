@@ -190,6 +190,13 @@ html, body {
   max-width:82%;
   margin:0;
 }
+.slide-question .question-text .fill-blank {
+  display:inline-block;
+  width:5em;
+  height:.2em;
+  margin:0 .1em -.05em;
+  border-bottom:.06em solid var(--t1);
+}
 
 /* ── Slides claros (conteúdo padrão) ───────── */
 .slide-light {
@@ -1318,7 +1325,7 @@ body.is-drawing .draw-toolbar {
     <section class="slide slide-question" aria-label="Slide 8 · Qual a minha escolha?">
       <div class="slide-inner">
         <p class="slide-eyebrow">Qual a minha escolha?</p>
-        <p class="question-text">A direção que escolho para minha carreira é __________________________.</p>
+        <p class="question-text">A direção que escolho para minha carreira é <span class="fill-blank"></span>.</p>
         <p class="slide-eyebrow slide-eyebrow-spacer" aria-hidden="true">Qual a minha escolha?</p>
       </div>
       <div class="slide-num">08</div>
