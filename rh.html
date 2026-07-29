@@ -357,6 +357,23 @@ html, body {
   color:var(--t1);
   font-variant-numeric:tabular-nums;
 }
+.slide-image-frame {
+  width:100%;
+  flex:1 1 auto;
+  min-height:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.slide-image-frame img {
+  display:block;
+  width:100%;
+  height:100%;
+  max-height:100%;
+  object-fit:contain;
+  border:1px solid var(--border);
+  border-radius:8px;
+}
 .topic-figures {
   grid-column:1 / -1;
   margin-top:.4em;
@@ -1263,9 +1280,9 @@ body.is-drawing .draw-toolbar {
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião DP/RH</p>
         <h2 class="slide-heading">Gente e Gestão 2024</h2>
-        <ul class="slide-list">
-          <li>Conteúdo a definir</li>
-        </ul>
+        <div class="slide-image-frame">
+          <img src="A2.png" alt="Pilares de Gente &amp; Gestão 2024: Employer Branding, Inovação e Sustentabilidade">
+        </div>
       </div>
     </section>
 
@@ -1348,20 +1365,17 @@ body.is-drawing .draw-toolbar {
         </div>
         <div class="cost-stage">
           <div class="cost-panel is-active" id="cost-panel-1" role="tabpanel" aria-label="HC / RH">
-            <p class="cost-panel-title">HC / RH</p>
             <ul class="cost-panel-list">
               <li>Estrutura enxuta, mantendo o padrão de qualidade e excelência das entregas.</li>
             </ul>
           </div>
           <div class="cost-panel" id="cost-panel-2" role="tabpanel" aria-label="Uniformes">
-            <p class="cost-panel-title">Uniformes</p>
             <ul class="cost-panel-list">
               <li>Redução de até <strong>50%</strong> no custo dos uniformes.</li>
               <li>Ganho de agilidade nas entregas.</li>
             </ul>
           </div>
           <div class="cost-panel" id="cost-panel-3" role="tabpanel" aria-label="Tatá Plus 2.0">
-            <p class="cost-panel-title">Tatá Plus 2.0</p>
             <div class="stat-compare">
               <div class="stat">
                 <p class="stat-label">Custo atual</p>
