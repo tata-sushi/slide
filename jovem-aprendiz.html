@@ -1103,6 +1103,23 @@ body.is-drawing .draw-toolbar {
   .data-table tr { break-inside: avoid; page-break-inside: avoid; }
   .topic-figures img { max-height: 38vh !important; }
 }
+.two-col-groups {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1.5em 3em;
+  width:100%;
+}
+.group-heading {
+  font-family:"DM Sans",sans-serif;
+  font-weight:700;
+  font-size:clamp(13px, 1.4vw, 17px);
+  margin:0 0 .6em;
+  color:var(--t1);
+}
+.slide-inner > div + div > .group-heading { margin-top:1em; }
+.slide-dense .slide-heading { margin-bottom:2%; }
+.slide-dense .slide-list { font-size:clamp(11px, 1.2vw, 15px); }
+.slide-dense .slide-list li { padding-top:.4em; padding-bottom:.4em; }
 </style>
 </head>
 <body>
@@ -1115,217 +1132,99 @@ body.is-drawing .draw-toolbar {
       <div class="slide-inner">
         <p class="slide-eyebrow">Jovem Aprendiz</p>
         <h2 class="slide-heading">Contrato de Jovem Aprendiz</h2>
-        <p class="slide-text">O contrato de aprendizagem é um contrato de trabalho especial, realizado por escrito e com prazo determinado, cujo objetivo é proporcionar formação técnico-profissional ao jovem, conciliando teoria e prática.</p>
+        <p class="slide-text">O contrato de aprendizagem é um contrato de trabalho especial, celebrado por escrito e com prazo determinado, cujo objetivo é proporcionar formação técnico-profissional ao jovem, conciliando atividades teóricas e práticas.</p>
+        <p class="slide-text"><strong>Quem pode ser Jovem Aprendiz?</strong></p>
+        <ul class="slide-list">
+          <li>Jovens com idade entre 14 e 24 anos</li>
+          <li>Deve estar matriculado e frequentando a escola, caso ainda não tenha concluído o ensino médio</li>
+          <li>Também deve estar inscrito em um programa de aprendizagem, como Nube, Despertar, Espro, entre outras entidades qualificadoras</li>
+        </ul>
       </div>
       <div class="slide-num">01</div>
     </section>
 
-    <!-- Slide 2 — Quem pode ser Jovem Aprendiz? -->
-    <section class="slide slide-light" aria-label="Slide 2 · Quem pode ser Jovem Aprendiz?">
-      <div class="slide-inner">
-        <p class="slide-eyebrow">Jovem Aprendiz</p>
-        <h2 class="slide-heading">Quem pode ser Jovem Aprendiz?</h2>
-        <ul class="slide-list">
-          <li>Jovens de 14 a 24 anos</li>
-          <li>Deve estar matriculado e frequentando a escola, caso ainda não tenha concluído o ensino médio, além de estar inscrito em programa de aprendizagem (ex: Nube, Despertar, Espro)</li>
-        </ul>
-      </div>
-      <div class="slide-num">02</div>
-    </section>
-
-    <!-- Slide 3 — Prazo do Contrato -->
-    <section class="slide slide-light" aria-label="Slide 3 · Prazo do Contrato">
+    <!-- Slide 2 — Prazo do Contrato / Direitos do Jovem Aprendiz -->
+    <section class="slide slide-light" aria-label="Slide 2 · Prazo do Contrato">
       <div class="slide-inner">
         <p class="slide-eyebrow">Jovem Aprendiz</p>
         <h2 class="slide-heading">Prazo do Contrato</h2>
         <p class="slide-text">Duração máxima de 16 meses.</p>
-        <p class="slide-text">Pode terminar antes em casos como:</p>
-        <ul class="slide-list">
-          <li>Término do programa</li>
-          <li>Desempenho insuficiente</li>
-          <li>Falta disciplinar grave</li>
-          <li>Ausência escolar que resulte na perda do ano letivo</li>
-          <li>Pedido de demissão</li>
-          <li>Justa causa</li>
-        </ul>
+        <p class="slide-text"><strong>Rescisão do contrato:</strong> pode terminar antes em casos como término do programa, desempenho insuficiente, falta disciplinar grave ou ausência escolar que resulte na perda do ano letivo.</p>
+        <p class="slide-text"><strong>Direitos do Jovem Aprendiz</strong></p>
+        <p class="slide-text">O jovem aprendiz possui praticamente todos os direitos trabalhistas, como Carteira de Trabalho assinada, salário, FGTS com alíquota de 2%, INSS, vale-transporte, 13º salário, férias, feriados, Descanso Semanal Remunerado (DSR), seguro de vida, refeição no local, desconto para consumo no restaurante, Gympass e convênio Sesc.</p>
+      </div>
+      <div class="slide-num">02</div>
+    </section>
+
+    <!-- Slide 3 — Obrigações da Empresa x Aprendiz -->
+    <section class="slide slide-light" aria-label="Slide 3 · Obrigações da Empresa x Aprendiz">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">Jovem Aprendiz</p>
+        <h2 class="slide-heading">Obrigações da Empresa x Aprendiz</h2>
+        <div class="two-col-groups">
+          <div>
+            <p class="group-heading">Obrigações da Empresa</p>
+            <ul class="slide-list">
+              <li>Registrar o contrato na CTPS</li>
+              <li>Matricular o aprendiz em entidade qualificadora</li>
+              <li>Liberar o aprendiz para as aulas teóricas</li>
+              <li>Acompanhar a frequência escolar</li>
+              <li>Fornecer ambiente de trabalho adequado</li>
+              <li>Cumprir a jornada</li>
+              <li>Pagar salário e benefícios</li>
+              <li>Respeitar as normas de proteção ao menor</li>
+            </ul>
+          </div>
+          <div>
+            <p class="group-heading">Obrigações do Aprendiz</p>
+            <ul class="slide-list">
+              <li>Frequentar a escola</li>
+              <li>Comparecer às aulas teóricas</li>
+              <li>Cumprir a jornada de trabalho</li>
+              <li>Respeitar as normas da empresa</li>
+              <li>Utilizar EPIs fornecidos</li>
+              <li>Manter bom desempenho</li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="slide-num">03</div>
     </section>
 
-    <!-- Slide 4 — Obrigações da Empresa -->
-    <section class="slide slide-light" aria-label="Slide 4 · Obrigações da Empresa">
+    <!-- Slide 4 — Jornada, Horário de Trabalho e Restrições -->
+    <section class="slide slide-light slide-dense" aria-label="Slide 4 · Jornada, Horário de Trabalho e Restrições do Jovem Aprendiz">
       <div class="slide-inner">
         <p class="slide-eyebrow">Jovem Aprendiz</p>
-        <h2 class="slide-heading">Obrigações da Empresa</h2>
-        <p class="slide-text">A empresa deve:</p>
-        <ul class="slide-list two-col">
-          <li>Registrar o contrato na CTPS</li>
-          <li>Matricular o aprendiz em entidade qualificadora</li>
-          <li>Liberar para aulas teóricas</li>
-          <li>Acompanhar frequência escolar</li>
-          <li>Fornecer ambiente adequado</li>
-          <li>Cumprir a jornada</li>
-          <li>Pagar salário e benefícios</li>
-          <li>Respeitar as normas de proteção ao menor</li>
-        </ul>
+        <h2 class="slide-heading">Jornada, Horário e Restrições</h2>
+        <div>
+          <p class="group-heading">Jornada e Horário de Trabalho</p>
+          <ul class="slide-list">
+            <li>Para menores de 18 anos, é proibido o trabalho noturno, considerado, na atividade urbana, o período das 22h às 5h — o jovem aprendiz deve encerrar sua jornada até as 22h</li>
+            <li>A jornada é de até 6 horas diárias e 30 horas semanais, incluindo as aulas teóricas e as atividades práticas na empresa</li>
+            <li>Quando aplicável, deve ser concedido intervalo mínimo de 15 minutos</li>
+            <li>Não é permitida a realização de horas extras, e a jornada deve respeitar os limites legais</li>
+          </ul>
+        </div>
+        <div>
+          <p class="group-heading">Restrições</p>
+          <ul class="slide-list">
+            <li>É proibido o trabalho em atividades ou locais perigosos, insalubres ou que possam prejudicar o desenvolvimento físico, moral, psicológico ou social do adolescente</li>
+            <li>O jovem aprendiz não pode acessar a câmara fria nem manusear facas ou outros equipamentos que ofereçam risco à sua integridade física</li>
+          </ul>
+        </div>
       </div>
       <div class="slide-num">04</div>
     </section>
 
-    <!-- Slide 5 — Obrigações do Aprendiz -->
-    <section class="slide slide-light" aria-label="Slide 5 · Obrigações do Aprendiz">
-      <div class="slide-inner">
-        <p class="slide-eyebrow">Jovem Aprendiz</p>
-        <h2 class="slide-heading">Obrigações do Aprendiz</h2>
-        <p class="slide-text">O aprendiz deve:</p>
-        <ul class="slide-list">
-          <li>Frequentar a escola</li>
-          <li>Comparecer às aulas teóricas</li>
-          <li>Cumprir a jornada</li>
-          <li>Respeitar normas internas</li>
-          <li>Utilizar EPIs quando necessários</li>
-          <li>Manter bom desempenho</li>
-        </ul>
-      </div>
-      <div class="slide-num">05</div>
-    </section>
-
-    <!-- Slide 6 — Direitos do Jovem Aprendiz -->
-    <section class="slide slide-light" aria-label="Slide 6 · Direitos do Jovem Aprendiz">
-      <div class="slide-inner">
-        <p class="slide-eyebrow">Jovem Aprendiz</p>
-        <h2 class="slide-heading">Direitos do Jovem Aprendiz</h2>
-        <p class="slide-text">O aprendiz possui praticamente todos os direitos trabalhistas.</p>
-        <ul class="slide-list two-col">
-          <li>Carteira assinada</li>
-          <li>Salário</li>
-          <li>FGTS de 2%</li>
-          <li>INSS</li>
-          <li>Vale-transporte</li>
-          <li>13º salário</li>
-          <li>Férias</li>
-          <li>Descanso semanal remunerado</li>
-          <li>Feriados</li>
-          <li>Licença maternidade</li>
-          <li>Seguro de vida</li>
-          <li>Refeição no local</li>
-          <li>Desconto para consumação no restaurante</li>
-          <li>Gympass</li>
-          <li>Convênio Sesc</li>
-        </ul>
-      </div>
-      <div class="slide-num">06</div>
-    </section>
-
-    <!-- Slide 7 — Jornada de Trabalho -->
-    <section class="slide slide-light" aria-label="Slide 7 · Jornada de Trabalho">
-      <div class="slide-inner">
-        <p class="slide-eyebrow">Jovem Aprendiz</p>
-        <h2 class="slide-heading">Jornada de Trabalho</h2>
-        <p class="slide-text">A jornada é diferenciada: até 6 horas por dia de trabalho, com intervalo de no mínimo 15 minutos, totalizando 30h semanais.</p>
-        <p class="slide-text">Dentro dessas 6 horas já devem estar incluídas:</p>
-        <ul class="slide-list">
-          <li>Aulas teóricas — no curso</li>
-          <li>Atividades práticas — na empresa</li>
-        </ul>
-        <p class="slide-text">Não pode ultrapassar esse limite de horas trabalhadas. Horas extras: não é permitido.</p>
-      </div>
-      <div class="slide-num">07</div>
-    </section>
-
-    <!-- Slide 8 — Acesso a Câmara Fria e manuseio de equipamentos -->
-    <section class="slide slide-light" aria-label="Slide 8 · Acesso a Câmara Fria e manuseio de equipamentos">
-      <div class="slide-inner">
-        <p class="slide-eyebrow">Jovem Aprendiz</p>
-        <h2 class="slide-heading">Acesso a Câmara Fria e Manuseio de Equipamentos</h2>
-        <p class="slide-text">Não é permitido o acesso à câmara fria, nem o manuseio de facas ou de outros objetos que possam causar riscos ou danos ao jovem.</p>
-      </div>
-      <div class="slide-num">08</div>
-    </section>
-
-    <!-- Slide 9 — Horário de Trabalho para menores de 18 anos -->
-    <section class="slide slide-light" aria-label="Slide 9 · Horário de Trabalho para menores de 18 anos">
-      <div class="slide-inner">
-        <p class="slide-eyebrow">Jovem Aprendiz</p>
-        <h2 class="slide-heading">Horário de Trabalho para Menores de 18 Anos</h2>
-        <p class="slide-text">É proibido o trabalho noturno. Considera-se trabalho noturno o período das 22h às 5h (atividade urbana). O horário de saída do jovem deve ser, no máximo, às 22h.</p>
-        <p class="slide-text">Também é vedado:</p>
-        <ul class="slide-list">
-          <li>Locais perigosos</li>
-          <li>Atividades insalubres</li>
-          <li>Atividades prejudiciais ao desenvolvimento físico, moral ou psicológico</li>
-        </ul>
-      </div>
-      <div class="slide-num">09</div>
-    </section>
-
-    <!-- Slide 10 — Férias -->
-    <section class="slide slide-light" aria-label="Slide 10 · Férias">
-      <div class="slide-inner">
-        <p class="slide-eyebrow">Jovem Aprendiz</p>
-        <h2 class="slide-heading">Férias</h2>
-        <p class="slide-text">As férias do aprendiz possuem regras específicas.</p>
-        <ul class="slide-list">
-          <li>30 dias de férias</li>
-          <li>Devem coincidir, sempre que possível, com as férias escolares</li>
-          <li>Não podem ser vendidas (abono pecuniário)</li>
-        </ul>
-      </div>
-      <div class="slide-num">10</div>
-    </section>
-
-    <!-- Slide 11 — Rescisão do Contrato -->
-    <section class="slide slide-light" aria-label="Slide 11 · Rescisão do Contrato">
-      <div class="slide-inner">
-        <p class="slide-eyebrow">Jovem Aprendiz</p>
-        <h2 class="slide-heading">Rescisão do Contrato</h2>
-        <p class="slide-text">O contrato pode ser encerrado por:</p>
-        <ul class="slide-list two-col">
-          <li>Término do prazo</li>
-          <li>Pedido de demissão</li>
-          <li>Justa causa</li>
-          <li>Desempenho insuficiente</li>
-          <li>Falta disciplinar grave</li>
-          <li>Perda do ano letivo por faltas injustificadas</li>
-          <li>Fechamento da empresa</li>
-        </ul>
-      </div>
-      <div class="slide-num">11</div>
-    </section>
-
-    <!-- Slide 12 — Pontos de Atenção para Empresa -->
-    <section class="slide slide-light" aria-label="Slide 12 · Pontos de Atenção para Empresa">
+    <!-- Slide 5 — Pontos de Atenção para a Empresa -->
+    <section class="slide slide-light" aria-label="Slide 5 · Pontos de Atenção para a Empresa">
       <div class="slide-inner">
         <p class="slide-eyebrow">Jovem Aprendiz</p>
         <h2 class="slide-heading">Pontos de Atenção para a Empresa</h2>
-        <p class="slide-text">Caso a empresa descumpra as regras poderá sofrer:</p>
-        <ul class="slide-list">
-          <li>Autuações pela Inspeção do Trabalho</li>
-          <li>Multas administrativas</li>
-          <li>Descaracterização do contrato de aprendizagem</li>
-          <li>Pagamento de diferenças trabalhistas</li>
-          <li>Ações judiciais</li>
-        </ul>
+        <p class="slide-text">Para garantir o cumprimento da legislação da aprendizagem, a empresa deve controlar corretamente a jornada de trabalho, não permitir a realização de horas extras, respeitar o horário escolar do aprendiz, acompanhar a frequência na entidade formadora, assegurar que as atividades sejam compatíveis com o programa de aprendizagem, não expor menores de idade a atividades proibidas e manter toda a documentação do contrato atualizada.</p>
+        <p class="slide-text">O descumprimento dessas obrigações pode resultar em autuações pela Inspeção do Trabalho, multas administrativas, descaracterização do contrato de aprendizagem, pagamento de diferenças trabalhistas e ações judiciais.</p>
       </div>
-      <div class="slide-num">12</div>
-    </section>
-
-    <!-- Slide 13 — Pontos de Atenção -->
-    <section class="slide slide-light" aria-label="Slide 13 · Pontos de Atenção">
-      <div class="slide-inner">
-        <p class="slide-eyebrow">Jovem Aprendiz</p>
-        <h2 class="slide-heading">Pontos de Atenção</h2>
-        <ul class="slide-list two-col">
-          <li>Controlar corretamente a jornada</li>
-          <li>Não permitir horas extras</li>
-          <li>Respeitar o horário escolar</li>
-          <li>Controlar frequência na entidade formadora</li>
-          <li>Garantir atividades compatíveis com a aprendizagem</li>
-          <li>Não expor menores a atividades proibidas</li>
-          <li>Manter toda a documentação atualizada</li>
-        </ul>
-      </div>
-      <div class="slide-num">13</div>
+      <div class="slide-num">05</div>
     </section>
 
     <canvas class="draw-canvas" id="drawCanvas"></canvas>
