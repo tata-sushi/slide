@@ -37,7 +37,7 @@
   .capa{padding:0 60px 60px;font-family:'Georgia',serif;}
   .capa .barra-topo{height:34px;background:var(--verde);margin:0 -60px 40px;}
   .capa .cabecalho{display:flex;align-items:flex-start;justify-content:space-between;}
-  .capa .logo{display:flex;align-items:center;gap:16px;}
+  .capa .logo{display:flex;align-items:center;gap:8px;}
   .capa .logo .icone{width:78px;height:78px;object-fit:contain;display:block;}
   .capa .logo-texto{line-height:1;}
   .capa .logo-texto .marca{font-size:38px;font-weight:bold;letter-spacing:1px;}
@@ -51,8 +51,9 @@
   /* edição fica logo acima do título, alinhada à direita e "colada" nele */
   .capa .edicao{font-size:26px;font-weight:bold;font-family:Arial,sans-serif;text-align:right;margin:0 6px -18px 0;}
 
+  /* font-size é apenas fallback: o script ajusta o título para preencher toda a largura (de ponta a ponta, igual à foto) */
   .capa .titulo-jornal{font-family:var(--fonte-marca);font-size:205px;font-weight:normal;
-    letter-spacing:-2px;line-height:1;margin:6px 0 4px;text-align:left;white-space:nowrap;}
+    letter-spacing:-0.01em;line-height:1;margin:6px 0 4px;text-align:left;white-space:nowrap;}
   .capa .titulo-jornal .tata{color:var(--verde);}
   .capa .titulo-jornal .news{color:var(--preto);}
   .capa .linha-verde{height:5px;background:var(--verde);margin-bottom:26px;}
@@ -128,7 +129,7 @@
 
   <!-- EDITAR: número da edição (fica logo acima do título, à direita) -->
   <div class="edicao">Ed. 006/2026</div>
-  <div class="titulo-jornal"><span class="tata">TATÁ</span><span class="news">NEWS</span></div>
+  <div class="titulo-jornal" id="titulo-jornal"><span class="tata">TATÁ</span><span class="news">NEWS</span></div>
   <div class="linha-verde"></div>
 
   <div class="foto-principal">
@@ -233,6 +234,34 @@
     </div>
   </div>
 </div>
+
+<script>
+  /* Ajusta o título TATÁNEWS para preencher exatamente a largura do conteúdo (de ponta a ponta, igual à foto). */
+  (function () {
+    function fitTitulo() {
+      var el = document.getElementById('titulo-jornal');
+      if (!el) return;
+      var parent = el.parentElement;               // .capa
+      var pcs = getComputedStyle(parent);
+      var avail = parent.clientWidth
+        - parseFloat(pcs.paddingLeft) - parseFloat(pcs.paddingRight); // largura de conteúdo
+      el.style.display = 'inline-block';           // encolhe até o texto p/ medir a largura real
+      el.style.whiteSpace = 'nowrap';
+      var size = 200;
+      el.style.fontSize = size + 'px';
+      for (var i = 0; i < 5; i++) {
+        var w = el.getBoundingClientRect().width;  // largura real do texto
+        if (!w) break;
+        size = size * avail / w;
+        el.style.fontSize = size + 'px';
+      }
+    }
+    window.addEventListener('load', fitTitulo);
+    window.addEventListener('resize', fitTitulo);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitTitulo);
+    fitTitulo();
+  })();
+</script>
 
 </body>
 </html>
