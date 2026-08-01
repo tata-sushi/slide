@@ -29,9 +29,21 @@
   .pagina{width:var(--pagina-larg);min-height:var(--pagina-alt);background:var(--fundo);
     margin:20px auto;position:relative;overflow:hidden;}
   @media print{
+    @page{size:A4 portrait;margin:0;}
     body{background:#fff;}
-    .pagina{margin:0 auto !important;box-shadow:none !important;}
+    /* o design é proporção A4 (1414x2000); escala para caber exatamente na folha */
+    .pagina{zoom:0.5613;margin:0 !important;box-shadow:none !important;
+      page-break-after:always;break-after:page;
+      -webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .pagina:last-child{page-break-after:auto;break-after:auto;}
+    .btn-imprimir{display:none !important;}
   }
+  /* botão flutuante de imprimir / salvar PDF */
+  .btn-imprimir{position:fixed;right:24px;bottom:24px;z-index:5000;
+    background:var(--verde);color:#fff;border:none;border-radius:50px;
+    padding:16px 26px;font-family:Arial,sans-serif;font-size:22px;font-weight:bold;
+    cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.3);}
+  .btn-imprimir:hover{background:#43a047;}
 
   /* =========================================================
      PÁGINA 1 — CAPA
@@ -51,7 +63,7 @@
   .capa .logo-texto .apresenta{font-size:22px;color:#333;font-family:Arial,sans-serif;
     text-align:justify;text-align-last:justify;}
   /* edição fica logo acima do título, alinhada à direita e "colada" nele */
-  .capa .edicao{font-size:26px;font-weight:bold;font-family:Arial,sans-serif;text-align:right;margin:0 6px -44px 0;}
+  .capa .edicao{font-size:30px;font-family:var(--fonte-marca);text-align:right;margin:0 6px -44px 0;}
 
   /* font-size é apenas fallback: o script ajusta o título para preencher toda a largura (de ponta a ponta, igual à foto) */
   .capa .titulo-jornal{font-family:var(--fonte-marca);font-size:205px;font-weight:normal;
@@ -89,11 +101,11 @@
   .capa .bloco-aniv{background:var(--verde);margin-top:28px;padding:30px 50px 30px;color:#fff;
     flex:1;display:flex;flex-direction:column;}
   .capa .bloco-aniv h2{text-align:center;font-size:36px;color:#111;font-family:Arial,sans-serif;font-weight:bold;margin-bottom:18px;}
-  .capa .grid-aniv{display:grid;grid-template-columns:1fr 1fr;gap:12px 60px;flex:1;align-content:space-between;}
-  .capa .item-aniv{display:flex;align-items:baseline;gap:18px;}
-  .capa .item-aniv .dia{font-size:40px;font-weight:bold;font-family:var(--fonte-play);min-width:58px;}
-  .capa .item-aniv .nome{font-size:31px;font-weight:bold;line-height:1.1;font-family:var(--fonte-play);}
-  .capa .item-aniv .setor{font-size:20px;font-family:var(--fonte-play);opacity:.9;}
+  .capa .grid-aniv{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 30px;flex:1;align-content:space-between;}
+  .capa .item-aniv{display:flex;align-items:baseline;gap:12px;}
+  .capa .item-aniv .dia{font-size:44px;font-weight:bold;font-family:var(--fonte-play);min-width:52px;}
+  .capa .item-aniv .nome{font-size:33px;font-weight:bold;line-height:1.05;font-family:var(--fonte-play);}
+  .capa .item-aniv .setor{font-size:22px;font-family:var(--fonte-play);opacity:.9;}
 
   /* =========================================================
      PÁGINA 2 — AGENDA
@@ -125,7 +137,7 @@
   .novos .barra-topo .titulo{font-family:var(--fonte-marca);font-size:40px;font-weight:normal;}
   .novos .barra-topo .titulo .verde{color:#0d3d12;}
   .novos .barra-topo .titulo .branco{color:#fff;}
-  .novos .barra-topo .edicao{position:absolute;right:40px;color:#fff;font-weight:bold;font-size:22px;font-family:Arial,sans-serif;}
+  .novos .barra-topo .edicao{position:absolute;right:40px;color:#fff;font-size:26px;font-family:var(--fonte-marca);}
   .novos .barra-topo .ico{position:absolute;left:28px;width:52px;height:52px;object-fit:contain;}
   .novos .conteudo{padding:60px 70px;}
   .novos h1{font-family:'Segoe UI',Arial,sans-serif;font-size:88px;font-weight:800;line-height:1;color:var(--verde);margin-bottom:10px;}
@@ -143,6 +155,8 @@
 </style>
 </head>
 <body>
+<!-- Botão flutuante: imprimir / salvar em PDF -->
+<button type="button" class="btn-imprimir" onclick="window.print()" title="Imprimir ou salvar em PDF">🖨️ Imprimir / PDF</button>
 
 <!-- ============================================================
      PÁGINA 1 — CAPA
@@ -180,22 +194,22 @@
     <!-- EDITAR: título -->
     <h2>Aniversariantes de agosto</h2>
     <div class="grid-aniv">
-      <!-- Aniversariantes (dados do Supabase) -->
+      <!-- Aniversariantes (Supabase) - 3 colunas -->
       <div class="item-aniv"><span class="dia">01</span><div><div class="nome">Maison Sousa</div><div class="setor">Bar</div></div></div>
-      <div class="item-aniv"><span class="dia">15</span><div><div class="nome">Paulino Nunes</div><div class="setor">Cozinha</div></div></div>
-      <div class="item-aniv"><span class="dia">04</span><div><div class="nome">Kleiton Santos</div><div class="setor">Cozinha</div></div></div>
-      <div class="item-aniv"><span class="dia">16</span><div><div class="nome">Cristiane Gomes</div><div class="setor">Cozinha</div></div></div>
-      <div class="item-aniv"><span class="dia">05</span><div><div class="nome">Ana Macedo</div><div class="setor">Operação</div></div></div>
-      <div class="item-aniv"><span class="dia">16</span><div><div class="nome">Leonardo Young</div><div class="setor">Operações</div></div></div>
-      <div class="item-aniv"><span class="dia">05</span><div><div class="nome">Vinicius Silva</div><div class="setor">Sushibar</div></div></div>
-      <div class="item-aniv"><span class="dia">17</span><div><div class="nome">Fabio Shiguematsu</div><div class="setor">Operação</div></div></div>
-      <div class="item-aniv"><span class="dia">10</span><div><div class="nome">Luciano Silva</div><div class="setor">Sushibar</div></div></div>
-      <div class="item-aniv"><span class="dia">21</span><div><div class="nome">Anna Porto</div><div class="setor">Qualidade</div></div></div>
       <div class="item-aniv"><span class="dia">11</span><div><div class="nome">Paulo Silva</div><div class="setor">Delivery</div></div></div>
-      <div class="item-aniv"><span class="dia">22</span><div><div class="nome">Guilherme Cenciarelli</div><div class="setor">Sushibar</div></div></div>
+      <div class="item-aniv"><span class="dia">16</span><div><div class="nome">Leonardo Young</div><div class="setor">Operações</div></div></div>
+      <div class="item-aniv"><span class="dia">04</span><div><div class="nome">Kleiton Santos</div><div class="setor">Cozinha</div></div></div>
       <div class="item-aniv"><span class="dia">13</span><div><div class="nome">Pedro Moreno</div><div class="setor">Financeiro</div></div></div>
-      <div class="item-aniv"><span class="dia">31</span><div><div class="nome">Cassiano Rodrigues</div><div class="setor">Delivery</div></div></div>
+      <div class="item-aniv"><span class="dia">17</span><div><div class="nome">Fabio Shiguematsu</div><div class="setor">Operação</div></div></div>
+      <div class="item-aniv"><span class="dia">05</span><div><div class="nome">Ana Macedo</div><div class="setor">Operação</div></div></div>
       <div class="item-aniv"><span class="dia">14</span><div><div class="nome">Jefferson Pereira</div><div class="setor">Sushibar</div></div></div>
+      <div class="item-aniv"><span class="dia">21</span><div><div class="nome">Anna Porto</div><div class="setor">Qualidade</div></div></div>
+      <div class="item-aniv"><span class="dia">05</span><div><div class="nome">Vinicius Silva</div><div class="setor">Sushibar</div></div></div>
+      <div class="item-aniv"><span class="dia">15</span><div><div class="nome">Paulino Nunes</div><div class="setor">Cozinha</div></div></div>
+      <div class="item-aniv"><span class="dia">22</span><div><div class="nome">Guilherme Cenciarelli</div><div class="setor">Sushibar</div></div></div>
+      <div class="item-aniv"><span class="dia">10</span><div><div class="nome">Luciano Silva</div><div class="setor">Sushibar</div></div></div>
+      <div class="item-aniv"><span class="dia">16</span><div><div class="nome">Cristiane Gomes</div><div class="setor">Cozinha</div></div></div>
+      <div class="item-aniv"><span class="dia">31</span><div><div class="nome">Cassiano Rodrigues</div><div class="setor">Delivery</div></div></div>
     </div>
   </div>
 </div>
