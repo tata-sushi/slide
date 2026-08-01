@@ -111,7 +111,7 @@
   .novos .intro b{font-weight:800;}
   .novos .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:44px 30px;}
   .novos .pessoa{text-align:center;}
-  .novos .pessoa img{width:200px;height:200px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 16px;}
+  .novos .pessoa img{width:200px;height:200px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 16px;background:var(--verde);}
   /* avatar com iniciais (quando não há foto) */
   .novos .pessoa .avatar{width:200px;height:200px;border-radius:50%;display:flex;align-items:center;justify-content:center;
     margin:0 auto 16px;background:var(--verde);color:#fff;font-family:var(--fonte-play);font-weight:bold;font-size:76px;line-height:1;}
@@ -237,19 +237,19 @@
       pessoas, é porque as contratações foram feitas para departamentos e unidades diferentes.</p>
 
     <div class="grid">
-      <!-- Novos integrantes (dados do Supabase; avatar = iniciais) -->
-      <div class="pessoa"><div class="avatar">LS</div><div class="nome">Luis Santos</div><div class="setor">Sushibar</div></div>
-      <div class="pessoa"><div class="avatar">VS</div><div class="nome">Vinicios Silva</div><div class="setor">Sushibar</div></div>
-      <div class="pessoa"><div class="avatar">IS</div><div class="nome">Irineu Silva</div><div class="setor">Sushibar</div></div>
-      <div class="pessoa"><div class="avatar">BS</div><div class="nome">Bruna Silva</div><div class="setor">Cozinha</div></div>
+      <!-- Novos integrantes (Supabase; foto do bucket público 'avatares' por matrícula, ou iniciais) -->
+      <div class="pessoa"><img src="https://aoqsbusfrffapjglpqjk.supabase.co/storage/v1/object/public/avatares/24721.jpg" alt="Luis Santos" loading="lazy"><div class="nome">Luis Santos</div><div class="setor">Sushibar</div></div>
+      <div class="pessoa"><img src="https://aoqsbusfrffapjglpqjk.supabase.co/storage/v1/object/public/avatares/24722.png" alt="Vinicios Silva" loading="lazy"><div class="nome">Vinicios Silva</div><div class="setor">Sushibar</div></div>
+      <div class="pessoa"><img src="https://aoqsbusfrffapjglpqjk.supabase.co/storage/v1/object/public/avatares/24723.png" alt="Irineu Silva" loading="lazy"><div class="nome">Irineu Silva</div><div class="setor">Sushibar</div></div>
+      <div class="pessoa"><img src="https://aoqsbusfrffapjglpqjk.supabase.co/storage/v1/object/public/avatares/24724.png" alt="Bruna Silva" loading="lazy"><div class="nome">Bruna Silva</div><div class="setor">Cozinha</div></div>
 
-      <div class="pessoa"><div class="avatar">DS</div><div class="nome">Diego Santos</div><div class="setor">Sushibar</div></div>
-      <div class="pessoa"><div class="avatar">RC</div><div class="nome">Richard Costa</div><div class="setor">Sushibar</div></div>
+      <div class="pessoa"><img src="https://aoqsbusfrffapjglpqjk.supabase.co/storage/v1/object/public/avatares/24725.jpg" alt="Diego Santos" loading="lazy"><div class="nome">Diego Santos</div><div class="setor">Sushibar</div></div>
+      <div class="pessoa"><img src="https://aoqsbusfrffapjglpqjk.supabase.co/storage/v1/object/public/avatares/24727.jpg" alt="Richard Costa" loading="lazy"><div class="nome">Richard Costa</div><div class="setor">Sushibar</div></div>
       <div class="pessoa"><div class="avatar">CR</div><div class="nome">Cassiano Rodrigues</div><div class="setor">Delivery</div></div>
-      <div class="pessoa"><div class="avatar">GS</div><div class="nome">Guilherme Santos</div><div class="setor">Sushibar</div></div>
+      <div class="pessoa"><img src="https://aoqsbusfrffapjglpqjk.supabase.co/storage/v1/object/public/avatares/24728.jpg" alt="Guilherme Santos" loading="lazy"><div class="nome">Guilherme Santos</div><div class="setor">Sushibar</div></div>
 
       <div class="pessoa"><div class="avatar">PZ</div><div class="nome">Pedro Zeferino</div><div class="setor">Limpeza</div></div>
-      <div class="pessoa"><div class="avatar">MG</div><div class="nome">Max Gomes</div><div class="setor">Delivery</div></div>
+      <div class="pessoa"><img src="https://aoqsbusfrffapjglpqjk.supabase.co/storage/v1/object/public/avatares/24730.jpg" alt="Max Gomes" loading="lazy"><div class="nome">Max Gomes</div><div class="setor">Delivery</div></div>
       <div class="pessoa"><div class="avatar">FR</div><div class="nome">Flavio Rodrigues</div><div class="setor">Cozinha</div></div>
       <div class="pessoa"><div class="avatar">MO</div><div class="nome">Mateus Oliveira</div><div class="setor">Cozinha</div></div>
 
