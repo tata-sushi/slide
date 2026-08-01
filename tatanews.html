@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tatá News — Ed. 006/2026</title>
+<title>Tatá News — Ed. 008/2026</title>
 <!-- Fonte da marca: DM Serif Display -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,14 +63,14 @@
   .capa .foto-legenda{position:absolute;left:0;right:0;bottom:0;background:rgba(76,175,82,.85);
     color:#fff;text-align:center;font-family:Arial,sans-serif;font-size:26px;padding:12px;}
 
-  .capa .bloco-aniv{background:var(--verde);margin-top:40px;padding:36px 50px 50px;color:#fff;
+  .capa .bloco-aniv{background:var(--verde);margin-top:28px;padding:30px 50px 30px;color:#fff;
     flex:1;display:flex;flex-direction:column;}
-  .capa .bloco-aniv h2{text-align:center;font-size:36px;color:#111;font-family:Arial,sans-serif;font-weight:bold;margin-bottom:34px;}
-  .capa .grid-aniv{display:grid;grid-template-columns:1fr 1fr;gap:22px 60px;flex:1;align-content:space-between;}
+  .capa .bloco-aniv h2{text-align:center;font-size:36px;color:#111;font-family:Arial,sans-serif;font-weight:bold;margin-bottom:18px;}
+  .capa .grid-aniv{display:grid;grid-template-columns:1fr 1fr;gap:12px 60px;flex:1;align-content:space-between;}
   .capa .item-aniv{display:flex;align-items:baseline;gap:18px;}
-  .capa .item-aniv .dia{font-size:44px;font-weight:bold;font-family:var(--fonte-play);min-width:64px;}
-  .capa .item-aniv .nome{font-size:34px;font-weight:bold;line-height:1.1;font-family:var(--fonte-play);}
-  .capa .item-aniv .setor{font-size:22px;font-family:var(--fonte-play);opacity:.9;}
+  .capa .item-aniv .dia{font-size:40px;font-weight:bold;font-family:var(--fonte-play);min-width:58px;}
+  .capa .item-aniv .nome{font-size:31px;font-weight:bold;line-height:1.1;font-family:var(--fonte-play);}
+  .capa .item-aniv .setor{font-size:20px;font-family:var(--fonte-play);opacity:.9;}
 
   /* =========================================================
      PÁGINA 2 — AGENDA
@@ -107,11 +107,14 @@
   .novos .conteudo{padding:60px 70px;}
   .novos h1{font-family:'Segoe UI',Arial,sans-serif;font-size:88px;font-weight:800;line-height:1;color:var(--verde);margin-bottom:10px;}
   .novos h1 .linha2{display:block;}
-  .novos .intro{font-size:34px;line-height:1.4;color:#222;max-width:1180px;margin:34px 0 60px;font-family:var(--fonte-kamerik);}
+  .novos .intro{font-size:34px;line-height:1.4;color:#222;max-width:1180px;margin:28px 0 44px;font-family:var(--fonte-kamerik);}
   .novos .intro b{font-weight:800;}
-  .novos .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:60px 30px;}
+  .novos .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:44px 30px;}
   .novos .pessoa{text-align:center;}
-  .novos .pessoa img{width:230px;height:230px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 18px;}
+  .novos .pessoa img{width:200px;height:200px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 16px;}
+  /* avatar com iniciais (quando não há foto) */
+  .novos .pessoa .avatar{width:200px;height:200px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    margin:0 auto 16px;background:var(--verde);color:#fff;font-family:var(--fonte-play);font-weight:bold;font-size:76px;line-height:1;}
   .novos .pessoa .nome{font-weight:bold;font-size:26px;color:#111;font-family:var(--fonte-play);}
   .novos .pessoa .setor{font-size:24px;color:#333;font-family:var(--fonte-play);}
 </style>
@@ -136,7 +139,7 @@
   </div>
 
   <!-- EDITAR: número da edição (fica logo acima do título, à direita) -->
-  <div class="edicao">Ed. 006/2026</div>
+  <div class="edicao">Ed. 008/2026</div>
   <div class="titulo-jornal" id="titulo-jornal"><span class="tata">TATÁ</span><span class="news">NEWS</span></div>
   <div class="linha-verde"></div>
 
@@ -144,24 +147,29 @@
     <!-- EDITAR FOTO: troque o src abaixo -->
     <img src="img/grupo_capa.jpg?v=3" alt="Foto do time">
     <!-- EDITAR: legenda da foto -->
-    <div class="foto-legenda">Comemoração aniversariantes de maio</div>
+    <div class="foto-legenda">Comemoração aniversariantes de julho</div>
   </div>
 
   <div class="bloco-aniv">
     <!-- EDITAR: título -->
-    <h2>Aniversariantes de junho</h2>
+    <h2>Aniversariantes de agosto</h2>
     <div class="grid-aniv">
-      <!-- EDITAR cada item: dia / nome / setor -->
-      <div class="item-aniv"><span class="dia">02</span><div><div class="nome">Marcelo Caetano</div><div class="setor">Delivery</div></div></div>
-      <div class="item-aniv"><span class="dia">20</span><div><div class="nome">Cleiton Verissimo</div><div class="setor">Sushibar</div></div></div>
-      <div class="item-aniv"><span class="dia">05</span><div><div class="nome">Maria Madalena</div><div class="setor">Salão</div></div></div>
-      <div class="item-aniv"><span class="dia">23</span><div><div class="nome">Nadir Freitas</div><div class="setor">Serviços Gerais</div></div></div>
-      <div class="item-aniv"><span class="dia">09</span><div><div class="nome">Beatriz Costa</div><div class="setor">Qualidade</div></div></div>
-      <div class="item-aniv"><span class="dia">25</span><div><div class="nome">Laura Bitencourt</div><div class="setor">Operação</div></div></div>
-      <div class="item-aniv"><span class="dia">17</span><div><div class="nome">Randy Vilalobos</div><div class="setor">Sushibar</div></div></div>
-      <div class="item-aniv"><span class="dia">26</span><div><div class="nome">Vitor Estevam</div><div class="setor">Estoque</div></div></div>
-      <div class="item-aniv"><span class="dia">18</span><div><div class="nome">Erick Lucas</div><div class="setor">Compras</div></div></div>
-      <div class="item-aniv"><span class="dia">27</span><div><div class="nome">José Cauã</div><div class="setor">Serviços Gerais</div></div></div>
+      <!-- Aniversariantes (dados do Supabase) -->
+      <div class="item-aniv"><span class="dia">01</span><div><div class="nome">Maison Sousa</div><div class="setor">Bar</div></div></div>
+      <div class="item-aniv"><span class="dia">15</span><div><div class="nome">Paulino Nunes</div><div class="setor">Cozinha</div></div></div>
+      <div class="item-aniv"><span class="dia">04</span><div><div class="nome">Kleiton Santos</div><div class="setor">Cozinha</div></div></div>
+      <div class="item-aniv"><span class="dia">16</span><div><div class="nome">Cristiane Gomes</div><div class="setor">Cozinha</div></div></div>
+      <div class="item-aniv"><span class="dia">05</span><div><div class="nome">Ana Macedo</div><div class="setor">Operação</div></div></div>
+      <div class="item-aniv"><span class="dia">16</span><div><div class="nome">Leonardo Young</div><div class="setor">Operações</div></div></div>
+      <div class="item-aniv"><span class="dia">05</span><div><div class="nome">Vinicius Silva</div><div class="setor">Sushibar</div></div></div>
+      <div class="item-aniv"><span class="dia">17</span><div><div class="nome">Fabio Shiguematsu</div><div class="setor">Operação</div></div></div>
+      <div class="item-aniv"><span class="dia">10</span><div><div class="nome">Luciano Silva</div><div class="setor">Sushibar</div></div></div>
+      <div class="item-aniv"><span class="dia">21</span><div><div class="nome">Anna Porto</div><div class="setor">Qualidade</div></div></div>
+      <div class="item-aniv"><span class="dia">11</span><div><div class="nome">Paulo Silva</div><div class="setor">Delivery</div></div></div>
+      <div class="item-aniv"><span class="dia">22</span><div><div class="nome">Guilherme Cenciarelli</div><div class="setor">Sushibar</div></div></div>
+      <div class="item-aniv"><span class="dia">13</span><div><div class="nome">Pedro Moreno</div><div class="setor">Financeiro</div></div></div>
+      <div class="item-aniv"><span class="dia">31</span><div><div class="nome">Cassiano Rodrigues</div><div class="setor">Delivery</div></div></div>
+      <div class="item-aniv"><span class="dia">14</span><div><div class="nome">Jefferson Pereira</div><div class="setor">Sushibar</div></div></div>
     </div>
   </div>
 </div>
@@ -175,12 +183,13 @@
   <div class="cal">
     <table>
       <tr><th>Dom</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sab</th></tr>
-      <!-- EDITAR: use <span class="destaque">N</span> para marcar dias em verde -->
-      <tr><td></td><td><span class="destaque">1</span></td><td>2</td><td>3</td><td>4</td><td><span class="destaque">5</span></td><td>6</td></tr>
-      <tr><td>7</td><td>8</td><td>9</td><td><span class="destaque">10</span></td><td>11</td><td>12</td><td>13</td></tr>
-      <tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td><span class="destaque">19</span></td><td>20</td></tr>
-      <tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td><span class="destaque">26</span></td><td>27</td></tr>
-      <tr><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td><td></td></tr>
+            <!-- Calendário agosto/2026 -->
+      <tr><td></td><td></td><td></td><td></td><td></td><td></td><td><span class="destaque">1</span></td></tr>
+      <tr><td>2</td><td>3</td><td>4</td><td><span class="destaque">5</span></td><td>6</td><td>7</td><td>8</td></tr>
+      <tr><td>9</td><td><span class="destaque">10</span></td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td></tr>
+      <tr><td>16</td><td>17</td><td>18</td><td>19</td><td><span class="destaque">20</span></td><td>21</td><td>22</td></tr>
+      <tr><td>23</td><td>24</td><td>25</td><td><span class="destaque">26</span></td><td>27</td><td>28</td><td>29</td></tr>
+      <tr><td>30</td><td>31</td><td></td><td></td><td></td><td></td><td></td></tr>
     </table>
   </div>
 
@@ -191,8 +200,8 @@
     <h3>Pagamentos e comemorações:</h3>
     <ul>
       <li>01 - Liberação do Vale-Transporte</li>
-      <li>05 - Pagamento Salário (maio/2026)</li>
-      <li>20 - Adiantamento de Salário (junho/2026)</li>
+      <li>05 - Pagamento Salário (julho/2026)</li>
+      <li>20 - Adiantamento de Salário (agosto/2026)</li>
       <li>26 - Comemoração aniversariantes do mês</li>
     </ul>
 
@@ -217,30 +226,35 @@
     <img class="ico" src="img/logo-tata-branco.png?v=2" alt="Logo Tatá Sushi">
     <div class="titulo"><span class="verde">TATÁ</span><span class="branco">NEWS</span></div>
     <!-- EDITAR: edição -->
-    <div class="edicao">Ed. 006/2026</div>
+    <div class="edicao">Ed. 008/2026</div>
   </div>
 
   <div class="conteudo">
     <h1>Novos integrantes<span class="linha2">Tatá Sushi</span></h1>
     <!-- EDITAR: texto de introdução -->
     <p class="intro">Conheça as pessoas que foram contratadas e iniciaram suas jornadas
-      conosco em <b>maio</b> aqui no TATÁ Sushi. Se você ainda não viu todas as
+      conosco em <b>julho</b> aqui no TATÁ Sushi. Se você ainda não viu todas as
       pessoas, é porque as contratações foram feitas para departamentos e unidades diferentes.</p>
 
     <div class="grid">
-      <!-- EDITAR cada pessoa: troque a img (src), o nome e o setor -->
-      <div class="pessoa"><img src="img/jose_caua.jpg"><div class="nome">José Cauã</div><div class="setor">Serviços Gerais</div></div>
-      <div class="pessoa"><img src="img/adenilton_cruz.jpg"><div class="nome">Adenilton Cruz</div><div class="setor">Cozinha</div></div>
-      <div class="pessoa"><img src="img/mariana_braga.jpg"><div class="nome">Mariana Braga</div><div class="setor">Cozinha</div></div>
-      <div class="pessoa"><img src="img/valeria_ramos.jpg"><div class="nome">Valeria Ramos</div><div class="setor">Cozinha</div></div>
+      <!-- Novos integrantes (dados do Supabase; avatar = iniciais) -->
+      <div class="pessoa"><div class="avatar">LS</div><div class="nome">Luis Santos</div><div class="setor">Sushibar</div></div>
+      <div class="pessoa"><div class="avatar">VS</div><div class="nome">Vinicios Silva</div><div class="setor">Sushibar</div></div>
+      <div class="pessoa"><div class="avatar">IS</div><div class="nome">Irineu Silva</div><div class="setor">Sushibar</div></div>
+      <div class="pessoa"><div class="avatar">BS</div><div class="nome">Bruna Silva</div><div class="setor">Cozinha</div></div>
 
-      <div class="pessoa"><img src="img/felipe_alves.jpg"><div class="nome">Felipe Alves</div><div class="setor">Delivery</div></div>
-      <div class="pessoa"><img src="img/manuel_barrios.jpg"><div class="nome">Manuel Barrios</div><div class="setor">Cozinha</div></div>
-      <div class="pessoa"><img src="img/rayane_carvalho.jpg"><div class="nome">Rayane Carvalho</div><div class="setor">Cozinha</div></div>
-      <div class="pessoa"><img src="img/randy_alberto.jpg"><div class="nome">Randy Alberto</div><div class="setor">Sushibar</div></div>
+      <div class="pessoa"><div class="avatar">DS</div><div class="nome">Diego Santos</div><div class="setor">Sushibar</div></div>
+      <div class="pessoa"><div class="avatar">RC</div><div class="nome">Richard Costa</div><div class="setor">Sushibar</div></div>
+      <div class="pessoa"><div class="avatar">CR</div><div class="nome">Cassiano Rodrigues</div><div class="setor">Delivery</div></div>
+      <div class="pessoa"><div class="avatar">GS</div><div class="nome">Guilherme Santos</div><div class="setor">Sushibar</div></div>
 
-      <div class="pessoa"><img src="img/jonathan_miller.jpg"><div class="nome">Jonathan Miller</div><div class="setor">Sushibar</div></div>
-      <div class="pessoa"><img src="img/mical_da_silva.jpg"><div class="nome">Mical da Silva</div><div class="setor">Sushibar</div></div>
+      <div class="pessoa"><div class="avatar">PZ</div><div class="nome">Pedro Zeferino</div><div class="setor">Limpeza</div></div>
+      <div class="pessoa"><div class="avatar">MG</div><div class="nome">Max Gomes</div><div class="setor">Delivery</div></div>
+      <div class="pessoa"><div class="avatar">FR</div><div class="nome">Flavio Rodrigues</div><div class="setor">Cozinha</div></div>
+      <div class="pessoa"><div class="avatar">MO</div><div class="nome">Mateus Oliveira</div><div class="setor">Cozinha</div></div>
+
+      <div class="pessoa"><div class="avatar">PB</div><div class="nome">Poliana Barbosa</div><div class="setor">Limpeza</div></div>
+      <div class="pessoa"><div class="avatar">NT</div><div class="nome">Nathan Teixeira</div><div class="setor">Delivery</div></div>
     </div>
   </div>
 </div>
