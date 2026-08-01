@@ -42,7 +42,11 @@
   .capa .logo-texto{line-height:1;}
   .capa .logo-texto .marca{font-size:38px;font-weight:bold;letter-spacing:1px;}
   .capa .logo-texto .marca .barra{color:var(--verde);}
-  .capa .logo-texto .apresenta{font-size:22px;letter-spacing:8px;color:#333;font-family:Arial,sans-serif;}
+  .capa .logo-texto .marca,
+  .capa .logo-texto .apresenta{display:block;}
+  /* "apresenta" é justificada de ponta a ponta para ter a MESMA largura de TATÁ|SUSHI acima */
+  .capa .logo-texto .apresenta{font-size:22px;color:#333;font-family:Arial,sans-serif;
+    text-align:justify;text-align-last:justify;}
   .capa .edicao{font-size:26px;font-weight:bold;font-family:Arial,sans-serif;margin-top:14px;}
 
   .capa .titulo-jornal{font-family:var(--fonte-marca);font-size:150px;font-weight:normal;
@@ -115,7 +119,7 @@
       <img class="icone" src="img/logo-tata.png?v=2" alt="Logo Tatá Sushi">
       <div class="logo-texto">
         <div class="marca">TATÁ<span class="barra">|</span>SUSHI</div>
-        <div class="apresenta">apresenta</div>
+        <div class="apresenta" aria-label="apresenta">a p r e s e n t a</div>
       </div>
     </div>
     <!-- EDITAR: número da edição -->
