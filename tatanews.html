@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Play:wght@400;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- Editor de corte da foto da capa -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cropperjs@1.6.2/dist/cropper.min.css">
 <style>
   /* ===== CONFIG DE MARCA (edite as cores aqui) ===== */
   :root{
@@ -62,6 +64,27 @@
   .capa .foto-principal img{width:100%;height:728px;object-fit:cover;display:block;}
   .capa .foto-legenda{position:absolute;left:0;right:0;bottom:0;background:rgba(76,175,82,.85);
     color:#fff;text-align:center;font-family:Arial,sans-serif;font-size:26px;padding:12px;}
+  /* botão para trocar a foto da capa (upload -> Supabase Storage) */
+  .capa .foto-principal .btn-trocar-foto{position:absolute;top:14px;right:14px;z-index:2;
+    background:rgba(0,0,0,.55);color:#fff;border:none;border-radius:10px;padding:12px 18px;
+    font-family:Arial,sans-serif;font-size:22px;cursor:pointer;line-height:1;}
+  .capa .foto-principal .btn-trocar-foto:hover{background:rgba(0,0,0,.78);}
+  .capa .foto-principal .btn-trocar-foto.enviando{opacity:.6;pointer-events:none;}
+  @media print{ .capa .foto-principal .btn-trocar-foto{display:none;} }
+  /* modal de recorte da foto da capa */
+  .crop-modal{position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;}
+  .crop-modal[hidden]{display:none;}
+  .crop-box{background:#fff;border-radius:14px;padding:20px;max-width:920px;width:100%;box-shadow:0 12px 44px rgba(0,0,0,.45);}
+  .crop-titulo{font-family:Arial,sans-serif;font-size:22px;color:#1a1a1a;margin:0 0 6px;font-weight:bold;}
+  .crop-dica{font-family:Arial,sans-serif;font-size:15px;color:#666;margin:0 0 14px;}
+  .crop-area{width:100%;height:56vh;max-height:520px;background:#f0f0f0;overflow:hidden;}
+  .crop-area img{display:block;max-width:100%;}
+  .crop-acoes{display:flex;justify-content:flex-end;gap:12px;margin-top:16px;}
+  .crop-btn{border:none;border-radius:9px;padding:13px 24px;font-family:Arial,sans-serif;font-size:18px;cursor:pointer;}
+  .crop-btn-sec{background:#e6e6e6;color:#333;}
+  .crop-btn-pri{background:var(--verde);color:#fff;font-weight:bold;}
+  .crop-btn.enviando{opacity:.6;pointer-events:none;}
+  @media print{ .crop-modal{display:none !important;} }
 
   .capa .bloco-aniv{background:var(--verde);margin-top:28px;padding:30px 50px 30px;color:#fff;
     flex:1;display:flex;flex-direction:column;}
@@ -144,10 +167,13 @@
   <div class="linha-verde"></div>
 
   <div class="foto-principal">
-    <!-- EDITAR FOTO: troque o src abaixo -->
-    <img src="img/grupo_capa.jpg?v=3" alt="Foto do time">
+    <!-- Foto da capa: carregada do Storage (tatanews-foto/capa.jpg); fallback = img/grupo_capa.jpg -->
+    <img id="foto-capa" src="img/grupo_capa.jpg?v=3" alt="Foto do time">
     <!-- EDITAR: legenda da foto -->
     <div class="foto-legenda">Comemoração aniversariantes de julho</div>
+    <!-- Botão de upload da capa (sem senha) -->
+    <button type="button" id="btn-trocar-foto" class="btn-trocar-foto" title="Trocar a foto da capa">📷 Trocar foto</button>
+    <input type="file" id="input-foto-capa" accept="image/jpeg,image/png,image/webp" hidden>
   </div>
 
   <div class="bloco-aniv">
@@ -284,6 +310,95 @@
     window.addEventListener('resize', fitTitulo);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitTitulo);
     fitTitulo();
+  })();
+</script>
+
+<!-- Modal de recorte/preview da foto da capa -->
+<div id="crop-modal" class="crop-modal" hidden>
+  <div class="crop-box">
+    <h4 class="crop-titulo">Ajustar a foto da capa</h4>
+    <p class="crop-dica">Arraste para posicionar e use a rolagem (ou pinça) para dar zoom. O quadro mostra exatamente como a foto vai aparecer na capa.</p>
+    <div class="crop-area"><img id="crop-img" alt=""></div>
+    <div class="crop-acoes">
+      <button type="button" id="crop-cancelar" class="crop-btn crop-btn-sec">Cancelar</button>
+      <button type="button" id="crop-enviar" class="crop-btn crop-btn-pri">Enviar foto</button>
+    </div>
+  </div>
+</div>
+
+<!-- Troca da foto da capa: recorte (Cropper.js) + upload para o Supabase Storage (bucket público tatanews-foto) -->
+<script src="https://cdn.jsdelivr.net/npm/cropperjs@1.6.2/dist/cropper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  (function () {
+    var URL_SB = "https://aoqsbusfrffapjglpqjk.supabase.co";
+    var KEY_SB = "sb_publishable_X3pKD_F1QLAyxbxFU32HqQ_pRp9p6JQ";
+    var BUCKET = "tatanews-foto", PATH = "capa.jpg";
+    var PUB = URL_SB + "/storage/v1/object/public/" + BUCKET + "/" + PATH;
+    var RATIO = 1294 / 728; // proporção exata da capa (~16:9)
+
+    var img = document.getElementById("foto-capa");
+    var btn = document.getElementById("btn-trocar-foto");
+    var input = document.getElementById("input-foto-capa");
+    var modal = document.getElementById("crop-modal");
+    var cimg = document.getElementById("crop-img");
+    var bCancel = document.getElementById("crop-cancelar");
+    var bEnviar = document.getElementById("crop-enviar");
+    if (!img || !btn || !input || !modal) return;
+
+    // Usa a foto do Storage se já existir; senão, mantém o fallback local.
+    (function carregar() {
+      var p = new Image();
+      p.onload = function () { img.src = PUB + "?t=" + Date.now(); };
+      p.src = PUB + "?t=" + Date.now();
+    })();
+
+    if (!window.supabase) { btn.style.display = "none"; return; }
+    var sb = window.supabase.createClient(URL_SB, KEY_SB);
+    var cropper = null;
+
+    btn.addEventListener("click", function () { input.click(); });
+
+    input.addEventListener("change", function () {
+      var f = input.files && input.files[0];
+      input.value = "";
+      if (!f) return;
+      if (!/^image\/(jpeg|png|webp)$/.test(f.type)) { alert("Escolha uma imagem JPG, PNG ou WEBP."); return; }
+      if (f.size > 5 * 1024 * 1024) { alert("Imagem muito grande (máximo 5 MB)."); return; }
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        cimg.src = e.target.result;
+        modal.hidden = false;
+        if (cropper) { cropper.destroy(); cropper = null; }
+        if (window.Cropper) {
+          cropper = new Cropper(cimg, { aspectRatio: RATIO, viewMode: 1, autoCropArea: 1, background: false, dragMode: "move", responsive: true });
+        }
+      };
+      reader.readAsDataURL(f);
+    });
+
+    function fechar() { if (cropper) { cropper.destroy(); cropper = null; } modal.hidden = true; cimg.src = ""; }
+    bCancel.addEventListener("click", fechar);
+
+    bEnviar.addEventListener("click", function () {
+      if (!cropper) { fechar(); return; }
+      var canvas = cropper.getCroppedCanvas({ width: 1600, height: 900, imageSmoothingQuality: "high" });
+      if (!canvas) return;
+      var label = bEnviar.textContent;
+      bEnviar.classList.add("enviando"); bEnviar.textContent = "Enviando...";
+      canvas.toBlob(async function (blob) {
+        try {
+          var r = await sb.storage.from(BUCKET).upload(PATH, blob, { upsert: true, contentType: "image/jpeg", cacheControl: "0" });
+          if (r.error) throw r.error;
+          img.src = PUB + "?t=" + Date.now();
+          fechar();
+        } catch (e) {
+          alert("Falha ao enviar a foto: " + (e && e.message ? e.message : e));
+        } finally {
+          bEnviar.classList.remove("enviando"); bEnviar.textContent = label;
+        }
+      }, "image/jpeg", 0.9);
+    });
   })();
 </script>
 
