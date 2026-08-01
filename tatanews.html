@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tatá News — Ed. 006/2026</title>
+<!-- Fonte da marca: DM Serif Display -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Play:wght@400;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  /* ===== CONFIG DE MARCA (edite as cores aqui) ===== */
+  :root{
+    --verde:#4caf52;
+    --verde-claro:#5cbf62;
+    --fundo:#f4f4f2;
+    --preto:#1a1a1a;
+    --texto:#3a3a3a;
+    --pagina-larg:1414px;   /* A4 em ~150dpi */
+    --pagina-alt:2000px;
+    --fonte-marca:'DM Serif Display', Georgia, 'Times New Roman', serif;
+    --fonte-play:'Play', Arial, Helvetica, sans-serif;
+    --fonte-kamerik:'Poppins', 'Century Gothic', Arial, sans-serif; /* substituto da Kamerik 105 */
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#ddd;font-family:Arial,Helvetica,sans-serif;}
+  .pagina{width:var(--pagina-larg);min-height:var(--pagina-alt);background:var(--fundo);
+    margin:20px auto;position:relative;overflow:hidden;}
+  @media print{
+    body{background:#fff;}
+    .pagina{margin:0 auto !important;box-shadow:none !important;}
+  }
+
+  /* =========================================================
+     PÁGINA 1 — CAPA
+     ========================================================= */
+  .capa{padding:0 60px 60px;font-family:'Georgia',serif;}
+  .capa .barra-topo{height:34px;background:var(--verde);margin:0 -60px 40px;}
+  .capa .cabecalho{display:flex;align-items:flex-start;justify-content:space-between;}
+  .capa .logo{display:flex;align-items:center;gap:16px;}
+  .capa .logo .icone{width:78px;height:78px;object-fit:contain;display:block;}
+  .capa .logo-texto{line-height:1;}
+  .capa .logo-texto .marca{font-size:38px;font-weight:bold;letter-spacing:1px;}
+  .capa .logo-texto .marca .barra{color:var(--verde);}
+  .capa .logo-texto .apresenta{font-size:22px;letter-spacing:8px;color:#333;font-family:Arial,sans-serif;}
+  .capa .edicao{font-size:26px;font-weight:bold;font-family:Arial,sans-serif;margin-top:14px;}
+
+  .capa .titulo-jornal{font-family:var(--fonte-marca);font-size:150px;font-weight:normal;
+    letter-spacing:-1px;line-height:1;margin:10px 0 4px;}
+  .capa .titulo-jornal .tata{color:var(--verde);}
+  .capa .titulo-jornal .news{color:var(--preto);}
+  .capa .linha-verde{height:5px;background:var(--verde);margin-bottom:26px;}
+
+  .capa .foto-principal{position:relative;width:100%;}
+  .capa .foto-principal img{width:100%;display:block;}
+  .capa .foto-legenda{position:absolute;left:0;right:0;bottom:0;background:rgba(76,175,82,.85);
+    color:#fff;text-align:center;font-family:Arial,sans-serif;font-size:26px;padding:12px;}
+
+  .capa .bloco-aniv{background:var(--verde);margin-top:40px;padding:36px 50px 50px;color:#fff;}
+  .capa .bloco-aniv h2{text-align:center;font-size:36px;color:#111;font-family:Arial,sans-serif;font-weight:bold;margin-bottom:34px;}
+  .capa .grid-aniv{display:grid;grid-template-columns:1fr 1fr;gap:22px 60px;}
+  .capa .item-aniv{display:flex;align-items:baseline;gap:18px;}
+  .capa .item-aniv .dia{font-size:44px;font-weight:bold;font-family:var(--fonte-play);min-width:64px;}
+  .capa .item-aniv .nome{font-size:34px;font-weight:bold;line-height:1.1;font-family:var(--fonte-play);}
+  .capa .item-aniv .setor{font-size:22px;font-family:var(--fonte-play);opacity:.9;}
+
+  /* =========================================================
+     PÁGINA 2 — AGENDA
+     ========================================================= */
+  .agenda .faixa-titulo{background:var(--verde);padding:20px 60px 30px;}
+  .agenda .faixa-titulo h1{color:#fff;font-family:var(--fonte-marca);font-size:150px;font-weight:normal;letter-spacing:2px;line-height:1;}
+  .agenda .cal{padding:50px 60px 20px;}
+  .agenda table{width:100%;border-collapse:collapse;text-align:center;color:var(--texto);font-family:var(--fonte-play);}
+  .agenda th{font-size:52px;font-weight:normal;padding-bottom:30px;}
+  .agenda td{font-size:52px;padding:26px 0;}
+  .agenda .destaque{display:inline-flex;align-items:center;justify-content:center;
+    width:88px;height:88px;background:var(--verde);color:#111;border-radius:50%;}
+  .agenda .rodape{background:var(--verde);color:#fff;margin-top:60px;padding:70px 70px 90px;min-height:800px;}
+  .agenda .rodape h3{font-family:'Georgia',serif;font-size:46px;margin-bottom:20px;}
+  .agenda .rodape ul{list-style:none;font-size:32px;line-height:1.7;}
+  .agenda .divisoria{width:560px;height:3px;background:#fff;margin:50px 0;}
+
+  /* =========================================================
+     PÁGINA 3 — NOVOS INTEGRANTES
+     ========================================================= */
+  .novos .barra-topo{background:var(--verde);height:70px;display:flex;align-items:center;justify-content:center;position:relative;}
+  .novos .barra-topo .titulo{font-family:var(--fonte-marca);font-size:40px;font-weight:normal;}
+  .novos .barra-topo .titulo .verde{color:#0d3d12;}
+  .novos .barra-topo .titulo .branco{color:#fff;}
+  .novos .barra-topo .edicao{position:absolute;right:40px;color:#fff;font-weight:bold;font-size:22px;font-family:Arial,sans-serif;}
+  .novos .barra-topo .ico{position:absolute;left:28px;width:52px;height:52px;object-fit:contain;}
+  .novos .conteudo{padding:60px 70px;}
+  .novos h1{font-family:'Segoe UI',Arial,sans-serif;font-size:88px;font-weight:800;line-height:1;color:var(--verde);margin-bottom:10px;}
+  .novos h1 .linha2{display:block;}
+  .novos .intro{font-size:34px;line-height:1.4;color:#222;max-width:1180px;margin:34px 0 60px;font-family:var(--fonte-kamerik);}
+  .novos .intro b{font-weight:800;}
+  .novos .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:60px 30px;}
+  .novos .pessoa{text-align:center;}
+  .novos .pessoa img{width:230px;height:230px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 18px;}
+  .novos .pessoa .nome{font-weight:bold;font-size:26px;color:#111;font-family:var(--fonte-play);}
+  .novos .pessoa .setor{font-size:24px;color:#333;font-family:var(--fonte-play);}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     PÁGINA 1 — CAPA
+     ============================================================ -->
+<div class="pagina capa">
+  <div class="barra-topo"></div>
+
+  <div class="cabecalho">
+    <div class="logo">
+      <!-- LOGO: coloque o arquivo em img/logo-tata.png (ou cole aqui seu data:image/png;base64,...) -->
+      <img class="icone" src="img/logo-tata.png" alt="Logo Tatá Sushi">
+      <div class="logo-texto">
+        <div class="marca">TATÁ<span class="barra">|</span>SUSHI</div>
+        <div class="apresenta">apresenta</div>
+      </div>
+    </div>
+    <!-- EDITAR: número da edição -->
+    <div class="edicao">Ed. 006/2026</div>
+  </div>
+
+  <div class="titulo-jornal"><span class="tata">TATÁ</span><span class="news">NEWS</span></div>
+  <div class="linha-verde"></div>
+
+  <div class="foto-principal">
+    <!-- EDITAR FOTO: troque o src abaixo -->
+    <img src="img/grupo_capa.jpg" alt="Foto do time">
+    <!-- EDITAR: legenda da foto -->
+    <div class="foto-legenda">Comemoração aniversariantes de maio</div>
+  </div>
+
+  <div class="bloco-aniv">
+    <!-- EDITAR: título -->
+    <h2>Aniversariantes de junho</h2>
+    <div class="grid-aniv">
+      <!-- EDITAR cada item: dia / nome / setor -->
+      <div class="item-aniv"><span class="dia">02</span><div><div class="nome">Marcelo Caetano</div><div class="setor">Delivery</div></div></div>
+      <div class="item-aniv"><span class="dia">20</span><div><div class="nome">Cleiton Verissimo</div><div class="setor">Sushibar</div></div></div>
+      <div class="item-aniv"><span class="dia">05</span><div><div class="nome">Maria Madalena</div><div class="setor">Salão</div></div></div>
+      <div class="item-aniv"><span class="dia">23</span><div><div class="nome">Nadir Freitas</div><div class="setor">Serviços Gerais</div></div></div>
+      <div class="item-aniv"><span class="dia">09</span><div><div class="nome">Beatriz Costa</div><div class="setor">Qualidade</div></div></div>
+      <div class="item-aniv"><span class="dia">25</span><div><div class="nome">Laura Bitencourt</div><div class="setor">Operação</div></div></div>
+      <div class="item-aniv"><span class="dia">17</span><div><div class="nome">Randy Vilalobos</div><div class="setor">Sushibar</div></div></div>
+      <div class="item-aniv"><span class="dia">26</span><div><div class="nome">Vitor Estevam</div><div class="setor">Estoque</div></div></div>
+      <div class="item-aniv"><span class="dia">18</span><div><div class="nome">Erick Lucas</div><div class="setor">Compras</div></div></div>
+      <div class="item-aniv"><span class="dia">27</span><div><div class="nome">José Cauã</div><div class="setor">Serviços Gerais</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     PÁGINA 2 — AGENDA
+     ============================================================ -->
+<div class="pagina agenda">
+  <div class="faixa-titulo"><h1>AGENDA</h1></div>
+
+  <div class="cal">
+    <table>
+      <tr><th>Dom</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sab</th></tr>
+      <!-- EDITAR: use <span class="destaque">N</span> para marcar dias em verde -->
+      <tr><td></td><td><span class="destaque">1</span></td><td>2</td><td>3</td><td>4</td><td><span class="destaque">5</span></td><td>6</td></tr>
+      <tr><td>7</td><td>8</td><td>9</td><td><span class="destaque">10</span></td><td>11</td><td>12</td><td>13</td></tr>
+      <tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td><span class="destaque">19</span></td><td>20</td></tr>
+      <tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td><span class="destaque">26</span></td><td>27</td></tr>
+      <tr><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td><td></td></tr>
+    </table>
+  </div>
+
+  <div class="rodape">
+    <!-- EDITAR: pagamentos e comemorações -->
+    <h3>Pagamentos e comemorações:</h3>
+    <ul>
+      <li>01 - Liberação do Vale-Transporte</li>
+      <li>05 - Pagamento Salário (maio/2026)</li>
+      <li>20 - Adiantamento de Salário (junho/2026)</li>
+      <li>26 - Comemoração aniversariantes do mês</li>
+    </ul>
+
+    <div class="divisoria"></div>
+
+    <!-- EDITAR: janela de movimentações -->
+    <h3>Janela de movimentações:</h3>
+    <ul>
+      <li>10 - Limite para alterações de VT (referente a próxima compra)</li>
+      <li>10 - Limite para transferências e promoções</li>
+      <li>20 - Limite para novas admissões</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============================================================
+     PÁGINA 3 — NOVOS INTEGRANTES
+     ============================================================ -->
+<div class="pagina novos">
+  <div class="barra-topo">
+    <!-- LOGO: coloque o arquivo em img/logo-tata.png (ou cole aqui seu data:image/png;base64,...) -->
+    <img class="ico" src="img/logo-tata.png" alt="Logo Tatá Sushi">
+    <div class="titulo"><span class="verde">TATÁ</span><span class="branco">NEWS</span></div>
+    <!-- EDITAR: edição -->
+    <div class="edicao">Ed. 006/2026</div>
+  </div>
+
+  <div class="conteudo">
+    <h1>Novos integrantes<span class="linha2">Tatá Sushi</span></h1>
+    <!-- EDITAR: texto de introdução -->
+    <p class="intro">Conheça as pessoas que foram contratadas e iniciaram suas jornadas
+      conosco em <b>maio</b> aqui no TATÁ Sushi. Se você ainda não viu todas as
+      pessoas, é porque as contratações foram feitas para departamentos e unidades diferentes.</p>
+
+    <div class="grid">
+      <!-- EDITAR cada pessoa: troque a img (src), o nome e o setor -->
+      <div class="pessoa"><img src="img/jose_caua.jpg"><div class="nome">José Cauã</div><div class="setor">Serviços Gerais</div></div>
+      <div class="pessoa"><img src="img/adenilton_cruz.jpg"><div class="nome">Adenilton Cruz</div><div class="setor">Cozinha</div></div>
+      <div class="pessoa"><img src="img/mariana_braga.jpg"><div class="nome">Mariana Braga</div><div class="setor">Cozinha</div></div>
+      <div class="pessoa"><img src="img/valeria_ramos.jpg"><div class="nome">Valeria Ramos</div><div class="setor">Cozinha</div></div>
+
+      <div class="pessoa"><img src="img/felipe_alves.jpg"><div class="nome">Felipe Alves</div><div class="setor">Delivery</div></div>
+      <div class="pessoa"><img src="img/manuel_barrios.jpg"><div class="nome">Manuel Barrios</div><div class="setor">Cozinha</div></div>
+      <div class="pessoa"><img src="img/rayane_carvalho.jpg"><div class="nome">Rayane Carvalho</div><div class="setor">Cozinha</div></div>
+      <div class="pessoa"><img src="img/randy_alberto.jpg"><div class="nome">Randy Alberto</div><div class="setor">Sushibar</div></div>
+
+      <div class="pessoa"><img src="img/jonathan_miller.jpg"><div class="nome">Jonathan Miller</div><div class="setor">Sushibar</div></div>
+      <div class="pessoa"><img src="img/mical_da_silva.jpg"><div class="nome">Mical da Silva</div><div class="setor">Sushibar</div></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
