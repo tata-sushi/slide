@@ -42,15 +42,17 @@
   .capa .logo-texto{line-height:1;}
   .capa .logo-texto .marca{font-size:38px;font-weight:bold;letter-spacing:1px;}
   .capa .logo-texto .marca .barra{color:var(--verde);}
+  .capa .logo-texto .marca .sushi{color:var(--verde);}
   .capa .logo-texto .marca,
   .capa .logo-texto .apresenta{display:block;}
   /* "apresenta" é justificada de ponta a ponta para ter a MESMA largura de TATÁ|SUSHI acima */
   .capa .logo-texto .apresenta{font-size:22px;color:#333;font-family:Arial,sans-serif;
     text-align:justify;text-align-last:justify;}
-  .capa .edicao{font-size:26px;font-weight:bold;font-family:Arial,sans-serif;margin-top:14px;}
+  /* edição fica logo acima do título, alinhada à direita e "colada" nele */
+  .capa .edicao{font-size:26px;font-weight:bold;font-family:Arial,sans-serif;text-align:right;margin:0 6px -18px 0;}
 
-  .capa .titulo-jornal{font-family:var(--fonte-marca);font-size:150px;font-weight:normal;
-    letter-spacing:-1px;line-height:1;margin:10px 0 4px;}
+  .capa .titulo-jornal{font-family:var(--fonte-marca);font-size:205px;font-weight:normal;
+    letter-spacing:-2px;line-height:1;margin:6px 0 4px;text-align:left;white-space:nowrap;}
   .capa .titulo-jornal .tata{color:var(--verde);}
   .capa .titulo-jornal .news{color:var(--preto);}
   .capa .linha-verde{height:5px;background:var(--verde);margin-bottom:26px;}
@@ -116,16 +118,16 @@
   <div class="cabecalho">
     <div class="logo">
       <!-- LOGO: coloque o arquivo em img/logo-tata.png (ou cole aqui seu data:image/png;base64,...) -->
-      <img class="icone" src="img/logo-tata.png?v=2" alt="Logo Tatá Sushi">
+      <img class="icone" src="img/logo-tata.png?v=3" alt="Logo Tatá Sushi">
       <div class="logo-texto">
-        <div class="marca">TATÁ<span class="barra">|</span>SUSHI</div>
+        <div class="marca">TATÁ<span class="barra">|</span><span class="sushi">SUSHI</span></div>
         <div class="apresenta" aria-label="apresenta">a p r e s e n t a</div>
       </div>
     </div>
-    <!-- EDITAR: número da edição -->
-    <div class="edicao">Ed. 006/2026</div>
   </div>
 
+  <!-- EDITAR: número da edição (fica logo acima do título, à direita) -->
+  <div class="edicao">Ed. 006/2026</div>
   <div class="titulo-jornal"><span class="tata">TATÁ</span><span class="news">NEWS</span></div>
   <div class="linha-verde"></div>
 
@@ -201,7 +203,7 @@
 <div class="pagina novos">
   <div class="barra-topo">
     <!-- LOGO: coloque o arquivo em img/logo-tata.png (ou cole aqui seu data:image/png;base64,...) -->
-    <img class="ico" src="img/logo-tata.png?v=2" alt="Logo Tatá Sushi">
+    <img class="ico" src="img/logo-tata-branco.png?v=1" alt="Logo Tatá Sushi">
     <div class="titulo"><span class="verde">TATÁ</span><span class="branco">NEWS</span></div>
     <!-- EDITAR: edição -->
     <div class="edicao">Ed. 006/2026</div>
