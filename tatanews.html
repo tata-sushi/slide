@@ -39,10 +39,10 @@
     .btn-imprimir{display:none !important;}
   }
   /* botão flutuante de imprimir / salvar PDF */
-  .btn-imprimir{position:fixed;right:24px;bottom:24px;z-index:5000;
-    background:var(--verde);color:#fff;border:none;border-radius:50px;
-    padding:16px 26px;font-family:Arial,sans-serif;font-size:22px;font-weight:bold;
-    cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.3);}
+  .btn-imprimir{display:block;width:calc(100% - 40px);max-width:1414px;margin:20px auto 0;
+    background:var(--verde);color:#fff;border:none;border-radius:14px;
+    padding:26px;font-family:Arial,sans-serif;font-size:36px;font-weight:bold;
+    cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.22);}
   .btn-imprimir:hover{background:#43a047;}
 
   /* =========================================================
@@ -70,7 +70,7 @@
     letter-spacing:-0.01em;line-height:1;margin:6px 0 4px;text-align:left;white-space:nowrap;align-self:flex-start;}
   .capa .titulo-jornal .tata{color:var(--verde);}
   .capa .titulo-jornal .news{color:var(--preto);}
-  .capa .linha-verde{height:5px;background:var(--verde);margin-top:-34px;margin-bottom:38px;}
+  .capa .linha-verde{height:5px;background:var(--verde);margin-top:-24px;margin-bottom:38px;}
 
   .capa .foto-principal{position:relative;width:100%;}
   .capa .foto-principal img{width:100%;height:728px;object-fit:cover;display:block;}
@@ -101,11 +101,13 @@
   .capa .bloco-aniv{background:var(--verde);margin-top:28px;padding:30px 50px 30px;color:#fff;
     flex:1;display:flex;flex-direction:column;}
   .capa .bloco-aniv h2{text-align:center;font-size:36px;color:#111;font-family:Arial,sans-serif;font-weight:bold;margin-bottom:18px;}
-  .capa .grid-aniv{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 30px;flex:1;align-content:space-between;}
-  .capa .item-aniv{display:flex;align-items:baseline;gap:12px;}
-  .capa .item-aniv .dia{font-size:44px;font-weight:bold;font-family:var(--fonte-play);min-width:52px;}
-  .capa .item-aniv .nome{font-size:33px;font-weight:bold;line-height:1.05;font-family:var(--fonte-play);}
-  .capa .item-aniv .setor{font-size:22px;font-family:var(--fonte-play);opacity:.9;}
+  .capa .grid-aniv{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 24px;flex:1;align-content:space-between;}
+  .capa .item-aniv{display:flex;align-items:baseline;gap:10px;}
+  .capa .item-aniv > div{flex:1;min-width:0;}
+  .capa .item-aniv .dia{font-size:48px;font-weight:bold;font-family:var(--fonte-play);min-width:46px;}
+  /* nome sempre em 1 linha (o script encolhe a fonte só se algum nome não couber) */
+  .capa .item-aniv .nome{font-size:36px;font-weight:bold;line-height:1.05;font-family:var(--fonte-play);white-space:nowrap;overflow:hidden;}
+  .capa .item-aniv .setor{font-size:23px;font-family:var(--fonte-play);opacity:.9;}
 
   /* =========================================================
      PÁGINA 2 — AGENDA
@@ -324,6 +326,27 @@
     window.addEventListener('resize', fitTitulo);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitTitulo);
     fitTitulo();
+  })();
+</script>
+
+<script>
+  /* Mantém cada nome de aniversariante em 1 linha: encolhe a fonte só de quem não couber na coluna. */
+  (function () {
+    function ajustarNomes() {
+      var nomes = document.querySelectorAll(".capa .item-aniv .nome");
+      for (var i = 0; i < nomes.length; i++) {
+        var el = nomes[i];
+        el.style.fontSize = "";
+        var size = parseFloat(getComputedStyle(el).fontSize);
+        while (el.scrollWidth > el.clientWidth + 1 && size > 22) {
+          size -= 0.5;
+          el.style.fontSize = size + "px";
+        }
+      }
+    }
+    window.addEventListener("load", ajustarNomes);
+    window.addEventListener("resize", ajustarNomes);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajustarNomes);
   })();
 </script>
 
