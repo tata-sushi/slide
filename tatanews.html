@@ -179,9 +179,10 @@
     text-align:center;letter-spacing:1px;line-height:1;}
   .comunicado .corpo .sub{font-family:var(--fonte-texto);font-size:40px;font-weight:700;color:#1a5e22;
     text-align:center;margin:16px 0 44px;}
-  .comunicado .corpo .texto{font-family:var(--fonte-texto);font-size:36px;line-height:1.55;color:#223522;
-    text-align:justify;flex:1;}
-  .comunicado .corpo .texto p{margin-bottom:28px;}
+  .comunicado .corpo .texto{font-family:var(--fonte-texto);font-size:41px;line-height:1.72;color:#223522;
+    text-align:justify;flex:1;display:flex;flex-direction:column;justify-content:center;}
+  .comunicado .corpo .texto p{margin-bottom:36px;}
+  .comunicado .corpo .texto p:last-child{margin-bottom:0;}
   .comunicado .corpo .texto .ola{font-weight:700;}
   .comunicado .corpo .texto .final{text-align:center;font-weight:700;font-size:44px;color:var(--verde);
     margin:16px 0 0;}
@@ -349,7 +350,7 @@
 
   <!-- Banner do topo (arte de marca; pode ser trocado por uma foto real depois) -->
   <div class="foto-topo">
-    <svg class="banner" viewBox="0 0 1414 430" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Segurança e Saúde no Trabalho">
+    <svg class="banner" viewBox="0 0 1414 430" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Comunicado">
       <defs>
         <linearGradient id="bgc" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stop-color="#5cbf62"/>
@@ -361,31 +362,34 @@
       <circle cx="1300" cy="60" r="250" fill="#ffffff" opacity="0.06"/>
       <circle cx="1170" cy="380" r="120" fill="#ffffff" opacity="0.05"/>
       <circle cx="300" cy="90" r="70" fill="#ffffff" opacity="0.05"/>
-      <!-- badge branco com escudo (segurança) + cruz (saúde) -->
+      <!-- badge branco com balão de fala (comunicado) -->
       <circle cx="707" cy="215" r="128" fill="#ffffff"/>
-      <path d="M707 150 L774 176 V214 C774 256 744 288 707 306 C670 288 640 256 640 214 V176 Z" fill="#4caf52"/>
-      <rect x="695" y="184" width="24" height="62" rx="8" fill="#ffffff"/>
-      <rect x="680" y="203" width="54" height="24" rx="8" fill="#ffffff"/>
+      <rect x="634" y="150" width="146" height="104" rx="26" fill="#4caf52"/>
+      <path d="M683 252 L683 300 L718 254 Z" fill="#4caf52"/>
+      <rect x="700" y="176" width="14" height="44" rx="7" fill="#ffffff"/>
+      <circle cx="707" cy="236" r="8.5" fill="#ffffff"/>
     </svg>
   </div>
 
   <div class="corpo">
     <h1>COMUNICADO</h1>
     <!-- EDITAR: subtítulo -->
-    <p class="sub">Pesquisa NR-1 (Segurança e Saúde no Trabalho)</p>
+    <p class="sub">Pagamento de julho</p>
 
     <!-- EDITAR: texto do comunicado (dados fixos) -->
     <div class="texto">
       <p class="ola">Olá, pessoal!</p>
-      <p>Estamos realizando a nossa Pesquisa NR-1, voltada à Segurança e Saúde no Trabalho.
-        Com ela, queremos ouvir você para conhecer melhor o nosso ambiente de trabalho e
-        identificar oportunidades de tornar o dia a dia mais seguro e saudável para todos.</p>
-      <p>O preenchimento é rápido e as respostas são totalmente confidenciais. Nenhuma
-        informação será usada para identificar quem respondeu — o resultado é analisado
-        apenas de forma coletiva, para orientar as ações de melhoria da empresa.</p>
-      <p>A participação de todos é essencial para construirmos juntos um ambiente de
-        trabalho cada vez melhor.</p>
-      <p class="final">Agradecemos pela colaboração!</p>
+      <p>Passando para lembrar que, nesta quinta-feira, <b>06/08</b>, será realizado o
+        pagamento referente ao mês de julho.</p>
+      <p>Para fins de cálculo da <b>gorjeta e do prêmio</b>, foi considerado o período de
+        <b>21/06/2026 a 20/07/2026</b>.</p>
+      <p>Lembramos que, durante esse período, tivemos uma redução no movimento do salão e
+        também do delivery, em razão das férias escolares, dos dias mais frios do inverno e,
+        principalmente, dos jogos da Copa.</p>
+      <p>Reforçamos essas informações para ajudar todos a compreenderem melhor os resultados
+        refletidos neste pagamento.</p>
+      <p>Em caso de dúvidas, conversem com a liderança da unidade ou procurem o RH. Estamos
+        à disposição para ajudar!</p>
     </div>
   </div>
 
