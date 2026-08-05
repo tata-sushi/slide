@@ -155,6 +155,39 @@
     margin:0 auto 16px;background:var(--verde);color:#fff;font-family:var(--fonte-play);font-weight:bold;font-size:76px;line-height:1;}
   .novos .pessoa .nome{font-weight:bold;font-size:26px;color:#111;font-family:var(--fonte-play);}
   .novos .pessoa .setor{font-size:24px;color:#333;font-family:var(--fonte-play);}
+
+  /* =========================================================
+     PÁGINA 4 — COMUNICADO (última página)
+     ========================================================= */
+  .comunicado{display:flex;flex-direction:column;}
+  /* mesma barra/cabeçalho das outras páginas (logo preto à esquerda) */
+  .comunicado .barra-topo{background:var(--verde);height:88px;display:flex;align-items:center;justify-content:center;position:relative;flex:0 0 auto;}
+  .comunicado .barra-topo .titulo{font-family:var(--fonte-marca);font-size:58px;font-weight:normal;}
+  .comunicado .barra-topo .titulo .verde{color:#0d3d12;}
+  .comunicado .barra-topo .titulo .branco{color:#fff;}
+  .comunicado .barra-topo .edicao{position:absolute;right:24px;bottom:8px;color:#fff;font-size:26px;font-family:var(--fonte-marca);}
+  .comunicado .barra-topo .ico{position:absolute;left:28px;width:64px;height:64px;object-fit:contain;}
+  /* foto de topo, com a base arredondada */
+  .comunicado .foto-topo{width:100%;flex:0 0 auto;background:var(--verde);}
+  .comunicado .foto-topo img{width:100%;height:430px;object-fit:cover;display:block;
+    border-bottom-left-radius:130px;border-bottom-right-radius:130px;}
+  /* corpo verde-claro preenche o restante da página */
+  .comunicado .corpo{background:#c9f2c0;flex:1;display:flex;flex-direction:column;padding:66px 96px 54px;}
+  .comunicado .corpo h1{font-family:var(--fonte-kamerik);font-size:112px;font-weight:800;color:var(--verde);
+    text-align:center;letter-spacing:1px;line-height:1;}
+  .comunicado .corpo .sub{font-family:var(--fonte-kamerik);font-size:40px;font-weight:600;color:#1a5e22;
+    text-align:center;margin:16px 0 44px;}
+  .comunicado .corpo .texto{font-family:var(--fonte-kamerik);font-size:36px;line-height:1.5;color:#223522;
+    text-align:justify;flex:1;}
+  .comunicado .corpo .texto p{margin-bottom:28px;}
+  .comunicado .corpo .texto .ola{font-weight:700;}
+  .comunicado .corpo .texto .final{text-align:center;font-weight:700;font-size:44px;color:var(--verde);
+    margin:16px 0 0;}
+  /* rodapé verde com redes sociais */
+  .comunicado .rodape{background:var(--verde);color:#fff;flex:0 0 auto;
+    display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:26px 64px;padding:40px 60px;}
+  .comunicado .rodape .rede{display:flex;align-items:center;gap:15px;font-family:var(--fonte-kamerik);font-size:30px;line-height:1;}
+  .comunicado .rodape .rede svg{width:42px;height:42px;fill:#fff;flex:0 0 auto;}
 </style>
 </head>
 <body>
@@ -298,6 +331,58 @@
 
       <div class="pessoa"><img src="https://aoqsbusfrffapjglpqjk.supabase.co/storage/v1/object/public/avatares/24732.jpg" alt="Poliana Barbosa" loading="lazy"><div class="nome">Poliana Barbosa</div><div class="setor">Limpeza</div></div>
     </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     PÁGINA 4 — COMUNICADO (última página)
+     ============================================================ -->
+<div class="pagina comunicado">
+  <div class="barra-topo">
+    <img class="ico" src="img/logo-tata-preto.png?v=1" alt="Logo Tatá Sushi">
+    <div class="titulo"><span class="verde">TATÁ</span><span class="branco">NEWS</span></div>
+    <!-- EDITAR: edição -->
+    <div class="edicao">Ed. 008/2026</div>
+  </div>
+
+  <!-- Foto do topo (placeholder: img/comunicado_foto.jpg) -->
+  <div class="foto-topo">
+    <img src="img/comunicado_foto.jpg?v=1" alt="">
+  </div>
+
+  <div class="corpo">
+    <h1>COMUNICADO</h1>
+    <!-- EDITAR: subtítulo -->
+    <p class="sub">Pesquisa NR-1 (Segurança e Saúde no Trabalho)</p>
+
+    <!-- EDITAR: texto do comunicado (dados fixos) -->
+    <div class="texto">
+      <p class="ola">Olá, pessoal!</p>
+      <p>Estamos realizando a nossa Pesquisa NR-1, voltada à Segurança e Saúde no Trabalho.
+        Com ela, queremos ouvir você para conhecer melhor o nosso ambiente de trabalho e
+        identificar oportunidades de tornar o dia a dia mais seguro e saudável para todos.</p>
+      <p>O preenchimento é rápido e as respostas são totalmente confidenciais. Nenhuma
+        informação será usada para identificar quem respondeu — o resultado é analisado
+        apenas de forma coletiva, para orientar as ações de melhoria da empresa.</p>
+      <p>A participação de todos é essencial para construirmos juntos um ambiente de
+        trabalho cada vez melhor.</p>
+      <p class="final">Agradecemos pela colaboração!</p>
+    </div>
+  </div>
+
+  <div class="rodape">
+    <span class="rede">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.93 6h-2.95a15.7 15.7 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.93 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14a7.96 7.96 0 0 1 0-4h3.38a16.6 16.6 0 0 0 0 4H4.26zm.81 2h2.95c.3 1.27.77 2.47 1.38 3.56A7.99 7.99 0 0 1 5.07 16zm2.95-8H5.07a7.99 7.99 0 0 1 4.33-3.56A15.7 15.7 0 0 0 8.02 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66a14.8 14.8 0 0 1 0-4h4.68a14.8 14.8 0 0 1 0 4zm.26 5.56c.61-1.09 1.08-2.29 1.38-3.56h2.95a7.99 7.99 0 0 1-4.33 3.56zM16.36 14a16.6 16.6 0 0 0 0-4h3.38a7.96 7.96 0 0 1 0 4h-3.38z"/></svg>
+      www.tatasushi.com.br
+    </span>
+    <span class="rede">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s0-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2zm0 3.05A6.75 6.75 0 1 0 18.75 12 6.75 6.75 0 0 0 12 5.25zm0 11.13A4.38 4.38 0 1 1 16.38 12 4.38 4.38 0 0 1 12 16.38zm6.99-11.4a1.58 1.58 0 1 1-1.58-1.58 1.58 1.58 0 0 1 1.58 1.58z"/></svg>
+      @tatasushi
+    </span>
+    <span class="rede">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.53C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+      /company/tatasushi
+    </span>
   </div>
 </div>
 
