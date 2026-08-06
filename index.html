@@ -610,6 +610,28 @@ html, body {
   color:var(--t1);
 }
 .topic-callout p strong { font-weight:700; }
+.two-col-groups {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1.5em 3em;
+  width:100%;
+}
+.slide-light .slide-inner > .two-col-groups {
+  flex:1 1 auto;
+  min-height:0;
+  overflow-y:auto;
+}
+.group-heading {
+  font-family:"DM Sans",sans-serif;
+  font-weight:700;
+  font-size:clamp(13px, 1.4vw, 17px);
+  margin:0 0 .6em;
+  color:var(--t1);
+}
+.slide-inner > div + div > .group-heading { margin-top:1em; }
+.slide-dense .slide-heading { margin-bottom:2%; }
+.slide-dense .slide-list { font-size:clamp(11px, 1.2vw, 15px); }
+.slide-dense .slide-list li { padding-top:.4em; padding-bottom:.4em; }
 .bar-chart { margin-bottom:1.6em; }
 .bar-chart:last-child { margin-bottom:0; }
 .bar-chart-title {
@@ -1146,88 +1168,121 @@ body.is-drawing .draw-toolbar {
       </div>
     </section>
 
-    <!-- Slide 4 — RH/DP -->
-    <section class="slide slide-light" aria-label="Slide 4 · RH/DP">
+    <!-- Slide 4 — Cultura e Engajamento -->
+    <section class="slide slide-light" aria-label="Slide 4 · Cultura e Engajamento">
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião de líderes</p>
-        <h2 class="slide-heading">RH/DP</h2>
+        <h2 class="slide-heading">Cultura e Engajamento</h2>
         <ul class="slide-list">
-          <li class="topic-collapse">
-            <details>
-              <summary>
-                <span>Jovens Aprendizes</span>
-                <span class="topic-chevron" aria-hidden="true">›</span>
-              </summary>
-              <div class="topic-single">
-                <p class="topic-text">Contrato de trabalho especial, com prazo determinado, que concilia formação teórica e prática. Duração máxima de <strong>16 meses</strong>.</p>
-                <div class="topic-cols">
-                  <div class="topic-section">
-                    <p class="topic-sub">Quem pode ser</p>
-                    <ul class="topic-sublist">
-                      <li>Idade entre 14 e 24 anos</li>
-                      <li>Matriculado e frequentando a escola, se ainda não concluiu o ensino médio</li>
-                      <li>Inscrito em entidade qualificadora (Nube, Despertar, Espro, entre outras)</li>
-                    </ul>
-                  </div>
-                  <div class="topic-section">
-                    <p class="topic-sub">Direitos</p>
-                    <ul class="topic-sublist">
-                      <li>CTPS assinada, salário, FGTS com alíquota de 2% e INSS</li>
-                      <li>Vale-transporte, 13º salário, férias e DSR</li>
-                      <li>Seguro de vida, refeição, Gympass e convênio Sesc</li>
-                    </ul>
-                  </div>
-                  <div class="topic-section">
-                    <p class="topic-sub">Jornada e Restrições</p>
-                    <ul class="topic-sublist">
-                      <li>Até 6h diárias e 30h semanais, sem hora extra</li>
-                      <li>Proibido trabalho noturno (22h às 5h) para menores de 18 anos</li>
-                      <li>Sem acesso à câmara fria nem manuseio de facas ou equipamentos de risco</li>
-                    </ul>
-                  </div>
-                  <div class="topic-section">
-                    <p class="topic-sub">Obrigações — Empresa</p>
-                    <ul class="topic-sublist">
-                      <li>Registrar o contrato e matricular em entidade qualificadora</li>
-                      <li>Liberar para aulas teóricas e acompanhar a frequência escolar</li>
-                      <li>Cumprir a jornada e pagar salário e benefícios</li>
-                    </ul>
-                  </div>
-                  <div class="topic-section">
-                    <p class="topic-sub">Obrigações — Aprendiz</p>
-                    <ul class="topic-sublist">
-                      <li>Frequentar a escola e comparecer às aulas teóricas</li>
-                      <li>Cumprir a jornada e respeitar as normas da empresa</li>
-                      <li>Utilizar EPIs fornecidos e manter bom desempenho</li>
-                    </ul>
-                  </div>
-                  <div class="topic-callout">
-                    <p><strong>Ponto de atenção:</strong> descumprimento pode gerar autuação da Inspeção do Trabalho, multas, descaracterização do contrato e ações judiciais. Controlar a jornada, respeitar o horário escolar e manter a documentação em dia.</p>
-                  </div>
-                </div>
-              </div>
-            </details>
-          </li>
+          <li>Convergência</li>
+          <li>Dia dos Pais</li>
         </ul>
       </div>
       <div class="slide-num">04</div>
     </section>
 
-    <!-- Slide 7 — Cultura e Engajamento -->
-    <section class="slide slide-light" aria-label="Slide 5 · Cultura e Engajamento">
+    <!-- Slide 5 — RH/DP · Contrato de Jovem Aprendiz -->
+    <section class="slide slide-light" aria-label="Slide 5 · RH/DP">
       <div class="slide-inner">
-        <p class="slide-eyebrow">Reunião de líderes</p>
-        <h2 class="slide-heading">Cultura e Engajamento</h2>
+        <p class="slide-eyebrow">RH/DP · Jovens Aprendizes</p>
+        <h2 class="slide-heading">Contrato de Jovem Aprendiz</h2>
+        <p class="slide-text">O contrato de aprendizagem é um contrato de trabalho especial, celebrado por escrito e com prazo determinado, cujo objetivo é proporcionar formação técnico-profissional ao jovem, conciliando atividades teóricas e práticas.</p>
+        <p class="slide-text"><strong>Quem pode ser Jovem Aprendiz?</strong></p>
         <ul class="slide-list">
-          <li>Festa Julina (31/07)</li>
-          <li>Tatá Plus 2.0</li>
+          <li>Jovens com idade entre 14 e 24 anos</li>
+          <li>Deve estar matriculado e frequentando a escola, caso ainda não tenha concluído o ensino médio</li>
+          <li>Também deve estar inscrito em um programa de aprendizagem, como Nube, Despertar, Espro, entre outras entidades qualificadoras</li>
         </ul>
       </div>
       <div class="slide-num">05</div>
     </section>
 
-    <!-- Slide 6 — Vendas -->
-    <section class="slide slide-light" aria-label="Slide 6 · Vendas">
+    <!-- Slide 6 — RH/DP · Prazo do Contrato -->
+    <section class="slide slide-light" aria-label="Slide 6 · RH/DP · Prazo do Contrato">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">RH/DP · Jovens Aprendizes</p>
+        <h2 class="slide-heading">Prazo do Contrato</h2>
+        <p class="slide-text">Duração máxima de 16 meses.</p>
+        <p class="slide-text"><strong>Rescisão do contrato:</strong> pode terminar antes em casos como término do programa, desempenho insuficiente, falta disciplinar grave ou ausência escolar que resulte na perda do ano letivo.</p>
+        <p class="slide-text"><strong>Direitos do Jovem Aprendiz</strong></p>
+        <p class="slide-text">O jovem aprendiz possui praticamente todos os direitos trabalhistas, como Carteira de Trabalho assinada, salário, FGTS com alíquota de 2%, INSS, vale-transporte, 13º salário, férias, feriados, Descanso Semanal Remunerado (DSR), seguro de vida, refeição no local, desconto para consumo no restaurante, Gympass e convênio Sesc.</p>
+      </div>
+      <div class="slide-num">06</div>
+    </section>
+
+    <!-- Slide 7 — RH/DP · Obrigações da Empresa x Aprendiz -->
+    <section class="slide slide-light slide-dense" aria-label="Slide 7 · RH/DP · Obrigações da Empresa x Aprendiz">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">RH/DP · Jovens Aprendizes</p>
+        <h2 class="slide-heading">Obrigações da Empresa x Aprendiz</h2>
+        <div class="two-col-groups">
+          <div>
+            <p class="group-heading">Obrigações da Empresa</p>
+            <ul class="slide-list">
+              <li>Registrar o contrato na CTPS</li>
+              <li>Matricular o aprendiz em entidade qualificadora</li>
+              <li>Liberar o aprendiz para as aulas teóricas</li>
+              <li>Acompanhar a frequência escolar</li>
+              <li>Fornecer ambiente de trabalho adequado</li>
+              <li>Cumprir a jornada</li>
+              <li>Pagar salário e benefícios</li>
+              <li>Respeitar as normas de proteção ao menor</li>
+            </ul>
+          </div>
+          <div>
+            <p class="group-heading">Obrigações do Aprendiz</p>
+            <ul class="slide-list">
+              <li>Frequentar a escola</li>
+              <li>Comparecer às aulas teóricas</li>
+              <li>Cumprir a jornada de trabalho</li>
+              <li>Respeitar as normas da empresa</li>
+              <li>Utilizar EPIs fornecidos</li>
+              <li>Manter bom desempenho</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">07</div>
+    </section>
+
+    <!-- Slide 8 — RH/DP · Jornada, Horário e Restrições -->
+    <section class="slide slide-light slide-dense" aria-label="Slide 8 · RH/DP · Jornada, Horário e Restrições">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">RH/DP · Jovens Aprendizes</p>
+        <h2 class="slide-heading">Jornada, Horário e Restrições</h2>
+        <div>
+          <p class="group-heading">Jornada e Horário de Trabalho</p>
+          <ul class="slide-list">
+            <li>Para menores de 18 anos, é proibido o trabalho noturno, considerado, na atividade urbana, o período das 22h às 5h — o jovem aprendiz deve encerrar sua jornada até as 22h</li>
+            <li>A jornada é de até 6 horas diárias e 30 horas semanais, incluindo as aulas teóricas e as atividades práticas na empresa</li>
+            <li>Quando aplicável, deve ser concedido intervalo mínimo de 15 minutos</li>
+            <li>Não é permitida a realização de horas extras, e a jornada deve respeitar os limites legais</li>
+          </ul>
+        </div>
+        <div>
+          <p class="group-heading">Restrições</p>
+          <ul class="slide-list">
+            <li>É proibido o trabalho em atividades ou locais perigosos, insalubres ou que possam prejudicar o desenvolvimento físico, moral, psicológico ou social do adolescente</li>
+            <li>O jovem aprendiz não pode acessar a câmara fria nem manusear facas ou outros equipamentos que ofereçam risco à sua integridade física</li>
+          </ul>
+        </div>
+      </div>
+      <div class="slide-num">08</div>
+    </section>
+
+    <!-- Slide 9 — RH/DP · Pontos de Atenção para a Empresa -->
+    <section class="slide slide-light" aria-label="Slide 9 · RH/DP · Pontos de Atenção para a Empresa">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">RH/DP · Jovens Aprendizes</p>
+        <h2 class="slide-heading">Pontos de Atenção para a Empresa</h2>
+        <p class="slide-text">Para garantir o cumprimento da legislação da aprendizagem, a empresa deve controlar corretamente a jornada de trabalho, não permitir a realização de horas extras, respeitar o horário escolar do aprendiz, acompanhar a frequência na entidade formadora, assegurar que as atividades sejam compatíveis com o programa de aprendizagem, não expor menores de idade a atividades proibidas e manter toda a documentação do contrato atualizada.</p>
+        <p class="slide-text">O descumprimento dessas obrigações pode resultar em autuações pela Inspeção do Trabalho, multas administrativas, descaracterização do contrato de aprendizagem, pagamento de diferenças trabalhistas e ações judiciais.</p>
+      </div>
+      <div class="slide-num">09</div>
+    </section>
+
+    <!-- Slide 10 — Vendas -->
+    <section class="slide slide-light" aria-label="Slide 10 · Vendas">
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião de líderes</p>
         <h2 class="slide-heading">Vendas Salão</h2>
@@ -1302,11 +1357,11 @@ body.is-drawing .draw-toolbar {
           </li>
         </ul>
       </div>
-      <div class="slide-num">06</div>
+      <div class="slide-num">10</div>
     </section>
 
-    <!-- Slide 7 — Próximas Reuniões -->
-    <section class="slide slide-light" aria-label="Slide 7 · Próximas Reuniões">
+    <!-- Slide 11 — Próximas Reuniões -->
+    <section class="slide slide-light" aria-label="Slide 11 · Próximas Reuniões">
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião de líderes</p>
         <h2 class="slide-heading">Próximas Reuniões</h2>
@@ -1315,21 +1370,21 @@ body.is-drawing .draw-toolbar {
           <li>Conteúdo líderes (sorteio)</li>
         </ul>
       </div>
-      <div class="slide-num">07</div>
+      <div class="slide-num">11</div>
     </section>
 
-    <!-- Slide 8 — O que precisa ser convergido? -->
-    <section class="slide slide-question" aria-label="Slide 8 · O que precisa ser convergido?">
+    <!-- Slide 12 — O que precisa ser convergido? -->
+    <section class="slide slide-question" aria-label="Slide 12 · O que precisa ser convergido?">
       <div class="slide-inner">
         <p class="slide-eyebrow">O que precisa ser convergido?</p>
         <p class="question-text">Qual atitude preciso melhorar para contribuir com relações mais construtivas e colaborativas com meus pares?</p>
         <p class="slide-eyebrow slide-eyebrow-spacer" aria-hidden="true">O que precisa ser convergido?</p>
       </div>
-      <div class="slide-num">08</div>
+      <div class="slide-num">12</div>
     </section>
 
-    <!-- Slide 9 — Encerramento -->
-    <section class="slide slide-cover is-dark" aria-label="Slide 9 · Encerramento">
+    <!-- Slide 13 — Encerramento -->
+    <section class="slide slide-cover is-dark" aria-label="Slide 13 · Encerramento">
       <div class="slide-inner">
         <img alt="TATÁ SUSHI" class="cover-logo-full" id="closingLogo">
       </div>
