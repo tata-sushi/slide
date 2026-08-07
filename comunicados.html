@@ -20,6 +20,11 @@
     --fonte-texto:'DM Sans', 'Segoe UI', Arial, sans-serif;
     --fundo-com:#f1faf3;    /* fundo do comunicado: verde bem claro, quase branco */
     --borda-com:#4caf52;    /* borda leve da folha, no verde da marca */
+    /* ===== PADRÃO DOS COMUNICADOS (fonte + cores) ===== */
+    --com-titulo:#4caf52;   /* títulos principais (verde da marca) */
+    --com-sub:#1a5e22;      /* subtítulos, rótulos e títulos de tópico (verde escuro) */
+    --com-texto:#223522;    /* texto do corpo */
+    --com-mute:#6a7a6a;     /* notas/assinatura */
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{background:#ddd;font-family:Arial,Helvetica,sans-serif;}
@@ -58,7 +63,7 @@
   .comunicado .corpo{background:transparent;flex:1;display:flex;flex-direction:column;justify-content:center;padding:80px 96px 60px;}
   .comunicado .corpo h1{font-family:var(--fonte-texto);font-size:112px;font-weight:800;color:var(--verde);
     text-align:center;letter-spacing:1px;line-height:1;margin:0 0 50px;}
-  .comunicado .corpo .texto{font-family:var(--fonte-texto);font-size:41px;line-height:1.72;color:#223522;
+  .comunicado .corpo .texto{font-family:var(--fonte-texto);font-size:41px;line-height:1.72;color:var(--com-texto);
     text-align:justify;}
   .comunicado .corpo .texto p{margin-bottom:34px;}
   .comunicado .corpo .texto p:last-child{margin-bottom:0;}
@@ -82,26 +87,26 @@
   .comunicado .checklist .item{display:flex;align-items:flex-start;gap:32px;}
   .comunicado .checklist .check{flex:0 0 auto;width:90px;height:90px;color:var(--verde);margin-top:2px;}
   .comunicado .checklist .check svg{width:100%;height:100%;display:block;}
-  .comunicado .checklist .txt{font-family:var(--fonte-texto);font-size:47px;line-height:1.32;color:#223522;}
+  .comunicado .checklist .txt{font-family:var(--fonte-texto);font-size:47px;line-height:1.32;color:var(--com-texto);}
   .comunicado .checklist .txt b{font-weight:800;}
   /* ---- Comunicado denso (refeitório) ---- */
   .comunicado.denso .corpo{justify-content:flex-start;padding:452px 80px 44px;}
   .comunicado .refeitorio{width:100%;display:flex;flex-direction:column;align-items:center;}
   .comunicado .refeitorio .titulo-com{font-size:62px;margin-bottom:24px;}
-  .comunicado .refeitorio .intro-r{font-family:var(--fonte-texto);font-size:31px;line-height:1.4;color:#38473a;
+  .comunicado .refeitorio .intro-r{font-family:var(--fonte-texto);font-size:31px;line-height:1.4;color:var(--com-texto);
     text-align:center;max-width:1000px;margin-bottom:26px;}
   .comunicado .refeitorio .sep{width:78%;height:2px;background:rgba(76,175,82,.32);margin-bottom:34px;}
   .comunicado .topicos{display:flex;flex-direction:column;gap:32px;width:100%;max-width:1050px;}
   .comunicado .topico{display:flex;align-items:flex-start;gap:30px;}
   .comunicado .topico .ico{flex:0 0 auto;width:86px;height:86px;color:var(--verde);}
   .comunicado .topico .ico svg{width:100%;height:100%;display:block;}
-  .comunicado .topico h3{font-family:var(--fonte-texto);font-size:39px;font-weight:800;color:#1a5e22;margin-bottom:6px;line-height:1.1;}
-  .comunicado .topico p{font-family:var(--fonte-texto);font-size:29px;line-height:1.34;color:#38473a;}
+  .comunicado .topico h3{font-family:var(--fonte-texto);font-size:39px;font-weight:800;color:var(--com-sub);margin-bottom:6px;line-height:1.1;}
+  .comunicado .topico p{font-family:var(--fonte-texto);font-size:29px;line-height:1.34;color:var(--com-texto);}
   .comunicado .refeitorio .fecho{font-family:var(--fonte-texto);font-size:40px;font-weight:700;font-style:italic;
     color:var(--verde);text-align:center;margin-top:40px;line-height:1.24;}
-  .comunicado .refeitorio .assinatura{font-family:var(--fonte-texto);font-size:24px;color:#6a7a6a;margin-top:24px;letter-spacing:.5px;}
+  .comunicado .refeitorio .assinatura{font-family:var(--fonte-texto);font-size:24px;color:var(--com-mute);margin-top:24px;letter-spacing:.5px;}
   .comunicado .wifi .rotulo{font-family:var(--fonte-texto);font-size:38px;font-weight:700;letter-spacing:6px;
-    text-transform:uppercase;color:#2a7d33;margin-bottom:16px;}
+    text-transform:uppercase;color:var(--com-sub);margin-bottom:16px;}
   .comunicado .wifi .valor{font-family:var(--fonte-texto);font-size:52px;font-weight:800;color:#fff;
     background:var(--verde);border-radius:16px;padding:24px 20px;letter-spacing:1px;word-break:break-word;}
   /* rodapé verde com redes sociais */
