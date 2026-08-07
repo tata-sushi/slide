@@ -8,7 +8,7 @@
 <!-- Fontes: DM Serif Display (marca) + DM Sans (texto) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
   /* ===== CONFIG DE MARCA (edite as cores aqui) ===== */
   :root{
@@ -33,6 +33,8 @@
     margin:20px auto;position:relative;overflow:hidden;border:25px solid var(--borda-com);padding:9px;}
   @media print{
     @page{size:A4 portrait;margin:0;}
+    @page paisagem{size:A4 landscape;margin:0;}
+    .pagina.paisagem{page:paisagem;}
     body{background:#fff;}
     /* o design é proporção A4 (1414x2000); escala para caber exatamente na folha */
     .pagina{zoom:0.5613;margin:0 !important;box-shadow:none !important;
@@ -61,7 +63,7 @@
   .comunicado .barra-topo .ico{position:absolute;left:28px;width:64px;height:64px;object-fit:contain;}
   /* corpo (fundo transparente = verde quase branco da folha) preenche o restante da página */
   .comunicado .corpo{background:transparent;flex:1;display:flex;flex-direction:column;justify-content:center;padding:80px 96px 60px;}
-  .comunicado .corpo h1{font-family:var(--fonte-texto);font-size:112px;font-weight:800;color:var(--verde);
+  .comunicado .corpo h1{font-family:var(--fonte-texto);font-size:112px;font-weight:900;color:var(--verde);
     text-align:center;letter-spacing:1px;line-height:1;margin:0 0 50px;}
   .comunicado .corpo .texto{font-family:var(--fonte-texto);font-size:41px;line-height:1.72;color:var(--com-texto);
     text-align:justify;}
@@ -81,7 +83,7 @@
   .comunicado .wifi .campo{text-align:center;}
   /* ---- Comunicado com título + lista de checks ---- */
   .comunicado .lista-com{display:flex;flex-direction:column;align-items:center;width:100%;transform:translateY(0);}
-  .comunicado .titulo-com{font-family:var(--fonte-texto);font-size:97px;font-weight:800;color:var(--verde);
+  .comunicado .titulo-com{font-family:var(--fonte-texto);font-size:97px;font-weight:900;color:var(--verde);
     text-align:center;line-height:1.12;letter-spacing:1px;text-transform:uppercase;margin-bottom:216px;}
   .comunicado .checklist{display:flex;flex-direction:column;gap:74px;width:100%;max-width:920px;}
   .comunicado .checklist .item{display:flex;align-items:flex-start;gap:32px;}
@@ -114,10 +116,15 @@
   .comunicado .seta svg{width:100%;height:auto;display:block;}
   .comunicado .lead{font-family:var(--fonte-texto);font-size:48px;font-weight:800;color:var(--com-sub);text-align:center;line-height:1.2;}
   .comunicado .corpo-txt{font-family:var(--fonte-texto);font-size:39px;line-height:1.42;color:var(--com-texto);text-align:center;max-width:980px;}
-  .comunicado .nota{font-family:var(--fonte-texto);font-size:33px;line-height:1.42;color:var(--com-texto);text-align:center;max-width:920px;}
+  .comunicado .nota{font-family:var(--fonte-texto);font-size:40px;line-height:1.42;color:var(--com-texto);text-align:center;max-width:920px;}
   .comunicado .nota-verde{font-family:var(--fonte-texto);font-size:30px;font-style:italic;color:var(--com-mute);text-align:center;}
   .comunicado .tarja{background:var(--verde);color:#fff;font-family:var(--fonte-texto);font-weight:800;
-    font-size:52px;letter-spacing:8px;text-transform:uppercase;padding:12px 50px;border-radius:12px;}
+    font-size:78px;letter-spacing:10px;text-transform:uppercase;padding:18px 76px;border-radius:14px;}
+  /* ---- Comunicado em paisagem (horizontal) ---- */
+  .pagina.paisagem{width:2000px;min-height:1414px;}
+  .comunicado .aviso-land{display:flex;align-items:center;justify-content:center;gap:96px;width:100%;}
+  .comunicado .aviso-txt{display:flex;flex-direction:column;align-items:flex-start;gap:40px;max-width:1120px;}
+  .comunicado .aviso-txt .titulo-com{text-align:left;font-size:90px;line-height:1.08;}
   .comunicado .wifi .rotulo{font-family:var(--fonte-texto);font-size:38px;font-weight:700;letter-spacing:6px;
     text-transform:uppercase;color:var(--com-sub);margin-bottom:16px;}
   .comunicado .wifi .valor{font-family:var(--fonte-texto);font-size:52px;font-weight:800;color:#fff;
@@ -287,8 +294,8 @@
   <div class="corpo">
     <div class="bloco-c" style="gap:74px;">
       <h2 class="titulo-com">Louça suja<br>aqui</h2>
-      <div class="seta" style="width:380px;">
-        <svg viewBox="0 0 100 60" fill="currentColor" aria-label="para o lado"><path d="M2 21 h58 v-19 l38 28 -38 28 v-19 h-58 z"/></svg>
+      <div class="seta" style="width:150px;">
+        <svg viewBox="0 0 60 100" fill="currentColor" aria-label="aqui embaixo"><path d="M20 2 h20 v56 h19 l-29 39 -29 -39 h19 z"/></svg>
       </div>
     </div>
   </div>
@@ -319,7 +326,7 @@
   <div class="corpo">
     <div class="bloco-c" style="gap:44px;">
       <div class="tarja">Atenção</div>
-      <div class="ico-grande" style="width:224px;">
+      <div class="ico-grande" style="width:269px;">
         <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M38 28 v10 M44 28 v10 M41 38 v22"/>
           <path d="M62 28 c-5 3 -6 14 0 16 v16"/>
@@ -327,7 +334,7 @@
           <line x1="25" y1="23" x2="75" y2="73"/>
         </svg>
       </div>
-      <h2 class="titulo-com">Proibido jogar<br>talher no lixo</h2>
+      <h2 class="titulo-com" style="font-size:98px;">Proibido jogar<br>talher no lixo</h2>
       <p class="nota">Caso jogue no lixo por acidente, é obrigatório recuperar o utensílio.</p>
     </div>
   </div>
@@ -338,11 +345,20 @@
   <div class="logo-topo"><img src="img/logo-tata-sushi.png?v=1" alt="Tatá Sushi"></div>
   <div class="corpo">
     <div class="bloco-c" style="gap:40px;">
-      <div class="ico-grande" style="width:270px;">
-        <svg viewBox="0 0 130 100" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="30" cy="74" r="13"/><circle cx="98" cy="74" r="13"/>
-          <path d="M30 74 h22 l12 -24 h14"/><path d="M78 50 l20 24"/><path d="M64 50 l-6 -14 h-11"/>
-          <rect x="40" y="26" width="24" height="24" rx="3"/><circle cx="73" cy="37" r="8"/>
+      <div class="ico-grande" style="width:300px;">
+        <svg viewBox="0 0 152 108" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="38" cy="84" r="18"/><circle cx="38" cy="84" r="4"/>
+          <circle cx="120" cy="84" r="18"/><circle cx="120" cy="84" r="4"/>
+          <!-- corpo / plataforma até a frente -->
+          <path d="M38 84 H74 C84 84 86 72 88 62 L94 44 H102"/>
+          <!-- escudo frontal descendo até a roda -->
+          <path d="M102 44 C112 50 113 66 114 84"/>
+          <!-- guidão -->
+          <path d="M94 44 L102 29 H118"/>
+          <!-- assento -->
+          <path d="M60 62 H88 C92 62 92 69 88 69 H68"/>
+          <!-- baú de entrega -->
+          <rect x="30" y="33" width="34" height="29" rx="5"/>
         </svg>
       </div>
       <h2 class="titulo-com" style="font-size:70px;">Motoboy, seu pedido<br>já está pronto!</h2>
@@ -354,21 +370,23 @@
   </div>
 </div>
 
-<!-- COMUNICADO 8 — Proibido acesso de pessoas não autorizadas -->
-<div class="pagina comunicado">
+<!-- COMUNICADO 8 — Proibido acesso de pessoas não autorizadas (paisagem) -->
+<div class="pagina comunicado paisagem">
   <div class="logo-topo"><img src="img/logo-tata-sushi.png?v=1" alt="Tatá Sushi"></div>
   <div class="corpo">
-    <div class="bloco-c" style="gap:44px;">
-      <div class="tarja">Atenção</div>
-      <div class="ico-grande" style="width:216px;">
+    <div class="aviso-land">
+      <div class="aviso-txt">
+        <div class="tarja">Atenção</div>
+        <h2 class="titulo-com">Proibido o acesso de pessoas não autorizadas</h2>
+      </div>
+      <div class="ico-grande" style="width:360px;">
         <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="50" cy="50" r="36"/>
-          <line x1="24" y1="24" x2="76" y2="76"/>
-          <path d="M39 64 v-16 M46 64 v-22 M53 64 v-22 M60 62 v-14"/>
-          <path d="M33 55 c-2 -6 7 -8 8 -2 M33 55 v8 a13 13 0 0 0 13 13 h6 a13 13 0 0 0 13 -13 v-12"/>
+          <path d="M41 58 V40 M49 58 V36 M57 58 V38 M65 58 V45"/>
+          <path d="M41 58 V52 c-1 -6 -9 -6 -9 1 l1 11 a15 15 0 0 0 15 13 h6 a15 15 0 0 0 15 -15 V45"/>
+          <circle cx="50" cy="50" r="38"/>
+          <line x1="23" y1="23" x2="77" y2="77"/>
         </svg>
       </div>
-      <h2 class="titulo-com" style="font-size:64px;">Proibido o acesso de<br>pessoas não autorizadas</h2>
     </div>
   </div>
 </div>
