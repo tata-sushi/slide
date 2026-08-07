@@ -25,7 +25,7 @@
   body{background:#ddd;font-family:Arial,Helvetica,sans-serif;}
   /* moldura nos 4 lados (cantos completos da folha) */
   .pagina{width:var(--pagina-larg);min-height:var(--pagina-alt);background:var(--fundo-com);
-    margin:20px auto;position:relative;overflow:hidden;border:15px solid var(--borda-com);padding:9px;}
+    margin:20px auto;position:relative;overflow:hidden;border:25px solid var(--borda-com);padding:9px;}
   @media print{
     @page{size:A4 portrait;margin:0;}
     body{background:#fff;}
@@ -74,6 +74,16 @@
   .comunicado .wifi h1{margin:14px 0 44px;}
   .comunicado .wifi .campos{display:flex;flex-direction:column;gap:40px;width:100%;max-width:760px;}
   .comunicado .wifi .campo{text-align:center;}
+  /* ---- Comunicado com título + lista de checks ---- */
+  .comunicado .lista-com{display:flex;flex-direction:column;align-items:center;width:100%;}
+  .comunicado .titulo-com{font-family:var(--fonte-texto);font-size:70px;font-weight:800;color:var(--verde);
+    text-align:center;line-height:1.12;letter-spacing:1px;text-transform:uppercase;margin-bottom:64px;}
+  .comunicado .checklist{display:flex;flex-direction:column;gap:46px;width:100%;max-width:900px;}
+  .comunicado .checklist .item{display:flex;align-items:flex-start;gap:30px;}
+  .comunicado .checklist .check{flex:0 0 auto;width:80px;height:80px;color:var(--verde);margin-top:2px;}
+  .comunicado .checklist .check svg{width:100%;height:100%;display:block;}
+  .comunicado .checklist .txt{font-family:var(--fonte-texto);font-size:41px;line-height:1.3;color:#223522;}
+  .comunicado .checklist .txt b{font-weight:800;}
   .comunicado .wifi .rotulo{font-family:var(--fonte-texto);font-size:38px;font-weight:700;letter-spacing:6px;
     text-transform:uppercase;color:#2a7d33;margin-bottom:16px;}
   .comunicado .wifi .valor{font-family:var(--fonte-texto);font-size:52px;font-weight:800;color:#fff;
@@ -118,6 +128,47 @@
         <div class="campo">
           <div class="rotulo">Senha</div>
           <div class="valor">#Tatahouse1234</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COMUNICADO 2 — Evitando o desperdício de alimentos -->
+<div class="pagina comunicado">
+  <div class="logo-topo">
+    <img src="img/logo-tata-sushi.png?v=1" alt="Tatá Sushi">
+  </div>
+  <div class="corpo">
+    <div class="lista-com">
+      <h2 class="titulo-com">Evitando o desperdício<br>de alimentos</h2>
+      <div class="checklist">
+        <div class="item">
+          <div class="check">
+            <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+              <circle cx="50" cy="50" r="44" stroke="currentColor" stroke-width="4" opacity="0.45"/>
+              <path d="M27 52 L44 69 L75 31" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="txt">Coloque no prato somente o que for comer</div>
+        </div>
+        <div class="item">
+          <div class="check">
+            <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+              <circle cx="50" cy="50" r="44" stroke="currentColor" stroke-width="4" opacity="0.45"/>
+              <path d="M27 52 L44 69 L75 31" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="txt">Prefira se servir mais de uma vez se estiver em dúvida do quanto comer</div>
+        </div>
+        <div class="item">
+          <div class="check">
+            <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+              <circle cx="50" cy="50" r="44" stroke="currentColor" stroke-width="4" opacity="0.45"/>
+              <path d="M27 52 L44 69 L75 31" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="txt"><b>Sobrou?</b> Na próxima vez se policie para não acontecer novamente!</div>
         </div>
       </div>
     </div>
