@@ -64,6 +64,17 @@
   .comunicado .corpo .texto p:last-child{margin-bottom:0;}
   .comunicado .corpo .texto .ola{font-weight:700;}
   .comunicado .corpo .texto .final{text-align:center;font-weight:700;font-size:44px;color:var(--verde);margin:16px 0 0;}
+  /* ---- Comunicado de Wi-Fi ---- */
+  .comunicado .wifi{display:flex;flex-direction:column;align-items:center;}
+  .comunicado .wifi .icone{width:210px;color:var(--verde);}
+  .comunicado .wifi .icone svg{width:100%;height:auto;display:block;}
+  .comunicado .wifi h1{margin:14px 0 44px;}
+  .comunicado .wifi .campos{display:flex;flex-direction:column;gap:40px;width:100%;max-width:760px;}
+  .comunicado .wifi .campo{text-align:center;}
+  .comunicado .wifi .rotulo{font-family:var(--fonte-texto);font-size:38px;font-weight:700;letter-spacing:6px;
+    text-transform:uppercase;color:#2a7d33;margin-bottom:16px;}
+  .comunicado .wifi .valor{font-family:var(--fonte-texto);font-size:52px;font-weight:800;color:#fff;
+    background:var(--verde);border-radius:16px;padding:24px 20px;letter-spacing:1px;word-break:break-word;}
   /* rodapé verde com redes sociais */
   .comunicado .rodape{background:var(--verde);color:#fff;flex:0 0 auto;
     display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:26px 64px;padding:40px 60px;}
@@ -80,14 +91,29 @@
      COMO CRIAR OUTRO: copie todo o bloco <div class="pagina comunicado"> ... </div>
      e cole logo abaixo. Cada bloco vira uma página A4 no PDF.
      ============================================================ -->
-<!-- Matriz: folha A4 com moldura. O texto do comunicado entra no centro (sem nada nas bordas). -->
+<!-- COMUNICADO 1 — Wi-Fi -->
 <div class="pagina comunicado">
   <div class="corpo">
-    <h1>COMUNICADO</h1>
-    <!-- EDITAR: texto do comunicado (use <b>...</b> para destacar datas e informações) -->
-    <div class="texto">
-      <p class="ola">Olá, pessoal!</p>
-      <p>Escreva aqui o texto do comunicado.</p>
+    <div class="wifi">
+      <div class="icone">
+        <svg viewBox="0 0 100 78" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" aria-label="Wi-Fi">
+          <path d="M8 26 A62 62 0 0 1 92 26"/>
+          <path d="M23 43 A41 41 0 0 1 77 43"/>
+          <path d="M37 58 A23 23 0 0 1 63 58"/>
+          <circle cx="50" cy="70" r="5.5" fill="currentColor" stroke="none"/>
+        </svg>
+      </div>
+      <h1>WI-FI</h1>
+      <div class="campos">
+        <div class="campo">
+          <div class="rotulo">Rede</div>
+          <div class="valor">TATA HOUSE</div>
+        </div>
+        <div class="campo">
+          <div class="rotulo">Senha</div>
+          <div class="valor">#Tatahouse1234</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
