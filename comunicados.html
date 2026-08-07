@@ -18,11 +18,13 @@
     --pagina-alt:2000px;
     --fonte-marca:'DM Serif Display', Georgia, 'Times New Roman', serif;
     --fonte-texto:'DM Sans', 'Segoe UI', Arial, sans-serif;
+    --fundo-com:#f1faf3;    /* fundo do comunicado: verde bem claro, quase branco */
+    --borda-com:#4caf52;    /* borda leve da folha, no verde da marca */
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{background:#ddd;font-family:Arial,Helvetica,sans-serif;}
-  .pagina{width:var(--pagina-larg);min-height:var(--pagina-alt);background:var(--fundo);
-    margin:20px auto;position:relative;overflow:hidden;}
+  .pagina{width:var(--pagina-larg);min-height:var(--pagina-alt);background:var(--fundo-com);
+    margin:20px auto;position:relative;overflow:hidden;border:4px solid var(--borda-com);}
   @media print{
     @page{size:A4 portrait;margin:0;}
     body{background:#fff;}
@@ -51,13 +53,8 @@
   .comunicado .barra-topo .titulo .branco{color:#fff;}
   .comunicado .barra-topo .edicao{position:absolute;right:24px;bottom:8px;color:#fff;font-size:26px;font-family:var(--fonte-marca);}
   .comunicado .barra-topo .ico{position:absolute;left:28px;width:64px;height:64px;object-fit:contain;}
-  /* banner/foto de topo, com a base arredondada */
-  .comunicado .foto-topo{width:100%;flex:0 0 auto;background:var(--verde);}
-  .comunicado .foto-topo img,
-  .comunicado .foto-topo .banner{width:100%;height:430px;object-fit:cover;display:block;
-    border-bottom-left-radius:130px;border-bottom-right-radius:130px;}
-  /* corpo verde-claro preenche o restante da página */
-  .comunicado .corpo{background:#c9f2c0;flex:1;display:flex;flex-direction:column;justify-content:center;padding:60px 96px 54px;}
+  /* corpo (fundo transparente = verde quase branco da folha) preenche o restante da página */
+  .comunicado .corpo{background:transparent;flex:1;display:flex;flex-direction:column;justify-content:center;padding:80px 96px 60px;}
   .comunicado .corpo h1{font-family:var(--fonte-texto);font-size:112px;font-weight:800;color:var(--verde);
     text-align:center;letter-spacing:1px;line-height:1;margin:0 0 50px;}
   .comunicado .corpo .texto{font-family:var(--fonte-texto);font-size:41px;line-height:1.72;color:#223522;
@@ -90,45 +87,13 @@
     <div class="edicao">07/08/2026</div>
   </div>
 
-  <!-- Banner do topo (arte de marca; pode ser trocado por uma foto real) -->
-  <div class="foto-topo">
-    <svg class="banner" viewBox="0 0 1414 430" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Comunicado">
-      <defs>
-        <linearGradient id="bgc" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#1f8f4d"/>
-          <stop offset="1" stop-color="#0c5d31"/>
-        </linearGradient>
-      </defs>
-      <rect width="1414" height="430" fill="url(#bgc)"/>
-      <circle cx="120" cy="380" r="210" fill="#ffffff" opacity="0.06"/>
-      <circle cx="1300" cy="60" r="250" fill="#ffffff" opacity="0.06"/>
-      <circle cx="1170" cy="380" r="120" fill="#ffffff" opacity="0.05"/>
-      <circle cx="300" cy="90" r="70" fill="#ffffff" opacity="0.05"/>
-      <!-- badge branco com balão de fala (comunicado) -->
-      <circle cx="707" cy="215" r="128" fill="#ffffff"/>
-      <rect x="634" y="150" width="146" height="104" rx="26" fill="#4caf52"/>
-      <path d="M683 252 L683 300 L718 254 Z" fill="#4caf52"/>
-      <rect x="700" y="176" width="14" height="44" rx="7" fill="#ffffff"/>
-      <circle cx="707" cy="236" r="8.5" fill="#ffffff"/>
-    </svg>
-  </div>
-
   <div class="corpo">
     <h1>COMUNICADO</h1>
 
-    <!-- EDITAR: texto do comunicado -->
+    <!-- EDITAR: texto do comunicado. Use <b>...</b> para destacar datas e informações. -->
     <div class="texto">
       <p class="ola">Olá, pessoal!</p>
-      <p>Passando para lembrar que, nesta quinta-feira, <b>06/08</b>, será realizado o
-        pagamento referente ao mês de julho, que, para fins de cálculo da
-        <b>gorjeta e do prêmio</b>, foi considerado o período de <b>21/06/2026 a 20/07/2026</b>.</p>
-      <p>Lembramos que, durante esse período, tivemos uma redução no movimento do salão e
-        também do delivery, em razão das férias escolares, dos dias mais frios do inverno e,
-        principalmente, dos jogos da Copa.</p>
-      <p>Reforçamos essas informações para ajudar todos a compreenderem melhor os resultados
-        refletidos neste pagamento.</p>
-      <p>Em caso de dúvidas, conversem com a liderança da unidade ou procurem o RH.</p>
-      <p>Estamos à disposição para ajudar!</p>
+      <p>Escreva aqui o texto do comunicado.</p>
     </div>
   </div>
 
