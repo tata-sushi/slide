@@ -23,8 +23,9 @@
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{background:#ddd;font-family:Arial,Helvetica,sans-serif;}
+  /* moldura fina nos 4 lados (cantos completos da folha); respiro reduzido */
   .pagina{width:var(--pagina-larg);min-height:var(--pagina-alt);background:var(--fundo-com);
-    margin:20px auto;position:relative;overflow:hidden;border:4px solid var(--borda-com);}
+    margin:20px auto;position:relative;overflow:hidden;border:1px solid var(--borda-com);padding:9px;}
   @media print{
     @page{size:A4 portrait;margin:0;}
     body{background:#fff;}
@@ -79,37 +80,10 @@
      COMO CRIAR OUTRO: copie todo o bloco <div class="pagina comunicado"> ... </div>
      e cole logo abaixo. Cada bloco vira uma página A4 no PDF.
      ============================================================ -->
+<!-- Matriz: folha A4 com moldura fina. O conteúdo (texto, logo etc.) entra aqui ao montar cada comunicado. -->
 <div class="pagina comunicado">
-  <div class="barra-topo">
-    <img class="ico" src="img/logo-tata-preto.png?v=1" alt="Logo Tatá Sushi">
-    <div class="titulo"><span class="verde">TATÁ</span><span class="branco">NEWS</span></div>
-    <!-- EDITAR: data do comunicado -->
-    <div class="edicao">07/08/2026</div>
-  </div>
-
   <div class="corpo">
-    <h1>COMUNICADO</h1>
-
-    <!-- EDITAR: texto do comunicado. Use <b>...</b> para destacar datas e informações. -->
-    <div class="texto">
-      <p class="ola">Olá, pessoal!</p>
-      <p>Escreva aqui o texto do comunicado.</p>
-    </div>
-  </div>
-
-  <div class="rodape">
-    <span class="rede">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.93 6h-2.95a15.7 15.7 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.93 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14a7.96 7.96 0 0 1 0-4h3.38a16.6 16.6 0 0 0 0 4H4.26zm.81 2h2.95c.3 1.27.77 2.47 1.38 3.56A7.99 7.99 0 0 1 5.07 16zm2.95-8H5.07a7.99 7.99 0 0 1 4.33-3.56A15.7 15.7 0 0 0 8.02 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66a14.8 14.8 0 0 1 0-4h4.68a14.8 14.8 0 0 1 0 4zm.26 5.56c.61-1.09 1.08-2.29 1.38-3.56h2.95a7.99 7.99 0 0 1-4.33 3.56zM16.36 14a16.6 16.6 0 0 0 0-4h3.38a7.96 7.96 0 0 1 0 4h-3.38z"/></svg>
-      www.tatasushi.com.br
-    </span>
-    <span class="rede">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s0-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2zm0 3.05A6.75 6.75 0 1 0 18.75 12 6.75 6.75 0 0 0 12 5.25zm0 11.13A4.38 4.38 0 1 1 16.38 12 4.38 4.38 0 0 1 12 16.38zm6.99-11.4a1.58 1.58 0 1 1-1.58-1.58 1.58 1.58 0 0 1 1.58 1.58z"/></svg>
-      @tatasushi
-    </span>
-    <span class="rede">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.53C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-      /company/tatasushi
-    </span>
+    <!-- CONTEÚDO DO COMUNICADO entra aqui -->
   </div>
 </div>
 
