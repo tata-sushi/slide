@@ -75,15 +75,31 @@
   .comunicado .wifi .campos{display:flex;flex-direction:column;gap:40px;width:100%;max-width:760px;}
   .comunicado .wifi .campo{text-align:center;}
   /* ---- Comunicado com título + lista de checks ---- */
-  .comunicado .lista-com{display:flex;flex-direction:column;align-items:center;width:100%;transform:translateY(-72px);}
-  .comunicado .titulo-com{font-family:var(--fonte-texto);font-size:84px;font-weight:800;color:var(--verde);
-    text-align:center;line-height:1.12;letter-spacing:1px;text-transform:uppercase;margin-bottom:144px;}
+  .comunicado .lista-com{display:flex;flex-direction:column;align-items:center;width:100%;transform:translateY(0);}
+  .comunicado .titulo-com{font-family:var(--fonte-texto);font-size:97px;font-weight:800;color:var(--verde);
+    text-align:center;line-height:1.12;letter-spacing:1px;text-transform:uppercase;margin-bottom:216px;}
   .comunicado .checklist{display:flex;flex-direction:column;gap:74px;width:100%;max-width:920px;}
   .comunicado .checklist .item{display:flex;align-items:flex-start;gap:32px;}
   .comunicado .checklist .check{flex:0 0 auto;width:90px;height:90px;color:var(--verde);margin-top:2px;}
   .comunicado .checklist .check svg{width:100%;height:100%;display:block;}
   .comunicado .checklist .txt{font-family:var(--fonte-texto);font-size:47px;line-height:1.32;color:#223522;}
   .comunicado .checklist .txt b{font-weight:800;}
+  /* ---- Comunicado denso (refeitório) ---- */
+  .comunicado.denso .corpo{justify-content:flex-start;padding:452px 80px 44px;}
+  .comunicado .refeitorio{width:100%;display:flex;flex-direction:column;align-items:center;}
+  .comunicado .refeitorio .titulo-com{font-size:62px;margin-bottom:24px;}
+  .comunicado .refeitorio .intro-r{font-family:var(--fonte-texto);font-size:31px;line-height:1.4;color:#38473a;
+    text-align:center;max-width:1000px;margin-bottom:26px;}
+  .comunicado .refeitorio .sep{width:78%;height:2px;background:rgba(76,175,82,.32);margin-bottom:34px;}
+  .comunicado .topicos{display:flex;flex-direction:column;gap:32px;width:100%;max-width:1050px;}
+  .comunicado .topico{display:flex;align-items:flex-start;gap:30px;}
+  .comunicado .topico .ico{flex:0 0 auto;width:86px;height:86px;color:var(--verde);}
+  .comunicado .topico .ico svg{width:100%;height:100%;display:block;}
+  .comunicado .topico h3{font-family:var(--fonte-texto);font-size:39px;font-weight:800;color:#1a5e22;margin-bottom:6px;line-height:1.1;}
+  .comunicado .topico p{font-family:var(--fonte-texto);font-size:29px;line-height:1.34;color:#38473a;}
+  .comunicado .refeitorio .fecho{font-family:var(--fonte-texto);font-size:40px;font-weight:700;font-style:italic;
+    color:var(--verde);text-align:center;margin-top:40px;line-height:1.24;}
+  .comunicado .refeitorio .assinatura{font-family:var(--fonte-texto);font-size:24px;color:#6a7a6a;margin-top:24px;letter-spacing:.5px;}
   .comunicado .wifi .rotulo{font-family:var(--fonte-texto);font-size:38px;font-weight:700;letter-spacing:6px;
     text-transform:uppercase;color:#2a7d33;margin-bottom:16px;}
   .comunicado .wifi .valor{font-family:var(--fonte-texto);font-size:52px;font-weight:800;color:#fff;
@@ -171,6 +187,79 @@
           <div class="txt"><b>Sobrou?</b> Na próxima vez se policie para não acontecer novamente!</div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- COMUNICADO 3 — Todos merecem comer bem -->
+<div class="pagina comunicado denso">
+  <div class="logo-topo">
+    <img src="img/logo-tata-sushi.png?v=1" alt="Tatá Sushi">
+  </div>
+  <div class="corpo">
+    <div class="refeitorio">
+      <h2 class="titulo-com">Todos merecem comer bem</h2>
+      <p class="intro-r">O refeitório é o nosso momento de pausa. Servir-se com consciência
+        e respeito ajuda a garantir a qualidade para todos.</p>
+      <div class="sep"></div>
+      <div class="topicos">
+        <div class="topico">
+          <div class="ico">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="53" cy="50" r="26"/><circle cx="53" cy="50" r="16"/>
+              <path d="M16 20 v14 a5 5 0 0 0 10 0 v-14 M21 34 v46"/>
+              <path d="M90 20 c-9 3 -13 20 -5 27 M85 47 v33"/>
+            </svg>
+          </div>
+          <div class="tx">
+            <h3>Planejamento com cuidado</h3>
+            <p>Cada refeição é pensada para atender a equipe com equilíbrio, qualidade e variedade do primeiro ao último horário.</p>
+          </div>
+        </div>
+        <div class="topico">
+          <div class="ico">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M50 30 c-4-6-16-6-16 4 c0 8 16 16 16 16 c0 0 16-8 16-16 c0-10-12-10-16-4 z" fill="currentColor" stroke="none"/>
+              <path d="M14 56 c8 17 22 24 36 24 c14 0 28-7 36-24"/>
+              <path d="M14 56 l-5 7 M86 56 l5 7"/>
+            </svg>
+          </div>
+          <div class="tx">
+            <h3>Sirva-se com consciência</h3>
+            <p>Pegar além do necessário hoje pode fazer falta para quem vem depois. O equilíbrio faz parte do cuidado coletivo.</p>
+          </div>
+        </div>
+        <div class="topico">
+          <div class="ico">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M30 46 a13 13 0 0 1 6-25 a15 15 0 0 1 28 0 a13 13 0 0 1 6 25 z"/>
+              <line x1="30" y1="46" x2="70" y2="46"/>
+              <path d="M37 48 v11 a13 13 0 0 0 26 0 v-11"/>
+            </svg>
+          </div>
+          <div class="tx">
+            <h3>Respeite quem está servindo</h3>
+            <p>Quem está ali também faz parte desse cuidado. Gentileza e respeito tornam o ambiente melhor para todos.</p>
+          </div>
+        </div>
+        <div class="topico">
+          <div class="ico">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="26" cy="32" r="8"/><path d="M14 54 a12 12 0 0 1 24 0"/>
+              <circle cx="74" cy="32" r="8"/><path d="M62 54 a12 12 0 0 1 24 0"/>
+              <circle cx="50" cy="26" r="9"/><path d="M37 50 a13 13 0 0 1 26 0"/>
+              <circle cx="50" cy="74" r="9"/>
+              <path d="M50 61 v-4 M50 87 v4 M63 74 h4 M33 74 h4 M59.2 65.2 l2.8-2.8 M38 86 l2.8-2.8 M59.2 82.8 l2.8 2.8 M38 62 l2.8 2.8"/>
+            </svg>
+          </div>
+          <div class="tx">
+            <h3>Compromisso com o coletivo</h3>
+            <p>Quando cada um faz a sua parte, o refeitório funciona melhor, com mais organização, qualidade e harmonia.</p>
+          </div>
+        </div>
+      </div>
+      <p class="fecho">Cuidar do refeitório é<br>cuidar da qualidade para todos.</p>
+      <p class="assinatura">Campanha informativa — Gestão</p>
     </div>
   </div>
 </div>
