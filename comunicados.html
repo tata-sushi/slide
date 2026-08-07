@@ -122,8 +122,10 @@
     font-size:78px;letter-spacing:10px;text-transform:uppercase;padding:18px 76px;border-radius:14px;}
   /* ---- Comunicado em paisagem (horizontal) ---- */
   .pagina.paisagem{width:2000px;min-height:1414px;}
+  /* na paisagem o logo é menor (a página é mais larga e o conteúdo maior) */
+  .pagina.paisagem .logo-topo{width:113px;}
   /* conteúdo centralizado, começando abaixo do logo */
-  .pagina.paisagem .corpo{justify-content:flex-start;padding-top:504px;}
+  .pagina.paisagem .corpo{justify-content:flex-start;padding-top:300px;}
   .comunicado .wifi .rotulo{font-family:var(--fonte-texto);font-size:38px;font-weight:700;letter-spacing:6px;
     text-transform:uppercase;color:var(--com-sub);margin-bottom:16px;}
   .comunicado .wifi .valor{font-family:var(--fonte-texto);font-size:52px;font-weight:800;color:#fff;
@@ -356,10 +358,10 @@
   <div class="corpo">
     <div class="bloco-c" style="gap:40px;">
       <div class="tarja">Atenção</div>
-      <div class="ico-grande" style="width:280px;">
+      <div class="ico-grande" style="width:360px;">
         <svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M588-502 395-695q17-14 38.5-21.5T480-724q58 0 97.5 39.5T617-587q0 25-7.5 46.5T588-502ZM222-255q63-44 123.5-67.5T480-346q37 0 65.5 5.5T597-327L474-450q-54-2-89.5-36.5T344-575L218-701q-37 45-57.5 99.5T140-480q0 61 19 116t63 109Zm521-6q35-42 56-97.5T820-480q0-145-97.5-242.5T480-820q-70 0-124 21t-96 55l483 483ZM325-111.5q-73-31.5-127.5-86t-86-127.5Q80-398 80-480.5t31.5-155q31.5-72.5 86-127t127.5-86Q398-880 480.5-880t155 31.5q72.5 31.5 127 86t86 127Q880-563 880-480.5T848.5-325q-31.5 73-86 127.5t-127 86Q563-80 480.5-80T325-111.5ZM480-140q59 0 109.5-17T691-212q-51-36-104-55t-107-19q-54 0-107 19t-104 55q51 38 102 55t109 17Zm0-73Z"/></svg>
       </div>
-      <h2 class="titulo-com" style="font-size:82px;">Proibido o acesso de<br>pessoas não autorizadas</h2>
+      <h2 class="titulo-com" style="font-size:100px;">Proibido o acesso de<br>pessoas não autorizadas</h2>
     </div>
   </div>
 </div>
