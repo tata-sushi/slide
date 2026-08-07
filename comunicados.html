@@ -66,6 +66,8 @@
   .comunicado .corpo .texto .final{text-align:center;font-weight:700;font-size:44px;color:var(--verde);margin:16px 0 0;}
   /* ---- Comunicado de Wi-Fi ---- */
   .comunicado .wifi{display:flex;flex-direction:column;align-items:center;}
+  .comunicado .wifi .logo-topo{width:150px;color:var(--verde);margin-bottom:40px;}
+  .comunicado .wifi .logo-topo svg{width:100%;height:auto;display:block;}
   .comunicado .wifi .icone{width:210px;color:var(--verde);}
   .comunicado .wifi .icone svg{width:100%;height:auto;display:block;}
   .comunicado .wifi h1{margin:14px 0 44px;}
@@ -95,6 +97,24 @@
 <div class="pagina comunicado">
   <div class="corpo">
     <div class="wifi">
+      <div class="logo-topo">
+        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5.5" stroke-linejoin="round" stroke-linecap="round" aria-label="Tatá Sushi">
+          <polygon points="50,4 92,27 92,73 50,96 8,73 8,27"/>
+          <polygon points="50,32 68,42 68,62 50,72 32,62 32,42"/>
+          <polygon points="50,10 58,15 58,23 50,28 42,23 42,15"/>
+          <line x1="8" y1="27" x2="32" y2="42"/>
+          <line x1="8" y1="73" x2="32" y2="62"/>
+          <line x1="92" y1="27" x2="68" y2="42"/>
+          <line x1="92" y1="73" x2="68" y2="62"/>
+          <line x1="32" y1="62" x2="50" y2="72"/>
+          <line x1="68" y1="62" x2="50" y2="72"/>
+          <line x1="32" y1="62" x2="50" y2="96"/>
+          <line x1="68" y1="62" x2="50" y2="96"/>
+          <line x1="50" y1="28" x2="50" y2="32"/>
+          <line x1="42" y1="15" x2="32" y2="42"/>
+          <line x1="58" y1="15" x2="68" y2="42"/>
+        </svg>
+      </div>
       <div class="icone">
         <svg viewBox="0 0 100 78" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" aria-label="Wi-Fi">
           <path d="M8 26 A62 62 0 0 1 92 26"/>
