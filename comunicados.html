@@ -8,7 +8,7 @@
 <!-- Fontes: DM Serif Display (marca) + DM Sans (texto) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900;1000&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
   /* ===== CONFIG DE MARCA (edite as cores aqui) ===== */
   :root{
@@ -122,9 +122,8 @@
     font-size:78px;letter-spacing:10px;text-transform:uppercase;padding:18px 76px;border-radius:14px;}
   /* ---- Comunicado em paisagem (horizontal) ---- */
   .pagina.paisagem{width:2000px;min-height:1414px;}
-  .comunicado .aviso-land{display:flex;align-items:center;justify-content:center;gap:96px;width:100%;}
-  .comunicado .aviso-txt{display:flex;flex-direction:column;align-items:flex-start;gap:40px;max-width:1120px;}
-  .comunicado .aviso-txt .titulo-com{text-align:left;font-size:90px;line-height:1.08;}
+  /* conteúdo centralizado, começando abaixo do logo */
+  .pagina.paisagem .corpo{justify-content:flex-start;padding-top:404px;}
   .comunicado .wifi .rotulo{font-family:var(--fonte-texto);font-size:38px;font-weight:700;letter-spacing:6px;
     text-transform:uppercase;color:var(--com-sub);margin-bottom:16px;}
   .comunicado .wifi .valor{font-family:var(--fonte-texto);font-size:52px;font-weight:800;color:#fff;
@@ -293,8 +292,8 @@
   <div class="logo-topo"><img src="img/logo-tata-sushi.png?v=1" alt="Tatá Sushi"></div>
   <div class="corpo">
     <div class="bloco-c" style="gap:74px;">
-      <h2 class="titulo-com">Louça suja<br>aqui</h2>
-      <div class="seta" style="width:150px;">
+      <h2 class="titulo-com" style="font-size:107px;font-weight:1000;">Louça suja<br>aqui</h2>
+      <div class="seta" style="width:225px;">
         <svg viewBox="0 0 60 100" fill="currentColor" aria-label="aqui embaixo"><path d="M20 2 h20 v56 h19 l-29 39 -29 -39 h19 z"/></svg>
       </div>
     </div>
@@ -307,7 +306,7 @@
   <div class="corpo">
     <div class="bloco-c" style="gap:40px;">
       <h2 class="titulo-com">Hábitos<br>sustentáveis</h2>
-      <div class="ico-grande" style="width:196px;">
+      <div class="ico-grande" style="width:255px;">
         <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
           <path d="M25 22 h50 l-6 62 a5 5 0 0 1 -5 5 h-23 a5 5 0 0 1 -5 -5 z"/>
           <line x1="30" y1="42" x2="70" y2="42"/><line x1="31" y1="60" x2="69" y2="60"/>
@@ -315,7 +314,6 @@
       </div>
       <p class="lead">Adote um copo para chamar de seu!</p>
       <p class="corpo-txt">Não leve outro e, quando quiser mais, basta encher novamente!</p>
-      <p class="nota-verde">Cuide do planeta, ele é o nosso lar.</p>
     </div>
   </div>
 </div>
@@ -326,12 +324,13 @@
   <div class="corpo">
     <div class="bloco-c" style="gap:44px;">
       <div class="tarja">Atenção</div>
-      <div class="ico-grande" style="width:269px;">
-        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M38 28 v10 M44 28 v10 M41 38 v22"/>
-          <path d="M62 28 c-5 3 -6 14 0 16 v16"/>
-          <circle cx="50" cy="48" r="35"/>
-          <line x1="25" y1="23" x2="75" y2="73"/>
+      <div class="ico-grande" style="width:377px;">
+        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="50" cy="50" r="42"/>
+          <line x1="21" y1="21" x2="79" y2="79"/>
+          <path d="M37 25 v13 M43 25 v13 M49 25 v13" stroke-width="5"/>
+          <path d="M43 38 v37"/>
+          <path d="M61 25 c-6 3 -7 18 0 21 v29"/>
         </svg>
       </div>
       <h2 class="titulo-com" style="font-size:98px;">Proibido jogar<br>talher no lixo</h2>
@@ -374,12 +373,9 @@
 <div class="pagina comunicado paisagem">
   <div class="logo-topo"><img src="img/logo-tata-sushi.png?v=1" alt="Tatá Sushi"></div>
   <div class="corpo">
-    <div class="aviso-land">
-      <div class="aviso-txt">
-        <div class="tarja">Atenção</div>
-        <h2 class="titulo-com">Proibido o acesso de pessoas não autorizadas</h2>
-      </div>
-      <div class="ico-grande" style="width:360px;">
+    <div class="bloco-c" style="gap:40px;">
+      <div class="tarja">Atenção</div>
+      <div class="ico-grande" style="width:300px;">
         <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M41 58 V40 M49 58 V36 M57 58 V38 M65 58 V45"/>
           <path d="M41 58 V52 c-1 -6 -9 -6 -9 1 l1 11 a15 15 0 0 0 15 13 h6 a15 15 0 0 0 15 -15 V45"/>
@@ -387,6 +383,7 @@
           <line x1="23" y1="23" x2="77" y2="77"/>
         </svg>
       </div>
+      <h2 class="titulo-com" style="font-size:82px;">Proibido o acesso de<br>pessoas não autorizadas</h2>
     </div>
   </div>
 </div>
