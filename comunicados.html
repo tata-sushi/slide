@@ -23,9 +23,9 @@
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{background:#ddd;font-family:Arial,Helvetica,sans-serif;}
-  /* moldura fina nos 4 lados (cantos completos da folha); respiro reduzido */
+  /* moldura nos 4 lados (cantos completos da folha) */
   .pagina{width:var(--pagina-larg);min-height:var(--pagina-alt);background:var(--fundo-com);
-    margin:20px auto;position:relative;overflow:hidden;border:1px solid var(--borda-com);padding:9px;}
+    margin:20px auto;position:relative;overflow:hidden;border:10px solid var(--borda-com);padding:9px;}
   @media print{
     @page{size:A4 portrait;margin:0;}
     body{background:#fff;}
@@ -80,10 +80,15 @@
      COMO CRIAR OUTRO: copie todo o bloco <div class="pagina comunicado"> ... </div>
      e cole logo abaixo. Cada bloco vira uma página A4 no PDF.
      ============================================================ -->
-<!-- Matriz: folha A4 com moldura fina. O conteúdo (texto, logo etc.) entra aqui ao montar cada comunicado. -->
+<!-- Matriz: folha A4 com moldura. O texto do comunicado entra no centro (sem nada nas bordas). -->
 <div class="pagina comunicado">
   <div class="corpo">
-    <!-- CONTEÚDO DO COMUNICADO entra aqui -->
+    <h1>COMUNICADO</h1>
+    <!-- EDITAR: texto do comunicado (use <b>...</b> para destacar datas e informações) -->
+    <div class="texto">
+      <p class="ola">Olá, pessoal!</p>
+      <p>Escreva aqui o texto do comunicado.</p>
+    </div>
   </div>
 </div>
 
