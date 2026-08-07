@@ -66,8 +66,9 @@
   .comunicado .corpo .texto .final{text-align:center;font-weight:700;font-size:44px;color:var(--verde);margin:16px 0 0;}
   /* ---- Comunicado de Wi-Fi ---- */
   .comunicado .wifi{display:flex;flex-direction:column;align-items:center;}
-  .comunicado .wifi .logo-topo{width:284px;margin-bottom:100px;}
-  .comunicado .wifi .logo-topo img{width:100%;height:auto;display:block;}
+  /* logo fixo perto da margem superior; o Wi-Fi fica centralizado na página */
+  .comunicado .logo-topo{position:absolute;top:56px;left:0;right:0;margin:0 auto;width:284px;z-index:2;}
+  .comunicado .logo-topo img{width:100%;height:auto;display:block;}
   .comunicado .wifi .icone{width:210px;color:var(--verde);}
   .comunicado .wifi .icone svg{width:100%;height:auto;display:block;}
   .comunicado .wifi h1{margin:14px 0 44px;}
@@ -95,11 +96,11 @@
      ============================================================ -->
 <!-- COMUNICADO 1 — Wi-Fi -->
 <div class="pagina comunicado">
+  <div class="logo-topo">
+    <img src="img/logo-tata-sushi.png?v=1" alt="Tatá Sushi">
+  </div>
   <div class="corpo">
     <div class="wifi">
-      <div class="logo-topo">
-        <img src="img/logo-tata-sushi.png?v=1" alt="Tatá Sushi">
-      </div>
       <div class="icone">
         <svg viewBox="0 0 100 78" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" aria-label="Wi-Fi">
           <path d="M8 26 A62 62 0 0 1 92 26"/>
