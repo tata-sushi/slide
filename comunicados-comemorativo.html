@@ -30,6 +30,10 @@
   .post{width:var(--pagina-lado);height:var(--pagina-lado);background:var(--fundo-com);
     margin:20px auto;position:relative;overflow:hidden;
     border:26px solid var(--borda-com);padding:8px;}
+  /* variante de teste: sem a moldura verde */
+  .post.sem-borda{border:none;}
+  .rotulo-teste{max-width:1080px;margin:26px auto 4px;text-align:center;font-family:Arial,sans-serif;
+    font-size:18px;font-weight:bold;letter-spacing:1px;color:#555;text-transform:uppercase;}
 
   @media print{
     @page{size:1080px 1080px;margin:0;}
@@ -88,8 +92,46 @@
 
 <!-- ============================================================
      COMEMORATIVO 1×1 — 1080×1080 (linha festiva)
+     TESTE: mesma arte COM borda e SEM borda (uma embaixo da outra)
      ============================================================ -->
+<p class="rotulo-teste">Com borda</p>
 <div class="post comunicado festa">
+  <!-- confete decorativo -->
+  <div class="confete" aria-hidden="true">
+    <i style="top:120px;left:70px;width:26px;height:26px;background:var(--dourado);transform:rotate(20deg);"></i>
+    <i style="top:210px;left:150px;width:18px;height:18px;border-radius:50%;background:var(--verde);"></i>
+    <i style="top:150px;left:250px;width:14px;height:40px;background:#a5d6a7;transform:rotate(35deg);"></i>
+    <i style="top:300px;left:60px;width:16px;height:16px;border-radius:50%;background:var(--dourado);"></i>
+    <i style="top:430px;left:110px;width:22px;height:22px;background:var(--verde);transform:rotate(15deg);"></i>
+    <i style="top:600px;left:70px;width:15px;height:44px;background:var(--dourado);transform:rotate(-25deg);"></i>
+    <i style="top:760px;left:140px;width:18px;height:18px;border-radius:50%;background:#a5d6a7;"></i>
+    <i style="top:900px;left:90px;width:24px;height:24px;background:var(--verde);transform:rotate(30deg);"></i>
+    <i style="top:130px;right:80px;width:24px;height:24px;background:var(--verde);transform:rotate(-15deg);"></i>
+    <i style="top:220px;right:160px;width:16px;height:16px;border-radius:50%;background:var(--dourado);"></i>
+    <i style="top:170px;right:250px;width:14px;height:38px;background:#a5d6a7;transform:rotate(-30deg);"></i>
+    <i style="top:320px;right:70px;width:18px;height:18px;border-radius:50%;background:var(--verde);"></i>
+    <i style="top:450px;right:120px;width:22px;height:22px;background:var(--dourado);transform:rotate(-20deg);"></i>
+    <i style="top:610px;right:80px;width:15px;height:42px;background:var(--verde);transform:rotate(25deg);"></i>
+    <i style="top:770px;right:150px;width:18px;height:18px;border-radius:50%;background:var(--dourado);"></i>
+    <i style="top:900px;right:95px;width:24px;height:24px;background:#a5d6a7;transform:rotate(-30deg);"></i>
+  </div>
+
+  <div class="logo-topo">
+    <img src="img/logo-tata-preto.png?v=1" alt="Tatá Sushi">
+  </div>
+
+  <div class="corpo">
+    <div class="bloco-c">
+      <h1 class="titulo-festa" style="font-size:78px;">Feliz Dia do Garçom!</h1>
+      <p class="msg-festa">Hoje é dia de parabenizar quem transforma atendimento em cuidado, atenção e boas experiências.<br><br>
+        Nosso reconhecimento e agradecimento a todos os garçons do Tatá pela dedicação, simpatia e pelo trabalho de todos os dias.</p>
+    </div>
+    <p class="data-festa">11 de Agosto</p>
+  </div>
+</div>
+
+<p class="rotulo-teste">Sem borda</p>
+<div class="post comunicado festa sem-borda">
   <!-- confete decorativo -->
   <div class="confete" aria-hidden="true">
     <i style="top:120px;left:70px;width:26px;height:26px;background:var(--dourado);transform:rotate(20deg);"></i>
