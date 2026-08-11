@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comunicados Comemorativos 1×1 — Tatá Sushi</title>
+<link rel="icon" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pagina-lado:1080px;   /* 1:1 — Instagram */
+    --fonte-marca:'DM Serif Display', Georgia, 'Times New Roman', serif;
+    --fonte-texto:'DM Sans', 'Segoe UI', Arial, sans-serif;
+    --tinta:#141414;        /* preto suave (conceito monocromático) */
+    --fundo:#ffffff;        /* fundo branco limpo */
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#ddd;font-family:Arial,Helvetica,sans-serif;}
+
+  /* ===== PÁGINA QUADRADA 1:1 (conceito minimalista, fundo branco) ===== */
+  .post{width:var(--pagina-lado);height:var(--pagina-lado);background:var(--fundo);
+    margin:20px auto;position:relative;overflow:hidden;}
+
+  @media print{
+    @page{size:1080px 1080px;margin:0;}
+    body{background:#fff;}
+    .post{margin:0 !important;box-shadow:none !important;
+      page-break-after:always;break-after:page;
+      -webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .post:last-child{page-break-after:auto;break-after:auto;}
+    .btn-imprimir,.barra-ferramentas{display:none !important;}
+  }
+
+  .btn-imprimir{display:block;width:calc(100% - 40px);max-width:1080px;margin:20px auto 0;
+    background:var(--tinta);color:#fff;border:none;border-radius:14px;
+    padding:22px;font-family:Arial,sans-serif;font-size:30px;font-weight:bold;
+    cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.22);}
+  .dica{max-width:1080px;margin:12px auto 0;color:#555;font-family:Arial,sans-serif;
+    font-size:16px;text-align:center;line-height:1.5;}
+  .nota-esboco{max-width:1080px;margin:6px auto 0;color:#8a6d00;background:#fff7d6;border:1px solid #ecd98a;
+    border-radius:10px;padding:12px 16px;font-family:Arial,sans-serif;font-size:16px;text-align:center;line-height:1.5;}
+
+  /* ===== COMUNICADO COMEMORATIVO (minimalista) ===== */
+  .comemora{width:100%;height:100%;display:grid;grid-template-rows:auto 1fr auto;
+    justify-items:center;align-items:center;padding:78px 90px 96px;}
+
+  .comemora .logo-topo{width:150px;}
+  .comemora .logo-topo img{width:100%;height:auto;display:block;}
+
+  .comemora .arte{width:100%;display:flex;align-items:center;justify-content:center;padding:24px 0;}
+  .comemora .arte svg{width:auto;height:100%;max-height:560px;max-width:100%;display:block;color:var(--tinta);}
+
+  .comemora .titulo{font-family:var(--fonte-marca);color:var(--tinta);font-size:104px;line-height:1.02;
+    text-align:center;letter-spacing:-1px;}
+  .comemora .titulo .sub{display:block;font-family:var(--fonte-texto);font-weight:500;font-size:26px;
+    letter-spacing:6px;text-transform:uppercase;color:#6a6a6a;margin-top:20px;}
+</style>
+</head>
+<body>
+<button type="button" class="btn-imprimir" onclick="window.print()" title="Imprimir ou salvar em PDF">🖨️ Imprimir / PDF</button>
+<p class="dica">Para o Instagram: abra em tela cheia e tire um print (1080×1080px), ou use 🖨️ para salvar em PDF quadrado.</p>
+<p class="nota-esboco">✏️ ESBOÇO do conceito minimalista (fundo branco · logo preto · ilustração · título serifado). A ilustração é uma silhueta de exemplo — dá pra trocar pela arte exata que você quiser.</p>
+
+<!-- ============================================================
+     COMEMORATIVO 1×1 — conceito minimalista
+     Cada <div class="post"> é um post quadrado (1080×1080).
+     ============================================================ -->
+
+<!-- COMEMORATIVO — Dia do Garçom -->
+<div class="post">
+  <div class="comemora">
+
+    <div class="logo-topo">
+      <img src="img/logo-tata-preto.png?v=1" alt="Tatá Sushi">
+    </div>
+
+    <!-- ILUSTRAÇÃO (silhueta de garçom com bandeja) -->
+    <div class="arte">
+      <svg viewBox="0 0 600 600" fill="currentColor" aria-label="Garçom com bandeja">
+        <!-- braço erguido (esquerda do observador) segurando a bandeja -->
+        <path d="M246 182 C210 172 188 146 178 120 L200 108 C214 134 232 156 260 172 Z"/>
+        <ellipse cx="185" cy="112" rx="17" ry="11"/>
+        <!-- bandeja + itens -->
+        <ellipse cx="182" cy="100" rx="92" ry="13"/>
+        <path d="M152 88 C152 62 210 62 210 88 Z"/>
+        <circle cx="181" cy="59" r="5"/>
+        <path d="M116 66 L120 89 L133 89 L137 66 Z"/>
+        <rect x="222" y="54" width="13" height="35" rx="4"/>
+        <!-- pernas (calça) -->
+        <path d="M252 302 C248 402 244 486 242 560 L286 560 C290 480 300 402 303 324 C306 402 316 480 320 560 L364 560 C362 486 358 402 354 302 Z"/>
+        <ellipse cx="262" cy="566" rx="30" ry="12"/>
+        <ellipse cx="340" cy="566" rx="30" ry="12"/>
+        <!-- tronco (camisa/colete) -->
+        <path d="M258 170 C240 174 234 188 236 202 L246 302 L360 302 L370 202 C372 188 366 174 348 170 C318 162 288 162 258 170 Z"/>
+        <!-- avental -->
+        <rect x="244" y="298" width="118" height="16" rx="3"/>
+        <path d="M252 312 L246 436 L360 436 L354 312 Z"/>
+        <!-- braço direito dobrado com guardanapo (na frente do avental) -->
+        <path d="M356 174 C376 194 386 222 382 250 L360 254 C362 224 352 198 338 180 Z"/>
+        <path d="M380 244 C366 262 340 270 322 272 L324 288 C346 286 376 278 392 258 Z"/>
+        <path d="M338 256 L334 312 L364 314 L370 258 Z"/>
+        <!-- pescoço + cabeça -->
+        <rect x="289" y="140" width="30" height="28"/>
+        <circle cx="304" cy="106" r="42"/>
+        <!-- gravata borboleta -->
+        <path d="M304 165 L278 155 L278 181 Z"/>
+        <path d="M304 165 L330 155 L330 181 Z"/>
+        <rect x="298" y="161" width="12" height="13" rx="2"/>
+      </svg>
+    </div>
+
+    <h1 class="titulo" style="font-size:90px;">Feliz Dia do Garçom</h1>
+
+  </div>
+</div>
+
+<!-- COMEMORATIVO — Dia dos Pais (exemplo do conceito) -->
+<div class="post">
+  <div class="comemora">
+
+    <div class="logo-topo">
+      <img src="img/logo-tata-preto.png?v=1" alt="Tatá Sushi">
+    </div>
+
+    <!-- ILUSTRAÇÃO (silhueta pai + filho de mãos dadas, vista de costas) -->
+    <div class="arte">
+      <svg viewBox="0 0 600 600" fill="currentColor" aria-label="Pai e filho de mãos dadas">
+        <!-- ===== PAI ===== -->
+        <!-- braço externo (esquerdo) segurando bolsa (atrás do tronco) -->
+        <path d="M160 150 C142 210 140 282 152 332 L178 328 C172 274 172 210 180 160 Z"/>
+        <ellipse cx="150" cy="360" rx="26" ry="34"/>
+        <path d="M140 328 C140 342 160 342 160 328 Z"/>
+        <!-- aba do chapéu -->
+        <ellipse cx="210" cy="92" rx="88" ry="15"/>
+        <!-- copa do chapéu -->
+        <path d="M172 92 C170 50 192 36 210 36 C228 36 252 50 250 92 Z"/>
+        <!-- cabeça (nuca, de costas) + pescoço -->
+        <ellipse cx="210" cy="112" rx="27" ry="22"/>
+        <rect x="196" y="118" width="28" height="34" rx="12"/>
+        <!-- tronco (casaco, de costas) -->
+        <path d="M158 138 C150 214 166 300 178 330 L246 330 C258 300 274 214 266 138 C242 120 182 120 158 138 Z"/>
+        <!-- calça (conectada, com pé) -->
+        <path d="M178 326 C170 410 162 492 158 566 L202 566 C206 500 208 442 210 380 C214 442 220 500 226 566 L268 566 C262 492 254 410 246 326 Z"/>
+        <!-- sapatos -->
+        <ellipse cx="180" cy="572" rx="30" ry="12"/>
+        <ellipse cx="250" cy="574" rx="30" ry="12"/>
+        <!-- braço interno (direito) descendo até a mão -->
+        <path d="M264 152 C290 208 304 306 302 372 L286 380 C272 326 250 216 244 160 Z"/>
+
+        <!-- ===== MÃOS DADAS ===== -->
+        <ellipse cx="300" cy="380" rx="16" ry="13"/>
+
+        <!-- ===== FILHO ===== -->
+        <!-- braço externo (direito) (atrás do tronco) -->
+        <path d="M428 280 C442 334 444 386 438 422 L418 420 C424 378 420 328 410 284 Z"/>
+        <!-- cabeça / capuz -->
+        <ellipse cx="382" cy="230" rx="46" ry="48"/>
+        <!-- tronco (moletom) -->
+        <path d="M334 274 C328 340 342 400 354 430 L410 430 C424 400 438 340 430 274 C406 256 358 256 334 274 Z"/>
+        <!-- calça (conectada, com pé) -->
+        <path d="M354 426 C350 486 346 528 344 570 L374 570 C377 528 379 486 382 448 C385 486 391 528 396 570 L426 570 C424 528 420 486 412 430 Z"/>
+        <!-- sapatos -->
+        <ellipse cx="360" cy="576" rx="25" ry="11"/>
+        <ellipse cx="412" cy="577" rx="25" ry="11"/>
+        <!-- braço interno (esquerdo) subindo até a mão do pai -->
+        <path d="M338 280 C320 318 306 352 300 378 L316 388 C326 354 344 320 360 288 Z"/>
+      </svg>
+    </div>
+
+    <h1 class="titulo">Feliz Dia dos Pais</h1>
+
+  </div>
+</div>
+
+</body>
+</html>
