@@ -101,6 +101,31 @@
   /* ---- tarja de ATENÇÃO ---- */
   .comunicado .tarja{background:var(--verde);color:#fff;font-family:var(--fonte-texto);font-weight:800;
     font-size:54px;letter-spacing:8px;text-transform:uppercase;padding:14px 56px;border-radius:12px;}
+
+  /* ---- comunicado de evento/treinamento (título + info em cards + fecho) ---- */
+  .comunicado.treino .corpo{padding:324px 70px 44px;justify-content:flex-start;}
+  .comunicado .selo{display:inline-block;background:var(--com-sub);color:#fff;font-family:var(--fonte-texto);
+    font-weight:800;font-size:22px;letter-spacing:5px;text-transform:uppercase;padding:9px 26px;border-radius:999px;}
+  .comunicado .titulo-evento{font-family:var(--fonte-texto);font-weight:900;color:var(--verde);
+    text-transform:uppercase;letter-spacing:1px;line-height:1;font-size:76px;margin-top:13px;}
+  .comunicado .sub-evento{font-family:var(--fonte-texto);font-weight:800;color:var(--com-sub);
+    font-size:38px;line-height:1.15;margin-top:12px;max-width:860px;}
+  .comunicado .apoio-evento{font-family:var(--fonte-texto);font-style:italic;color:var(--com-mute);
+    font-size:27px;margin-top:8px;}
+  .comunicado .infos{display:flex;flex-direction:column;gap:15px;width:100%;max-width:640px;margin-top:26px;text-align:left;}
+  .comunicado .info-row{display:flex;align-items:center;gap:24px;background:#fff;border:2px solid #d9ecdd;
+    border-radius:16px;padding:13px 24px;}
+  .comunicado .info-row .ic{flex:0 0 auto;width:66px;height:66px;border-radius:50%;background:var(--verde);
+    color:#fff;display:flex;align-items:center;justify-content:center;}
+  .comunicado .info-row .ic svg{width:40px;height:40px;display:block;}
+  .comunicado .info-row .rt{font-family:var(--fonte-texto);}
+  .comunicado .info-row .rt .lb{font-size:20px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--com-mute);}
+  .comunicado .info-row .rt .vl{font-size:37px;font-weight:800;color:var(--com-texto);line-height:1.1;}
+  .comunicado .obrig{margin-top:34px;background:var(--verde);color:#fff;font-family:var(--fonte-texto);
+    font-weight:800;font-size:30px;letter-spacing:5px;text-transform:uppercase;padding:12px 42px;border-radius:10px;}
+  .comunicado .fecho-evento{font-family:var(--fonte-texto);font-size:27px;line-height:1.35;color:var(--com-texto);
+    margin-top:24px;max-width:760px;}
+  .comunicado .fecho-evento b{font-weight:800;color:var(--com-sub);}
 </style>
 </head>
 <body>
@@ -115,14 +140,51 @@
      e cole logo abaixo. Cada bloco é um post quadrado.
      ============================================================ -->
 
-<!-- MATRIZ (modelo em branco — copie e preencha) -->
+<!-- MATRIZ (modelo em branco — copie o bloco abaixo, tire o comentário e preencha)
 <div class="post comunicado">
   <div class="logo-topo">
     <img src="img/logo-tata-sushi.png?v=1" alt="Tatá Sushi">
   </div>
   <div class="corpo">
     <div class="bloco-c">
-      <!-- conteúdo do comunicado aqui -->
+      conteúdo do comunicado aqui
+    </div>
+  </div>
+</div>
+-->
+
+<!-- COMUNICADO — Treinamento de Boas Práticas e Segurança Alimentar -->
+<div class="post comunicado treino">
+  <div class="logo-topo">
+    <img src="img/logo-tata-sushi.png?v=1" alt="Tatá Sushi">
+  </div>
+  <div class="corpo">
+    <div class="bloco-c">
+      <span class="selo">Presença obrigatória</span>
+      <h1 class="titulo-evento">Treinamento</h1>
+      <p class="sub-evento">Boas Práticas e Segurança Alimentar</p>
+      <p class="apoio-evento">com a nutricionista</p>
+      <div class="infos">
+        <div class="info-row">
+          <div class="ic">
+            <svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-60h65v60h340v-60h65v60h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Zm300 230q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-188.5-11.5Q280-423 280-440t11.5-28.5Q303-480 320-480t28.5 11.5Q360-457 360-440t-11.5 28.5Q337-400 320-400t-28.5-11.5ZM640-400q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-188.5-11.5Q280-263 280-280t11.5-28.5Q303-320 320-320t28.5 11.5Q360-297 360-280t-11.5 28.5Q337-240 320-240t-28.5-11.5ZM640-240q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></svg>
+          </div>
+          <div class="rt"><div class="lb">Datas</div><div class="vl">17 e 18 de agosto</div></div>
+        </div>
+        <div class="info-row">
+          <div class="ic">
+            <svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="m627-287 45-45-159-160v-201h-60v225l174 181ZM480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-82 31.5-155t86-127.5Q252-817 325-848.5T480-880q82 0 155 31.5t127.5 86Q817-708 848.5-635T880-480q0 82-31.5 155t-86 127.5Q708-143 635-111.5T480-80Zm0-400Zm0 340q140 0 240-100t100-240q0-140-100-240T480-820q-140 0-240 100T140-480q0 140 100 240t240 100Z"/></svg>
+          </div>
+          <div class="rt"><div class="lb">Horário</div><div class="vl">15h30 às 16h30</div></div>
+        </div>
+        <div class="info-row">
+          <div class="ic">
+            <svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M480-159q133-121 196.5-219.5T740-552q0-118-75.5-193T480-820q-109 0-184.5 75T220-552q0 75 65 173.5T480-159Zm0 79Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480ZM480-490q29 0 49.5-20.5T550-560q0-29-20.5-49.5T480-630q-29 0-49.5 20.5T410-560q0 29 20.5 49.5T480-490Z"/></svg>
+          </div>
+          <div class="rt"><div class="lb">Unidade</div><div class="vl">Somente Itaim</div></div>
+        </div>
+      </div>
+      <p class="fecho-evento">Organizem as equipes para que <b>todos participem</b>.<br>Pinheiros marcaremos em breve.</p>
     </div>
   </div>
 </div>
