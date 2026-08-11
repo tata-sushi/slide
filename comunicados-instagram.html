@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comunicados 1×1 (Instagram) — Tatá Sushi</title>
+<link rel="icon" href="favicon.svg">
+<!-- Fontes: DM Serif Display (marca) + DM Sans (texto) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900;1000&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  /* ===== CONFIG DE MARCA (mesma paleta dos comunicados A4) ===== */
+  :root{
+    --verde:#4caf52;
+    --pagina-lado:1080px;   /* 1:1 — tamanho do feed do Instagram */
+    --fonte-marca:'DM Serif Display', Georgia, 'Times New Roman', serif;
+    --fonte-texto:'DM Sans', 'Segoe UI', Arial, sans-serif;
+    --fundo-com:#f1faf3;    /* fundo: verde bem claro, quase branco */
+    --borda-com:#4caf52;    /* moldura no verde da marca */
+    --com-titulo:#4caf52;   /* títulos principais (verde da marca) */
+    --com-sub:#1a5e22;      /* subtítulos, rótulos e títulos de tópico */
+    --com-texto:#223522;    /* texto do corpo */
+    --com-mute:#6a7a6a;     /* notas/assinatura */
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#ddd;font-family:Arial,Helvetica,sans-serif;}
+
+  /* ===== PÁGINA QUADRADA 1:1 (moldura verde nos 4 lados) ===== */
+  .post{width:var(--pagina-lado);height:var(--pagina-lado);background:var(--fundo-com);
+    margin:20px auto;position:relative;overflow:hidden;
+    border:26px solid var(--borda-com);padding:8px;}
+
+  @media print{
+    @page{size:1080px 1080px;margin:0;}
+    body{background:#fff;}
+    .post{margin:0 !important;box-shadow:none !important;
+      page-break-after:always;break-after:page;
+      -webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .post:last-child{page-break-after:auto;break-after:auto;}
+    .btn-imprimir{display:none !important;}
+  }
+
+  /* botão flutuante de imprimir / salvar */
+  .btn-imprimir{display:block;width:calc(100% - 40px);max-width:1080px;margin:20px auto 0;
+    background:var(--verde);color:#fff;border:none;border-radius:14px;
+    padding:22px;font-family:Arial,sans-serif;font-size:30px;font-weight:bold;
+    cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.22);}
+  .btn-imprimir:hover{background:#43a047;}
+  .dica{max-width:1080px;margin:12px auto 0;color:#555;font-family:Arial,sans-serif;
+    font-size:16px;text-align:center;line-height:1.5;}
+
+  /* =========================================================
+     COMUNICADO QUADRADO — estrutura base
+     ========================================================= */
+  .comunicado{display:flex;flex-direction:column;}
+  /* logo fixo perto da margem superior */
+  .comunicado .logo-topo{position:absolute;top:44px;left:0;right:0;margin:0 auto;width:168px;z-index:2;}
+  .comunicado .logo-topo img{width:100%;height:auto;display:block;}
+  /* corpo: centraliza o conteúdo no espaço abaixo do logo */
+  .comunicado .corpo{flex:1;display:flex;flex-direction:column;justify-content:center;
+    align-items:center;text-align:center;padding:190px 78px 66px;}
+
+  /* ---- bloco centralizado simples ---- */
+  .comunicado .bloco-c{display:flex;flex-direction:column;align-items:center;width:100%;}
+  .comunicado .titulo-com{font-family:var(--fonte-texto);font-weight:900;color:var(--verde);
+    text-align:center;line-height:1.08;letter-spacing:1px;text-transform:uppercase;font-size:74px;}
+  .comunicado .lead{font-family:var(--fonte-texto);font-size:38px;font-weight:800;color:var(--com-sub);
+    text-align:center;line-height:1.2;}
+  .comunicado .corpo-txt{font-family:var(--fonte-texto);font-size:32px;line-height:1.4;
+    color:var(--com-texto);text-align:center;max-width:820px;}
+  .comunicado .nota-verde{font-family:var(--fonte-texto);font-size:24px;font-style:italic;
+    color:var(--com-mute);text-align:center;}
+
+  /* ---- ícone grande centralizado ---- */
+  .comunicado .ico-grande{color:var(--verde);}
+  .comunicado .ico-grande svg{width:100%;height:auto;display:block;}
+
+  /* ---- Wi-Fi ---- */
+  .comunicado .wifi{display:flex;flex-direction:column;align-items:center;width:100%;}
+  .comunicado .wifi .icone{width:168px;color:var(--verde);}
+  .comunicado .wifi .icone svg{width:100%;height:auto;display:block;}
+  .comunicado .wifi h1{font-family:var(--fonte-texto);font-size:86px;font-weight:900;color:var(--verde);
+    letter-spacing:2px;line-height:1;margin:10px 0 40px;}
+  .comunicado .wifi .campos{display:flex;flex-direction:column;gap:30px;width:100%;max-width:640px;}
+  .comunicado .wifi .campo{text-align:center;}
+  .comunicado .wifi .rotulo{font-family:var(--fonte-texto);font-size:28px;font-weight:700;letter-spacing:5px;
+    text-transform:uppercase;color:var(--com-sub);margin-bottom:12px;}
+  .comunicado .wifi .valor{font-family:var(--fonte-texto);font-size:40px;font-weight:800;color:#fff;
+    background:var(--verde);border-radius:14px;padding:18px 16px;letter-spacing:1px;word-break:break-word;}
+
+  /* ---- lista de checks / tópicos ---- */
+  .comunicado .checklist{display:flex;flex-direction:column;gap:40px;width:100%;max-width:760px;
+    text-align:left;margin-top:8px;}
+  .comunicado .checklist .item{display:flex;align-items:flex-start;gap:24px;}
+  .comunicado .checklist .check{flex:0 0 auto;width:60px;height:60px;color:var(--verde);margin-top:2px;}
+  .comunicado .checklist .check svg{width:100%;height:100%;display:block;}
+  .comunicado .checklist .txt{font-family:var(--fonte-texto);font-size:33px;line-height:1.3;color:var(--com-texto);}
+  .comunicado .checklist .txt b{font-weight:800;}
+
+  /* ---- tarja de ATENÇÃO ---- */
+  .comunicado .tarja{background:var(--verde);color:#fff;font-family:var(--fonte-texto);font-weight:800;
+    font-size:54px;letter-spacing:8px;text-transform:uppercase;padding:14px 56px;border-radius:12px;}
+</style>
+</head>
+<body>
+<!-- Botão flutuante: imprimir / salvar -->
+<button type="button" class="btn-imprimir" onclick="window.print()" title="Imprimir ou salvar em PDF">🖨️ Imprimir / PDF</button>
+<p class="dica">Para o Instagram: abra em tela cheia e tire um print (a página é exatamente 1080×1080px),
+  ou use 🖨️ para salvar em PDF quadrado.</p>
+
+<!-- ============================================================
+     FORMATO 1×1 (INSTAGRAM) — 1080×1080
+     COMO CRIAR OUTRO: copie um bloco <div class="post comunicado"> ... </div>
+     e cole logo abaixo. Cada bloco é um post quadrado.
+     ============================================================ -->
+
+<!-- MATRIZ (modelo em branco — copie e preencha) -->
+<div class="post comunicado">
+  <div class="logo-topo">
+    <img src="img/logo-tata-sushi.png?v=1" alt="Tatá Sushi">
+  </div>
+  <div class="corpo">
+    <div class="bloco-c">
+      <!-- conteúdo do comunicado aqui -->
+    </div>
+  </div>
+</div>
+
+<!-- EXEMPLO — Wi-Fi (mesmo comunicado A4, adaptado ao quadrado) -->
+<div class="post comunicado">
+  <div class="logo-topo">
+    <img src="img/logo-tata-sushi.png?v=1" alt="Tatá Sushi">
+  </div>
+  <div class="corpo">
+    <div class="wifi">
+      <div class="icone">
+        <svg viewBox="0 0 100 78" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" aria-label="Wi-Fi">
+          <path d="M8 26 A62 62 0 0 1 92 26"/>
+          <path d="M23 43 A41 41 0 0 1 77 43"/>
+          <path d="M37 58 A23 23 0 0 1 63 58"/>
+          <circle cx="50" cy="70" r="5.5" fill="currentColor" stroke="none"/>
+        </svg>
+      </div>
+      <h1>WI-FI</h1>
+      <div class="campos">
+        <div class="campo">
+          <div class="rotulo">Rede</div>
+          <div class="valor">TATA HOUSE</div>
+        </div>
+        <div class="campo">
+          <div class="rotulo">Senha</div>
+          <div class="valor">#Tatahouse1234</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
