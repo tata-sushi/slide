@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comunicados Comemorativos 1×1 — Tatá Sushi</title>
+<link rel="icon" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900;1000&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  /* ===== CONFIG DE MARCA ===== */
+  :root{
+    --verde:#4caf52;
+    --pagina-lado:1080px;   /* 1:1 — Instagram */
+    --fonte-marca:'DM Serif Display', Georgia, 'Times New Roman', serif;
+    --fonte-texto:'DM Sans', 'Segoe UI', Arial, sans-serif;
+    --fundo-com:#f1faf3;
+    --borda-com:#4caf52;
+    --com-titulo:#4caf52;
+    --com-sub:#1a5e22;
+    --com-texto:#223522;
+    --com-mute:#6a7a6a;
+    --dourado:#e8b923;      /* acento festivo */
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#ddd;font-family:Arial,Helvetica,sans-serif;}
+
+  /* ===== PÁGINA QUADRADA 1:1 ===== */
+  .post{width:var(--pagina-lado);height:var(--pagina-lado);background:var(--fundo-com);
+    margin:20px auto;position:relative;overflow:hidden;
+    border:26px solid var(--borda-com);padding:8px;}
+
+  @media print{
+    @page{size:1080px 1080px;margin:0;}
+    body{background:#fff;}
+    .post{margin:0 !important;box-shadow:none !important;
+      page-break-after:always;break-after:page;
+      -webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .post:last-child{page-break-after:auto;break-after:auto;}
+    .btn-imprimir{display:none !important;}
+  }
+
+  .btn-imprimir{display:block;width:calc(100% - 40px);max-width:1080px;margin:20px auto 0;
+    background:var(--verde);color:#fff;border:none;border-radius:14px;
+    padding:22px;font-family:Arial,sans-serif;font-size:30px;font-weight:bold;
+    cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.22);}
+  .btn-imprimir:hover{background:#43a047;}
+  .dica{max-width:1080px;margin:12px auto 0;color:#555;font-family:Arial,sans-serif;
+    font-size:16px;text-align:center;line-height:1.5;}
+  .nota-esboco{max-width:1080px;margin:6px auto 0;color:#8a6d00;background:#fff7d6;border:1px solid #ecd98a;
+    border-radius:10px;padding:12px 16px;font-family:Arial,sans-serif;font-size:16px;text-align:center;line-height:1.5;}
+
+  /* =========================================================
+     COMUNICADO COMEMORATIVO 1×1
+     ========================================================= */
+  .comunicado{display:flex;flex-direction:column;}
+  .comunicado .logo-topo{position:absolute;top:44px;left:0;right:0;margin:0 auto;width:168px;z-index:3;}
+  .comunicado .logo-topo img{width:100%;height:auto;display:block;}
+  .comunicado .corpo{flex:1;display:flex;flex-direction:column;justify-content:center;
+    align-items:center;text-align:center;padding:330px 78px 70px;position:relative;z-index:2;}
+
+  /* ---- confete de fundo ---- */
+  .confete{position:absolute;inset:0;pointer-events:none;z-index:1;}
+  .confete i{position:absolute;display:block;}
+
+  /* ---- bloco festivo ---- */
+  .festa .icone-festa{color:var(--verde);width:118px;margin-bottom:6px;}
+  .festa .icone-festa svg{width:100%;height:auto;display:block;}
+  .festa .kicker{display:inline-block;background:var(--dourado);color:#5a4600;font-family:var(--fonte-texto);
+    font-weight:800;font-size:22px;letter-spacing:5px;text-transform:uppercase;padding:8px 26px;border-radius:999px;
+    margin-bottom:6px;}
+  .festa .titulo-festa{font-family:var(--fonte-marca);color:var(--com-sub);font-size:96px;line-height:1;
+    margin-top:14px;}
+  .festa .destaque{font-family:var(--fonte-texto);font-weight:900;color:var(--verde);text-transform:uppercase;
+    letter-spacing:1px;font-size:44px;line-height:1.1;margin-top:14px;}
+  .festa .msg-festa{font-family:var(--fonte-texto);font-size:33px;line-height:1.4;color:var(--com-texto);
+    max-width:780px;margin-top:22px;}
+  .festa .data-festa{font-family:var(--fonte-texto);font-weight:700;font-size:26px;letter-spacing:2px;
+    text-transform:uppercase;color:var(--com-mute);margin-top:26px;}
+  /* marcadores de placeholder no esboço */
+  .ph{color:#b06a00;font-style:italic;}
+</style>
+</head>
+<body>
+<button type="button" class="btn-imprimir" onclick="window.print()" title="Imprimir ou salvar em PDF">🖨️ Imprimir / PDF</button>
+<p class="dica">Para o Instagram: abra em tela cheia e tire um print (1080×1080px), ou use 🖨️ para salvar em PDF quadrado.</p>
+<p class="nota-esboco">✏️ ESBOÇO para validação — os textos entre [colchetes] são exemplos e serão substituídos pelo conteúdo real.</p>
+
+<!-- ============================================================
+     FORMATO COMEMORATIVO 1×1 — 1080×1080 (ESBOÇO)
+     ============================================================ -->
+<div class="post comunicado festa">
+  <!-- confete decorativo -->
+  <div class="confete" aria-hidden="true">
+    <i style="top:120px;left:70px;width:26px;height:26px;background:var(--dourado);transform:rotate(20deg);"></i>
+    <i style="top:210px;left:150px;width:18px;height:18px;border-radius:50%;background:var(--verde);"></i>
+    <i style="top:150px;left:250px;width:14px;height:40px;background:#a5d6a7;transform:rotate(35deg);"></i>
+    <i style="top:300px;left:60px;width:16px;height:16px;border-radius:50%;background:var(--dourado);"></i>
+    <i style="top:430px;left:110px;width:22px;height:22px;background:var(--verde);transform:rotate(15deg);"></i>
+    <i style="top:600px;left:70px;width:15px;height:44px;background:var(--dourado);transform:rotate(-25deg);"></i>
+    <i style="top:760px;left:140px;width:18px;height:18px;border-radius:50%;background:#a5d6a7;"></i>
+    <i style="top:900px;left:90px;width:24px;height:24px;background:var(--verde);transform:rotate(30deg);"></i>
+    <i style="top:130px;right:80px;width:24px;height:24px;background:var(--verde);transform:rotate(-15deg);"></i>
+    <i style="top:220px;right:160px;width:16px;height:16px;border-radius:50%;background:var(--dourado);"></i>
+    <i style="top:170px;right:250px;width:14px;height:38px;background:#a5d6a7;transform:rotate(-30deg);"></i>
+    <i style="top:320px;right:70px;width:18px;height:18px;border-radius:50%;background:var(--verde);"></i>
+    <i style="top:450px;right:120px;width:22px;height:22px;background:var(--dourado);transform:rotate(-20deg);"></i>
+    <i style="top:610px;right:80px;width:15px;height:42px;background:var(--verde);transform:rotate(25deg);"></i>
+    <i style="top:770px;right:150px;width:18px;height:18px;border-radius:50%;background:var(--dourado);"></i>
+    <i style="top:900px;right:95px;width:24px;height:24px;background:#a5d6a7;transform:rotate(-30deg);"></i>
+  </div>
+
+  <div class="logo-topo">
+    <img src="img/logo-tata-sushi.png?v=1" alt="Tatá Sushi">
+  </div>
+
+  <div class="corpo">
+    <div class="bloco-c">
+      <div class="icone-festa">
+        <svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="m80-80 186-520 337 333L80-80Zm101-101 314-112-203-204-111 316Zm376-264-34-34 240-240q32-32 81-32.5t81 31.5l17 17-34 34-19-19q-19-19-44-19.5T800-688L557-445ZM398-600l-34-34 30-30q23-23 21.5-52.5T394-766l-28-28 34-34 26 26q35 35 34.5 87.5T425-627l-27 27Zm81 77-34-34 152-152q19-19 18.5-48.5T596-806l-61-61 34-34 63 63q31 32 32 80.5T633-677L479-523Zm158 159-34-34 47-47q35-35 84-36t84 34l51 51-34 34-52-52q-23-23-48-23t-48 23l-50 50ZM181-181Z"/></svg>
+      </div>
+      <span class="kicker">[ Ocasião ]</span>
+      <h1 class="titulo-festa">Parabéns!</h1>
+      <p class="destaque">[ Nome / Motivo do destaque ]</p>
+      <p class="msg-festa"><span class="ph">[ Mensagem comemorativa vai aqui — uma ou duas linhas curtas com os parabéns ou o motivo da celebração. ]</span></p>
+      <p class="data-festa">[ Data ]</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
