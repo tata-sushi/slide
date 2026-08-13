@@ -770,6 +770,7 @@ html, body {
 }
 .nav-count .current { color:var(--citric); }
 .nav-sep { width:1px; height:20px; background:rgba(255,255,255,.15); margin:0 2px; }
+.nav-zoom-group { display:flex; align-items:center; gap:8px; }
 .nav-zoom {
   width:auto;
   min-width:52px;
@@ -1060,9 +1061,11 @@ body.is-drawing .draw-toolbar {
   .deck { padding:16px 12px 100px; }
   .slide { border-radius:10px; }
   .draw-canvas { border-radius:10px; }
-  .nav { bottom:12px; }
+  .nav { bottom:12px; gap:4px; padding:6px; }
   .nav-btn { width:34px; height:34px; }
-  .nav-count { font-size:11px; min-width:60px; }
+  .nav-count { font-size:11px; min-width:52px; padding:0 4px; }
+  /* No mobile o navegador já faz pinch-to-zoom; escondemos o zoom da barra */
+  .nav-zoom-group { display:none; }
   .draw-toolbar { bottom:70px; padding:6px; gap:4px; }
   .tool-btn { width:32px; height:32px; }
   .color-btn { width:20px; height:20px; }
@@ -1349,17 +1352,19 @@ body.is-drawing .draw-toolbar {
       <polyline points="15 20 15 15 20 15"></polyline>
     </svg>
   </button>
-  <div class="nav-sep" aria-hidden="true"></div>
-  <button class="nav-btn" id="zoomOut" aria-label="Diminuir zoom" title="Diminuir zoom (−)">
-    <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-  </button>
-  <button class="nav-btn nav-zoom" id="zoomReset" aria-label="Redefinir zoom" title="Redefinir zoom (0)">
-    <span id="zoomVal">100%</span>
-  </button>
-  <button class="nav-btn" id="zoomIn" aria-label="Aumentar zoom" title="Aumentar zoom (+)">
-    <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-  </button>
-  <div class="nav-sep" aria-hidden="true"></div>
+  <div class="nav-zoom-group">
+    <div class="nav-sep" aria-hidden="true"></div>
+    <button class="nav-btn" id="zoomOut" aria-label="Diminuir zoom" title="Diminuir zoom (−)">
+      <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+    </button>
+    <button class="nav-btn nav-zoom" id="zoomReset" aria-label="Redefinir zoom" title="Redefinir zoom (0)">
+      <span id="zoomVal">100%</span>
+    </button>
+    <button class="nav-btn" id="zoomIn" aria-label="Aumentar zoom" title="Aumentar zoom (+)">
+      <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+    </button>
+    <div class="nav-sep" aria-hidden="true"></div>
+  </div>
   <button class="nav-btn" id="drawToggle" aria-label="Ativar lousa" title="Lousa (D)">
     <svg viewBox="0 0 24 24">
       <path d="M12 20h9"></path>
