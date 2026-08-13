@@ -336,6 +336,11 @@ html, body {
   padding-right:.2em;
 }
 .slide-list li.topic-collapse > details[open] > summary .topic-chevron { transform:rotate(270deg); }
+/* Sub-lista dentro de um tópico expansível */
+.slide-list .topic-sublist { list-style:none; margin:.45em 0 .2em; padding:0; }
+.slide-list .topic-sublist li { border-top:none; padding:.3em 0 .3em 1.2em; }
+.slide-list .topic-sublist li::before { top:.62em; width:.34em; height:.34em; }
+.slide-list .topic-sublist strong { font-weight:700; }
 .mini-table {
   margin-top:.7em;
   width:fit-content;
@@ -1188,7 +1193,20 @@ body.is-drawing .draw-toolbar {
         <h2 class="slide-heading">Liderança</h2>
         <p class="slide-text">Criando uma identidade coletiva:</p>
         <ul class="slide-list">
-          <li>O que significa ser líder;</li>
+          <li class="topic-collapse">
+            <details>
+              <summary>
+                <span>O que significa ser líder</span>
+                <span class="topic-chevron" aria-hidden="true">›</span>
+              </summary>
+              <ul class="topic-sublist">
+                <li><strong>Direcionar:</strong> deixar claro onde precisamos chegar e o que é esperado.</li>
+                <li><strong>Desenvolver:</strong> ajudar as pessoas a crescerem, corrigindo e orientando quando necessário.</li>
+                <li><strong>Influenciar:</strong> entender que comportamento, postura e comunicação do líder são observados e reproduzidos.</li>
+                <li><strong>Responsabilizar-se:</strong> não apenas cobrar a equipe, mas assumir responsabilidade pelo ambiente e pelos resultados dela.</li>
+              </ul>
+            </details>
+          </li>
           <li>O que significa fazer parte de um time de liderança;</li>
           <li>União e confiança;</li>
           <li>Comunicação;</li>
