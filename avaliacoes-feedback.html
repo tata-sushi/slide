@@ -597,6 +597,22 @@ html, body {
 .topic-cols .topic-section + .topic-section { margin-top:0; }
 .topic-section .info-box-text { color:var(--t1); }
 .topic-cols .topic-section { text-align:center; }
+.category-grid {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.7em;
+  width:100%;
+}
+.category-chip {
+  padding:.6em 1.1em;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:var(--page-bg);
+  font-family:"DM Sans",sans-serif;
+  font-weight:600;
+  font-size:clamp(12px, 1.3vw, 16px);
+  color:var(--t1);
+}
 .topic-callout {
   grid-column:1 / -1;
   margin-top:1.1em;
@@ -1578,8 +1594,34 @@ body.is-drawing .draw-toolbar {
       <div class="slide-num">03</div>
     </section>
 
-    <!-- Slide 4 — Avaliações e feedbacks em cada momento da jornada (âncora) -->
-    <section class="slide slide-light" aria-label="Slide 4 · Linha do Tempo">
+    <!-- Slide 4 — Categorias -->
+    <section class="slide slide-light" aria-label="Slide 4 · Categorias">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">Avaliações &amp; Feedback</p>
+        <h2 class="slide-heading">Categorias</h2>
+        <p class="slide-text">As categorias organizam os principais temas avaliados ao longo da jornada do colaborador no Tatá. Elas ajudam a identificar padrões, pontos fortes e oportunidades de melhoria de forma integrada.</p>
+        <div class="category-grid">
+          <span class="category-chip">Clareza</span>
+          <span class="category-chip">Integração</span>
+          <span class="category-chip">Desenvolvimento</span>
+          <span class="category-chip">Liderança</span>
+          <span class="category-chip">Comunicação</span>
+          <span class="category-chip">Colaboração</span>
+          <span class="category-chip">Respeito</span>
+          <span class="category-chip">Desempenho</span>
+          <span class="category-chip">Cultura</span>
+          <span class="category-chip">Condições</span>
+          <span class="category-chip">Reconhecimento</span>
+          <span class="category-chip">Bem-estar</span>
+          <span class="category-chip">Carreira</span>
+          <span class="category-chip">Desligamento</span>
+        </div>
+      </div>
+      <div class="slide-num">04</div>
+    </section>
+
+    <!-- Slide 5 — Avaliações e feedbacks em cada momento da jornada (âncora) -->
+    <section class="slide slide-light" aria-label="Slide 5 · Linha do Tempo">
       <div class="slide-inner">
         <p class="slide-eyebrow">Avaliações &amp; Feedback</p>
         <h2 class="slide-heading">Durante toda a jornada</h2>
@@ -1630,11 +1672,11 @@ body.is-drawing .draw-toolbar {
           </div>
         </div>
       </div>
-      <div class="slide-num">04</div>
+      <div class="slide-num">05</div>
     </section>
 
-    <!-- Slide 5 — Onde estamos (status) -->
-    <section class="slide slide-light" aria-label="Slide 5 · Onde Estamos">
+    <!-- Slide 6 — Onde estamos (status) -->
+    <section class="slide slide-light" aria-label="Slide 6 · Onde Estamos">
       <div class="slide-inner">
         <p class="slide-eyebrow">Avaliações &amp; Feedback</p>
         <h2 class="slide-heading">Onde estamos</h2>
@@ -1661,11 +1703,11 @@ body.is-drawing .draw-toolbar {
           </div>
         </div>
       </div>
-      <div class="slide-num">05</div>
+      <div class="slide-num">06</div>
     </section>
 
-    <!-- Slide 6 — Próximos passos -->
-    <section class="slide slide-light" aria-label="Slide 6 · Próximos Passos">
+    <!-- Slide 7 — Próximos passos -->
+    <section class="slide slide-light" aria-label="Slide 7 · Próximos Passos">
       <div class="slide-inner">
         <p class="slide-eyebrow">Avaliações &amp; Feedback</p>
         <h2 class="slide-heading">Próximos passos</h2>
@@ -1674,11 +1716,11 @@ body.is-drawing .draw-toolbar {
           <li>Transformar resultados em ações com as lideranças e desenvolvimento da cultura</li>
         </ul>
       </div>
-      <div class="slide-num">06</div>
+      <div class="slide-num">07</div>
     </section>
 
-    <!-- Slide 7 — Encerramento -->
-    <section class="slide slide-cover is-dark" aria-label="Slide 7 · Encerramento">
+    <!-- Slide 8 — Encerramento -->
+    <section class="slide slide-cover is-dark" aria-label="Slide 8 · Encerramento">
       <div class="slide-inner">
         <img alt="TATÁ SUSHI" class="cover-logo-full" id="closingLogo">
       </div>
