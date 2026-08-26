@@ -536,19 +536,20 @@ html, body {
   color:var(--t2);
 }
 .topic-cols {
-  padding:1em 0 .2em;
+  padding:1.6em 0 .2em;
   display:grid;
   grid-template-columns:1fr 1fr;
+  align-items:start;
   gap:1em 2.2em;
 }
 .topic-sub {
-  margin:0 0 .5em;
-  font-family:"DM Mono",monospace;
-  font-size:clamp(9px, .95vw, 12px);
-  font-weight:500;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  color:var(--t3);
+  margin:0 0 .3em;
+  font-family:"DM Sans",sans-serif;
+  font-size:clamp(13px, 1.5vw, 20px);
+  font-weight:700;
+  letter-spacing:normal;
+  text-transform:none;
+  color:var(--t1);
 }
 .topic-sublist {
   list-style:none;
@@ -699,6 +700,7 @@ html, body {
   -webkit-box-decoration-break:clone;
 }
 .topic-cols--triple { grid-template-columns:1fr 1fr 1fr; }
+.comofunciona-lead { margin-top:6em; }
 .timeline-track {
   display:grid;
   grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
@@ -1537,8 +1539,54 @@ body.is-drawing .draw-toolbar {
       <div class="slide-num">02</div>
     </section>
 
-    <!-- Slide 3 — Avaliações e feedbacks em cada momento da jornada (âncora) -->
-    <section class="slide slide-light" aria-label="Slide 3 · Linha do Tempo">
+    <!-- Slide 3 — Como funciona (a mecânica comum) -->
+    <section class="slide slide-light" aria-label="Slide 3 · Como Funciona">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">Avaliações &amp; Feedback</p>
+        <h2 class="slide-heading">Como funciona</h2>
+        <p class="slide-text comofunciona-lead">Régua de classificação:</p>
+        <div class="faixa-legend">
+          <div class="faixa-chip faixa-critico">
+            <p class="faixa-name">Crítico</p>
+            <p class="faixa-range">&lt; 3,0</p>
+          </div>
+          <div class="faixa-chip faixa-atencao">
+            <p class="faixa-name">Atenção</p>
+            <p class="faixa-range">≥ 3,0</p>
+          </div>
+          <div class="faixa-chip faixa-observacao">
+            <p class="faixa-name">Observação</p>
+            <p class="faixa-range">≥ 3,5</p>
+          </div>
+          <div class="faixa-chip faixa-saudavel">
+            <p class="faixa-name">Saudável</p>
+            <p class="faixa-range">≥ 4,0</p>
+          </div>
+          <div class="faixa-chip faixa-destaque">
+            <p class="faixa-name">Destaque</p>
+            <p class="faixa-range">≥ 4,5</p>
+          </div>
+        </div>
+        <div class="topic-cols topic-cols--triple">
+          <div class="topic-section">
+            <p class="topic-sub">Escala Likert</p>
+            <p class="info-box-text">Classificação de 1 à 5 em todos os instrumentos, com percepção/qualidade: Nunca → Às vezes → Sempre.</p>
+          </div>
+          <div class="topic-section">
+            <p class="topic-sub">Confidencialidade onde importa</p>
+            <p class="info-box-text">Clima é medido de forma confidencial, e a liderança acompanha a média consolidada.</p>
+          </div>
+          <div class="topic-section">
+            <p class="topic-sub">Começo, meio e fim</p>
+            <p class="info-box-text">Formulários inteligentes, dashboards consolidados e resultados separados por fases.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">03</div>
+    </section>
+
+    <!-- Slide 4 — Avaliações e feedbacks em cada momento da jornada (âncora) -->
+    <section class="slide slide-light" aria-label="Slide 4 · Linha do Tempo">
       <div class="slide-inner">
         <p class="slide-eyebrow">Avaliações &amp; Feedback</p>
         <h2 class="slide-heading">Durante toda a jornada</h2>
@@ -1586,52 +1634,6 @@ body.is-drawing .draw-toolbar {
                 <li>Entrevista de Desligamento</li>
               </ul>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="slide-num">03</div>
-    </section>
-
-    <!-- Slide 4 — Como funciona (a mecânica comum) -->
-    <section class="slide slide-light" aria-label="Slide 4 · Como Funciona">
-      <div class="slide-inner">
-        <p class="slide-eyebrow">Avaliações &amp; Feedback</p>
-        <h2 class="slide-heading">Como funciona</h2>
-        <p class="slide-text">Régua de classificação:</p>
-        <div class="faixa-legend">
-          <div class="faixa-chip faixa-critico">
-            <p class="faixa-name">Crítico</p>
-            <p class="faixa-range">&lt; 3,0</p>
-          </div>
-          <div class="faixa-chip faixa-atencao">
-            <p class="faixa-name">Atenção</p>
-            <p class="faixa-range">≥ 3,0</p>
-          </div>
-          <div class="faixa-chip faixa-observacao">
-            <p class="faixa-name">Observação</p>
-            <p class="faixa-range">≥ 3,5</p>
-          </div>
-          <div class="faixa-chip faixa-saudavel">
-            <p class="faixa-name">Saudável</p>
-            <p class="faixa-range">≥ 4,0</p>
-          </div>
-          <div class="faixa-chip faixa-destaque">
-            <p class="faixa-name">Destaque</p>
-            <p class="faixa-range">≥ 4,5</p>
-          </div>
-        </div>
-        <div class="topic-cols topic-cols--triple">
-          <div class="topic-section">
-            <p class="topic-sub">Escala Likert</p>
-            <p class="info-box-text">Classificação de 1 à 5 em todos os instrumentos, com percepção/qualidade: Nunca → Às vezes → Sempre.</p>
-          </div>
-          <div class="topic-section">
-            <p class="topic-sub">Confidencialidade onde importa</p>
-            <p class="info-box-text">Clima é medido de forma confidencial, e a liderança acompanha a média consolidada.</p>
-          </div>
-          <div class="topic-section">
-            <p class="topic-sub">Começo, meio e fim</p>
-            <p class="info-box-text">Formulários inteligentes, dashboards consolidados e resultados separados por fases.</p>
           </div>
         </div>
       </div>
