@@ -685,6 +685,13 @@ html, body {
   margin-top:.15em;
 }
 .topic-cols--triple { grid-template-columns:1fr 1fr 1fr; }
+.topic-text-lg {
+  margin:0;
+  font-family:"DM Sans",sans-serif;
+  font-size:clamp(14px, 1.7vw, 20px);
+  line-height:1.5;
+  color:var(--t2);
+}
 .timeline-track {
   display:grid;
   grid-template-columns: 1fr auto 1fr auto 1.3fr auto 1fr;
@@ -1484,7 +1491,6 @@ body.is-drawing .draw-toolbar {
           <h1 class="cover-title">Avaliações &amp; Feedback</h1>
           <p class="cover-subtitle cover-subtitle--wrap">Dos primeiros dias à saída</p>
         </div>
-        <p class="cover-foot">Gente &amp; Gestão · Tatá Sushi · 2026</p>
       </div>
     </section>
 
@@ -1497,29 +1503,20 @@ body.is-drawing .draw-toolbar {
         <div class="topic-cols">
           <div class="topic-section">
             <p class="topic-sub">Catálogo único</p>
-            <p class="info-box-text">Configurável sem necessidade de reprogramação.</p>
+            <p class="topic-text-lg">Configurável sem necessidade de reprogramação.</p>
           </div>
           <div class="topic-section">
             <p class="topic-sub">Metodologia simples</p>
-            <p class="info-box-text">Escala Likert com classificação de 1 à 5.</p>
+            <p class="topic-text-lg">Escala Likert com classificação de 1 à 5.</p>
           </div>
         </div>
         <div class="topic-section">
           <p class="topic-sub">Canais personalizados</p>
-          <div class="topic-cols topic-cols--triple">
-            <div>
-              <p class="info-box-title">WhatsApp</p>
-              <p class="info-box-text">Com links exclusivos e automatizados, passam uma melhor sensação de segurança e confiabilidade.<span class="mini-caption">Pesquisa de Clima e Pesquisa de Desligamento</span></p>
-            </div>
-            <div>
-              <p class="info-box-title">Tatá Plus</p>
-              <p class="info-box-text">Aplicativo do colaborador com maior usabilidade e simplicidade.<span class="mini-caption">Avaliação período de experiência e liderança</span></p>
-            </div>
-            <div>
-              <p class="info-box-title">Portal de Governança</p>
-              <p class="info-box-text">Gestão e Liderança avaliando e acompanhando dados via dashboard.<span class="mini-caption">Avaliação de experiência e Avaliação de desempenho semestral</span></p>
-            </div>
-          </div>
+          <ul class="slide-list">
+            <li><strong>WhatsApp</strong> — Com links exclusivos e automatizados, passam uma melhor sensação de segurança e confiabilidade.<span class="mini-caption">Pesquisa de Clima e Pesquisa de Desligamento</span></li>
+            <li><strong>Tatá Plus</strong> — Aplicativo do colaborador com maior usabilidade e simplicidade.<span class="mini-caption">Avaliação período de experiência e liderança</span></li>
+            <li><strong>Portal de Governança</strong> — Gestão e Liderança avaliando e acompanhando dados via dashboard.<span class="mini-caption">Avaliação de experiência e Avaliação de desempenho semestral</span></li>
+          </ul>
         </div>
       </div>
       <div class="slide-num">02</div>
