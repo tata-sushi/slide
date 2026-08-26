@@ -676,8 +676,17 @@ html, body {
 .channel-icon svg { width:20px; height:20px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
 .info-box.channel-box { text-align:center; display:flex; flex-direction:column; align-items:center; }
 .mini-caption {
+  display:block;
+  font-family:"DM Mono",monospace;
+  font-size:.72em;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--t3);
+  margin-top:.15em;
+}
+.mini-caption--highlight {
   display:inline;
-  margin-top:.3em;
+  margin-top:0;
   font-family:inherit;
   font-size:1em;
   font-weight:400;
@@ -1501,9 +1510,9 @@ body.is-drawing .draw-toolbar {
         <div class="topic-section">
           <p class="topic-sub">Canais personalizados</p>
           <ul class="slide-list">
-            <li><strong>WhatsApp:</strong> Com links exclusivos e automatizados, passam uma melhor sensação de segurança e confiabilidade.<span class="mini-caption">Pesquisa de Clima e Pesquisa de Desligamento</span></li>
-            <li><strong>Tatá Plus:</strong> Aplicativo do colaborador com maior usabilidade e simplicidade.<span class="mini-caption">Avaliação período de experiência e liderança</span></li>
-            <li><strong>Portal de Governança:</strong> Gestão e Liderança avaliando e acompanhando dados via dashboard.<span class="mini-caption">Avaliação de experiência e Avaliação de desempenho semestral</span></li>
+            <li><strong>WhatsApp:</strong> Com links exclusivos e automatizados, passam uma melhor sensação de segurança e confiabilidade.<span class="mini-caption mini-caption--highlight">Pesquisa de Clima e Pesquisa de Desligamento</span></li>
+            <li><strong>Tatá Plus:</strong> Aplicativo do colaborador com maior usabilidade e simplicidade.<span class="mini-caption mini-caption--highlight">Avaliação período de experiência e liderança</span></li>
+            <li><strong>Portal de Governança:</strong> Gestão e Liderança avaliando e acompanhando dados via dashboard.<span class="mini-caption mini-caption--highlight">Avaliação de experiência e Avaliação de desempenho semestral</span></li>
           </ul>
         </div>
       </div>
