@@ -597,21 +597,34 @@ html, body {
 .topic-cols .topic-section + .topic-section { margin-top:0; }
 .topic-section .info-box-text { color:var(--t1); }
 .topic-cols .topic-section { text-align:center; }
-.category-grid {
-  display:flex;
-  flex-wrap:wrap;
-  gap:.7em;
+.category-lists {
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:0 2.4em;
   width:100%;
 }
-.category-chip {
-  padding:.6em 1.1em;
-  border:1px solid var(--border);
-  border-radius:999px;
-  background:var(--page-bg);
+.category-lists ul {
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.category-lists li {
+  position:relative;
   font-family:"DM Sans",sans-serif;
   font-weight:600;
-  font-size:clamp(12px, 1.3vw, 16px);
+  font-size:clamp(13px, 1.4vw, 17px);
   color:var(--t1);
+  padding:.45em 0 .45em 1.1em;
+}
+.category-lists li::before {
+  content:"";
+  position:absolute;
+  left:0;
+  top:1.05em;
+  width:.4em;
+  height:.4em;
+  background:var(--carbon);
+  border-radius:50%;
 }
 .topic-callout {
   grid-column:1 / -1;
@@ -1599,22 +1612,28 @@ body.is-drawing .draw-toolbar {
       <div class="slide-inner">
         <p class="slide-eyebrow">Avaliações &amp; Feedback</p>
         <h2 class="slide-heading">Categorias</h2>
-        <p class="slide-text">As categorias organizam os principais temas avaliados ao longo da jornada do colaborador no Tatá. Elas ajudam a identificar padrões, pontos fortes e oportunidades de melhoria de forma integrada.</p>
-        <div class="category-grid">
-          <span class="category-chip">Clareza</span>
-          <span class="category-chip">Integração</span>
-          <span class="category-chip">Desenvolvimento</span>
-          <span class="category-chip">Liderança</span>
-          <span class="category-chip">Comunicação</span>
-          <span class="category-chip">Colaboração</span>
-          <span class="category-chip">Respeito</span>
-          <span class="category-chip">Desempenho</span>
-          <span class="category-chip">Cultura</span>
-          <span class="category-chip">Condições</span>
-          <span class="category-chip">Reconhecimento</span>
-          <span class="category-chip">Bem-estar</span>
-          <span class="category-chip">Carreira</span>
-          <span class="category-chip">Desligamento</span>
+        <p class="slide-text">Separamos as categorias organizando os principais temas avaliados ao longo da jornada do colaborador. Para que elas ajudem a identificar padrões, pontos fortes e oportunidades de melhoria de forma integrada.</p>
+        <div class="category-lists">
+          <ul>
+            <li>Clareza</li>
+            <li>Integração</li>
+            <li>Desenvolvimento</li>
+            <li>Liderança</li>
+            <li>Comunicação</li>
+          </ul>
+          <ul>
+            <li>Colaboração</li>
+            <li>Respeito</li>
+            <li>Desempenho</li>
+            <li>Cultura</li>
+            <li>Condições</li>
+          </ul>
+          <ul>
+            <li>Reconhecimento</li>
+            <li>Bem-estar</li>
+            <li>Carreira</li>
+            <li>Desligamento</li>
+          </ul>
         </div>
       </div>
       <div class="slide-num">04</div>
