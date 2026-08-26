@@ -505,13 +505,13 @@ html, body {
   border-left:1px solid var(--border);
 }
 .stat-compare .stat-label {
-  margin:0 0 .4em;
-  font-family:"DM Mono",monospace;
-  font-size:clamp(9px, .95vw, 12px);
-  font-weight:500;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:var(--t3);
+  margin:0 0 .48em;
+  font-family:"DM Sans",sans-serif;
+  font-size:clamp(12px, 1.4vw, 17px);
+  font-weight:700;
+  letter-spacing:normal;
+  text-transform:none;
+  color:var(--t1);
 }
 .stat-compare .stat-value {
   margin:0 0 .3em;
@@ -602,7 +602,7 @@ html, body {
   grid-template-columns:repeat(3, 1fr);
   gap:0 2.4em;
   width:100%;
-  margin-top:.15em;
+  margin-top:.38em;
 }
 .category-lists ul {
   list-style:none;
@@ -753,11 +753,11 @@ html, body {
 .timeline-box .channel-icon {
   width:38px;
   height:38px;
-  margin-bottom:.5em;
+  margin-bottom:.85em;
 }
 .timeline-box .channel-icon svg { width:19px; height:19px; }
 .timeline-stop-label {
-  margin:0 0 1.1em;
+  margin:0 0 .75em;
   font-family:"DM Mono",monospace;
   font-size:clamp(9px, .95vw, 11px);
   font-weight:700;
@@ -868,7 +868,7 @@ html, body {
   line-height:1;
 }
 .stat-compare--triple { grid-template-columns:1fr 1fr 1fr; max-width:94%; }
-.stat-compare--quad { grid-template-columns:1fr 1fr 1fr 1fr; max-width:98%; }
+.stat-compare--quad { grid-template-columns:1fr 1fr 1fr 1fr; max-width:98%; margin-top:6.1em; }
 .faixa-legend + .info-grid { margin-top:.9em; }
 .bar-chart { margin-bottom:1.6em; }
 .bar-chart:last-child { margin-bottom:0; }
@@ -1608,40 +1608,8 @@ body.is-drawing .draw-toolbar {
       <div class="slide-num">03</div>
     </section>
 
-    <!-- Slide 4 — Categorias -->
-    <section class="slide slide-light" aria-label="Slide 4 · Categorias">
-      <div class="slide-inner">
-        <p class="slide-eyebrow">Avaliações &amp; Feedback</p>
-        <h2 class="slide-heading">Categorias</h2>
-        <p class="slide-text">Separamos as categorias organizando os principais temas avaliados ao longo da jornada do colaborador. Para que elas ajudem a identificar padrões, pontos fortes e oportunidades de melhoria de forma integrada.</p>
-        <div class="category-lists">
-          <ul>
-            <li>Clareza</li>
-            <li>Integração</li>
-            <li>Desenvolvimento</li>
-            <li>Liderança</li>
-            <li>Comunicação</li>
-          </ul>
-          <ul>
-            <li>Colaboração</li>
-            <li>Respeito</li>
-            <li>Desempenho</li>
-            <li>Cultura</li>
-            <li>Condições</li>
-          </ul>
-          <ul>
-            <li>Reconhecimento</li>
-            <li>Bem-estar</li>
-            <li>Carreira</li>
-            <li>Desligamento</li>
-          </ul>
-        </div>
-      </div>
-      <div class="slide-num">04</div>
-    </section>
-
-    <!-- Slide 5 — Avaliações e feedbacks em cada momento da jornada (âncora) -->
-    <section class="slide slide-light" aria-label="Slide 5 · Linha do Tempo">
+    <!-- Slide 4 — Avaliações e feedbacks em cada momento da jornada (âncora) -->
+    <section class="slide slide-light" aria-label="Slide 4 · Linha do Tempo">
       <div class="slide-inner">
         <p class="slide-eyebrow">Avaliações &amp; Feedback</p>
         <h2 class="slide-heading">Durante toda a jornada</h2>
@@ -1690,6 +1658,38 @@ body.is-drawing .draw-toolbar {
               </ul>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="slide-num">04</div>
+    </section>
+
+    <!-- Slide 5 — Categorias -->
+    <section class="slide slide-light" aria-label="Slide 5 · Categorias">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">Avaliações &amp; Feedback</p>
+        <h2 class="slide-heading">Categorias</h2>
+        <p class="slide-text">Separamos as categorias organizando os principais temas avaliados ao longo da jornada do colaborador. Para que elas ajudem a identificar padrões, pontos fortes e oportunidades de melhoria de forma integrada.</p>
+        <div class="category-lists">
+          <ul>
+            <li>Clareza</li>
+            <li>Integração</li>
+            <li>Desenvolvimento</li>
+            <li>Liderança</li>
+            <li>Comunicação</li>
+          </ul>
+          <ul>
+            <li>Colaboração</li>
+            <li>Respeito</li>
+            <li>Desempenho</li>
+            <li>Cultura</li>
+            <li>Condições</li>
+          </ul>
+          <ul>
+            <li>Reconhecimento</li>
+            <li>Bem-estar</li>
+            <li>Carreira</li>
+            <li>Desligamento</li>
+          </ul>
         </div>
       </div>
       <div class="slide-num">05</div>
