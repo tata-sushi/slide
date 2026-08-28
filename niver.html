@@ -849,59 +849,33 @@ html, body {
 .htl-card {
   width:100%;
   padding:.85em .8em;
-  border:1px solid var(--border);
+  border:1px solid var(--carbon);
   border-radius:10px;
   background:var(--page-bg);
 }
 .htl-reward {
   margin:0;
   font-family:"DM Sans",sans-serif;
-  font-size:clamp(10px,1.05vw,12.5px);
+  font-size:clamp(11.5px,1.21vw,14.4px);
   line-height:1.35;
   color:var(--t1);
 }
-.htl-col--milestone .htl-card { border-color:var(--carbon); }
 .htl-col--milestone .htl-reward { font-weight:600; }
 
-/* ── Nota / callout ──────────────────────────── */
-.nota-callout {
-  display:flex;
-  gap:1.1em;
-  align-items:flex-start;
-  width:100%;
-  max-width:82%;
-  margin-top:1em;
-  padding:1.4em 1.6em;
-  background:var(--page-bg);
-  border:1px solid var(--border);
-  border-left:6px solid var(--carbon);
-  border-radius:10px;
-}
-.nota-icon {
-  flex-shrink:0;
-  width:44px;
-  height:44px;
-  border-radius:50%;
-  background:var(--carbon);
-  color:var(--citric);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.nota-icon svg { width:22px; height:22px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
-.nota-title {
-  margin:0 0 .4em;
+/* ── Nota · Atenção (texto direto na página) ──── */
+.nota-headline {
+  margin:.2em 0 .55em;
   font-family:"DM Sans",sans-serif;
   font-weight:700;
-  font-size:clamp(14px,1.5vw,19px);
+  font-size:clamp(16px,2vw,27px);
+  line-height:1.2;
   color:var(--t1);
 }
-.nota-text {
-  margin:0;
-  font-family:"DM Sans",sans-serif;
-  font-size:clamp(12px,1.3vw,16px);
-  line-height:1.5;
-  color:var(--t2);
+.nota-body {
+  max-width:80%;
+  font-size:clamp(13px,1.5vw,19px);
+  line-height:1.55;
+  color:var(--t1);
 }
 .faixa-legend {
   display:flex;
@@ -1657,9 +1631,8 @@ body.is-drawing .draw-toolbar {
     <!-- Slide 2 — Linha do tempo (6 meses a 5 anos) -->
     <section class="slide slide-light" aria-label="Slide 2 · Linha do tempo (6 meses a 5 anos)">
       <div class="slide-inner">
-        <p class="slide-eyebrow">Tempo de Casa · 1 de 2</p>
         <h2 class="slide-heading">Linha do tempo</h2>
-        <p class="slide-text niver-lead">Os primeiros anos — dos 6 meses aos 5 anos de casa.</p>
+        <p class="slide-text niver-lead">Dos 6 meses aos 5 anos de casa.</p>
         <div class="htl" style="--n:6">
             <div class="htl-col">
               <div class="htl-badge"><span class="n">6</span></div>
@@ -1699,9 +1672,8 @@ body.is-drawing .draw-toolbar {
     <!-- Slide 3 — Linha do tempo (6 a 10 anos) -->
     <section class="slide slide-light" aria-label="Slide 3 · Linha do tempo (6 a 10 anos)">
       <div class="slide-inner">
-        <p class="slide-eyebrow">Tempo de Casa · 2 de 2</p>
         <h2 class="slide-heading">Linha do tempo</h2>
-        <p class="slide-text niver-lead">A história continua — dos 6 aos 10 anos de casa.</p>
+        <p class="slide-text niver-lead">Dos 6 aos 10 anos de casa.</p>
         <div class="htl" style="--n:5">
             <div class="htl-col">
               <div class="htl-badge"><span class="n">6</span></div>
@@ -1737,16 +1709,9 @@ body.is-drawing .draw-toolbar {
     <section class="slide slide-light" aria-label="Slide 4 · Contagem">
       <div class="slide-inner">
         <p class="slide-eyebrow">Tempo de Casa</p>
-        <h2 class="slide-heading">Como conta o tempo</h2>
-        <div class="nota-callout">
-          <div class="nota-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 14"></polyline></svg>
-          </div>
-          <div class="nota-body">
-            <p class="nota-title">Contagem a partir da implantação</p>
-            <p class="nota-text">A premiação por tempo de casa passa a contar a partir da data de implantação do programa. Períodos anteriores não serão considerados de forma retroativa.</p>
-          </div>
-        </div>
+        <h2 class="slide-heading">Atenção</h2>
+        <p class="nota-headline">Contagem a partir da implantação</p>
+        <p class="slide-text nota-body">A premiação por tempo de casa passa a contar a partir da data de implantação do programa. Períodos anteriores não serão considerados de forma retroativa.</p>
       </div>
       <div class="slide-num">04</div>
     </section>
