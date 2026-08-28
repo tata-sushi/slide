@@ -794,40 +794,40 @@ html, body {
 .timeline-items li:first-child { padding-top:0; }
 .timeline-items li:first-child::before { top:.34em; }
 
-/* ── Linha do tempo · Tempo de Casa ──────────── */
-.niver-lead { margin-bottom:1.4em; }
-.niver-timeline {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:start;
-  gap:1em 2.6em;
+/* ── Linha do tempo horizontal · Tempo de Casa ── */
+.niver-lead { margin-bottom:1.2em; }
+.htl {
+  position:relative;
   width:100%;
   flex:1 1 auto;
   min-height:0;
-  overflow-y:auto;
+  margin-top:1.6em;
+  display:grid;
+  grid-auto-flow:column;
+  grid-auto-columns:1fr;
+  gap:0 .9em;
+  align-content:start;
 }
-.tl-list { position:relative; display:flex; flex-direction:column; }
-.tl-list::before {
+.htl::before {
   content:"";
   position:absolute;
-  left:19px;
-  top:1.4em;
-  bottom:1.4em;
-  width:2px;
+  top:20px;
+  left:calc(100% / var(--n) / 2);
+  right:calc(100% / var(--n) / 2);
+  height:2px;
   background:var(--border);
   z-index:0;
 }
-.tl-item {
-  position:relative;
-  display:grid;
-  grid-template-columns:40px 1fr;
-  gap:.9em;
-  align-items:flex-start;
-  padding:.5em 0;
-}
-.tl-badge {
+.htl-col {
   position:relative;
   z-index:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  min-width:0;
+}
+.htl-badge {
   width:40px;
   height:40px;
   border-radius:50%;
@@ -839,14 +839,14 @@ html, body {
   justify-content:center;
   flex-shrink:0;
 }
-.tl-badge .n {
+.htl-badge .n {
   font-family:"DM Sans",sans-serif;
   font-weight:700;
   font-size:15px;
   line-height:1;
   color:var(--carbon);
 }
-.tl-badge .u {
+.htl-badge .u {
   font-family:"DM Mono",monospace;
   font-size:7.5px;
   font-weight:500;
@@ -855,18 +855,26 @@ html, body {
   color:var(--t3);
   margin-top:.15em;
 }
-.tl-item--milestone .tl-badge { background:var(--citric); border-color:var(--carbon); }
-.tl-item--milestone .tl-badge .n { color:var(--carbon); }
-.tl-item--milestone .tl-badge .u { color:var(--carbon); }
-.tl-content { padding-top:.5em; }
-.tl-reward {
+.htl-stem { width:2px; height:16px; background:var(--border); }
+.htl-card {
+  width:100%;
+  padding:.85em .8em;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:var(--page-bg);
+}
+.htl-reward {
   margin:0;
   font-family:"DM Sans",sans-serif;
-  font-size:clamp(11px,1.18vw,13.75px);
+  font-size:clamp(10px,1.05vw,12.5px);
   line-height:1.35;
   color:var(--t1);
 }
-.tl-item--milestone .tl-reward { font-weight:600; }
+.htl-col--milestone .htl-badge { background:var(--citric); border-color:var(--carbon); }
+.htl-col--milestone .htl-badge .u { color:var(--carbon); }
+.htl-col--milestone .htl-stem { background:var(--carbon); }
+.htl-col--milestone .htl-card { border-color:var(--carbon); }
+.htl-col--milestone .htl-reward { font-weight:600; }
 
 /* ── Nota / callout ──────────────────────────── */
 .nota-callout {
@@ -1659,68 +1667,87 @@ body.is-drawing .draw-toolbar {
       </div>
     </section>
 
-    <!-- Slide 2 — Linha do tempo -->
-    <section class="slide slide-light" aria-label="Slide 2 · Linha do tempo">
+    <!-- Slide 2 — Linha do tempo (6 meses a 5 anos) -->
+    <section class="slide slide-light" aria-label="Slide 2 · Linha do tempo (6 meses a 5 anos)">
       <div class="slide-inner">
-        <p class="slide-eyebrow">Tempo de Casa</p>
+        <p class="slide-eyebrow">Tempo de Casa · 1 de 2</p>
         <h2 class="slide-heading">Linha do tempo</h2>
-        <p class="slide-text niver-lead">Cada tempo de casa tem seu reconhecimento — dos primeiros 6 meses aos 10 anos de história.</p>
-        <div class="niver-timeline">
-          <div class="tl-list">
-            <div class="tl-item">
-              <div class="tl-badge"><span class="n">6</span><span class="u">meses</span></div>
-              <div class="tl-content"><p class="tl-reward">500 pontos no Tatá Plus</p></div>
+        <p class="slide-text niver-lead">Os primeiros anos — dos 6 meses aos 5 anos de casa.</p>
+        <div class="htl" style="--n:6">
+            <div class="htl-col">
+              <div class="htl-badge"><span class="n">6</span><span class="u">meses</span></div>
+              <div class="htl-stem" aria-hidden="true"></div>
+              <div class="htl-card"><p class="htl-reward">500 pontos no Tatá Plus</p></div>
             </div>
-            <div class="tl-item tl-item--milestone">
-              <div class="tl-badge"><span class="n">1</span><span class="u">ano</span></div>
-              <div class="tl-content"><p class="tl-reward">Saque Especial + Mini tartaruga de vidro + foto no mural (Tatá House)</p></div>
+            <div class="htl-col htl-col--milestone">
+              <div class="htl-badge"><span class="n">1</span><span class="u">ano</span></div>
+              <div class="htl-stem" aria-hidden="true"></div>
+              <div class="htl-card"><p class="htl-reward">Saque Especial + Mini tartaruga de vidro + foto no mural (Tatá House)</p></div>
             </div>
-            <div class="tl-item">
-              <div class="tl-badge"><span class="n">2</span><span class="u">anos</span></div>
-              <div class="tl-content"><p class="tl-reward">Voucher de R$ 250 no Caju</p></div>
+            <div class="htl-col">
+              <div class="htl-badge"><span class="n">2</span><span class="u">anos</span></div>
+              <div class="htl-stem" aria-hidden="true"></div>
+              <div class="htl-card"><p class="htl-reward">Voucher de R$ 250 no Caju</p></div>
             </div>
-            <div class="tl-item">
-              <div class="tl-badge"><span class="n">3</span><span class="u">anos</span></div>
-              <div class="tl-content"><p class="tl-reward">Delivery para retirada no valor de até R$ 500</p></div>
+            <div class="htl-col">
+              <div class="htl-badge"><span class="n">3</span><span class="u">anos</span></div>
+              <div class="htl-stem" aria-hidden="true"></div>
+              <div class="htl-card"><p class="htl-reward">Delivery para retirada no valor de até R$ 500</p></div>
             </div>
-            <div class="tl-item">
-              <div class="tl-badge"><span class="n">4</span><span class="u">anos</span></div>
-              <div class="tl-content"><p class="tl-reward">Quadro personalizado + passeio com 1 acompanhante até R$ 300 + day off</p></div>
+            <div class="htl-col">
+              <div class="htl-badge"><span class="n">4</span><span class="u">anos</span></div>
+              <div class="htl-stem" aria-hidden="true"></div>
+              <div class="htl-card"><p class="htl-reward">Quadro personalizado + passeio com 1 acompanhante até R$ 300 + day off</p></div>
             </div>
-            <div class="tl-item tl-item--milestone">
-              <div class="tl-badge"><span class="n">5</span><span class="u">anos</span></div>
-              <div class="tl-content"><p class="tl-reward">Vale R$ 500 + story com Leo no Instagram + destaque (reportagem 5 anos)</p></div>
+            <div class="htl-col htl-col--milestone">
+              <div class="htl-badge"><span class="n">5</span><span class="u">anos</span></div>
+              <div class="htl-stem" aria-hidden="true"></div>
+              <div class="htl-card"><p class="htl-reward">Vale R$ 500 + story com Leo no Instagram + destaque (reportagem 5 anos)</p></div>
             </div>
-          </div>
-          <div class="tl-list">
-            <div class="tl-item">
-              <div class="tl-badge"><span class="n">6</span><span class="u">anos</span></div>
-              <div class="tl-content"><p class="tl-reward">Delivery para retirada no valor de até R$ 600</p></div>
-            </div>
-            <div class="tl-item">
-              <div class="tl-badge"><span class="n">7</span><span class="u">anos</span></div>
-              <div class="tl-content"><p class="tl-reward">Delivery para retirada no valor de até R$ 700</p></div>
-            </div>
-            <div class="tl-item">
-              <div class="tl-badge"><span class="n">8</span><span class="u">anos</span></div>
-              <div class="tl-content"><p class="tl-reward">Delivery para retirada no valor de até R$ 800</p></div>
-            </div>
-            <div class="tl-item">
-              <div class="tl-badge"><span class="n">9</span><span class="u">anos</span></div>
-              <div class="tl-content"><p class="tl-reward">Delivery para retirada no valor de até R$ 900</p></div>
-            </div>
-            <div class="tl-item tl-item--milestone tl-item--final">
-              <div class="tl-badge"><span class="n">10</span><span class="u">anos</span></div>
-              <div class="tl-content"><p class="tl-reward">Homenagem e prêmio especial</p></div>
-            </div>
-          </div>
         </div>
       </div>
       <div class="slide-num">02</div>
     </section>
 
-    <!-- Slide 3 — Contagem -->
-    <section class="slide slide-light" aria-label="Slide 3 · Contagem">
+    <!-- Slide 3 — Linha do tempo (6 a 10 anos) -->
+    <section class="slide slide-light" aria-label="Slide 3 · Linha do tempo (6 a 10 anos)">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">Tempo de Casa · 2 de 2</p>
+        <h2 class="slide-heading">Linha do tempo</h2>
+        <p class="slide-text niver-lead">A história continua — dos 6 aos 10 anos de casa.</p>
+        <div class="htl" style="--n:5">
+            <div class="htl-col">
+              <div class="htl-badge"><span class="n">6</span><span class="u">anos</span></div>
+              <div class="htl-stem" aria-hidden="true"></div>
+              <div class="htl-card"><p class="htl-reward">Delivery para retirada no valor de até R$ 600</p></div>
+            </div>
+            <div class="htl-col">
+              <div class="htl-badge"><span class="n">7</span><span class="u">anos</span></div>
+              <div class="htl-stem" aria-hidden="true"></div>
+              <div class="htl-card"><p class="htl-reward">Delivery para retirada no valor de até R$ 700</p></div>
+            </div>
+            <div class="htl-col">
+              <div class="htl-badge"><span class="n">8</span><span class="u">anos</span></div>
+              <div class="htl-stem" aria-hidden="true"></div>
+              <div class="htl-card"><p class="htl-reward">Delivery para retirada no valor de até R$ 800</p></div>
+            </div>
+            <div class="htl-col">
+              <div class="htl-badge"><span class="n">9</span><span class="u">anos</span></div>
+              <div class="htl-stem" aria-hidden="true"></div>
+              <div class="htl-card"><p class="htl-reward">Delivery para retirada no valor de até R$ 900</p></div>
+            </div>
+            <div class="htl-col htl-col--milestone">
+              <div class="htl-badge"><span class="n">10</span><span class="u">anos</span></div>
+              <div class="htl-stem" aria-hidden="true"></div>
+              <div class="htl-card"><p class="htl-reward">Homenagem e prêmio especial</p></div>
+            </div>
+        </div>
+      </div>
+      <div class="slide-num">03</div>
+    </section>
+
+    <!-- Slide 4 — Contagem -->
+    <section class="slide slide-light" aria-label="Slide 4 · Contagem">
       <div class="slide-inner">
         <p class="slide-eyebrow">Tempo de Casa</p>
         <h2 class="slide-heading">Como conta o tempo</h2>
@@ -1734,11 +1761,11 @@ body.is-drawing .draw-toolbar {
           </div>
         </div>
       </div>
-      <div class="slide-num">03</div>
+      <div class="slide-num">04</div>
     </section>
 
-    <!-- Slide 4 — Encerramento -->
-    <section class="slide slide-cover is-dark" aria-label="Slide 4 · Encerramento">
+    <!-- Slide 5 — Encerramento -->
+    <section class="slide slide-cover is-dark" aria-label="Slide 5 · Encerramento">
       <div class="slide-inner">
         <img alt="TATÁ SUSHI" class="cover-logo-full" id="closingLogo">
       </div>
