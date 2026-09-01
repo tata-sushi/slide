@@ -102,7 +102,7 @@
   .capa .bloco-aniv{background:var(--verde);margin-top:28px;padding:30px 50px 30px;color:#fff;
     flex:1;display:flex;flex-direction:column;}
   .capa .bloco-aniv h2{text-align:center;font-size:36px;color:#111;font-family:Arial,sans-serif;font-weight:bold;margin-bottom:18px;}
-  .capa .grid-aniv{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 24px;flex:1;align-content:space-between;}
+  .capa .grid-aniv{display:grid;grid-template-columns:repeat(3,1fr);gap:36px 24px;flex:1;align-content:center;}
   .capa .item-aniv{display:flex;align-items:baseline;gap:10px;}
   .capa .item-aniv > div{flex:1;min-width:0;}
   .capa .item-aniv .dia{font-size:48px;font-weight:bold;font-family:var(--fonte-play);min-width:46px;}
@@ -175,11 +175,13 @@
     border-bottom-left-radius:130px;border-bottom-right-radius:130px;}
   /* corpo verde-claro preenche o restante da página */
   .comunicado .corpo{background:#c9f2c0;flex:1;display:flex;flex-direction:column;justify-content:center;padding:60px 96px 54px;}
-  .comunicado .corpo h1{font-family:var(--fonte-texto);font-size:112px;font-weight:800;color:var(--verde);
-    text-align:center;letter-spacing:1px;line-height:1;margin:0 0 50px;}
-  .comunicado .corpo .texto{font-family:var(--fonte-texto);font-size:41px;line-height:1.72;color:#223522;
+  .comunicado .corpo h1{font-family:var(--fonte-texto);font-size:88px;font-weight:800;color:var(--verde);
+    text-align:center;letter-spacing:1px;line-height:1;margin:0 0 30px;}
+  .comunicado .corpo .texto{font-family:var(--fonte-texto);font-size:27px;line-height:1.5;color:#223522;
     text-align:justify;}
-  .comunicado .corpo .texto p{margin-bottom:34px;}
+  .comunicado .corpo .texto p{margin-bottom:15px;}
+  .comunicado .corpo .texto ul{margin:-4px 0 15px;padding-left:1.4em;list-style:disc;}
+  .comunicado .corpo .texto ul li{margin-bottom:6px;}
   .comunicado .corpo .texto p:last-child{margin-bottom:0;}
   .comunicado .corpo .texto .ola{font-weight:700;}
   .comunicado .corpo .texto .final{text-align:center;font-weight:700;font-size:44px;color:var(--verde);
@@ -221,7 +223,7 @@
     <!-- Foto da capa: carregada do Storage (tatanews-foto/capa.jpg); fallback = img/grupo_capa.jpg -->
     <img id="foto-capa" src="img/grupo_capa.jpg?v=3" alt="Foto do time">
     <!-- EDITAR: legenda da foto -->
-    <div class="foto-legenda">Comemoração aniversariantes de julho</div>
+    <div class="foto-legenda">Comemoração aniversariantes de agosto</div>
     <!-- Botão de upload da capa (sem senha) -->
     <button type="button" id="btn-trocar-foto" class="btn-trocar-foto" title="Trocar a foto da capa">📷 Trocar foto</button>
     <input type="file" id="input-foto-capa" accept="image/jpeg,image/png,image/webp" hidden>
@@ -257,11 +259,11 @@
   <div class="cal">
     <table>
       <tr><th>Dom</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sab</th></tr>
-      <!-- Calendário setembro/2026 (1º = terça). Destaques a confirmar com os dados de RH. -->
-      <tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
-      <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
-      <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
-      <tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
+      <!-- Calendário setembro/2026 (1º = terça). Destaques = dias da Agenda: 01,04,10,18,20,25. -->
+      <tr><td></td><td></td><td><span class="destaque">1</span></td><td>2</td><td>3</td><td><span class="destaque">4</span></td><td>5</td></tr>
+      <tr><td>6</td><td>7</td><td>8</td><td>9</td><td><span class="destaque">10</span></td><td>11</td><td>12</td></tr>
+      <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td><span class="destaque">18</span></td><td>19</td></tr>
+      <tr><td><span class="destaque">20</span></td><td>21</td><td>22</td><td>23</td><td>24</td><td><span class="destaque">25</span></td><td>26</td></tr>
       <tr><td>27</td><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td></tr>
     </table>
   </div>
@@ -273,9 +275,9 @@
     <h3>Pagamentos e comemorações:</h3>
     <ul>
       <li>01 - Liberação do Vale-Transporte</li>
-      <li>06 - Pagamento Salário (julho/2026)</li>
-      <li>20 - Adiantamento de Salário (agosto/2026)</li>
-      <li>28 - Comemoração aniversariantes do mês</li>
+      <li>04 - Pagamento Salário (agosto/2026)</li>
+      <li>18 - Adiantamento de Salário (setembro/2026)</li>
+      <li>25 - Comemoração aniversariantes do mês</li>
     </ul>
 
     <div class="divisoria"></div>
@@ -368,14 +370,17 @@
     <!-- EDITAR: texto do comunicado (dados fixos) -->
     <div class="texto">
       <p class="ola">Olá, pessoal!</p>
-      <p>Passando para lembrar que, nesta quinta-feira, <b>06/08</b>, será realizado o
-        pagamento referente ao mês de julho, que, para fins de cálculo da
-        <b>gorjeta e do prêmio</b>, foi considerado o período de <b>21/06/2026 a 20/07/2026</b>.</p>
-      <p>Lembramos que, durante esse período, tivemos uma redução no movimento do salão e
-        também do delivery, em razão das férias escolares, dos dias mais frios do inverno e,
-        principalmente, dos jogos da Copa.</p>
-      <p>Reforçamos essas informações para ajudar todos a compreenderem melhor os resultados
-        refletidos neste pagamento.</p>
+      <p>Informamos que, a partir de <b>01/11/2026</b>, teremos uma alteração na forma e na data de pagamento.</p>
+      <p>Atualmente, o pagamento é realizado em duas etapas:</p>
+      <ul>
+        <li>adiantamento de 40% no dia 20;</li>
+        <li>saldo restante no 5º dia útil do mês seguinte.</li>
+      </ul>
+      <p>Com a mudança, os valores passarão a ser pagos em um <b>único pagamento, todo dia 30 de cada mês</b>.</p>
+      <p>Dessa forma, a partir de novembro, não teremos mais o adiantamento de 40% no dia 20 e o pagamento no 5º dia útil do mês seguinte. Todo o valor será concentrado em um único pagamento mensal.</p>
+      <p>A alteração tem como objetivo simplificar e organizar o processo de pagamento, deixando o calendário mais claro e previsível para todos.</p>
+      <p>A nova regra passa a valer a partir de <b>01/11/2026</b>, com o primeiro pagamento nesse formato em <b>30/11/2026</b>.</p>
+      <p><b>Observação:</b> para apoiar todos durante esse período de mudança e contribuir com uma melhor organização financeira, o adiantamento da 1ª parcela do 13º salário será realizado no dia <b>20/11</b>, e a 2ª parcela será paga no dia <b>20/12</b>. Dessa forma, buscamos facilitar a adaptação ao novo calendário de pagamentos e permitir um melhor planejamento financeiro nesse período.</p>
       <p>Em caso de dúvidas, conversem com a liderança da unidade ou procurem o RH.</p>
       <p>Estamos à disposição para ajudar!</p>
     </div>
