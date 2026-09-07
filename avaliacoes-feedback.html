@@ -597,36 +597,97 @@ html, body {
 .topic-cols .topic-section + .topic-section { margin-top:0; }
 .topic-section .info-box-text { color:var(--t1); }
 .topic-cols .topic-section { text-align:center; }
-.category-lists {
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:0 2.4em;
+.cat-groups {
+  display:flex;
+  flex-direction:column;
+  gap:.7em;
   width:100%;
-  margin-top:.38em;
+  margin-top:.15em;
+  text-align:left;
 }
-.category-lists ul {
+.cat-group-label {
+  font-family:"DM Mono",monospace;
+  font-size:clamp(9px, .92vw, 11px);
+  font-weight:500;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--t3);
+  margin:0 0 .5em;
+  padding-bottom:.3em;
+  border-bottom:1px solid var(--border);
+}
+.cat-list {
   list-style:none;
   margin:0;
   padding:0;
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:.3em 2.2em;
 }
-.category-lists li {
-  position:relative;
+.cat-list li {
+  display:flex;
+  align-items:flex-start;
+  gap:.6em;
+  padding:.1em 0;
+}
+.cat-num {
+  flex:0 0 auto;
+  width:1.55em;
+  height:1.55em;
+  border-radius:50%;
+  background:var(--carbon);
+  color:var(--citric);
+  font-family:"DM Mono",monospace;
+  font-size:clamp(10px, 1.05vw, 12px);
+  font-weight:500;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:.05em;
+}
+.cat-body { display:flex; flex-direction:column; min-width:0; }
+.cat-name {
   font-family:"DM Sans",sans-serif;
   font-weight:600;
-  font-size:clamp(13px, 1.4vw, 17px);
+  font-size:clamp(12px, 1.34vw, 16px);
   color:var(--t1);
-  padding:.45em 0 .45em 1.1em;
+  line-height:1.15;
 }
-.category-lists li::before {
-  content:"";
-  position:absolute;
-  left:0;
-  top:1.05em;
-  width:.4em;
-  height:.4em;
-  background:var(--carbon);
-  border-radius:50%;
+.cat-desc {
+  font-family:"DM Sans",sans-serif;
+  font-weight:400;
+  font-size:clamp(10px, 1.05vw, 12.5px);
+  color:var(--t2);
+  line-height:1.25;
+  margin-top:.12em;
 }
+.cat-transversal {
+  display:flex;
+  align-items:center;
+  gap:.8em;
+  padding:.55em .95em;
+  border-left:3px solid var(--citric);
+  background:rgba(207,255,0,.14);
+  border-radius:0 6px 6px 0;
+}
+.cat-transversal-tag {
+  flex:0 0 auto;
+  font-family:"DM Mono",monospace;
+  font-size:clamp(8px, .82vw, 10px);
+  font-weight:500;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--t3);
+}
+.cat-transversal p {
+  margin:0;
+  font-family:"DM Sans",sans-serif;
+  font-size:clamp(11px, 1.16vw, 13.5px);
+  color:var(--t1);
+  line-height:1.3;
+}
+.slide-categorias .slide-heading { margin-bottom:1.6%; }
+.slide-categorias .slide-text { margin-bottom:.35em; }
 .topic-callout {
   grid-column:1 / -1;
   margin-top:1.1em;
@@ -1664,32 +1725,35 @@ body.is-drawing .draw-toolbar {
     </section>
 
     <!-- Slide 5 — Categorias -->
-    <section class="slide slide-light" aria-label="Slide 5 · Categorias">
+    <section class="slide slide-light slide-categorias" aria-label="Slide 5 · Categorias">
       <div class="slide-inner">
         <p class="slide-eyebrow">Avaliações &amp; Feedback</p>
         <h2 class="slide-heading">Categorias</h2>
-        <p class="slide-text">Separamos as categorias organizando os principais temas avaliados ao longo da jornada do colaborador. Para que elas ajudem a identificar padrões, pontos fortes e oportunidades de melhoria de forma integrada.</p>
-        <div class="category-lists">
-          <ul>
-            <li>Clareza</li>
-            <li>Integração</li>
-            <li>Desenvolvimento</li>
-            <li>Liderança</li>
-            <li>Comunicação</li>
-          </ul>
-          <ul>
-            <li>Colaboração</li>
-            <li>Respeito</li>
-            <li>Desempenho</li>
-            <li>Cultura</li>
-            <li>Condições</li>
-          </ul>
-          <ul>
-            <li>Reconhecimento</li>
-            <li>Bem-estar</li>
-            <li>Carreira</li>
-            <li>Desligamento</li>
-          </ul>
+        <p class="slide-text">Agrupamos os resultados de todas as avaliações em <strong>9 categorias</strong> — 7 de percepção e clima e 2 de desempenho individual —, além de um indicador transversal de recomendação.</p>
+        <div class="cat-groups">
+          <div class="cat-group">
+            <p class="cat-group-label">Percepção &middot; Clima</p>
+            <ul class="cat-list">
+              <li><span class="cat-num">1</span><span class="cat-body"><span class="cat-name">Liderança &amp; Comunicação</span><span class="cat-desc">Apoio, orientação, clareza e feedback</span></span></li>
+              <li><span class="cat-num">2</span><span class="cat-body"><span class="cat-name">Reconhecimento</span><span class="cat-desc">Valorização do trabalho e dos esforços</span></span></li>
+              <li><span class="cat-num">3</span><span class="cat-body"><span class="cat-name">Desenvolvimento</span><span class="cat-desc">Aprendizado, treinamentos e crescimento</span></span></li>
+              <li><span class="cat-num">4</span><span class="cat-body"><span class="cat-name">Relacionamento &amp; Equipe</span><span class="cat-desc">Colegas, integração e apoio dos pares</span></span></li>
+              <li><span class="cat-num">5</span><span class="cat-body"><span class="cat-name">Respeito &amp; Bem-estar</span><span class="cat-desc">Respeito, justiça, segurança psicológica e saúde mental</span></span></li>
+              <li><span class="cat-num">6</span><span class="cat-body"><span class="cat-name">Cultura &amp; Valores</span><span class="cat-desc">Cultura, valores, ética e conduta</span></span></li>
+              <li><span class="cat-num">7</span><span class="cat-body"><span class="cat-name">Estrutura &amp; Recursos</span><span class="cat-desc">Ambiente, condições, processos e canais</span></span></li>
+            </ul>
+          </div>
+          <div class="cat-group">
+            <p class="cat-group-label">Desempenho individual</p>
+            <ul class="cat-list">
+              <li><span class="cat-num">8</span><span class="cat-body"><span class="cat-name">Entrega &amp; Qualidade</span><span class="cat-desc">Produtividade, qualidade, organização e domínio técnico</span></span></li>
+              <li><span class="cat-num">9</span><span class="cat-body"><span class="cat-name">Postura &amp; Compromisso</span><span class="cat-desc">Responsabilidade, disciplina, proatividade e adesão às normas</span></span></li>
+            </ul>
+          </div>
+          <div class="cat-transversal">
+            <span class="cat-transversal-tag">Indicador transversal</span>
+            <p><strong>Recomendação</strong> — disposição a recomendar o Tatá (antigo eNPS), fora das 9 categorias.</p>
+          </div>
         </div>
       </div>
       <div class="slide-num">05</div>
