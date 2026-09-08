@@ -663,6 +663,145 @@ html, body {
 }
 .slide-categorias .slide-heading { margin-bottom:1.6%; }
 .slide-categorias .slide-text { margin-bottom:.35em; }
+
+/* ── Slides de formulário (perguntas por formulário) ── */
+.slide-form .slide-inner { padding:4.6% 6.5%; justify-content:flex-start; }
+.slide-form .slide-eyebrow { margin-bottom:1.4%; }
+.slide-form .slide-heading {
+  font-size:clamp(20px, 2.9vw, 38px);
+  line-height:1.02;
+  letter-spacing:-.5px;
+  margin-bottom:1.3%;
+}
+.form-meta {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:.4em;
+  width:100%;
+  margin-bottom:1.05em;
+}
+.form-chip {
+  font-family:"DM Mono",monospace;
+  font-size:clamp(8.5px, .9vw, 11px);
+  font-weight:500;
+  letter-spacing:.03em;
+  color:var(--t2);
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:.34em .72em;
+  line-height:1;
+}
+.form-chip--count {
+  background:var(--carbon);
+  border-color:var(--carbon);
+  color:var(--citric);
+}
+.form-qs {
+  list-style:none;
+  margin:0;
+  padding:0;
+  width:100%;
+  columns:2;
+  column-gap:2.6em;
+  counter-reset:q;
+  text-align:left;
+}
+.form-qs.is-dense li { font-size:clamp(9px, 1.02vw, 12px); padding-top:.18em; padding-bottom:.18em; }
+.form-qs li {
+  break-inside:avoid;
+  counter-increment:q;
+  position:relative;
+  padding:.24em 0 .24em 1.85em;
+  font-family:"DM Sans",sans-serif;
+  font-size:clamp(10px, 1.12vw, 13.5px);
+  line-height:1.28;
+  color:var(--t1);
+}
+.form-qs li::before {
+  content:counter(q);
+  position:absolute;
+  left:0;
+  top:.28em;
+  min-width:1.4em;
+  font-family:"DM Mono",monospace;
+  font-size:.8em;
+  font-weight:500;
+  color:var(--citric-ink, #7a8a00);
+  text-align:left;
+}
+.q-tag {
+  display:inline-block;
+  font-family:"DM Mono",monospace;
+  font-size:.72em;
+  font-weight:500;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  color:var(--carbon);
+  background:rgba(207,255,0,.32);
+  border-radius:4px;
+  padding:.12em .42em;
+  margin-left:.28em;
+  white-space:nowrap;
+  vertical-align:.08em;
+}
+.form-branches {
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:.4em 2.6em;
+  width:100%;
+  text-align:left;
+}
+.form-branch-label {
+  font-family:"DM Mono",monospace;
+  font-size:clamp(8.5px, .9vw, 11px);
+  font-weight:500;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--t3);
+  margin:.2em 0 .4em;
+  padding-bottom:.25em;
+  border-bottom:1px solid var(--border);
+}
+.form-branch--a { grid-column:1; grid-row:1; }
+.form-branch--b { grid-column:1; grid-row:2; }
+.form-branch--todos { grid-column:2; grid-row:1 / span 2; }
+.form-branch .form-qs { columns:1; }
+.form-branch .form-qs li { font-size:clamp(9px, 1.02vw, 12px); padding-top:.16em; padding-bottom:.16em; }
+.form-foot {
+  margin-top:.8em;
+  font-family:"DM Mono",monospace;
+  font-size:clamp(8.5px, .88vw, 11px);
+  letter-spacing:.03em;
+  color:var(--t3);
+}
+.form-social {
+  width:100%;
+  text-align:left;
+  display:flex;
+  flex-direction:column;
+  gap:1em;
+}
+.form-social-lead {
+  font-family:"DM Sans",sans-serif;
+  font-size:clamp(13px, 1.5vw, 19px);
+  line-height:1.45;
+  color:var(--t1);
+  max-width:92%;
+}
+.form-motivos { display:flex; flex-wrap:wrap; gap:.5em; }
+.form-motivo {
+  font-family:"DM Sans",sans-serif;
+  font-weight:600;
+  font-size:clamp(12px, 1.3vw, 16px);
+  color:var(--carbon);
+  background:rgba(207,255,0,.22);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:.45em .85em;
+  line-height:1;
+}
 .topic-callout {
   grid-column:1 / -1;
   margin-top:1.1em;
@@ -1730,8 +1869,311 @@ body.is-drawing .draw-toolbar {
       <div class="slide-num">05</div>
     </section>
 
-    <!-- Slide 6 — Onde estamos (status) -->
-    <section class="slide slide-light" aria-label="Slide 6 · Onde Estamos">
+    <!-- Slide 6 — Formulário 1: Experiência 14 dias (Líder) -->
+    <section class="slide slide-light slide-form" aria-label="Slide 6 · Formulário 1 — Experiência 14 dias (Líder)">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">Formulário 1 · Avaliações &amp; Feedback</p>
+        <h2 class="slide-heading">Experiência 14 dias — Líder</h2>
+        <div class="form-meta">
+          <span class="form-chip">Líder avalia o colaborador</span>
+          <span class="form-chip">Portal</span>
+          <span class="form-chip">14 dias</span>
+          <span class="form-chip form-chip--count">11 perguntas</span>
+        </div>
+        <ul class="form-qs">
+          <li>O quanto está preparado(a) para realizar as tarefas básicas da função?</li>
+          <li>O quanto demonstra atenção e cuidado aos detalhes ao realizar as tarefas?</li>
+          <li>O quanto o ritmo de execução das tarefas está adequado ao tempo previsto?</li>
+          <li>O quanto está adaptado(a) às rotinas e práticas do restaurante?</li>
+          <li>O quanto está integrado(a) à equipe e se comunicando bem com os colegas?</li>
+          <li>O quanto demonstra proatividade na execução das tarefas?</li>
+          <li>O quanto está aderente às normas de segurança, higiene e procedimentos?</li>
+          <li>O quanto está adequado(a) em relação à pontualidade e ao cumprimento da jornada?</li>
+          <li>O quanto demonstra interesse e disposição para aprender?</li>
+          <li>O colaborador continua no 2º período de experiência? <span class="q-tag">Sim/Não</span></li>
+          <li>Observações gerais: pontos de atenção, destaques e próximos passos. <span class="q-tag">Aberta</span></li>
+        </ul>
+        <p class="form-foot">Escala 1–5 (Nada → Muito), salvo perguntas marcadas.</p>
+      </div>
+      <div class="slide-num">06</div>
+    </section>
+
+    <!-- Slide 7 — Formulário 2: Experiência 14 dias (Colaborador) -->
+    <section class="slide slide-light slide-form" aria-label="Slide 7 · Formulário 2 — Experiência 14 dias (Colaborador)">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">Formulário 2 · Avaliações &amp; Feedback</p>
+        <h2 class="slide-heading">Experiência 14 dias — Colaborador</h2>
+        <div class="form-meta">
+          <span class="form-chip">Autoavaliação</span>
+          <span class="form-chip">App</span>
+          <span class="form-chip">14 dias</span>
+          <span class="form-chip form-chip--count">17 perguntas</span>
+        </div>
+        <ul class="form-qs is-dense">
+          <li>O quanto está claro o que é esperado de você neste início de trabalho?</li>
+          <li>O quanto você se sente adaptado(a) à rotina neste início de trabalho?</li>
+          <li>O quanto os desafios recebidos têm sido úteis para sua adaptação?</li>
+          <li>O quanto seu progresso nos estudos e desafios do Tatá Plus está adequado?</li>
+          <li>O quanto você se sente acolhido(a) pela equipe?</li>
+          <li>O quanto está claro como funcionam jornada, escalas, folgas, ponto, atrasos e ausências?</li>
+          <li>O quanto está claro como funcionam salário, fechamento e datas de pagamento?</li>
+          <li>O quanto está claro como funcionam a gorjeta, seus critérios e a elegibilidade?</li>
+          <li>O quanto está claro como funcionam as premiações, seus critérios e a elegibilidade?</li>
+          <li>O quanto está claro como funciona o Canal de Ouvidoria?</li>
+          <li>O quanto está claro o processo de documentação, incluindo o que entregar e como regularizar?</li>
+          <li>O quanto está claro que você pode participar de avaliações de refeição e melhorias?</li>
+          <li>O quanto você se sente equipado(a) com uniformes, EPIs e materiais necessários?</li>
+          <li>O quanto está claro como higienizar, conservar e utilizar uniforme e EPIs?</li>
+          <li>O quanto você se sente apoiado(a) pela liderança para aprender suas atividades?</li>
+          <li>O quanto você se sente confortável para pedir ajuda quando necessário?</li>
+          <li>O quanto sua experiência de trabalho tem sido positiva até o momento?</li>
+        </ul>
+        <p class="form-foot">Todas as perguntas em escala 1–5 (Nada → Muito).</p>
+      </div>
+      <div class="slide-num">07</div>
+    </section>
+
+    <!-- Slide 8 — Formulário 3: Experiência 60 dias (Líder) -->
+    <section class="slide slide-light slide-form" aria-label="Slide 8 · Formulário 3 — Experiência 60 dias (Líder)">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">Formulário 3 · Avaliações &amp; Feedback</p>
+        <h2 class="slide-heading">Experiência 60 dias — Líder</h2>
+        <div class="form-meta">
+          <span class="form-chip">Líder avalia o colaborador</span>
+          <span class="form-chip">Portal</span>
+          <span class="form-chip">60 dias</span>
+          <span class="form-chip form-chip--count">14 perguntas</span>
+        </div>
+        <ul class="form-qs is-dense">
+          <li>O quanto está adaptado(a) às rotinas e receptivo(a) a mudanças e feedbacks?</li>
+          <li>O quanto mantém equilíbrio e postura adequada em situações de pressão ou estresse?</li>
+          <li>O quanto demonstra dedicação, responsabilidade e compromisso?</li>
+          <li>O quanto demonstra integridade e respeito aos princípios éticos?</li>
+          <li>O quanto mantém relações positivas com colegas, superiores e/ou clientes?</li>
+          <li>O quanto sua comunicação é clara, objetiva e eficaz?</li>
+          <li>O quanto demonstra organização das tarefas, do tempo e do ambiente de trabalho?</li>
+          <li>O quanto demonstra interesse contínuo em aprender e evoluir desde a 1ª avaliação?</li>
+          <li>O quanto demonstra compromisso com a qualidade do trabalho entregue?</li>
+          <li>O quanto está adequado(a) no cumprimento de horários, jornadas, intervalos e avisos de ausência?</li>
+          <li>O quanto está adequado(a) no cuidado e na utilização do uniforme?</li>
+          <li>O quanto demonstra comportamentos alinhados à cultura do Tatá?</li>
+          <li>O colaborador deve ser efetivado? <span class="q-tag">Sim/Não</span></li>
+          <li>Observações gerais: pontos de atenção, destaques e próximos passos. <span class="q-tag">Aberta</span></li>
+        </ul>
+        <p class="form-foot">Escala 1–5 (Nada → Muito), salvo perguntas marcadas.</p>
+      </div>
+      <div class="slide-num">08</div>
+    </section>
+
+    <!-- Slide 9 — Formulário 4: Experiência 60 dias (Colaborador) -->
+    <section class="slide slide-light slide-form" aria-label="Slide 9 · Formulário 4 — Experiência 60 dias (Colaborador)">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">Formulário 4 · Avaliações &amp; Feedback</p>
+        <h2 class="slide-heading">Experiência 60 dias — Colaborador</h2>
+        <div class="form-meta">
+          <span class="form-chip">Autoavaliação</span>
+          <span class="form-chip">App</span>
+          <span class="form-chip">60 dias</span>
+          <span class="form-chip form-chip--count">9 perguntas</span>
+        </div>
+        <ul class="form-qs">
+          <li>O quanto está claro o que é esperado de você no trabalho?</li>
+          <li>O quanto foi fácil acessar e realizar os desafios?</li>
+          <li>O quanto os desafios recebidos prepararam você para desempenhar suas atividades?</li>
+          <li>O quanto você se sente integrado(a) à equipe?</li>
+          <li>O quanto você se sente à vontade para expressar dúvidas, opiniões ou sugestões?</li>
+          <li>O quanto você se sente apoiado(a) pela liderança quando enfrenta dificuldades?</li>
+          <li>O quanto sua carga de trabalho está adequada para realizar suas atividades com qualidade?</li>
+          <li>O quanto você se sente respeitado(a) no ambiente de trabalho?</li>
+          <li>Como sua liderança contribuiu para sua adaptação e o que poderia ter ajudado mais nesse período? <span class="q-tag">Aberta</span></li>
+        </ul>
+        <p class="form-foot">Escala 1–5 (Nada → Muito), salvo perguntas marcadas.</p>
+      </div>
+      <div class="slide-num">09</div>
+    </section>
+
+    <!-- Slide 10 — Formulário 5: Avaliação de Desempenho -->
+    <section class="slide slide-light slide-form" aria-label="Slide 10 · Formulário 5 — Avaliação de Desempenho">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">Formulário 5 · Avaliações &amp; Feedback</p>
+        <h2 class="slide-heading">Avaliação de Desempenho</h2>
+        <div class="form-meta">
+          <span class="form-chip">Líder avalia o colaborador</span>
+          <span class="form-chip">Portal</span>
+          <span class="form-chip">Semestral</span>
+          <span class="form-chip form-chip--count">12 perguntas</span>
+        </div>
+        <ul class="form-qs">
+          <li>O quanto entrega seu trabalho com qualidade e atenção aos detalhes?</li>
+          <li>O quanto o ritmo de trabalho e o cumprimento dos prazos estão adequados?</li>
+          <li>O quanto demonstra responsabilidade no cumprimento dos combinados da função?</li>
+          <li>O quanto demonstra organização das tarefas, do tempo e do ambiente de trabalho?</li>
+          <li>O quanto demonstra colaboração e contribuição para o trabalho da equipe?</li>
+          <li>O quanto sua comunicação com equipe e/ou clientes é clara e adequada?</li>
+          <li>O quanto demonstra autonomia e proatividade para identificar e executar o que precisa ser feito?</li>
+          <li>O quanto demonstra interesse em aprender, evoluir e aplicar novos conhecimentos?</li>
+          <li>O quanto demonstra comportamentos alinhados à cultura, aos valores e à conduta esperada no Tatá?</li>
+          <li>O quanto está aderente às normas de segurança, higiene e aos procedimentos operacionais?</li>
+          <li>Principais pontos fortes e conquistas do período. <span class="q-tag">Aberta</span></li>
+          <li>Pontos a desenvolver e ações combinadas (base do PDI). <span class="q-tag">Aberta</span></li>
+        </ul>
+        <p class="form-foot">Escala 1–5 (Nada → Muito), salvo perguntas marcadas.</p>
+      </div>
+      <div class="slide-num">10</div>
+    </section>
+
+    <!-- Slide 11 — Formulário 6: Avaliação de Liderança -->
+    <section class="slide slide-light slide-form" aria-label="Slide 11 · Formulário 6 — Avaliação de Liderança">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">Formulário 6 · Avaliações &amp; Feedback</p>
+        <h2 class="slide-heading">Avaliação de Liderança</h2>
+        <div class="form-meta">
+          <span class="form-chip">Colaborador avalia o líder</span>
+          <span class="form-chip">App · confidencial</span>
+          <span class="form-chip">Semestral</span>
+          <span class="form-chip form-chip--count">10 perguntas</span>
+        </div>
+        <ul class="form-qs">
+          <li>O quanto as orientações da sua liderança são claras?</li>
+          <li>O quanto você se sente apoiado(a) pela sua liderança quando enfrenta dificuldades?</li>
+          <li>O quanto os feedbacks da sua liderança são úteis para melhorar seu trabalho?</li>
+          <li>O quanto você percebe respeito na forma como sua liderança trata as pessoas?</li>
+          <li>O quanto a distribuição de demandas e cobranças feita pela sua liderança é justa?</li>
+          <li>O quanto você se sente à vontade para conversar com sua liderança sobre dúvidas, erros ou dificuldades?</li>
+          <li>O quanto as boas entregas e os esforços da equipe são reconhecidos pela sua liderança?</li>
+          <li>O quanto você se sente apoiado(a) pela sua liderança no seu aprendizado e crescimento?</li>
+          <li>O que sua liderança faz bem e deveria manter? <span class="q-tag">Aberta</span></li>
+          <li>O que sua liderança poderia melhorar? <span class="q-tag">Aberta</span></li>
+        </ul>
+        <p class="form-foot">Avaliação ascendente e confidencial · Escala 1–5 (Nada → Muito), salvo perguntas marcadas.</p>
+      </div>
+      <div class="slide-num">11</div>
+    </section>
+
+    <!-- Slide 12 — Formulário 7: Pesquisa de Clima -->
+    <section class="slide slide-light slide-form" aria-label="Slide 12 · Formulário 7 — Pesquisa de Clima">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">Formulário 7 · Avaliações &amp; Feedback</p>
+        <h2 class="slide-heading">Pesquisa de Clima</h2>
+        <div class="form-meta">
+          <span class="form-chip">Colaborador · anônimo</span>
+          <span class="form-chip">Link / WhatsApp</span>
+          <span class="form-chip">Contínuo — 5 por rodada</span>
+          <span class="form-chip form-chip--count">20 no banco</span>
+        </div>
+        <ul class="form-qs is-dense">
+          <li>O quanto o ambiente de trabalho está colaborativo?</li>
+          <li>O quanto a comunicação da liderança é clara e próxima?</li>
+          <li>O quanto você percebe comportamentos alinhados aos valores do Tatá?</li>
+          <li>O quanto as oportunidades de aprender algo novo têm estado presentes no seu trabalho recentemente?</li>
+          <li>O quanto seus esforços são reconhecidos quando você entrega bons resultados?</li>
+          <li>O quanto você estaria disposto(a) a recomendar o Tatá como um bom lugar para trabalhar? <span class="q-tag">Recomendação</span></li>
+          <li>O quanto você se sente apoiado(a) pelos colegas quando precisa de ajuda?</li>
+          <li>O quanto os processos e orientações são úteis para facilitar seu trabalho?</li>
+          <li>O quanto os recursos, equipamentos e condições de trabalho estão adequados para você trabalhar bem?</li>
+          <li>O quanto você se sente informado(a) sobre os canais para sugestões, dúvidas ou problemas?</li>
+          <li>O quanto sua carga de trabalho tem sido adequada?</li>
+          <li>O quanto a pressão no trabalho tem se mantido em um nível saudável?</li>
+          <li>O quanto está claro para você o que é esperado no trabalho?</li>
+          <li>O quanto você se sente apoiado(a) pela liderança quando enfrenta dificuldades?</li>
+          <li>O quanto você se sente respeitado(a) no ambiente de trabalho?</li>
+          <li>O quanto você se sente seguro(a) para expressar opiniões sem medo de represálias?</li>
+          <li>O quanto você considera justo e respeitoso o modo como os conflitos da equipe são tratados?</li>
+          <li>O quanto você considera equilibrada sua relação entre trabalho e vida pessoal?</li>
+          <li>O quanto você se sente emocionalmente bem em relação ao trabalho?</li>
+          <li>O que mais ajudaria a melhorar o clima e a rotina de trabalho? <span class="q-tag">Aberta</span></li>
+        </ul>
+        <p class="form-foot">Escala 1–5 (Nada → Muito), salvo perguntas marcadas · disparo de 5 perguntas por rodada.</p>
+      </div>
+      <div class="slide-num">12</div>
+    </section>
+
+    <!-- Slide 13 — Formulário 8: Entrevista de Desligamento -->
+    <section class="slide slide-light slide-form" aria-label="Slide 13 · Formulário 8 — Entrevista de Desligamento">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">Formulário 8 · Avaliações &amp; Feedback</p>
+        <h2 class="slide-heading">Entrevista de Desligamento</h2>
+        <div class="form-meta">
+          <span class="form-chip">Quem está saindo</span>
+          <span class="form-chip">Link / WhatsApp</span>
+          <span class="form-chip">Na saída · fluxo ramificado</span>
+          <span class="form-chip form-chip--count">20 perguntas</span>
+        </div>
+        <div class="form-branches">
+          <div class="form-branch form-branch--a">
+            <p class="form-branch-label">Ramo A — Pedi demissão</p>
+            <ul class="form-qs">
+              <li>Qual é o principal motivo da sua saída do Tatá? <span class="q-tag">Múltipla</span></li>
+              <li>Se marcou "Outros", descreva o motivo. <span class="q-tag">Aberta</span></li>
+              <li>A proposta da outra empresa foi melhor em salário e/ou benefícios? <span class="q-tag">Sim/Não</span></li>
+              <li>O novo emprego oferece melhores oportunidades de crescimento e desenvolvimento? <span class="q-tag">Sim/Não</span></li>
+            </ul>
+          </div>
+          <div class="form-branch form-branch--b">
+            <p class="form-branch-label">Ramo B — Fui desligado(a)</p>
+            <ul class="form-qs" style="counter-reset:q 4">
+              <li>Você foi informado(a) previamente sobre o motivo do seu desligamento? <span class="q-tag">Sim/Não</span></li>
+              <li>Qual foi o motivo principal, conforme informado pelo Tatá? <span class="q-tag">Escolha única</span></li>
+              <li>Você concorda com os motivos apresentados pelo Tatá? <span class="q-tag">Sim/Não</span></li>
+              <li>Se não concorda, explique suas razões. <span class="q-tag">Aberta</span></li>
+              <li>Você considerou o processo de desligamento justo e transparente? <span class="q-tag">Sim/Não</span></li>
+              <li>O que o Tatá poderia melhorar no processo de desligamento? <span class="q-tag">Aberta</span></li>
+            </ul>
+          </div>
+          <div class="form-branch form-branch--todos">
+            <p class="form-branch-label">Todos — Satisfação (escala 1–5)</p>
+            <ul class="form-qs" style="counter-reset:q 10">
+              <li>Satisfação com o ambiente de trabalho no Tatá</li>
+              <li>Satisfação com o relacionamento com os colegas</li>
+              <li>Satisfação com o relacionamento com a liderança</li>
+              <li>Satisfação com o reconhecimento e a valorização do trabalho</li>
+              <li>Satisfação com os desafios e oportunidades de desenvolvimento</li>
+              <li>Satisfação com o apoio ao desenvolvimento de carreira</li>
+              <li>Satisfação com as condições físicas (equipamentos e instalações)</li>
+              <li>Satisfação com a carga de trabalho</li>
+              <li>Recomendaria o Tatá como um bom lugar para trabalhar <span class="q-tag">Recomendação</span></li>
+              <li>Algum outro comentário que gostaria de fazer? <span class="q-tag">Aberta</span></li>
+            </ul>
+          </div>
+        </div>
+        <p class="form-foot">Ramo definido pelo RH conforme o tipo de saída · perguntas condicionais quando aplicável.</p>
+      </div>
+      <div class="slide-num">13</div>
+    </section>
+
+    <!-- Slide 14 — Formulário 9: Reconhecimento entre pares -->
+    <section class="slide slide-light slide-form" aria-label="Slide 14 · Formulário 9 — Reconhecimento entre pares">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">Formulário 9 · Avaliações &amp; Feedback</p>
+        <h2 class="slide-heading">Reconhecimento entre pares</h2>
+        <div class="form-meta">
+          <span class="form-chip">Reconhecimento entre colegas</span>
+          <span class="form-chip">Social no app</span>
+          <span class="form-chip form-chip--count">Sem escala / nota</span>
+        </div>
+        <div class="form-social">
+          <p class="form-social-lead">Não é um questionário: um colaborador reconhece um colega escolhendo um <strong>motivo</strong> e escrevendo uma <strong>mensagem</strong> livre. Sem perguntas e sem pontuação.</p>
+          <div>
+            <p class="form-branch-label">Motivos disponíveis</p>
+            <div class="form-motivos">
+              <span class="form-motivo">Equipe</span>
+              <span class="form-motivo">Proatividade</span>
+              <span class="form-motivo">Atendimento</span>
+              <span class="form-motivo">Qualidade</span>
+              <span class="form-motivo">Apoio</span>
+              <span class="form-motivo">Cultura</span>
+              <span class="form-motivo">Liderança</span>
+              <span class="form-motivo">Outro</span>
+            </div>
+          </div>
+        </div>
+        <p class="form-foot">Reconhecimento social, visível no app · complementa os 8 formulários avaliativos.</p>
+      </div>
+      <div class="slide-num">14</div>
+    </section>
+
+    <!-- Slide 15 — Onde estamos (status) -->
+    <section class="slide slide-light" aria-label="Slide 15 · Onde Estamos">
       <div class="slide-inner">
         <p class="slide-eyebrow">Avaliações &amp; Feedback</p>
         <h2 class="slide-heading">Onde estamos</h2>
@@ -1758,11 +2200,11 @@ body.is-drawing .draw-toolbar {
           </div>
         </div>
       </div>
-      <div class="slide-num">06</div>
+      <div class="slide-num">15</div>
     </section>
 
-    <!-- Slide 7 — Próximos passos -->
-    <section class="slide slide-light" aria-label="Slide 7 · Próximos Passos">
+    <!-- Slide 16 — Próximos passos -->
+    <section class="slide slide-light" aria-label="Slide 16 · Próximos Passos">
       <div class="slide-inner">
         <p class="slide-eyebrow">Avaliações &amp; Feedback</p>
         <h2 class="slide-heading">Próximos passos</h2>
@@ -1772,11 +2214,11 @@ body.is-drawing .draw-toolbar {
           <li>Elaboração de temas específicos por área</li>
         </ul>
       </div>
-      <div class="slide-num">07</div>
+      <div class="slide-num">16</div>
     </section>
 
-    <!-- Slide 8 — Encerramento -->
-    <section class="slide slide-cover is-dark" aria-label="Slide 8 · Encerramento">
+    <!-- Slide 17 — Encerramento -->
+    <section class="slide slide-cover is-dark" aria-label="Slide 17 · Encerramento">
       <div class="slide-inner">
         <img alt="TATÁ SUSHI" class="cover-logo-full" id="closingLogo">
       </div>
