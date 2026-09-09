@@ -1109,6 +1109,7 @@ html, body {
 
 /* ── Numeração / marca do slide ─────────────── */
 .slide-num {
+  display:none;
   position:absolute;
   right:3%;
   bottom:3%;
@@ -2305,6 +2306,13 @@ body.is-drawing .draw-toolbar {
       </button>
     </div>
   </div>
+  <div class="nav-sep" aria-hidden="true"></div>
+  <button class="nav-btn" id="navClose" aria-label="Fechar barra" title="Fechar barra">
+    <svg viewBox="0 0 24 24">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </button>
 </nav>
 
 <div class="export-modal" id="exportModal" hidden>
@@ -2578,19 +2586,33 @@ body.is-drawing .draw-toolbar {
   // Auto-ocultar a barra (tela cheia e modo janela): fica escondida e
   // reaparece quando é necessária, sumindo sozinha depois.
   var hideTimer = null;
+  var navDismissed = false;
   var REVEAL_ZONE = 130; // px a partir do rodapé que revelam a barra (modo janela)
   function revealNav() {
+    navDismissed = false;
     document.body.classList.add('nav-visible');
     clearTimeout(hideTimer);
     hideTimer = setTimeout(function () {
       document.body.classList.remove('nav-visible');
     }, 2500);
   }
+  function hideNav() {
+    // Fecha a barra na hora e evita que ela reapareça enquanto o cursor
+    // continuar no rodapé (re-arma quando o cursor sai da faixa).
+    navDismissed = true;
+    clearTimeout(hideTimer);
+    document.body.classList.remove('nav-visible');
+  }
   function activityReveal(y) {
     // Revela a barra só quando o cursor se aproxima do rodapé — tanto no modo
     // janela quanto em tela cheia — para não piscar a cada movimento do mouse.
-    if (window.innerHeight - y <= REVEAL_ZONE) revealNav();
+    var inZone = window.innerHeight - y <= REVEAL_ZONE;
+    if (!inZone) { navDismissed = false; return; }
+    if (navDismissed) return;
+    revealNav();
   }
+  var navCloseBtn = document.getElementById('navClose');
+  if (navCloseBtn) navCloseBtn.addEventListener('click', hideNav);
   document.addEventListener('mousemove', function (e) { activityReveal(e.clientY); });
   document.addEventListener('touchstart', function (e) {
     var t = e.touches && e.touches[0];
