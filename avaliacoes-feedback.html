@@ -1438,9 +1438,15 @@ body.is-drawing .draw-toolbar {
   width: min(100vw, calc(100vh * 16 / 9));
   height: min(100vh, calc(100vw * 9 / 16));
   max-width:none;
+  /* Em tela cheia o slide já ocupa a tela inteira: o zoom não se aplica,
+     garantindo que o enquadramento nunca se perca. */
+  transform:none !important;
 }
 :fullscreen .slide,
 :-webkit-full-screen .slide { border-radius:0; box-shadow:none; }
+/* Zoom é recurso do modo janela; escondemos os controles em tela cheia. */
+:fullscreen .nav-zoom-group,
+:-webkit-full-screen .nav-zoom-group { display:none; }
 :fullscreen .draw-canvas,
 :-webkit-full-screen .draw-canvas { border-radius:0; }
 
