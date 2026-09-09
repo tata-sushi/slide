@@ -2607,9 +2607,8 @@ body.is-drawing .draw-toolbar {
     }, 2500);
   }
   function activityReveal(y) {
-    // Em tela cheia, qualquer movimento revela; no modo janela, só perto do rodapé.
-    if (isFullscreen()) { revealNav(); return; }
-    if (!document.body.classList.contains('nav-autohide')) return;
+    // Revela a barra só quando o cursor se aproxima do rodapé — tanto no modo
+    // janela quanto em tela cheia — para não piscar a cada movimento do mouse.
     if (window.innerHeight - y <= REVEAL_ZONE) revealNav();
   }
   document.addEventListener('mousemove', function (e) { activityReveal(e.clientY); });
