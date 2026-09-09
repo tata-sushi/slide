@@ -679,26 +679,21 @@ html, body {
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  gap:.4em;
+  align-items:baseline;
+  gap:.32em 1.7em;
   width:100%;
-  margin-bottom:1.05em;
+  margin-bottom:1.15em;
 }
-.form-chip {
-  font-family:"DM Mono",monospace;
-  font-size:clamp(8.5px, .9vw, 11px);
+.form-metaitem {
+  font-family:"DM Sans",sans-serif;
+  font-size:clamp(11px, 1.18vw, 14px);
+  color:var(--t1);
+  line-height:1.35;
+}
+.form-metalabel {
+  color:var(--t3);
   font-weight:500;
-  letter-spacing:.03em;
-  color:var(--t2);
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:999px;
-  padding:.34em .72em;
-  line-height:1;
-}
-.form-chip--count {
-  background:var(--carbon);
-  border-color:var(--carbon);
-  color:var(--citric);
+  margin-right:.28em;
 }
 .form-qs {
   list-style:none;
@@ -710,12 +705,12 @@ html, body {
   counter-reset:q;
   text-align:left;
 }
-.form-qs.is-dense li { font-size:clamp(9px, 1.02vw, 12px); padding-top:.18em; padding-bottom:.18em; }
+.form-qs.is-dense li { font-size:clamp(9px, 1.02vw, 12px); padding-top:.198em; padding-bottom:.198em; }
 .form-qs li {
   break-inside:avoid;
   counter-increment:q;
   position:relative;
-  padding:.24em 0 .24em 1.85em;
+  padding:.264em 0 .264em 1.85em;
   font-family:"DM Sans",sans-serif;
   font-size:clamp(10px, 1.12vw, 13.5px);
   line-height:1.28;
@@ -770,13 +765,16 @@ html, body {
 .form-branch--b { grid-column:1; grid-row:2; }
 .form-branch--todos { grid-column:2; grid-row:1 / span 2; }
 .form-branch .form-qs { columns:1; }
-.form-branch .form-qs li { font-size:clamp(9px, 1.02vw, 12px); padding-top:.16em; padding-bottom:.16em; }
+.form-branch .form-qs li { font-size:clamp(9px, 1.02vw, 12px); padding-top:.176em; padding-bottom:.176em; }
 .form-foot {
-  margin-top:.8em;
-  font-family:"DM Mono",monospace;
-  font-size:clamp(8.5px, .88vw, 11px);
-  letter-spacing:.03em;
-  color:var(--t3);
+  margin-top:1em;
+  width:100%;
+  text-align:center;
+  font-family:"DM Sans",sans-serif;
+  font-weight:700;
+  font-size:clamp(9.5px, .95vw, 12.5px);
+  letter-spacing:.01em;
+  color:var(--carbon);
 }
 .form-social {
   width:100%;
@@ -797,11 +795,11 @@ html, body {
   font-family:"DM Sans",sans-serif;
   font-weight:600;
   font-size:clamp(12px, 1.3vw, 16px);
-  color:var(--carbon);
-  background:rgba(207,255,0,.22);
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:.45em .85em;
+  color:var(--citric);
+  background:var(--carbon);
+  border:1px solid var(--carbon);
+  border-radius:999px;
+  padding:.5em 1.05em;
   line-height:1;
 }
 .topic-callout {
@@ -1891,10 +1889,10 @@ body.is-drawing .draw-toolbar {
         <p class="slide-eyebrow">Formulário 1 · Avaliações &amp; Feedback</p>
         <h2 class="slide-heading">Experiência 14 dias — Líder</h2>
         <div class="form-meta">
-          <span class="form-chip">Líder avalia o colaborador</span>
-          <span class="form-chip">Portal</span>
-          <span class="form-chip">14 dias</span>
-          <span class="form-chip form-chip--count">11 perguntas</span>
+          <span class="form-metaitem"><span class="form-metalabel">Quem avalia:</span> Líder avalia o colaborador</span>
+          <span class="form-metaitem"><span class="form-metalabel">Quando:</span> 14 dias</span>
+          <span class="form-metaitem"><span class="form-metalabel">Onde:</span> Portal</span>
+          <span class="form-metaitem"><span class="form-metalabel">Perguntas:</span> 11</span>
         </div>
         <ul class="form-qs">
           <li>O quanto está preparado(a) para realizar as tarefas básicas da função?</li>
@@ -1920,10 +1918,10 @@ body.is-drawing .draw-toolbar {
         <p class="slide-eyebrow">Formulário 2 · Avaliações &amp; Feedback</p>
         <h2 class="slide-heading">Experiência 14 dias — Colaborador</h2>
         <div class="form-meta">
-          <span class="form-chip">Autoavaliação</span>
-          <span class="form-chip">App</span>
-          <span class="form-chip">14 dias</span>
-          <span class="form-chip form-chip--count">17 perguntas</span>
+          <span class="form-metaitem"><span class="form-metalabel">Quem avalia:</span> Autoavaliação do colaborador</span>
+          <span class="form-metaitem"><span class="form-metalabel">Quando:</span> 14 dias</span>
+          <span class="form-metaitem"><span class="form-metalabel">Onde:</span> App</span>
+          <span class="form-metaitem"><span class="form-metalabel">Perguntas:</span> 17</span>
         </div>
         <ul class="form-qs is-dense">
           <li>O quanto está claro o que é esperado de você neste início de trabalho?</li>
@@ -1955,10 +1953,10 @@ body.is-drawing .draw-toolbar {
         <p class="slide-eyebrow">Formulário 3 · Avaliações &amp; Feedback</p>
         <h2 class="slide-heading">Experiência 60 dias — Líder</h2>
         <div class="form-meta">
-          <span class="form-chip">Líder avalia o colaborador</span>
-          <span class="form-chip">Portal</span>
-          <span class="form-chip">60 dias</span>
-          <span class="form-chip form-chip--count">14 perguntas</span>
+          <span class="form-metaitem"><span class="form-metalabel">Quem avalia:</span> Líder avalia o colaborador</span>
+          <span class="form-metaitem"><span class="form-metalabel">Quando:</span> 60 dias</span>
+          <span class="form-metaitem"><span class="form-metalabel">Onde:</span> Portal</span>
+          <span class="form-metaitem"><span class="form-metalabel">Perguntas:</span> 14</span>
         </div>
         <ul class="form-qs is-dense">
           <li>O quanto está adaptado(a) às rotinas e receptivo(a) a mudanças e feedbacks?</li>
@@ -1987,10 +1985,10 @@ body.is-drawing .draw-toolbar {
         <p class="slide-eyebrow">Formulário 4 · Avaliações &amp; Feedback</p>
         <h2 class="slide-heading">Experiência 60 dias — Colaborador</h2>
         <div class="form-meta">
-          <span class="form-chip">Autoavaliação</span>
-          <span class="form-chip">App</span>
-          <span class="form-chip">60 dias</span>
-          <span class="form-chip form-chip--count">9 perguntas</span>
+          <span class="form-metaitem"><span class="form-metalabel">Quem avalia:</span> Autoavaliação do colaborador</span>
+          <span class="form-metaitem"><span class="form-metalabel">Quando:</span> 60 dias</span>
+          <span class="form-metaitem"><span class="form-metalabel">Onde:</span> App</span>
+          <span class="form-metaitem"><span class="form-metalabel">Perguntas:</span> 9</span>
         </div>
         <ul class="form-qs">
           <li>O quanto está claro o que é esperado de você no trabalho?</li>
@@ -2014,10 +2012,10 @@ body.is-drawing .draw-toolbar {
         <p class="slide-eyebrow">Formulário 5 · Avaliações &amp; Feedback</p>
         <h2 class="slide-heading">Avaliação de Desempenho</h2>
         <div class="form-meta">
-          <span class="form-chip">Líder avalia o colaborador</span>
-          <span class="form-chip">Portal</span>
-          <span class="form-chip">Semestral</span>
-          <span class="form-chip form-chip--count">12 perguntas</span>
+          <span class="form-metaitem"><span class="form-metalabel">Quem avalia:</span> Líder avalia o colaborador</span>
+          <span class="form-metaitem"><span class="form-metalabel">Quando:</span> Semestral</span>
+          <span class="form-metaitem"><span class="form-metalabel">Onde:</span> Portal</span>
+          <span class="form-metaitem"><span class="form-metalabel">Perguntas:</span> 12</span>
         </div>
         <ul class="form-qs">
           <li>O quanto entrega seu trabalho com qualidade e atenção aos detalhes?</li>
@@ -2044,10 +2042,10 @@ body.is-drawing .draw-toolbar {
         <p class="slide-eyebrow">Formulário 6 · Avaliações &amp; Feedback</p>
         <h2 class="slide-heading">Avaliação de Liderança</h2>
         <div class="form-meta">
-          <span class="form-chip">Colaborador avalia o líder</span>
-          <span class="form-chip">App · confidencial</span>
-          <span class="form-chip">Semestral</span>
-          <span class="form-chip form-chip--count">10 perguntas</span>
+          <span class="form-metaitem"><span class="form-metalabel">Quem avalia:</span> Colaborador avalia o líder</span>
+          <span class="form-metaitem"><span class="form-metalabel">Quando:</span> Semestral</span>
+          <span class="form-metaitem"><span class="form-metalabel">Onde:</span> App · confidencial</span>
+          <span class="form-metaitem"><span class="form-metalabel">Perguntas:</span> 10</span>
         </div>
         <ul class="form-qs">
           <li>O quanto as orientações da sua liderança são claras?</li>
@@ -2072,10 +2070,10 @@ body.is-drawing .draw-toolbar {
         <p class="slide-eyebrow">Formulário 7 · Avaliações &amp; Feedback</p>
         <h2 class="slide-heading">Pesquisa de Clima</h2>
         <div class="form-meta">
-          <span class="form-chip">Colaborador · anônimo</span>
-          <span class="form-chip">Link / WhatsApp</span>
-          <span class="form-chip">Contínuo — 5 por rodada</span>
-          <span class="form-chip form-chip--count">20 no banco</span>
+          <span class="form-metaitem"><span class="form-metalabel">Quem avalia:</span> Colaborador (anônimo)</span>
+          <span class="form-metaitem"><span class="form-metalabel">Quando:</span> Contínuo — 5 por rodada</span>
+          <span class="form-metaitem"><span class="form-metalabel">Onde:</span> Link / WhatsApp</span>
+          <span class="form-metaitem"><span class="form-metalabel">Perguntas:</span> 20 no banco</span>
         </div>
         <ul class="form-qs is-dense">
           <li>O quanto o ambiente de trabalho está colaborativo?</li>
@@ -2110,10 +2108,10 @@ body.is-drawing .draw-toolbar {
         <p class="slide-eyebrow">Formulário 8 · Avaliações &amp; Feedback</p>
         <h2 class="slide-heading">Entrevista de Desligamento</h2>
         <div class="form-meta">
-          <span class="form-chip">Quem está saindo</span>
-          <span class="form-chip">Link / WhatsApp</span>
-          <span class="form-chip">Na saída · fluxo ramificado</span>
-          <span class="form-chip form-chip--count">20 perguntas</span>
+          <span class="form-metaitem"><span class="form-metalabel">Quem avalia:</span> Quem está saindo</span>
+          <span class="form-metaitem"><span class="form-metalabel">Quando:</span> Na saída · fluxo ramificado</span>
+          <span class="form-metaitem"><span class="form-metalabel">Onde:</span> Link / WhatsApp</span>
+          <span class="form-metaitem"><span class="form-metalabel">Perguntas:</span> 20</span>
         </div>
         <div class="form-branches">
           <div class="form-branch form-branch--a">
@@ -2163,9 +2161,9 @@ body.is-drawing .draw-toolbar {
         <p class="slide-eyebrow">Formulário 9 · Avaliações &amp; Feedback</p>
         <h2 class="slide-heading">Reconhecimento entre pares</h2>
         <div class="form-meta">
-          <span class="form-chip">Reconhecimento entre colegas</span>
-          <span class="form-chip">Social no app</span>
-          <span class="form-chip form-chip--count">Sem escala / nota</span>
+          <span class="form-metaitem"><span class="form-metalabel">O que é:</span> Reconhecimento entre colegas</span>
+          <span class="form-metaitem"><span class="form-metalabel">Onde:</span> Social no app</span>
+          <span class="form-metaitem"><span class="form-metalabel">Formato:</span> Sem escala / nota</span>
         </div>
         <div class="form-social">
           <p class="form-social-lead">Não é um questionário: um colaborador reconhece um colega escolhendo um <strong>motivo</strong> e escrevendo uma <strong>mensagem</strong> livre. Sem perguntas e sem pontuação.</p>
