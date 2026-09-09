@@ -36,10 +36,12 @@ html, body {
   max-width:1120px;
   aspect-ratio: 16 / 9;
   position:relative;
-  transform: scale(var(--stage-zoom, 1));
+  transform: translate(var(--pan-x, 0px), var(--pan-y, 0px)) scale(var(--stage-zoom, 1));
   transform-origin: center center;
   transition: transform .18s ease;
 }
+.stage.is-pannable { cursor:grab; user-select:none; -webkit-user-select:none; }
+.stage.is-panning { cursor:grabbing; transition:none; }
 
 /* ── Slide: card com sombra, empilhado no stage ─── */
 .slide {
@@ -1432,21 +1434,15 @@ body.is-drawing .draw-toolbar {
 :fullscreen body,
 :-webkit-full-screen body { background:#000; }
 :fullscreen .deck,
-:-webkit-full-screen .deck { padding:0; min-height:100vh; }
+:-webkit-full-screen .deck { padding:0; min-height:100vh; height:100vh; overflow:hidden; }
 :fullscreen .stage,
 :-webkit-full-screen .stage {
   width: min(100vw, calc(100vh * 16 / 9));
   height: min(100vh, calc(100vw * 9 / 16));
   max-width:none;
-  /* Em tela cheia o slide já ocupa a tela inteira: o zoom não se aplica,
-     garantindo que o enquadramento nunca se perca. */
-  transform:none !important;
 }
 :fullscreen .slide,
 :-webkit-full-screen .slide { border-radius:0; box-shadow:none; }
-/* Zoom é recurso do modo janela; escondemos os controles em tela cheia. */
-:fullscreen .nav-zoom-group,
-:-webkit-full-screen .nav-zoom-group { display:none; }
 :fullscreen .draw-canvas,
 :-webkit-full-screen .draw-canvas { border-radius:0; }
 
@@ -2393,6 +2389,7 @@ body.is-drawing .draw-toolbar {
     curEl.textContent = idx + 1;
     prevBtn.disabled = idx === 0;
     nextBtn.disabled = idx === slides.length - 1;
+    if (typeof resetView === 'function') resetView();
     var url = new URL(window.location.href);
     url.hash = 'slide-' + (idx + 1);
     history.replaceState(null, '', url.toString());
@@ -2479,23 +2476,69 @@ body.is-drawing .draw-toolbar {
 
   // ── Zoom do conteúdo (não afeta a barra de ferramentas) ──
   var stageZoomEl = document.getElementById('stage');
+  var deckEl = document.querySelector('.deck');
   var zoomValEl = document.getElementById('zoomVal');
   var zoomLevel = 1;
-  var ZOOM_MIN = 0.6, ZOOM_MAX = 2.5, ZOOM_STEP = 0.1;
+  var panX = 0, panY = 0;
+  var ZOOM_MIN = 0.6, ZOOM_MAX = 3, ZOOM_STEP = 0.25;
+  function clampPan() {
+    // Limita o pan para que a borda do slide nunca entre no quadro (sem "buracos").
+    var maxX = stageZoomEl.offsetWidth * (zoomLevel - 1) / 2;
+    var maxY = stageZoomEl.offsetHeight * (zoomLevel - 1) / 2;
+    if (maxX < 0) maxX = 0;
+    if (maxY < 0) maxY = 0;
+    panX = Math.max(-maxX, Math.min(maxX, panX));
+    panY = Math.max(-maxY, Math.min(maxY, panY));
+  }
   function applyZoom() {
+    clampPan();
     stageZoomEl.style.setProperty('--stage-zoom', zoomLevel);
+    stageZoomEl.style.setProperty('--pan-x', panX + 'px');
+    stageZoomEl.style.setProperty('--pan-y', panY + 'px');
+    stageZoomEl.classList.toggle('is-pannable', zoomLevel > 1 && isFullscreen());
     if (zoomValEl) zoomValEl.textContent = Math.round(zoomLevel * 100) + '%';
   }
   function setZoom(z) {
     zoomLevel = Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, Math.round(z * 100) / 100));
+    if (zoomLevel <= 1) { panX = 0; panY = 0; }
     applyZoom();
   }
+  function resetView() { zoomLevel = 1; panX = 0; panY = 0; applyZoom(); }
   var zoomInBtn = document.getElementById('zoomIn');
   var zoomOutBtn = document.getElementById('zoomOut');
   var zoomResetBtn = document.getElementById('zoomReset');
   if (zoomInBtn) zoomInBtn.addEventListener('click', function () { setZoom(zoomLevel + ZOOM_STEP); });
   if (zoomOutBtn) zoomOutBtn.addEventListener('click', function () { setZoom(zoomLevel - ZOOM_STEP); });
-  if (zoomResetBtn) zoomResetBtn.addEventListener('click', function () { setZoom(1); });
+  if (zoomResetBtn) zoomResetBtn.addEventListener('click', function () { resetView(); });
+
+  // Arrastar para navegar (pan) quando ampliado — como uma lupa.
+  var panning = false, panStartX = 0, panStartY = 0, panOrigX = 0, panOrigY = 0;
+  function panActive() { return zoomLevel > 1 && isFullscreen() && !drawMode; }
+  if (deckEl) {
+    deckEl.addEventListener('pointerdown', function (e) {
+      if (!panActive() || e.button !== 0) return;
+      panning = true;
+      panStartX = e.clientX; panStartY = e.clientY;
+      panOrigX = panX; panOrigY = panY;
+      stageZoomEl.classList.add('is-panning');
+      try { deckEl.setPointerCapture(e.pointerId); } catch (err) {}
+      e.preventDefault();
+    });
+    deckEl.addEventListener('pointermove', function (e) {
+      if (!panning) return;
+      panX = panOrigX + (e.clientX - panStartX);
+      panY = panOrigY + (e.clientY - panStartY);
+      applyZoom();
+    });
+    var endPan = function (e) {
+      if (!panning) return;
+      panning = false;
+      stageZoomEl.classList.remove('is-panning');
+      try { deckEl.releasePointerCapture(e.pointerId); } catch (err) {}
+    };
+    deckEl.addEventListener('pointerup', endPan);
+    deckEl.addEventListener('pointercancel', endPan);
+  }
 
   // Fullscreen
   var fsBtn = document.getElementById('fs');
@@ -2521,7 +2564,13 @@ body.is-drawing .draw-toolbar {
     fsExit.style.display = on ? 'block' : 'none';
     fsBtn.setAttribute('aria-label', on ? 'Sair da tela cheia' : 'Tela cheia');
     fsBtn.setAttribute('title', on ? 'Sair da tela cheia (F ou Esc)' : 'Tela cheia (F)');
-    if (!on) document.body.classList.remove('nav-visible');
+    if (!on) {
+      document.body.classList.remove('nav-visible');
+      resetView();
+    } else {
+      // O stage é redimensionado pela regra :fullscreen; recalcula pan/cursor.
+      setTimeout(applyZoom, 60);
+    }
   }
   fsBtn.addEventListener('click', toggleFullscreen);
   document.addEventListener('fullscreenchange', syncFsIcon);
@@ -2948,6 +2997,14 @@ body.is-drawing .draw-toolbar {
       case 'M':
         if (drawMode) { e.preventDefault(); setTool('hl'); }
         break;
+      case '+':
+      case '=':
+        e.preventDefault(); setZoom(zoomLevel + ZOOM_STEP); break;
+      case '-':
+      case '_':
+        e.preventDefault(); setZoom(zoomLevel - ZOOM_STEP); break;
+      case '0':
+        e.preventDefault(); resetView(); break;
     }
   });
 
