@@ -1150,6 +1150,20 @@ html, body {
   z-index:10;
   user-select:none;
 }
+/* Auto-ocultar no modo janela: a barra some quando não está em uso e
+   reaparece perto do rodapé (ou ao navegar). Em tela cheia, as regras
+   :fullscreen abaixo é que cuidam disso. */
+body.nav-autohide .nav {
+  opacity:0;
+  transform:translateX(-50%) translateY(16px);
+  transition:opacity .25s ease, transform .25s ease;
+  pointer-events:none;
+}
+body.nav-autohide.nav-visible .nav {
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+  pointer-events:auto;
+}
 .nav-btn {
   width:38px; height:38px;
   border:none; background:transparent;
@@ -2390,6 +2404,7 @@ body.is-drawing .draw-toolbar {
     prevBtn.disabled = idx === 0;
     nextBtn.disabled = idx === slides.length - 1;
     if (typeof resetView === 'function') resetView();
+    if (typeof revealNav === 'function') revealNav();
     var url = new URL(window.location.href);
     url.hash = 'slide-' + (idx + 1);
     history.replaceState(null, '', url.toString());
@@ -2502,6 +2517,7 @@ body.is-drawing .draw-toolbar {
     zoomLevel = Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, Math.round(z * 100) / 100));
     if (zoomLevel <= 1) { panX = 0; panY = 0; }
     applyZoom();
+    if (typeof revealNav === 'function') revealNav();
   }
   function resetView() { zoomLevel = 1; panX = 0; panY = 0; applyZoom(); }
   var zoomInBtn = document.getElementById('zoomIn');
@@ -2565,30 +2581,42 @@ body.is-drawing .draw-toolbar {
     fsBtn.setAttribute('aria-label', on ? 'Sair da tela cheia' : 'Tela cheia');
     fsBtn.setAttribute('title', on ? 'Sair da tela cheia (F ou Esc)' : 'Tela cheia (F)');
     if (!on) {
-      document.body.classList.remove('nav-visible');
+      document.body.classList.add('nav-autohide');
       resetView();
     } else {
+      document.body.classList.remove('nav-autohide');
       // O stage é redimensionado pela regra :fullscreen; recalcula pan/cursor.
       setTimeout(applyZoom, 60);
     }
     if (typeof updateNavForZoom === 'function') updateNavForZoom();
+    if (typeof revealNav === 'function') revealNav();
   }
   fsBtn.addEventListener('click', toggleFullscreen);
   document.addEventListener('fullscreenchange', syncFsIcon);
   document.addEventListener('webkitfullscreenchange', syncFsIcon);
 
-  // Auto-hide da barra em fullscreen
+  // Auto-ocultar a barra (tela cheia e modo janela): fica escondida e
+  // reaparece quando é necessária, sumindo sozinha depois.
   var hideTimer = null;
-  function showNav() {
-    if (!isFullscreen()) return;
+  var REVEAL_ZONE = 130; // px a partir do rodapé que revelam a barra (modo janela)
+  function revealNav() {
     document.body.classList.add('nav-visible');
     clearTimeout(hideTimer);
     hideTimer = setTimeout(function () {
       document.body.classList.remove('nav-visible');
-    }, 2000);
+    }, 2500);
   }
-  document.addEventListener('mousemove', showNav);
-  document.addEventListener('touchstart', showNav, { passive: true });
+  function activityReveal(y) {
+    // Em tela cheia, qualquer movimento revela; no modo janela, só perto do rodapé.
+    if (isFullscreen()) { revealNav(); return; }
+    if (!document.body.classList.contains('nav-autohide')) return;
+    if (window.innerHeight - y <= REVEAL_ZONE) revealNav();
+  }
+  document.addEventListener('mousemove', function (e) { activityReveal(e.clientY); });
+  document.addEventListener('touchstart', function (e) {
+    var t = e.touches && e.touches[0];
+    activityReveal(t ? t.clientY : 0);
+  }, { passive: true });
 
   // ── Barra de navegação com tamanho fixo sob zoom de pinça ──
   // Ao ampliar a página com pinça (visual viewport zoom), a barra cresceria
@@ -3048,6 +3076,7 @@ body.is-drawing .draw-toolbar {
     var n = parseInt(m[1], 10) - 1;
     if (n >= 0 && n < slides.length) idx = n;
   }
+  document.body.classList.add('nav-autohide');
   fitCanvas();
   render();
 })();
