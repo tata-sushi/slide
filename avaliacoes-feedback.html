@@ -2571,6 +2571,7 @@ body.is-drawing .draw-toolbar {
       // O stage é redimensionado pela regra :fullscreen; recalcula pan/cursor.
       setTimeout(applyZoom, 60);
     }
+    if (typeof updateNavForZoom === 'function') updateNavForZoom();
   }
   fsBtn.addEventListener('click', toggleFullscreen);
   document.addEventListener('fullscreenchange', syncFsIcon);
@@ -2588,6 +2589,40 @@ body.is-drawing .draw-toolbar {
   }
   document.addEventListener('mousemove', showNav);
   document.addEventListener('touchstart', showNav, { passive: true });
+
+  // ── Barra de navegação com tamanho fixo sob zoom de pinça ──
+  // Ao ampliar a página com pinça (visual viewport zoom), a barra cresceria
+  // junto. Aqui a contra-escalamos por 1/scale e a reposicionamos no rodapé
+  // da área visível, para que fique sempre do mesmo tamanho e ao alcance.
+  // Sem pinça (ou em tela cheia), limpamos os estilos inline e o CSS assume.
+  var navBar = document.querySelector('.nav');
+  function updateNavForZoom() {
+    var vv = window.visualViewport;
+    if (!vv || !navBar) return;
+    var scale = vv.scale || 1;
+    if (scale <= 1.01 || isFullscreen()) {
+      navBar.style.transform = '';
+      navBar.style.left = '';
+      navBar.style.top = '';
+      navBar.style.bottom = '';
+      navBar.style.transformOrigin = '';
+      return;
+    }
+    var inv = 1 / scale;
+    var w = navBar.offsetWidth, h = navBar.offsetHeight;
+    var x = (vv.offsetLeft + vv.width / 2) - (w * inv) / 2;
+    var y = (vv.offsetTop + vv.height) - (20 + h) * inv;
+    navBar.style.left = '0';
+    navBar.style.top = '0';
+    navBar.style.bottom = 'auto';
+    navBar.style.transformOrigin = '0 0';
+    navBar.style.transform = 'translate(' + x.toFixed(2) + 'px,' + y.toFixed(2) + 'px) scale(' + inv.toFixed(4) + ')';
+  }
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', updateNavForZoom);
+    window.visualViewport.addEventListener('scroll', updateNavForZoom);
+  }
+  window.addEventListener('resize', updateNavForZoom);
 
   // ── Lousa ─────────────────────────────────
   var canvas = document.getElementById('drawCanvas');
