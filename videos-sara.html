@@ -889,6 +889,8 @@ html, body {
   -webkit-box-decoration-break:clone;
 }
 .topic-cols--triple { grid-template-columns:1fr 1fr 1fr; }
+.topic-cols--stack { grid-template-columns:1fr; gap:1.1em 0; }
+.topic-cols--stack .topic-section { text-align:left; }
 .comofunciona-lead { margin-top:2em; }
 .timeline-track {
   display:grid;
@@ -1746,8 +1748,14 @@ body.is-drawing .draw-toolbar {
     <!-- Slide 3 — Como funciona (a mecânica comum) -->
     <section class="slide slide-light" aria-label="Slide 3 · Como Funciona">
       <div class="slide-inner">
-        <p class="slide-eyebrow">Avaliações &amp; Feedback</p>
-        <h2 class="slide-heading">Como funciona</h2>
+        <p class="slide-eyebrow">Pesquisa de Clima</p>
+        <h2 class="slide-heading">Como funciona?</h2>
+        <div class="topic-cols topic-cols--stack">
+          <div class="topic-section">
+            <p class="topic-sub">Link via Whatsapp</p>
+            <p class="info-box-text">Link individual enviado pelo Whatsapp da Sara com expiração em 24h.</p>
+          </div>
+        </div>
         <p class="slide-text comofunciona-lead">Régua de classificação:</p>
         <div class="faixa-legend">
           <div class="faixa-chip faixa-critico">
@@ -1771,18 +1779,10 @@ body.is-drawing .draw-toolbar {
             <p class="faixa-range">≥ 4,5</p>
           </div>
         </div>
-        <div class="topic-cols topic-cols--triple">
+        <div class="topic-cols topic-cols--stack">
           <div class="topic-section">
-            <p class="topic-sub">Escala Likert</p>
-            <p class="info-box-text">Classificação de 1 à 5 em todos os instrumentos, com percepção/qualidade: Nunca → Às vezes → Sempre.</p>
-          </div>
-          <div class="topic-section">
-            <p class="topic-sub">Confidencialidade</p>
+            <p class="topic-sub">Feedback</p>
             <p class="info-box-text">Clima é medido de forma confidencial, e a liderança acompanha a média consolidada.</p>
-          </div>
-          <div class="topic-section">
-            <p class="topic-sub">Começo, meio e fim</p>
-            <p class="info-box-text">Formulários inteligentes, dashboards consolidados e resultados separados por fases.</p>
           </div>
         </div>
       </div>
