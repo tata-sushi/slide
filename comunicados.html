@@ -146,54 +146,82 @@
   .comunicado .rodape .rede svg{width:42px;height:42px;fill:#fff;flex:0 0 auto;}
 
   /* =========================================================
-     COMUNICADO — Programa de Reconhecimento (Tatá Stars)
-     Layout próprio, denso: título + regras + tabela de bônus
+     COMUNICADO — Prêmio Tatá (Cozinha) — 2 páginas
+     Pág 1: o prêmio / como funciona | Pág 2: penalidades
+     Verde da marca + vermelho SÓ nas penalidades (igual ao app)
      ========================================================= */
-  /* logo menor e mais alto nesta página (dá lugar ao título "Tatá Stars") */
-  .comunicado.stars-pag .logo-topo{width:168px;top:64px;}
-  .comunicado.stars-pag .corpo{justify-content:flex-start;padding:352px 80px 48px;}
-  .comunicado .stars{display:flex;flex-direction:column;align-items:center;width:100%;text-align:center;}
-  .comunicado .stars .kicker{font-family:var(--fonte-texto);font-size:33px;font-weight:700;letter-spacing:7px;
+  :root{ --pen-bg:#fdeae7; --pen-txt:#c0392b; --pen-borda:#e7b3aa; }
+  .comunicado.premio-pag .logo-topo{width:150px;top:58px;}
+  .comunicado.premio-pag .corpo{justify-content:center;padding:210px 78px 60px;}
+  .comunicado .premio{display:flex;flex-direction:column;align-items:center;width:100%;text-align:center;}
+  /* cabeçalho comum */
+  .comunicado .premio .kicker{font-family:var(--fonte-texto);font-size:31px;font-weight:700;letter-spacing:6px;
     text-transform:uppercase;color:var(--com-sub);}
-  .comunicado .stars .titulo{font-family:var(--fonte-texto);font-size:134px;font-weight:1000;line-height:.95;
-    letter-spacing:2px;text-transform:uppercase;margin:4px 0 2px;}
-  .comunicado .stars .titulo .a{color:var(--com-sub);}
-  .comunicado .stars .titulo .b{color:var(--verde);}
-  .comunicado .stars .tag{background:var(--verde);color:#fff;font-family:var(--fonte-texto);font-weight:800;
-    font-size:34px;text-transform:uppercase;letter-spacing:1px;padding:12px 40px;border-radius:12px;margin-top:12px;}
-  .comunicado .stars .intro{font-family:var(--fonte-texto);font-size:36px;line-height:1.5;color:var(--com-texto);
-    max-width:1060px;margin-top:38px;}
-  .comunicado .stars .intro b{font-weight:800;color:var(--com-sub);}
-  .comunicado .stars .sec{font-family:var(--fonte-texto);font-size:39px;font-weight:800;text-transform:uppercase;
-    letter-spacing:2px;color:var(--com-sub);margin:46px 0 26px;display:flex;align-items:center;gap:22px;}
-  .comunicado .stars .sec::before,.comunicado .stars .sec::after{content:"";width:70px;height:3px;
-    background:rgba(76,175,82,.5);border-radius:2px;}
-  /* regras (3 cartões lado a lado) */
-  .comunicado .regras{display:flex;gap:26px;width:100%;justify-content:center;}
-  .comunicado .regra{flex:1;max-width:390px;background:rgba(76,175,82,.08);border:2px solid rgba(76,175,82,.35);
-    border-radius:22px;padding:32px 24px;display:flex;flex-direction:column;align-items:center;}
-  .comunicado .regra .ico{width:92px;height:92px;color:var(--verde);margin-bottom:14px;}
-  .comunicado .regra .ico svg{width:100%;height:100%;display:block;}
-  .comunicado .regra h3{font-family:var(--fonte-texto);font-size:38px;font-weight:900;color:var(--verde);
-    text-transform:uppercase;line-height:1.05;margin-bottom:10px;}
-  .comunicado .regra p{font-family:var(--fonte-texto);font-size:28px;line-height:1.3;color:var(--com-texto);}
-  /* progressão do bônus */
-  .comunicado .stars .nota{font-family:var(--fonte-texto);font-size:31px;line-height:1.38;color:var(--com-texto);
-    max-width:1080px;margin-bottom:24px;}
-  .comunicado .stars .nota b{font-weight:800;color:var(--com-sub);}
-  .comunicado .tabela-bonus{border-collapse:separate;border-spacing:10px;width:100%;max-width:1160px;}
-  .comunicado .tabela-bonus th,.comunicado .tabela-bonus td{text-align:center;border-radius:12px;}
-  .comunicado .tabela-bonus thead th{background:var(--verde);color:#fff;font-family:var(--fonte-texto);font-weight:800;
-    font-size:30px;text-transform:uppercase;letter-spacing:.5px;padding:16px 6px;}
-  .comunicado .tabela-bonus thead th:first-child{background:transparent;}
-  .comunicado .tabela-bonus tbody th{background:var(--com-sub);color:#fff;font-family:var(--fonte-texto);font-weight:800;
-    font-size:31px;padding:16px 14px;width:270px;}
-  .comunicado .tabela-bonus tbody td{background:#fff;color:var(--com-sub);font-family:var(--fonte-texto);font-weight:800;
-    font-size:40px;padding:20px 6px;}
-  .comunicado .tabela-bonus .max{background:#1a5e22;}
-  .comunicado .tabela-bonus td.max{background:var(--verde);color:#fff;font-size:42px;}
-  .comunicado .stars .fecho{font-family:var(--fonte-texto);font-size:44px;font-weight:800;font-style:italic;
-    color:var(--verde);text-transform:uppercase;letter-spacing:1px;margin-top:48px;line-height:1.2;}
+  .comunicado .premio .titulo{font-family:var(--fonte-texto);font-size:118px;font-weight:1000;line-height:.95;
+    letter-spacing:1px;text-transform:uppercase;color:var(--verde);margin:2px 0 6px;}
+  .comunicado .premio .subtitulo{font-family:var(--fonte-texto);font-size:37px;font-weight:800;color:var(--com-sub);
+    text-transform:uppercase;letter-spacing:2px;}
+  .comunicado .premio .periodo{font-family:var(--fonte-texto);font-size:28px;color:var(--com-mute);margin-top:12px;}
+  .comunicado .premio .periodo b{color:var(--com-sub);}
+  .comunicado .premio .sec{font-family:var(--fonte-texto);font-size:36px;font-weight:800;text-transform:uppercase;
+    letter-spacing:2px;color:var(--verde);margin:40px 0 22px;display:flex;align-items:center;gap:20px;align-self:stretch;}
+  .comunicado .premio .sec::before,.comunicado .premio .sec::after{content:"";height:3px;flex:1;
+    background:rgba(76,175,82,.4);border-radius:2px;}
+  /* Pág 1 — como funciona (bullets) */
+  .comunicado .premio .como{align-self:stretch;max-width:1140px;margin:0 auto;font-family:var(--fonte-texto);
+    display:flex;flex-direction:column;gap:22px;text-align:left;}
+  .comunicado .premio .como li{list-style:none;position:relative;padding-left:40px;
+    font-size:33px;line-height:1.4;color:var(--com-texto);}
+  .comunicado .premio .como li::before{content:"";position:absolute;left:0;top:11px;width:20px;height:20px;
+    border-radius:50%;background:var(--verde);}
+  .comunicado .premio .como b{font-weight:800;color:var(--com-sub);}
+  /* Pág 1 — cartões de valor */
+  .comunicado .premio-cards{display:flex;gap:30px;width:100%;justify-content:center;}
+  .comunicado .premio-card{flex:1;max-width:520px;background:#fff;border:3px solid rgba(76,175,82,.4);
+    border-radius:26px;padding:38px 34px;display:flex;flex-direction:column;align-items:center;text-align:center;}
+  .comunicado .premio-card.bonus{border-color:var(--verde);background:rgba(76,175,82,.1);}
+  .comunicado .premio-card .rot{font-family:var(--fonte-texto);font-size:31px;font-weight:800;color:var(--com-sub);
+    text-transform:uppercase;letter-spacing:1px;line-height:1.15;min-height:74px;}
+  .comunicado .premio-card .val{font-family:var(--fonte-texto);font-size:98px;font-weight:1000;color:var(--verde);
+    line-height:1;margin:10px 0 6px;}
+  .comunicado .premio-card .desc{font-family:var(--fonte-texto);font-size:28px;line-height:1.34;color:var(--com-texto);}
+  .comunicado .premio .fecho{font-family:var(--fonte-texto);font-size:38px;font-weight:800;color:var(--verde);
+    text-align:center;margin-top:48px;line-height:1.3;}
+  .comunicado .premio .fecho i{font-style:italic;}
+  /* Pág 2 — penalidades (compacta p/ caber em A4) */
+  .comunicado.penal-pag .logo-topo{width:134px;}
+  .comunicado.penal-pag .corpo{justify-content:flex-start;padding:262px 76px 38px;}
+  .comunicado.penal-pag .titulo{font-size:72px;margin:0 0 4px;}
+  .comunicado.penal-pag .lead{font-size:29px;}
+  .comunicado.penal-pag .sec{margin:22px 0 11px;font-size:32px;}
+  .comunicado.penal-pag .pen-grupo{gap:11px;}
+  .comunicado.penal-pag .pen-item{padding:15px 24px;border-radius:16px;}
+  .comunicado.penal-pag .pen-head .tit{font-size:31px;}
+  .comunicado.penal-pag .pen-head .tit small{font-size:24px;margin-top:2px;}
+  .comunicado.penal-pag .pen-valor{font-size:29px;padding:9px 22px;}
+  .comunicado.penal-pag .pen-bullets{margin-top:10px;gap:8px;}
+  .comunicado.penal-pag .pen-bullets li{font-size:27px;}
+  .comunicado.penal-pag .pen-bullets li::before{margin-top:8px;}
+  .comunicado.penal-pag .pen-atencao{margin-top:10px;padding:12px 18px;font-size:25px;}
+  .comunicado .premio .lead{font-family:var(--fonte-texto);font-size:31px;line-height:1.38;color:var(--com-texto);
+    max-width:1160px;margin-top:2px;}
+  .comunicado .premio .lead b{font-weight:800;color:var(--com-sub);}
+  .comunicado .premio .lead .neg{color:var(--pen-txt);font-weight:800;}
+  .comunicado .pen-grupo{width:100%;display:flex;flex-direction:column;gap:16px;}
+  .comunicado .pen-item{background:#fff;border:2px solid rgba(76,175,82,.22);border-radius:18px;padding:22px 28px;text-align:left;}
+  .comunicado .pen-head{display:flex;align-items:center;justify-content:space-between;gap:20px;}
+  .comunicado .pen-head .tit{font-family:var(--fonte-texto);font-size:35px;font-weight:800;color:var(--com-sub);line-height:1.12;}
+  .comunicado .pen-head .tit small{display:block;font-size:26px;font-weight:600;color:var(--com-mute);margin-top:4px;}
+  .comunicado .pen-valor{flex:0 0 auto;background:var(--pen-bg);color:var(--pen-txt);font-family:var(--fonte-texto);
+    font-weight:800;font-size:33px;padding:11px 26px;border-radius:40px;white-space:nowrap;}
+  .comunicado .pen-bullets{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:11px;}
+  .comunicado .pen-bullets li{display:flex;gap:16px;align-items:flex-start;font-family:var(--fonte-texto);
+    font-size:29px;line-height:1.3;color:var(--com-texto);}
+  .comunicado .pen-bullets li::before{content:"";flex:0 0 auto;width:15px;height:15px;border-radius:50%;
+    background:var(--verde);margin-top:9px;}
+  .comunicado .pen-atencao{margin-top:14px;background:var(--pen-bg);border:2px solid var(--pen-borda);border-radius:14px;
+    padding:15px 22px;font-family:var(--fonte-texto);font-size:27px;line-height:1.34;color:var(--com-texto);}
+  .comunicado .pen-atencao b{color:var(--pen-txt);}
 </style>
 </head>
 <body>
@@ -533,79 +561,114 @@
   </div>
 </div>
 
-<!-- COMUNICADO 12 — Programa de Reconhecimento (Tatá Stars)
-     ATENÇÃO: os valores/meses da tabela são MOCK (placeholder) — trocar pelos reais depois. -->
-<div class="pagina comunicado stars-pag">
+<!-- COMUNICADO 12 — Prêmio Tatá (pág. 1/2): o prêmio / como funciona
+     Fonte: app "Prêmio Poke - Pinheiros Cozinha". Versão geral (mural). -->
+<div class="pagina comunicado premio-pag">
   <div class="logo-topo"><img src="img/logo-tata-sushi.png?v=1" alt="Tatá Sushi"></div>
   <div class="corpo">
-    <div class="stars">
-      <p class="kicker">Programa de Reconhecimento</p>
-      <h2 class="titulo"><span class="a">Tatá</span> <span class="b">Stars</span></h2>
-      <div class="tag">Disciplina hoje, recompensa sempre!</div>
+    <div class="premio">
+      <p class="kicker">Prêmio da Cozinha</p>
+      <h2 class="titulo">Prêmio Tatá</h2>
+      <p class="subtitulo">Unidade Pinheiros &middot; Cozinha</p>
+      <p class="periodo">Período <b>21/08 a 20/09/2026</b> &middot; pagamento no <b>5º dia útil de outubro</b></p>
 
-      <p class="intro">Aqui, atitude gera resultado. Quem faz o básico
-        <b>extraordinariamente bem</b> merece reconhecimento.</p>
+      <div class="sec">Como funciona</div>
+      <ul class="como">
+        <li>O valor do ponto do prêmio padrão é de <b>R$ 100,00 &times; a sua pontuação</b>.</li>
+        <li>Cada penalidade (em vermelho) abate um valor sobre a sua pontuação.</li>
+        <li>Atingindo o número máximo do volume de pedidos, o ponto sobe para <b>R$ 115,00</b>.</li>
+      </ul>
 
-      <div class="sec">Regras do programa</div>
-      <div class="regras">
-        <div class="regra">
-          <div class="ico">
-            <svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h60v80h360v-80h60v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-60h560v-400H200v400Zm0-460h560v-100H200v100Zm0 0v-100 100Z"/></svg>
-          </div>
-          <h3>Não faltar</h3>
-          <p>Presença é compromisso com o time.</p>
+      <div class="sec">O prêmio</div>
+      <div class="premio-cards">
+        <div class="premio-card">
+          <div class="rot">Valor do prêmio padrão</div>
+          <div class="val">R$ 100</div>
+          <div class="desc">por ponto &mdash; R$ 100,00 &times; a sua pontuação.</div>
         </div>
-        <div class="regra">
-          <div class="ico">
-            <svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm-40-260 174 174 42-42-176-176v-210h-60v254Z"/></svg>
-          </div>
-          <h3>Não atrasar</h3>
-          <p>Pontualidade mostra respeito e profissionalismo.</p>
-        </div>
-        <div class="regra">
-          <div class="ico">
-            <svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="m438-338 226-226-57-57-169 169-84-84-57 57 141 141ZM480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q104-33 172-132t68-220v-202l-240-90-240 90v202q0 121 68 220t172 132Z"/></svg>
-          </div>
-          <h3>Não ser advertido</h3>
-          <p>Atitude certa evita problemas e mantém o padrão Tatá.</p>
+        <div class="premio-card bonus">
+          <div class="rot">Prêmio padrão com bônus</div>
+          <div class="val">R$ 115</div>
+          <div class="desc">por ponto, ao atingir o volume máximo de pedidos.</div>
         </div>
       </div>
 
-      <div class="sec">Progressão do bônus</div>
-      <p class="nota">Cumpra as <b>3 regras todos os dias</b> e, a cada mês sem falta, atraso
-        ou advertência, seu bônus cresce até o prêmio máximo:</p>
-      <table class="tabela-bonus">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Agosto</th>
-            <th>Setembro</th>
-            <th>Outubro</th>
-            <th>Novembro</th>
-            <th class="max">Dezembro</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>Manhã / Tarde</th>
-            <td>R$ 150</td>
-            <td>R$ 180</td>
-            <td>R$ 210</td>
-            <td>R$ 240</td>
-            <td class="max">R$ 400</td>
-          </tr>
-          <tr>
-            <th>Noite</th>
-            <td>R$ 200</td>
-            <td>R$ 230</td>
-            <td>R$ 260</td>
-            <td>R$ 290</td>
-            <td class="max">R$ 450</td>
-          </tr>
-        </tbody>
-      </table>
+      <p class="fecho">Quanto maior a sua pontuação, maior o prêmio.<br><i>Veja na próxima página o que pode descontar.</i></p>
+    </div>
+  </div>
+</div>
 
-      <p class="fecho">Disciplina é o que te leva ao topo.</p>
+<!-- COMUNICADO 13 — Prêmio Tatá (pág. 2/2): penalidades (o que desconta) -->
+<div class="pagina comunicado premio-pag penal-pag">
+  <div class="logo-topo"><img src="img/logo-tata-sushi.png?v=1" alt="Tatá Sushi"></div>
+  <div class="corpo">
+    <div class="premio">
+      <p class="kicker">Prêmio Tatá &middot; Cozinha Pinheiros</p>
+      <h2 class="titulo">O que desconta</h2>
+      <p class="lead">Cada item abaixo <span class="neg">(em vermelho)</span> abate do valor da sua pontuação.</p>
+
+      <div class="sec">Metas individuais</div>
+      <div class="pen-grupo">
+        <div class="pen-item">
+          <div class="pen-head">
+            <div class="tit">Comprometimento</div>
+            <div class="pen-valor">&minus; R$ 20,00</div>
+          </div>
+          <ul class="pen-bullets">
+            <li>Faltas injustificadas, advertências e suspensões</li>
+            <li>Atrasos e saídas antecipadas não autorizadas</li>
+            <li>Uniforme incorreto</li>
+            <li>Adornos indevidos</li>
+            <li>Unhas compridas ou com esmalte escuro (permitido curta e esmalte claro)</li>
+          </ul>
+          <div class="pen-atencao"><b>Atenção:</b> acima de 2 faltas injustificadas, o prêmio é zerado.</div>
+        </div>
+        <div class="pen-item">
+          <div class="pen-head">
+            <div class="tit">Ausências justificadas (atestado)<small>Máximo de 3 nos últimos 60 dias</small></div>
+            <div class="pen-valor">&minus; R$ 20,00</div>
+          </div>
+          <div class="pen-atencao"><b>Atenção:</b> a partir de 4 ausências justificadas (atestado) nos últimos 60 dias, o prêmio é zerado.</div>
+        </div>
+        <div class="pen-item">
+          <div class="pen-head">
+            <div class="tit">Ausência do uso de EPIs</div>
+            <div class="pen-valor">&minus; R$ 10,00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec">Metas do departamento</div>
+      <div class="pen-grupo">
+        <div class="pen-item">
+          <div class="pen-head">
+            <div class="tit">Avaliação no iFood<small>Nota igual ou inferior a 4.9</small></div>
+            <div class="pen-valor">&minus; R$ 18,00</div>
+          </div>
+        </div>
+        <div class="pen-item">
+          <div class="pen-head">
+            <div class="tit">Qualidade<small>Nota abaixo de 80% na auditoria nutricional</small></div>
+            <div class="pen-valor">&minus; R$ 6,00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec">Metas da unidade</div>
+      <p class="lead">Conforme o total de pedidos da unidade no período. As penalidades <b>somam</b> quando a meta não é atingida:</p>
+      <div class="pen-grupo">
+        <div class="pen-item">
+          <div class="pen-head">
+            <div class="tit">Faixa mínima<small>Abaixo de 2.660 pedidos</small></div>
+            <div class="pen-valor">&minus; R$ 10,00</div>
+          </div>
+          <ul class="pen-bullets">
+            <li>Penalidade da faixa mínima: &minus; R$ 10,00</li>
+            <li>Penalidade da faixa intermediária: &minus; R$ 16,00</li>
+            <li>Total caso não atinja a faixa mínima: &minus; R$ 26,00 (mínima + intermediária)</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
