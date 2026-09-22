@@ -175,16 +175,22 @@
   .comunicado .premio .como li::before{content:"";position:absolute;left:0;top:11px;width:20px;height:20px;
     border-radius:50%;background:var(--verde);}
   .comunicado .premio .como b{font-weight:800;color:var(--com-sub);}
-  /* Pág 1 — cartões de valor */
-  .comunicado .premio-cards{display:flex;gap:30px;width:100%;justify-content:center;}
-  .comunicado .premio-card{flex:1;max-width:520px;background:#fff;border:3px solid rgba(76,175,82,.4);
-    border-radius:26px;padding:38px 34px;display:flex;flex-direction:column;align-items:center;text-align:center;}
-  .comunicado .premio-card.bonus{border-color:var(--verde);background:rgba(76,175,82,.1);}
-  .comunicado .premio-card .rot{font-family:var(--fonte-texto);font-size:31px;font-weight:800;color:var(--com-sub);
-    text-transform:uppercase;letter-spacing:1px;line-height:1.15;min-height:74px;}
-  .comunicado .premio-card .val{font-family:var(--fonte-texto);font-size:98px;font-weight:1000;color:var(--verde);
-    line-height:1;margin:10px 0 6px;}
-  .comunicado .premio-card .desc{font-family:var(--fonte-texto);font-size:28px;line-height:1.34;color:var(--com-texto);}
+  /* Pág 1 — fatores do prêmio (mini cards com ícone + selo no canto) */
+  .comunicado .fatores{display:flex;flex-direction:column;gap:26px;width:100%;}
+  .comunicado .fatores-linha{display:flex;gap:24px;justify-content:center;}
+  .comunicado .mini{flex:1;max-width:340px;position:relative;background:#fff;border:2px solid var(--verde);
+    border-radius:20px;padding:30px 18px 24px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;}
+  .comunicado .mini .ico{width:76px;height:76px;color:var(--verde);}
+  .comunicado .mini .ico svg{width:100%;height:100%;display:block;}
+  .comunicado .mini .lbl{font-family:var(--fonte-texto);font-size:31px;font-weight:800;color:var(--com-sub);line-height:1.12;}
+  .comunicado .mini .badge{position:absolute;top:-16px;right:-16px;width:58px;height:58px;border-radius:50%;
+    background:var(--verde);display:flex;align-items:center;justify-content:center;box-shadow:0 3px 8px rgba(0,0,0,.18);}
+  .comunicado .mini .badge svg{width:34px;height:34px;color:#fff;}
+  /* linha coletiva (qualidade / pedidos) — um pouco mais clara */
+  .comunicado .fatores-linha.clara .mini{border-color:rgba(76,175,82,.45);background:rgba(76,175,82,.06);}
+  .comunicado .fatores-linha.clara .mini .ico{color:#8ecb92;}
+  .comunicado .fatores-linha.clara .mini .lbl{color:var(--com-mute);}
+  .comunicado .fatores-linha.clara .mini .badge{background:#8ecb92;box-shadow:0 2px 6px rgba(0,0,0,.12);}
   .comunicado .premio .fecho{font-family:var(--fonte-texto);font-size:27px;font-weight:600;color:var(--com-mute);
     text-align:center;margin-top:40px;line-height:1.42;max-width:1100px;}
   .comunicado .premio .fecho b{font-weight:800;color:var(--verde);}
@@ -573,27 +579,46 @@
 
       <div class="sec">Como funciona</div>
       <ul class="como">
-        <li>Parte do seu prêmio é composta por uma regra de <b>assiduidade</b>.</li>
-        <li>Cada ausência desconta um valor da sua premiação.</li>
-        <li>Caso ultrapasse o limite de ausências, <b style="color:var(--pen-txt)">o prêmio todo será zerado</b>.</li>
-        <li>Se não tiver ausências, receberá a <b>premiação de assiduidade completa</b>.</li>
+        <li>Parte do seu prêmio é composta por uma regra de <b>assiduidade</b> (que significa não ter faltas, atrasos ou atestados).</li>
+        <li>Cada ausência desconta um valor da sua premiação, reduzindo do valor total da sua premiação.</li>
+        <li>Agora, se ultrapassar o limite de ausências, <b style="color:var(--pen-txt)">o prêmio todo será zerado</b>.</li>
+        <li>Se não tiver ausências, receberá a <b>premiação de assiduidade</b>.</li>
       </ul>
 
-      <div class="sec">O prêmio</div>
-      <div class="premio-cards">
-        <div class="premio-card">
-          <div class="rot">Valor do prêmio padrão</div>
-          <div class="val">R$ 100</div>
-          <div class="desc">por ponto &mdash; R$ 100,00 &times; a sua pontuação.</div>
+      <div class="sec">O que conta</div>
+      <div class="fatores">
+        <div class="fatores-linha">
+          <div class="mini">
+            <span class="badge"><svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg></span>
+            <span class="ico"><svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h60v80h360v-80h60v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-60h560v-400H200v400Zm0-460h560v-100H200v100Zm0 0v-100 100Z"/></svg></span>
+            <div class="lbl">Sem faltas</div>
+          </div>
+          <div class="mini">
+            <span class="badge"><svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg></span>
+            <span class="ico"><svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80Zm-80 320q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520Z"/></svg></span>
+            <div class="lbl">Sem atestados</div>
+          </div>
+          <div class="mini">
+            <span class="badge"><svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg></span>
+            <span class="ico"><svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm-40-260 174 174 42-42-176-176v-210h-60v254Z"/></svg></span>
+            <div class="lbl">Sem atrasos</div>
+          </div>
         </div>
-        <div class="premio-card bonus">
-          <div class="rot">Prêmio padrão com bônus</div>
-          <div class="val">R$ 115</div>
-          <div class="desc">por ponto, ao atingir o volume máximo de pedidos.</div>
+        <div class="fatores-linha clara">
+          <div class="mini">
+            <span class="badge"><svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M480-160q-134 0-227-93t-93-227q0-134 93-227t227-93q69 0 132 28.5T720-690v-110h80v280H520v-80h168q-32-56-87.5-88T480-720q-100 0-170 70t-70 170q0 100 70 170t170 70q77 0 139-44t87-116h84q-28 106-114 173t-196 67Z"/></svg></span>
+            <span class="ico"><svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M480-269 314-169q-11 7-23 6t-21-8q-9-7-14-17.5t-2-23.5l44-189-147-127q-10-9-12.5-20.5T140-600q4-11 12-18t22-9l194-17 75-178q5-12 15.5-18t21.5-6q11 0 21.5 6t15.5 18l75 178 194 17q14 2 22 9t12 18q4 11 1.5 22.5T809-528L662-401l44 189q3 13-2 23.5T690-171q-9 7-21 8t-23-6L480-269Z"/></svg></span>
+            <div class="lbl">Qualidade</div>
+          </div>
+          <div class="mini">
+            <span class="badge"><svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M480-160q-134 0-227-93t-93-227q0-134 93-227t227-93q69 0 132 28.5T720-690v-110h80v280H520v-80h168q-32-56-87.5-88T480-720q-100 0-170 70t-70 170q0 100 70 170t170 70q77 0 139-44t87-116h84q-28 106-114 173t-196 67Z"/></svg></span>
+            <span class="ico"><svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="M240-80q-33 0-56.5-23.5T160-160v-480q0-33 23.5-56.5T240-720h80q0-66 47-113t113-47q66 0 113 47t47 113h80q33 0 56.5 23.5T800-640v480q0 33-23.5 56.5T720-80H240Zm0-80h480v-480h-80v80q0 17-11.5 28.5T600-520q-17 0-28.5-11.5T560-560v-80H400v80q0 17-11.5 28.5T360-520q-17 0-28.5-11.5T320-560v-80h-80v480Zm160-560h160q0-33-23.5-56.5T480-800q-33 0-56.5 23.5T400-720ZM240-160v-480 480Z"/></svg></span>
+            <div class="lbl">Quantidade de pedidos</div>
+          </div>
         </div>
       </div>
 
-      <p class="fecho">Válido para colaboradores participantes do prêmio &mdash; consulte as regras gerais no <b>Tatá Plus</b> e com a sua liderança.</p>
+      <p class="fecho">Válido para colaboradores participantes do prêmio. Consulte as regras gerais no <b>Tatá Plus</b> e com a sua liderança.</p>
     </div>
   </div>
 </div>
