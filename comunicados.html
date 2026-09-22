@@ -167,6 +167,8 @@
     letter-spacing:2px;color:var(--verde);margin:40px 0 22px;display:flex;align-items:center;gap:20px;align-self:stretch;}
   .comunicado .premio .sec::before,.comunicado .premio .sec::after{content:"";height:3px;flex:1;
     background:rgba(76,175,82,.4);border-radius:2px;}
+  /* seção dos cards: espaçamento duplo abaixo do título */
+  .comunicado .premio .sec-viz{margin-bottom:44px;}
   /* Pág 1 — como funciona (bullets) */
   .comunicado .premio .como{align-self:stretch;max-width:1140px;margin:0 auto;font-family:var(--fonte-texto);
     display:flex;flex-direction:column;gap:22px;text-align:left;}
@@ -199,8 +201,8 @@
   /* sinal de igual entre os fatores e o Prêmio Total */
   .comunicado .fatores-linha .igual{flex:0 0 auto;align-self:center;font-family:var(--fonte-texto);
     font-size:52px;font-weight:1000;color:var(--verde);line-height:1;}
-  .comunicado .premio .fecho{font-family:var(--fonte-texto);font-size:27px;font-weight:600;color:var(--com-mute);
-    text-align:center;margin-top:40px;line-height:1.42;max-width:1100px;}
+  .comunicado .premio .fecho{font-family:var(--fonte-texto);font-size:27px;font-weight:600;color:#111;
+    text-align:center;margin-top:120px;line-height:1.42;max-width:1100px;}
   .comunicado .premio .fecho b{font-weight:800;color:var(--verde);}
   /* Pág 2 — penalidades (compacta p/ caber em A4) */
   .comunicado.penal-pag .logo-topo{width:134px;}
@@ -582,7 +584,7 @@
   <div class="corpo">
     <div class="premio">
       <h2 class="titulo">Premiação Tatá</h2>
-      <p class="subtitulo">Unidade Pinheiros</p>
+      <p class="subtitulo">&nbsp;</p>
       <p class="periodo">Disciplina Hoje, Recompensa Sempre!</p>
 
       <div class="sec">Como funciona</div>
@@ -593,7 +595,7 @@
         <li>Se não tiver ausências, receberá a <b>premiação de assiduidade</b>.</li>
       </ul>
 
-      <div class="sec">O que conta</div>
+      <div class="sec sec-viz">Veja como funciona</div>
       <div class="fatores">
         <div class="fatores-linha">
           <div class="mini">
