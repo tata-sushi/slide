@@ -161,8 +161,8 @@
     letter-spacing:1px;text-transform:uppercase;color:var(--verde);margin:2px 0 28px;}
   .comunicado .premio .subtitulo{font-family:var(--fonte-texto);font-size:37px;font-weight:800;color:var(--com-sub);
     text-transform:uppercase;letter-spacing:2px;}
-  .comunicado .premio .periodo{font-family:var(--fonte-texto);font-size:28px;color:var(--com-mute);margin-top:12px;}
-  .comunicado .premio .periodo b{color:var(--com-sub);}
+  .comunicado .premio .periodo{font-family:var(--fonte-texto);font-size:35px;font-weight:800;font-style:italic;
+    color:var(--verde);margin-top:16px;letter-spacing:.3px;}
   .comunicado .premio .sec{font-family:var(--fonte-texto);font-size:36px;font-weight:800;text-transform:uppercase;
     letter-spacing:2px;color:var(--verde);margin:40px 0 22px;display:flex;align-items:center;gap:20px;align-self:stretch;}
   .comunicado .premio .sec::before,.comunicado .premio .sec::after{content:"";height:3px;flex:1;
@@ -185,9 +185,9 @@
   .comunicado .premio-card .val{font-family:var(--fonte-texto);font-size:98px;font-weight:1000;color:var(--verde);
     line-height:1;margin:10px 0 6px;}
   .comunicado .premio-card .desc{font-family:var(--fonte-texto);font-size:28px;line-height:1.34;color:var(--com-texto);}
-  .comunicado .premio .fecho{font-family:var(--fonte-texto);font-size:38px;font-weight:800;color:var(--verde);
-    text-align:center;margin-top:48px;line-height:1.3;}
-  .comunicado .premio .fecho i{font-style:italic;}
+  .comunicado .premio .fecho{font-family:var(--fonte-texto);font-size:27px;font-weight:600;color:var(--com-mute);
+    text-align:center;margin-top:40px;line-height:1.42;max-width:1100px;}
+  .comunicado .premio .fecho b{font-weight:800;color:var(--verde);}
   /* Pág 2 — penalidades (compacta p/ caber em A4) */
   .comunicado.penal-pag .logo-topo{width:134px;}
   .comunicado.penal-pag .corpo{justify-content:flex-start;padding:262px 76px 38px;}
@@ -569,13 +569,14 @@
     <div class="premio">
       <h2 class="titulo">Premiação Tatá</h2>
       <p class="subtitulo">Unidade Pinheiros</p>
-      <p class="periodo">Período <b>21/08 a 20/09/2026</b> &middot; pagamento no <b>5º dia útil de outubro</b></p>
+      <p class="periodo">Disciplina Hoje, Recompensa Sempre!</p>
 
       <div class="sec">Como funciona</div>
       <ul class="como">
-        <li>O valor do ponto do prêmio padrão é de <b>R$ 100,00 &times; a sua pontuação</b>.</li>
-        <li>Cada penalidade (em vermelho) abate um valor sobre a sua pontuação.</li>
-        <li>Atingindo o número máximo do volume de pedidos, o ponto sobe para <b>R$ 115,00</b>.</li>
+        <li>Parte do seu prêmio é composta por uma regra de <b>assiduidade</b>.</li>
+        <li>Cada ausência desconta um valor da sua premiação.</li>
+        <li>Caso ultrapasse o limite de ausências, <b style="color:var(--pen-txt)">o prêmio todo será zerado</b>.</li>
+        <li>Se não tiver ausências, receberá a <b>premiação de assiduidade completa</b>.</li>
       </ul>
 
       <div class="sec">O prêmio</div>
@@ -592,7 +593,7 @@
         </div>
       </div>
 
-      <p class="fecho">Quanto maior a sua pontuação, maior o prêmio.<br><i>Veja na próxima página o que pode descontar.</i></p>
+      <p class="fecho">Válido para colaboradores participantes do prêmio &mdash; consulte as regras gerais no <b>Tatá Plus</b> e com a sua liderança.</p>
     </div>
   </div>
 </div>
