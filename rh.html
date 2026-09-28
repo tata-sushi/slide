@@ -269,7 +269,7 @@ html, body {
 .slide-light .slide-list::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px; }
 .slide-light .slide-list::-webkit-scrollbar-track { background:transparent; }
 .pauta-nav li { cursor:pointer; }
-.slide-list.pauta-nav li { padding-top:.45em; padding-bottom:.45em; }
+.slide-list.pauta-nav li { padding-top:.35em; padding-bottom:.35em; }
 .slide-list li {
   position:relative;
   padding:.55em 0 .55em 1.5em;
@@ -1126,6 +1126,7 @@ body.is-drawing .draw-toolbar {
   -webkit-tap-highlight-color:transparent;
 }
 .cost-orbit-disc {
+  position:relative;
   width:clamp(76px, 11vw, 132px);
   height:clamp(76px, 11vw, 132px);
   border-radius:50%;
@@ -1158,6 +1159,23 @@ body.is-drawing .draw-toolbar {
   box-shadow:0 8px 22px rgba(53,56,63,.35);
 }
 .cost-orbit.is-active .cost-orbit-label { color:var(--t1); font-weight:500; }
+.cost-orbit-check {
+  position:absolute;
+  top:5%;
+  right:5%;
+  width:clamp(22px, 2.9vw, 34px);
+  height:clamp(22px, 2.9vw, 34px);
+  border-radius:50%;
+  background:var(--citric);
+  color:var(--carbon);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:clamp(12px, 1.5vw, 18px);
+  font-weight:700;
+  line-height:1;
+  box-shadow:0 2px 6px rgba(17,17,17,.22);
+}
 .cost-stage {
   width:100%;
   max-width:78%;
@@ -1278,6 +1296,7 @@ body.is-drawing .draw-toolbar {
           <li>Liberdade líderes (advertências)</li>
           <li>Vendas moletons</li>
           <li>Documentos assinados digitalmente e sem necessidade de movimentação</li>
+          <li>Palestra assédio (15/10 e 16/10)</li>
         </ul>
       </div>
     </section>
@@ -1352,23 +1371,27 @@ body.is-drawing .draw-toolbar {
       </div>
     </section>
 
-    <!-- Slide 5 — Redução de Custos (3 órbitas clicáveis) -->
-    <section class="slide slide-light slide-cost" aria-label="Slide 5 · Redução de Custos">
+    <!-- Slide 5 — Economia RH (4 órbitas clicáveis) -->
+    <section class="slide slide-light slide-cost" aria-label="Slide 5 · Economia RH">
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião DP/RH</p>
-        <h2 class="slide-heading">Redução de <span class="accent">Custos</span></h2>
-        <div class="cost-orbits" role="tablist" aria-label="Frentes de redução de custos">
+        <h2 class="slide-heading">Economia <span class="accent">RH</span></h2>
+        <div class="cost-orbits" role="tablist" aria-label="Frentes de economia de RH">
           <button type="button" class="cost-orbit is-active" data-cost="1" role="tab" aria-selected="true" aria-controls="cost-panel-1">
-            <span class="cost-orbit-disc">1</span>
+            <span class="cost-orbit-disc">1<span class="cost-orbit-check" aria-hidden="true" title="Concluído">&#10003;</span></span>
             <span class="cost-orbit-label">HC / RH</span>
           </button>
           <button type="button" class="cost-orbit" data-cost="2" role="tab" aria-selected="false" aria-controls="cost-panel-2">
-            <span class="cost-orbit-disc">2</span>
+            <span class="cost-orbit-disc">2<span class="cost-orbit-check" aria-hidden="true" title="Concluído">&#10003;</span></span>
             <span class="cost-orbit-label">Uniformes</span>
           </button>
           <button type="button" class="cost-orbit" data-cost="3" role="tab" aria-selected="false" aria-controls="cost-panel-3">
-            <span class="cost-orbit-disc">3</span>
+            <span class="cost-orbit-disc">3<span class="cost-orbit-check" aria-hidden="true" title="Concluído">&#10003;</span></span>
             <span class="cost-orbit-label">Tatá Plus 2.0</span>
+          </button>
+          <button type="button" class="cost-orbit" data-cost="4" role="tab" aria-selected="false" aria-controls="cost-panel-4">
+            <span class="cost-orbit-disc">4</span>
+            <span class="cost-orbit-label">Lugarh &rarr; Sara</span>
           </button>
         </div>
         <div class="cost-stage">
@@ -1399,6 +1422,12 @@ body.is-drawing .draw-toolbar {
             <ul class="cost-panel-list">
               <li>Migração da <strong>Comunitive</strong> para dentro do nosso ecossistema.</li>
               <li>Base de dados própria (supabase) implantada por <strong>R$ 100</strong>.</li>
+            </ul>
+          </div>
+          <div class="cost-panel" id="cost-panel-4" role="tabpanel" aria-label="Lugarh &rarr; Sara">
+            <ul class="cost-panel-list">
+              <li>Migração do <strong>Lugarh</strong> para o <strong>Sara</strong> &mdash; fluxo 100% interno.</li>
+              <li>Documentos assinados digitalmente, sem necessidade de movimentação.</li>
             </ul>
           </div>
         </div>
