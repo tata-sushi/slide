@@ -1267,6 +1267,115 @@ body.is-drawing .draw-toolbar {
 }
 .timeline-items li:first-child { padding-top:0; }
 .timeline-items li:first-child::before { top:.34em; }
+/* Comparativo lado a lado (Esforço RH) */
+.vs-grid {
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:stretch;
+  gap:clamp(12px, 2.2vw, 30px);
+  width:100%;
+  margin-top:1.3em;
+}
+.vs-card {
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:var(--page-bg);
+  padding:1.3em 1.4em;
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+}
+.vs-card--win {
+  background:var(--white);
+  border:2px solid var(--carbon);
+  box-shadow:0 12px 30px rgba(17,17,17,.10);
+}
+.vs-name {
+  margin:0 0 .7em;
+  font-family:"DM Sans",sans-serif;
+  font-size:clamp(15px, 1.9vw, 24px);
+  font-weight:700;
+  color:var(--t1);
+}
+.vs-card--win .vs-name::after {
+  content:"";
+  display:inline-block;
+  width:.5em; height:.5em;
+  margin-left:.4em;
+  border-radius:50%;
+  background:var(--citric);
+  vertical-align:middle;
+}
+.vs-stats {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1em;
+  padding-bottom:1em;
+  margin-bottom:1em;
+  border-bottom:1px solid var(--border);
+}
+.vs-num {
+  display:block;
+  font-family:"DM Sans",sans-serif;
+  font-size:clamp(26px, 3.6vw, 46px);
+  font-weight:700;
+  line-height:1;
+  color:var(--t1);
+  font-variant-numeric:tabular-nums;
+}
+.vs-cap {
+  display:block;
+  margin-top:.4em;
+  font-family:"DM Mono",monospace;
+  font-size:clamp(8px, .9vw, 10.5px);
+  font-weight:500;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--t3);
+}
+.vs-list { list-style:none; margin:0; padding:0; }
+.vs-list li {
+  position:relative;
+  padding:.36em 0 .36em 1.3em;
+  font-family:"DM Sans",sans-serif;
+  font-size:clamp(11px, 1.2vw, 14.5px);
+  line-height:1.35;
+  color:var(--t1);
+}
+.vs-list li::before {
+  content:"";
+  position:absolute;
+  left:0; top:.7em;
+  width:.38em; height:.38em;
+  border-radius:50%;
+  background:var(--carbon);
+}
+.vs-list .vs-qty { font-weight:700; }
+.vs-versus {
+  align-self:center;
+  flex-shrink:0;
+  width:clamp(38px, 5vw, 54px);
+  height:clamp(38px, 5vw, 54px);
+  border-radius:50%;
+  background:var(--carbon);
+  color:var(--citric);
+  display:flex; align-items:center; justify-content:center;
+  font-family:"DM Sans",sans-serif;
+  font-weight:700;
+  font-size:clamp(12px, 1.4vw, 17px);
+  letter-spacing:.04em;
+}
+.vs-note {
+  margin:1.2em 0 0;
+  background:var(--carbon);
+  color:var(--white);
+  border-radius:10px;
+  padding:.85em 1.2em;
+  font-family:"DM Sans",sans-serif;
+  font-size:clamp(12px, 1.35vw, 16px);
+  line-height:1.45;
+}
+.vs-note strong { color:var(--citric); font-weight:700; }
 .cost-stage {
   width:100%;
   max-width:78%;
@@ -1555,8 +1664,46 @@ body.is-drawing .draw-toolbar {
       </div>
     </section>
 
-    <!-- Slide 8 — R&S: Novos formatos de anúncio -->
-    <section class="slide slide-light" aria-label="Slide 8 · R&S — Novos formatos de anúncio">
+    <!-- Slide 8 — R&S: Esforço de RH (Papila x Tatá) -->
+    <section class="slide slide-light" aria-label="Slide 8 · R&S — Esforço de RH">
+      <div class="slide-inner">
+        <p class="slide-eyebrow">R&amp;S · Recrutamento &amp; Seleção</p>
+        <h2 class="slide-heading">Esforço de <span class="accent">RH</span></h2>
+        <div class="vs-grid">
+          <div class="vs-card">
+            <p class="vs-name">Papila</p>
+            <div class="vs-stats">
+              <div class="vs-stat"><span class="vs-num">220</span><span class="vs-cap">Colaboradores</span></div>
+              <div class="vs-stat"><span class="vs-num">7</span><span class="vs-cap">Time de R&amp;S</span></div>
+            </div>
+            <ul class="vs-list">
+              <li><span class="vs-qty">1</span> Gerente</li>
+              <li><span class="vs-qty">1</span> Business Partner</li>
+              <li><span class="vs-qty">2</span> Analistas de R&amp;S</li>
+              <li><span class="vs-qty">1</span> Jovem aprendiz</li>
+              <li><span class="vs-qty">2</span> Departamento Pessoal</li>
+            </ul>
+          </div>
+          <div class="vs-versus">VS</div>
+          <div class="vs-card vs-card--win">
+            <p class="vs-name">Tatá Sushi</p>
+            <div class="vs-stats">
+              <div class="vs-stat"><span class="vs-num">140</span><span class="vs-cap">Colaboradores</span></div>
+              <div class="vs-stat"><span class="vs-num">4</span><span class="vs-cap">Time de R&amp;S</span></div>
+            </div>
+            <ul class="vs-list">
+              <li><span class="vs-qty">1</span> Gerente de GRH</li>
+              <li><span class="vs-qty">1</span> Analista sênior</li>
+              <li><span class="vs-qty">2</span> Assistentes (júnior)</li>
+            </ul>
+          </div>
+        </div>
+        <p class="vs-note">Com uma equipe <strong>43% mais enxuta</strong>, a Tatá entrega R&amp;S com alta eficiência: <strong>35 colaboradores por profissional</strong>, ante 31 da Papila.</p>
+      </div>
+    </section>
+
+    <!-- Slide 9 — R&S: Novos formatos de anúncio -->
+    <section class="slide slide-light" aria-label="Slide 9 · R&S — Novos formatos de anúncio">
       <div class="slide-inner">
         <p class="slide-eyebrow">R&amp;S · Recrutamento &amp; Seleção</p>
         <h2 class="slide-heading">Novos formatos de <span class="accent">anúncio</span></h2>
@@ -1636,8 +1783,8 @@ body.is-drawing .draw-toolbar {
       </div>
     </section>
 
-    <!-- Slide 9 — Próximas palestras -->
-    <section class="slide slide-light" aria-label="Slide 9 · Próximas palestras">
+    <!-- Slide 10 — Próximas palestras -->
+    <section class="slide slide-light" aria-label="Slide 10 · Próximas palestras">
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião DP/RH</p>
         <h2 class="slide-heading">Próximas <span class="accent">palestras</span></h2>
@@ -1677,8 +1824,8 @@ body.is-drawing .draw-toolbar {
       </div>
     </section>
 
-    <!-- Slide 10 — Entrevista: 5 anos de Tatá com Léo -->
-    <section class="slide slide-light" aria-label="Slide 10 · Entrevista — 5 anos de Tatá com Léo">
+    <!-- Slide 11 — Entrevista: 5 anos de Tatá com Léo -->
+    <section class="slide slide-light" aria-label="Slide 11 · Entrevista — 5 anos de Tatá com Léo">
       <div class="slide-inner">
         <p class="slide-eyebrow">Comemoração · 5 anos de Tatá</p>
         <h2 class="slide-heading">Entrevista com <span class="accent">Léo</span></h2>
@@ -1693,8 +1840,8 @@ body.is-drawing .draw-toolbar {
       </div>
     </section>
 
-    <!-- Slide 11 — Encerramento -->
-    <section class="slide slide-cover is-dark" aria-label="Slide 11 · Encerramento">
+    <!-- Slide 12 — Encerramento -->
+    <section class="slide slide-cover is-dark" aria-label="Slide 12 · Encerramento">
       <div class="slide-inner">
         <img alt="TATÁ SUSHI" class="cover-logo-full" id="closingLogo">
       </div>
