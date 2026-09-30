@@ -1371,9 +1371,11 @@ body.nav-autohide.nav-visible .nav {
   font-size:clamp(9px,.95vw,12px);
   letter-spacing:.08em;
   text-transform:uppercase;
-  color:var(--t3);
+  color:var(--t1);
+  text-align:center;
+  align-self:center;
 }
-.funnel { display:flex; flex-direction:column; gap:clamp(4px,.8vh,9px); width:100%; margin-top:clamp(10px,2vh,22px); }
+.funnel { display:flex; flex-direction:column; gap:clamp(4px,.8vh,9px); width:100%; max-width:clamp(560px,72%,800px); margin:clamp(10px,2vh,22px) auto 0; }
 .funnel-row { display:grid; grid-template-columns:minmax(0,1.5fr) 2.4fr 3em; align-items:center; gap:clamp(8px,1.3vw,18px); }
 .funnel-label { text-align:right; font-family:"DM Sans",sans-serif; font-size:clamp(10px,1.05vw,13.5px); color:var(--t2); line-height:1.2; }
 .funnel-bar-wrap { display:flex; justify-content:center; min-width:0; }
@@ -1383,7 +1385,7 @@ body.nav-autohide.nav-visible .nav {
   font-family:"DM Sans",sans-serif; font-weight:700; font-size:clamp(11px,1.15vw,14px);
   min-width:2.6em; font-variant-numeric:tabular-nums;
 }
-.funnel-pct { text-align:left; font-family:"DM Mono",monospace; font-size:clamp(10px,1.05vw,13px); color:var(--t3); font-weight:600; }
+.funnel-pct { text-align:left; font-family:"DM Sans",sans-serif; font-size:clamp(10px,1.05vw,13.5px); color:var(--t2); font-weight:400; }
 .efc-tables { display:grid; grid-template-columns:1fr 1fr; gap:clamp(22px,3.4vw,52px); width:100%; margin-top:clamp(10px,2vh,20px); align-items:start; }
 .efc-table-title {
   display:flex; justify-content:space-between; gap:1em; align-items:baseline;
@@ -1400,6 +1402,8 @@ body.nav-autohide.nav-visible .nav {
 }
 .efc-rows .r:first-child { border-top:none; }
 .efc-rows .r .v { font-weight:700; font-variant-numeric:tabular-nums; white-space:nowrap; color:var(--carbon); }
+.efc-rows .r--total { border-top:2px solid var(--carbon); font-weight:700; margin-top:.15em; }
+.efc-rows .r--total span { color:var(--carbon); }
 /* Comparativo lado a lado (Esforço RH) */
 .vs-grid {
   display:grid;
@@ -1829,20 +1833,20 @@ body.nav-autohide.nav-visible .nav {
     <section class="slide slide-light" aria-label="Slide 6 · R&amp;S - Esforço de RH">
       <div class="slide-inner">
         <h2 class="slide-heading">R&amp;S - Esforço de <span class="accent">RH</span></h2>
-        <p class="efc-sub">Esforço por contratação &amp; desperdiçado · set/2026</p>
+        <p class="efc-sub">Esforços desperdiçados e por contratações · set/2026</p>
         <div class="efc-tables">
           <div>
-            <div class="efc-table-title"><span>Para gerar 1 contratação</span><span class="h">Qtd.</span></div>
+            <div class="efc-table-title"><span>Esforço por contratação</span><span class="h">Qtd.</span></div>
             <div class="efc-rows">
-              <div class="r"><span>Candidatos contatados</span><span class="v">18,5</span></div>
-              <div class="r"><span>Candidatos que responderam</span><span class="v">9,8</span></div>
-              <div class="r"><span>Entrevistas agendadas</span><span class="v">9,2</span></div>
-              <div class="r"><span>Entrevistas realizadas</span><span class="v">5,0</span></div>
-              <div class="r"><span>Aprovados na entrevista</span><span class="v">2,9</span></div>
-              <div class="r"><span>Testes agendados</span><span class="v">2,5</span></div>
-              <div class="r"><span>Testes realizados</span><span class="v">1,5</span></div>
-              <div class="r"><span>Referências aprovadas</span><span class="v">1,5</span></div>
-              <div class="r"><span>Contratações</span><span class="v">1,0</span></div>
+              <div class="r"><span>Candidatos contatados</span><span class="v">18</span></div>
+              <div class="r"><span>Candidatos que responderam</span><span class="v">10</span></div>
+              <div class="r"><span>Entrevistas agendadas</span><span class="v">9</span></div>
+              <div class="r"><span>Entrevistas realizadas</span><span class="v">5</span></div>
+              <div class="r"><span>Aprovados na entrevista</span><span class="v">3</span></div>
+              <div class="r"><span>Testes agendados</span><span class="v">3</span></div>
+              <div class="r"><span>Testes realizados</span><span class="v">2</span></div>
+              <div class="r"><span>Referências aprovadas</span><span class="v">2</span></div>
+              <div class="r"><span>Contratações</span><span class="v">1</span></div>
             </div>
           </div>
           <div>
@@ -1855,6 +1859,7 @@ body.nav-autohide.nav-visible .nav {
               <div class="r"><span>Aprovados na entrevista que não viraram teste</span><span class="v">7</span></div>
               <div class="r"><span>Testes agendados que não foram realizados</span><span class="v">22</span></div>
               <div class="r"><span>Referências aprovadas que não viraram contratação</span><span class="v">10</span></div>
+              <div class="r r--total"><span>Total</span><span class="v">367</span></div>
             </div>
           </div>
         </div>
