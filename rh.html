@@ -504,12 +504,12 @@ html, body {
 .data-table--reclam { table-layout:fixed; font-size:clamp(9.5px, 1.02vw, 13px); margin-top:clamp(14px, 3vh, 28px); }
 .data-table--reclam th, .data-table--reclam td { padding:.5em .7em; vertical-align:top; }
 .data-table--reclam thead th { letter-spacing:.04em; }
-.data-table--reclam th:nth-child(1), .data-table--reclam td:nth-child(1) { width:16%; }
+.data-table--reclam th:nth-child(1), .data-table--reclam td:nth-child(1) { width:23%; }
 .data-table--reclam th:nth-child(2), .data-table--reclam td:nth-child(2) { width:8%; }
 .data-table--reclam th:nth-child(3), .data-table--reclam td:nth-child(3) { width:13%; }
 .data-table--reclam th:nth-child(4), .data-table--reclam td:nth-child(4) { width:11%; }
 .data-table--reclam th:nth-child(5), .data-table--reclam td:nth-child(5) { width:12%; text-align:right; }
-.data-table--reclam th:nth-child(6), .data-table--reclam td:nth-child(6) { width:40%; }
+.data-table--reclam th:nth-child(6), .data-table--reclam td:nth-child(6) { width:33%; }
 .data-table tr.is-current td { font-weight:700; }
 .data-table td .cell-note {
   display:block;
@@ -1376,12 +1376,12 @@ body.nav-autohide.nav-visible .nav {
 .format-card .timeline-items li::before { top:.81em; }
 /* ── Esforço de RH: funil + tabelas ─────────── */
 .efc-sub {
-  margin:.2em 0 0;
-  font-family:"DM Mono",monospace;
-  font-size:clamp(9px,.95vw,12px);
-  letter-spacing:.08em;
-  text-transform:uppercase;
+  margin:.35em 0 0;
+  font-family:"DM Sans",sans-serif;
+  font-size:clamp(12px, 1.3vw, 16px);
+  line-height:1.45;
   color:var(--t1);
+  max-width:88%;
   text-align:center;
   align-self:center;
 }
@@ -1414,18 +1414,6 @@ body.nav-autohide.nav-visible .nav {
 .efc-rows .r .v { font-weight:700; font-variant-numeric:tabular-nums; white-space:nowrap; color:var(--carbon); }
 .efc-rows .r--total { border-top:2px solid var(--carbon); font-weight:700; margin-top:.15em; }
 .efc-rows .r--total span { color:var(--carbon); }
-/* Jornada Tatá: nota de pendência no rodapé */
-.jornada-todo {
-  align-self:flex-start;
-  margin-top:1.6em;
-  padding:.7em 1.1em;
-  border-left:3px solid var(--citric);
-  border-radius:0 8px 8px 0;
-  background:var(--page-bg);
-  font-family:"DM Sans",sans-serif;
-  font-size:clamp(12px,1.35vw,16px);
-  color:var(--t2);
-}
 /* Comparativo lado a lado (Esforço RH) */
 .vs-grid {
   display:grid;
@@ -2120,7 +2108,7 @@ body.nav-autohide.nav-visible .nav {
           <li>Como a cultura e a equipe evoluíram nesses 5 anos?</li>
           <li>Como você enxerga a Tatá nos próximos 5 anos?</li>
         </ul>
-        <p class="jornada-todo">Definir roteiro, data e dinâmica.</p>
+        <p class="turnover-foot">Definir roteiro, data e dinâmica.</p>
       </div>
     </section>
 
