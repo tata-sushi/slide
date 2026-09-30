@@ -500,6 +500,16 @@ html, body {
 .data-table--indicators th:nth-child(4), .data-table--indicators td:nth-child(4) { width:24%; }
 .data-table--indicators th:nth-child(5), .data-table--indicators td:nth-child(5) { width:14%; }
 .data-table--centered-nums th:not(:first-child), .data-table--centered-nums td:not(:first-child) { text-align:center; }
+/* Tabela de reclamações trabalhistas (com coluna larga de pedidos) */
+.data-table--reclam { table-layout:fixed; font-size:clamp(9.5px, 1.02vw, 13px); margin-top:clamp(14px, 3vh, 28px); }
+.data-table--reclam th, .data-table--reclam td { padding:.5em .7em; vertical-align:top; }
+.data-table--reclam thead th { letter-spacing:.04em; }
+.data-table--reclam th:nth-child(1), .data-table--reclam td:nth-child(1) { width:16%; }
+.data-table--reclam th:nth-child(2), .data-table--reclam td:nth-child(2) { width:8%; }
+.data-table--reclam th:nth-child(3), .data-table--reclam td:nth-child(3) { width:13%; }
+.data-table--reclam th:nth-child(4), .data-table--reclam td:nth-child(4) { width:11%; }
+.data-table--reclam th:nth-child(5), .data-table--reclam td:nth-child(5) { width:12%; text-align:right; }
+.data-table--reclam th:nth-child(6), .data-table--reclam td:nth-child(6) { width:40%; }
 .data-table tr.is-current td { font-weight:700; }
 .data-table td .cell-note {
   display:block;
@@ -2046,6 +2056,44 @@ body.nav-autohide.nav-visible .nav {
       <div class="slide-inner">
         <h2 class="slide-heading">Reclamações <span class="accent">trabalhistas</span></h2>
         <p class="efc-sub">Acompanhamento das reclamações trabalhistas: volume, evolução e principais causas.</p>
+        <table class="data-table data-table--reclam">
+          <thead>
+            <tr>
+              <th scope="col">Reclamante</th>
+              <th scope="col">Unidade</th>
+              <th scope="col">Departamento</th>
+              <th scope="col">Audiência</th>
+              <th scope="col">Valor da causa</th>
+              <th scope="col">Pedidos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Enilton Rodrigues Ferreira</td>
+              <td>Itaim</td>
+              <td>Sushibar</td>
+              <td>24/02/2027</td>
+              <td>R$ 422.400</td>
+              <td>Horas extras, adicional de horas extras, adicional noturno e adicional de insalubridade.</td>
+            </tr>
+            <tr>
+              <td>Jeane Jesus da Silva</td>
+              <td>Itaim</td>
+              <td>Limpeza</td>
+              <td>20/10/2026</td>
+              <td>R$ 47.360</td>
+              <td>Conversão para demissão sem justa causa; reconhecimento da estabilidade desde o desligamento até 5 meses após o parto, com conversão em indenização.</td>
+            </tr>
+            <tr>
+              <td>Janaina Cândido da Silva</td>
+              <td>Itaim</td>
+              <td>Cozinha</td>
+              <td>14/10/2026</td>
+              <td>R$ 37.751</td>
+              <td>Nulidade do pedido de demissão de gestante.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
