@@ -1525,6 +1525,32 @@ body.nav-autohide.nav-visible .nav {
   line-height:1.45;
 }
 .vs-note strong { color:var(--citric); font-weight:700; }
+/* Tabela comparativa (Esforço de RH — Papila x Tatá) */
+.cmp { width:100%; max-width:clamp(560px, 80%, 880px); margin:clamp(16px, 4vh, 44px) auto 0; }
+.cmp-row {
+  display:grid;
+  grid-template-columns:2.2fr 1fr 1fr 1fr;
+  gap:1em;
+  align-items:baseline;
+  padding:.7em 0;
+  border-top:1px solid var(--border);
+  font-family:"DM Sans",sans-serif;
+  font-size:clamp(12px, 1.55vw, 19px);
+  color:var(--t1);
+}
+.cmp-row > span:not(:first-child) { text-align:center; font-variant-numeric:tabular-nums; font-weight:700; color:var(--carbon); }
+.cmp-head {
+  border-top:none;
+  border-bottom:2px solid var(--carbon);
+  padding-top:0;
+  font-family:"DM Mono",monospace;
+  font-size:clamp(10px, 1.1vw, 13px);
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--carbon);
+  font-weight:700;
+}
+.cmp-head > span:not(:first-child) { color:var(--carbon); font-weight:700; }
 .note-topics {
   list-style:none;
   margin:0;
@@ -1775,36 +1801,12 @@ body.nav-autohide.nav-visible .nav {
     <section class="slide slide-light" aria-label="Slide 5 · R&amp;S - Esforço de RH">
       <div class="slide-inner">
         <h2 class="slide-heading">R&amp;S - Esforço de <span class="accent">RH</span></h2>
-        <div class="vs-grid">
-          <div class="vs-card">
-            <p class="vs-name">Papila</p>
-            <div class="vs-stats">
-              <div class="vs-stat"><span class="vs-num">220</span><span class="vs-cap">Colaboradores</span></div>
-              <div class="vs-stat"><span class="vs-num">7</span><span class="vs-cap">RH completo</span></div>
-            </div>
-            <ul class="vs-list">
-              <li><span class="vs-qty">1</span> Gerente</li>
-              <li><span class="vs-qty">1</span> Business Partner</li>
-              <li><span class="vs-qty">2</span> Analistas de R&amp;S</li>
-              <li><span class="vs-qty">1</span> Jovem aprendiz</li>
-              <li><span class="vs-qty">2</span> Departamento Pessoal</li>
-            </ul>
-          </div>
-          <div class="vs-versus">VS</div>
-          <div class="vs-card vs-card--win">
-            <p class="vs-name">Tatá Sushi</p>
-            <div class="vs-stats">
-              <div class="vs-stat"><span class="vs-num">140</span><span class="vs-cap">Colaboradores</span></div>
-              <div class="vs-stat"><span class="vs-num">4</span><span class="vs-cap">RH completo</span></div>
-            </div>
-            <ul class="vs-list">
-              <li><span class="vs-qty">1</span> Gerente de GRH</li>
-              <li><span class="vs-qty">1</span> Analista sênior</li>
-              <li><span class="vs-qty">2</span> Assistentes (júnior)</li>
-            </ul>
-          </div>
+        <div class="cmp">
+          <div class="cmp-row cmp-head"><span>Tema</span><span>Papila</span><span>Tatá</span><span>Dif.</span></div>
+          <div class="cmp-row"><span>Colaboradores</span><span>220</span><span>140</span><span>&minus;80</span></div>
+          <div class="cmp-row"><span>Equipe de RH</span><span>7</span><span>4</span><span>&minus;3</span></div>
+          <div class="cmp-row"><span>Colaboradores por RH</span><span>31</span><span>35</span><span>+4</span></div>
         </div>
-        <p class="vs-note">Proporção sobre o <strong>headcount completo</strong>: a Tatá mantém <strong>1 profissional de RH para cada 35 colaboradores</strong> (ante 31 na Papila), com uma equipe 43% mais enxuta — alta entrega e eficiência.</p>
       </div>
     </section>
 
@@ -2043,7 +2045,7 @@ body.nav-autohide.nav-visible .nav {
     <section class="slide slide-light" aria-label="Slide 15 · Reclamações trabalhistas">
       <div class="slide-inner">
         <h2 class="slide-heading">Reclamações <span class="accent">trabalhistas</span></h2>
-        <p class="slide-text">Acompanhamento das reclamações trabalhistas: volume, evolução e principais causas.</p>
+        <p class="efc-sub">Acompanhamento das reclamações trabalhistas: volume, evolução e principais causas.</p>
       </div>
     </section>
 
