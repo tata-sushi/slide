@@ -1291,6 +1291,10 @@ body.nav-autohide.nav-visible .nav {
 .ext-textlink { text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:1px; transition:color .2s ease; }
 a.ext-textlink { margin-top:auto; margin-bottom:auto; }   /* centraliza no espaço do slide */
 .ext-textlink:hover { color:var(--carbon); }
+/* Bloco de texto + link centralizado no slide (Checklist dos Banheiros) */
+.link-block { align-self:center; margin:auto 0; display:flex; flex-direction:column; align-items:center; gap:clamp(8px, 1.6vh, 18px); width:100%; text-align:center; }
+.link-block .efc-sub { margin:0; }
+.link-block a.ext-textlink { margin:0; }
 /* Cards horizontais (linha do tempo / formatos) — portado de avaliacoes-feedback */
 .info-box {
   border:1px solid var(--border);
@@ -1738,6 +1742,7 @@ a.ext-textlink { margin-top:auto; margin-bottom:auto; }   /* centraliza no espa�
 .tech-topics li { position:relative; padding:.6em 0 .6em 1.4em; border-top:1px solid var(--border); }
 .tech-topics li:first-child { border-top:none; }
 .tech-topics li::before { content:""; position:absolute; left:0; top:.95em; width:.44em; height:.44em; background:var(--carbon); border-radius:50%; }
+.tech-topics li .note { display:block; font-family:"DM Sans",sans-serif; font-size:.62em; color:var(--t2); margin-top:.25em; line-height:1.35; }
 .tech-figure { flex:1 1 auto; min-height:0; align-self:stretch; display:flex; align-items:center; justify-content:center; }
 .tech-figure img { max-width:100%; max-height:100%; object-fit:contain; border-radius:8px; box-shadow:0 4px 16px rgba(17,17,17,.10); }
 .turnover-divider { flex:0 0 auto; width:min(560px, 70%); height:1px; background:var(--border); margin:clamp(2px,1vh,10px) auto; }
@@ -2087,7 +2092,10 @@ a.ext-textlink { margin-top:auto; margin-bottom:auto; }   /* centraliza no espa�
     <section class="slide slide-light" aria-label="Slide 12 · Checklist dos Banheiros">
       <div class="slide-inner">
         <h2 class="slide-heading">Checklist dos <span class="accent">Banheiros</span></h2>
-        <a class="efc-sub ext-textlink" href="https://plus.tatasushi.tech/comunidade" target="_blank" rel="noopener">plus.tatasushi.tech/comunidade</a>
+        <div class="link-block">
+          <p class="efc-sub">Implantação e período de teste na unidade de Pinheiros.</p>
+          <a class="efc-sub ext-textlink" href="https://plus.tatasushi.tech/comunidade" target="_blank" rel="noopener">plus.tatasushi.tech/comunidade</a>
+        </div>
       </div>
     </section>
 
@@ -2097,7 +2105,7 @@ a.ext-textlink { margin-top:auto; margin-bottom:auto; }   /* centraliza no espa�
         <h2 class="slide-heading">Tecnologia e <span class="accent">AI</span></h2>
         <div class="tech-split">
           <ul class="tech-topics">
-            <li>Excel &times; SQL</li>
+            <li>Excel &times; SQL<span class="note">Flexibilidade · Agilidade · Bases conectadas</span></li>
             <li>Facilidade de acesso às informações</li>
           </ul>
           <figure class="tech-figure">
