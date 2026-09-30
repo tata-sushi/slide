@@ -1295,6 +1295,11 @@ a.ext-textlink { margin-top:auto; margin-bottom:auto; }   /* centraliza no espa�
 .link-block { align-self:center; margin:auto 0; display:flex; flex-direction:column; align-items:center; gap:clamp(8px, 1.6vh, 18px); width:100%; text-align:center; }
 .link-block .efc-sub { margin:0; }
 .link-block a.ext-textlink { margin:0; }
+/* Ícone de arquivo externo (ex.: planilha em Excel — Cargos & Salários) */
+.ext-file { align-self:center; margin:auto 0; display:flex; flex-direction:column; align-items:center; gap:clamp(10px, 1.8vh, 20px); text-align:center; }
+.excel-icon { display:inline-flex; }
+.excel-icon svg { width:clamp(64px, 9vw, 112px); height:auto; filter:drop-shadow(0 8px 20px rgba(29,111,66,.28)); }
+.ext-file-label { font-family:"DM Mono",monospace; font-size:clamp(11px, 1.2vw, 15px); letter-spacing:.1em; text-transform:uppercase; color:var(--t2); }
 /* Cards horizontais (linha do tempo / formatos) — portado de avaliacoes-feedback */
 .info-box {
   border:1px solid var(--border);
@@ -2021,6 +2026,25 @@ a.ext-textlink { margin-top:auto; margin-bottom:auto; }   /* centraliza no espa�
     <section class="slide slide-light" aria-label="Slide 8 · R&amp;S - Cargos &amp; Salários">
       <div class="slide-inner">
         <h2 class="slide-heading">R&amp;S - Cargos &amp; <span class="accent">Salários</span></h2>
+        <div class="ext-file">
+          <span class="excel-icon">
+            <svg viewBox="0 0 48 48" role="img" aria-label="Planilha em Excel" focusable="false">
+              <rect x="5" y="5" width="38" height="38" rx="7" fill="#1D6F42"/>
+              <g stroke="#ffffff" stroke-opacity="0.28" stroke-width="1.3">
+                <line x1="15" y1="12" x2="15" y2="36"/>
+                <line x1="24" y1="12" x2="24" y2="36"/>
+                <line x1="33" y1="12" x2="33" y2="36"/>
+                <line x1="9" y1="20" x2="39" y2="20"/>
+                <line x1="9" y1="28" x2="39" y2="28"/>
+              </g>
+              <g stroke="#ffffff" stroke-width="4" stroke-linecap="round">
+                <line x1="18" y1="17" x2="30" y2="31"/>
+                <line x1="30" y1="17" x2="18" y2="31"/>
+              </g>
+            </svg>
+          </span>
+          <span class="ext-file-label">Planilha em Excel</span>
+        </div>
       </div>
     </section>
 
@@ -2082,8 +2106,8 @@ a.ext-textlink { margin-top:auto; margin-bottom:auto; }   /* centraliza no espa�
           <li>Liberdade e informações para os líderes<span class="note">Com acompanhamento e auditoria do RH (advertências)</span></li>
           <li>Documentos assinados digitalmente<span class="note">Com validação digital e sistema de auditoria</span></li>
           <li>Zero esforço em 95% dos documentos<span class="note">Sem impressão, digitalização, movimentação de pastas ou renomeação</span></li>
-          <li>Investimento em brindes aleatórios</li>
           <li>Tudo em um único lugar<span class="note">Admissão · Assinatura de documentos · Holerite · Cartão de ponto</span></li>
+          <li>Investimento em brindes aleatórios</li>
         </ul>
       </div>
     </section>
