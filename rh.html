@@ -268,7 +268,18 @@ html, body {
 .slide-light .slide-list::-webkit-scrollbar { width:6px; }
 .slide-light .slide-list::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px; }
 .slide-light .slide-list::-webkit-scrollbar-track { background:transparent; }
-.pauta-nav li { cursor:pointer; }
+.pauta-nav li.is-link { cursor:pointer; transition:color .15s; }
+.pauta-nav li.is-link::after {
+  content:"\2192";
+  margin-left:.4em;
+  font-size:.85em;
+  color:var(--t3);
+  opacity:.55;
+  transition:opacity .15s, transform .15s;
+  display:inline-block;
+}
+.pauta-nav li.is-link:hover { color:var(--carbon); }
+.pauta-nav li.is-link:hover::after { opacity:1; transform:translateX(3px); }
 .slide-list.pauta-nav li { padding-top:.6em; padding-bottom:.6em; }
 .slide-list li {
   position:relative;
@@ -1528,37 +1539,25 @@ body.nav-autohide.nav-visible .nav {
         <p class="slide-eyebrow">Reunião DP/RH</p>
         <h2 class="slide-heading">Pauta do <span class="accent">dia</span></h2>
         <ul class="slide-list pauta-nav two-col">
-          <li>R&amp;S - Esforço RH</li>
-          <li>R&amp;S - Novos formatos de anúncio</li>
+          <li data-goto="Esforço de RH">R&amp;S - Esforço RH</li>
+          <li data-goto="Novos formatos de anúncio">R&amp;S - Novos formatos de anúncio</li>
           <li>QR Code e Checklist banheiros</li>
           <li>Lugarh &rarr; Sara (fluxo interno)</li>
           <li>Cargos &amp; Salários</li>
           <li>Liberdade líderes (advertências)</li>
           <li>Vendas moletons</li>
           <li>Documentos assinados digitalmente e sem necessidade de movimentação</li>
-          <li>Próximas palestras</li>
+          <li data-goto="Próximas palestras">Próximas palestras</li>
           <li>Excel x SQL</li>
           <li>Cartaz prêmio</li>
-          <li>Jornada Tatá</li>
-          <li>Reclamações trabalhistas</li>
+          <li data-goto="Entrevista com Léo">Jornada Tatá</li>
+          <li data-goto="Reclamações trabalhistas">Reclamações trabalhistas</li>
         </ul>
       </div>
     </section>
 
-    <!-- Slide 3 — Gente e Gestão 2024 -->
-    <section class="slide slide-light" aria-label="Slide 3 · Gente e Gestão 2024">
-      <div class="slide-inner">
-        <p class="slide-eyebrow">Reunião DP/RH</p>
-        <h2 class="slide-heading">Gente e Gestão 2024</h2>
-        <div class="slide-image-frame">
-          <img src="A1.png" alt="Capa Gente &amp; Gestão 2024 — TATÁ SUSHI">
-          <img src="A2.png" alt="Pilares de Gente &amp; Gestão 2024: Employer Branding, Inovação e Sustentabilidade">
-        </div>
-      </div>
-    </section>
-
-    <!-- Slide 4 — Turnover -->
-    <section class="slide slide-light slide-turnover" aria-label="Slide 4 · Turnover">
+    <!-- Slide 3 — Turnover -->
+    <section class="slide slide-light slide-turnover" aria-label="Slide 3 · Turnover">
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião DP/RH</p>
         <h2 class="slide-heading">Turnover</h2>
@@ -1615,8 +1614,8 @@ body.nav-autohide.nav-visible .nav {
       </div>
     </section>
 
-    <!-- Slide 5 — Economia RH (4 órbitas clicáveis) -->
-    <section class="slide slide-light slide-cost" aria-label="Slide 5 · Economia RH">
+    <!-- Slide 4 — Economia RH (4 órbitas clicáveis) -->
+    <section class="slide slide-light slide-cost" aria-label="Slide 4 · Economia RH">
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião DP/RH</p>
         <h2 class="slide-heading">Economia <span class="accent">RH</span></h2>
@@ -1678,8 +1677,8 @@ body.nav-autohide.nav-visible .nav {
       </div>
     </section>
 
-    <!-- Slide 6 — Tatá Plus / Governança de Processos (fechamento) -->
-    <section class="slide slide-light" aria-label="Slide 6 · Tatá Plus / Governança de Processos">
+    <!-- Slide 5 — Tatá Plus / Governança de Processos (fechamento) -->
+    <section class="slide slide-light" aria-label="Slide 5 · Tatá Plus / Governança de Processos">
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião DP/RH</p>
         <h2 class="slide-heading">Tatá Plus <span class="accent">/</span> Governança de Processos</h2>
@@ -1692,8 +1691,8 @@ body.nav-autohide.nav-visible .nav {
       </div>
     </section>
 
-    <!-- Slide 7 — Fortalecimento da Cultura -->
-    <section class="slide slide-light" aria-label="Slide 7 · Fortalecimento da Cultura">
+    <!-- Slide 6 — Fortalecimento da Cultura -->
+    <section class="slide slide-light" aria-label="Slide 6 · Fortalecimento da Cultura">
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião DP/RH</p>
         <h2 class="slide-heading">Fortalecimento da Cultura</h2>
@@ -1705,8 +1704,8 @@ body.nav-autohide.nav-visible .nav {
       </div>
     </section>
 
-    <!-- Slide 8 — R&S: Esforço de RH (Papila x Tatá) -->
-    <section class="slide slide-light" aria-label="Slide 8 · R&S — Esforço de RH">
+    <!-- Slide 7 — R&S: Esforço de RH (Papila x Tatá) -->
+    <section class="slide slide-light" aria-label="Slide 7 · R&S — Esforço de RH">
       <div class="slide-inner">
         <p class="slide-eyebrow">R&amp;S · Recrutamento &amp; Seleção</p>
         <h2 class="slide-heading">Esforço de <span class="accent">RH</span></h2>
@@ -1743,8 +1742,8 @@ body.nav-autohide.nav-visible .nav {
       </div>
     </section>
 
-    <!-- Slide 9 — R&S: Novos formatos de anúncio -->
-    <section class="slide slide-light" aria-label="Slide 9 · R&S — Novos formatos de anúncio">
+    <!-- Slide 8 — R&S: Novos formatos de anúncio -->
+    <section class="slide slide-light" aria-label="Slide 8 · R&S — Novos formatos de anúncio">
       <div class="slide-inner">
         <p class="slide-eyebrow">R&amp;S · Recrutamento &amp; Seleção</p>
         <h2 class="slide-heading">Novos formatos de <span class="accent">anúncio</span></h2>
@@ -1824,8 +1823,8 @@ body.nav-autohide.nav-visible .nav {
       </div>
     </section>
 
-    <!-- Slide 10 — Próximas palestras -->
-    <section class="slide slide-light" aria-label="Slide 10 · Próximas palestras">
+    <!-- Slide 9 — Próximas palestras -->
+    <section class="slide slide-light" aria-label="Slide 9 · Próximas palestras">
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião DP/RH</p>
         <h2 class="slide-heading">Próximas <span class="accent">palestras</span></h2>
@@ -1838,7 +1837,7 @@ body.nav-autohide.nav-visible .nav {
               <ul class="timeline-items">
                 <li>Assédio no trabalho</li>
                 <li>Dias 15 e 16/10</li>
-                <li><strong>Custo:</strong> a definir</li>
+                <li><strong>Custo:</strong> R$ 2.250</li>
               </ul>
             </div>
           </div>
@@ -1868,17 +1867,15 @@ body.nav-autohide.nav-visible .nav {
             </div>
           </div>
         </div>
-        <div class="vs-note">
-          <ul class="note-topics">
-            <li><strong>Evolução das entregas</strong></li>
-            <li><strong>Investimentos:</strong> microfone e fotógrafo</li>
-          </ul>
-        </div>
+        <ul class="slide-list">
+          <li>Evolução das entregas</li>
+          <li>Investimentos: microfone, fotógrafo e smartphone</li>
+        </ul>
       </div>
     </section>
 
-    <!-- Slide 11 — Entrevista: 5 anos de Tatá com Léo -->
-    <section class="slide slide-light" aria-label="Slide 11 · Entrevista — 5 anos de Tatá com Léo">
+    <!-- Slide 10 — Entrevista: 5 anos de Tatá com Léo -->
+    <section class="slide slide-light" aria-label="Slide 10 · Entrevista — 5 anos de Tatá com Léo">
       <div class="slide-inner">
         <p class="slide-eyebrow">Comemoração · 5 anos de Tatá</p>
         <h2 class="slide-heading">Entrevista com <span class="accent">Léo</span></h2>
@@ -1893,8 +1890,8 @@ body.nav-autohide.nav-visible .nav {
       </div>
     </section>
 
-    <!-- Slide 12 — Reclamações trabalhistas -->
-    <section class="slide slide-light" aria-label="Slide 12 · Reclamações trabalhistas">
+    <!-- Slide 11 — Reclamações trabalhistas -->
+    <section class="slide slide-light" aria-label="Slide 11 · Reclamações trabalhistas">
       <div class="slide-inner">
         <p class="slide-eyebrow">DP/RH · Jurídico trabalhista</p>
         <h2 class="slide-heading">Reclamações <span class="accent">trabalhistas</span></h2>
@@ -1902,8 +1899,8 @@ body.nav-autohide.nav-visible .nav {
       </div>
     </section>
 
-    <!-- Slide 13 — Encerramento -->
-    <section class="slide slide-cover is-dark" aria-label="Slide 13 · Encerramento">
+    <!-- Slide 12 — Encerramento -->
+    <section class="slide slide-cover is-dark" aria-label="Slide 12 · Encerramento">
       <div class="slide-inner">
         <img alt="TATÁ SUSHI" class="cover-logo-full" id="closingLogo">
       </div>
@@ -2465,12 +2462,16 @@ body.nav-autohide.nav-visible .nav {
   var pautaNav = document.querySelector('.pauta-nav');
   if (pautaNav) {
     Array.prototype.forEach.call(pautaNav.children, function (li) {
+      var goto = li.getAttribute('data-goto');
       var text = li.textContent.trim();
       var targetIndex = -1;
       for (var i = 0; i < slides.length; i++) {
-        if (slideTitle(slides[i], i) === text) { targetIndex = i; break; }
+        var h = slides[i].querySelector('.slide-heading');
+        var htext = h ? h.textContent.trim() : '';
+        if (goto ? (htext === goto) : (slideTitle(slides[i], i) === text)) { targetIndex = i; break; }
       }
       if (targetIndex >= 0) {
+        li.classList.add('is-link');
         li.addEventListener('click', function () {
           idx = targetIndex;
           render();
