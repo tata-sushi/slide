@@ -1389,6 +1389,33 @@ body.nav-autohide.nav-visible .nav {
   line-height:1.45;
 }
 .vs-note strong { color:var(--citric); font-weight:700; }
+.note-topics {
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.35em 2.4em;
+}
+.note-topics li {
+  position:relative;
+  padding-left:1.2em;
+  font-family:"DM Sans",sans-serif;
+  font-size:clamp(12px, 1.35vw, 16px);
+  line-height:1.4;
+  color:var(--white);
+}
+.note-topics li::before {
+  content:"";
+  position:absolute;
+  left:0;
+  top:.5em;
+  width:.4em;
+  height:.4em;
+  border-radius:50%;
+  background:var(--citric);
+}
+.note-topics li strong { color:var(--citric); font-weight:700; }
 .cost-stage {
   width:100%;
   max-width:78%;
@@ -1811,6 +1838,7 @@ body.nav-autohide.nav-visible .nav {
               <ul class="timeline-items">
                 <li>Assédio no trabalho</li>
                 <li>Dias 15 e 16/10</li>
+                <li><strong>Custo:</strong> a definir</li>
               </ul>
             </div>
           </div>
@@ -1822,6 +1850,7 @@ body.nav-autohide.nav-visible .nav {
               <ul class="timeline-items">
                 <li>Ansiedade e depressão</li>
                 <li>Dias 12 e 13/11</li>
+                <li><strong>Custo:</strong> a definir</li>
                 <li>Novembro Azul — a definir</li>
               </ul>
             </div>
@@ -1834,11 +1863,17 @@ body.nav-autohide.nav-visible .nav {
               <ul class="timeline-items">
                 <li>Drogas, vícios e jogos</li>
                 <li>Dias 10 e 11/12</li>
+                <li><strong>Custo:</strong> a definir</li>
               </ul>
             </div>
           </div>
         </div>
-        <p class="vs-note"><strong>Evolução da qualidade</strong> das palestras: investimento em <strong>áudio e microfone</strong> para elevar a produção — custo a definir.</p>
+        <div class="vs-note">
+          <ul class="note-topics">
+            <li><strong>Evolução das entregas</strong></li>
+            <li><strong>Investimentos:</strong> microfone e fotógrafo</li>
+          </ul>
+        </div>
       </div>
     </section>
 
