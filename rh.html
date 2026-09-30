@@ -1427,6 +1427,13 @@ body.nav-autohide.nav-visible .nav {
   background:var(--citric);
 }
 .note-topics li strong { color:var(--citric); font-weight:700; }
+/* Slide de palestras: compacta para caberem os tópicos de baixo */
+.slide-palestras .timeline-track { margin-top:.9em; }
+.slide-palestras .timeline-box { padding:.85em 1em; }
+.slide-palestras .timeline-box .channel-icon { margin-bottom:.55em; }
+.slide-palestras .timeline-items li { padding:.34em 0 .34em 1em; }
+.slide-palestras .slide-list.palestras-topics { flex:0 0 auto; overflow:visible; margin-top:1em; }
+.slide-palestras .slide-list.palestras-topics li { padding-top:.45em; padding-bottom:.45em; }
 .cost-stage {
   width:100%;
   max-width:78%;
@@ -1824,11 +1831,10 @@ body.nav-autohide.nav-visible .nav {
     </section>
 
     <!-- Slide 9 — Próximas palestras -->
-    <section class="slide slide-light" aria-label="Slide 9 · Próximas palestras">
+    <section class="slide slide-light slide-palestras" aria-label="Slide 9 · Próximas palestras">
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião DP/RH</p>
         <h2 class="slide-heading">Próximas <span class="accent">palestras</span></h2>
-        <p class="slide-text"><em>Temas das palestras a confirmar.</em></p>
         <div class="timeline-track">
           <div class="timeline-stop">
             <div class="info-box channel-box timeline-box">
@@ -1849,8 +1855,8 @@ body.nav-autohide.nav-visible .nav {
               <ul class="timeline-items">
                 <li>Ansiedade e depressão</li>
                 <li>Dias 12 e 13/11</li>
-                <li><strong>Custo:</strong> R$ 0</li>
                 <li>Novembro Azul — a definir</li>
+                <li><strong>Custo:</strong> R$ 0</li>
               </ul>
             </div>
           </div>
@@ -1867,7 +1873,7 @@ body.nav-autohide.nav-visible .nav {
             </div>
           </div>
         </div>
-        <ul class="slide-list">
+        <ul class="slide-list palestras-topics">
           <li>Evolução das entregas</li>
           <li>Investimentos: microfone e fotógrafo</li>
         </ul>
