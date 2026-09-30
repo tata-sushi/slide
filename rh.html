@@ -1561,6 +1561,15 @@ body.nav-autohide.nav-visible .nav {
   font-weight:700;
 }
 .cmp-head > span:not(:first-child) { color:var(--carbon); font-weight:700; }
+.cmp-notes { max-width:clamp(560px, 80%, 880px); margin:1.5em auto 0; }
+.cmp-notes p {
+  margin:.4em 0 0;
+  font-family:"DM Sans",sans-serif;
+  font-size:clamp(11px, 1.2vw, 15px);
+  line-height:1.4;
+  color:var(--t2);
+}
+.cmp-notes p strong { color:var(--t1); font-weight:700; }
 .note-topics {
   list-style:none;
   margin:0;
@@ -1815,7 +1824,10 @@ body.nav-autohide.nav-visible .nav {
           <div class="cmp-row cmp-head"><span>Tema</span><span>Papila</span><span>Tatá</span><span>Dif.</span></div>
           <div class="cmp-row"><span>Colaboradores</span><span>220</span><span>140</span><span>&minus;80</span></div>
           <div class="cmp-row"><span>Equipe de RH</span><span>7</span><span>4</span><span>&minus;3</span></div>
-          <div class="cmp-row"><span>Colaboradores por RH</span><span>31</span><span>35</span><span>+4</span></div>
+        </div>
+        <div class="cmp-notes">
+          <p><strong>RH Papila:</strong> 1 Gerente, 1 BP, 2 Analistas de R&amp;S, 2 Analistas de DP, 1 Jovem Aprendiz</p>
+          <p><strong>Média do mercado:</strong> R$ 5.000,00</p>
         </div>
       </div>
     </section>
