@@ -1008,6 +1008,19 @@ body.is-drawing .draw-toolbar {
   transform:translateX(-50%) translateY(0);
   pointer-events:auto;
 }
+/* Auto-ocultar no modo janela: some quando não está em uso e reaparece
+   perto do rodapé (ou ao navegar). Em tela cheia, as regras :fullscreen cuidam disso. */
+body.nav-autohide .nav {
+  opacity:0;
+  transform:translateX(-50%) translateY(16px);
+  transition:opacity .25s ease, transform .25s ease;
+  pointer-events:none;
+}
+body.nav-autohide.nav-visible .nav {
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+  pointer-events:auto;
+}
 
 /* ── Responsivo ─────────────────────────────── */
 @media (max-width:640px) {
@@ -1919,6 +1932,13 @@ body.is-drawing .draw-toolbar {
       </button>
     </div>
   </div>
+  <div class="nav-sep" aria-hidden="true"></div>
+  <button class="nav-btn" id="navClose" aria-label="Fechar barra" title="Fechar barra">
+    <svg viewBox="0 0 24 24">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </button>
 </nav>
 
 <div class="export-modal" id="exportModal" hidden>
@@ -2105,24 +2125,50 @@ body.is-drawing .draw-toolbar {
     fsExit.style.display = on ? 'block' : 'none';
     fsBtn.setAttribute('aria-label', on ? 'Sair da tela cheia' : 'Tela cheia');
     fsBtn.setAttribute('title', on ? 'Sair da tela cheia (F ou Esc)' : 'Tela cheia (F)');
-    if (!on) document.body.classList.remove('nav-visible');
+    // Modo janela usa a classe nav-autohide; em tela cheia as regras :fullscreen cuidam disso.
+    document.body.classList.toggle('nav-autohide', !on);
+    if (typeof revealNav === 'function') revealNav();
   }
   fsBtn.addEventListener('click', toggleFullscreen);
   document.addEventListener('fullscreenchange', syncFsIcon);
   document.addEventListener('webkitfullscreenchange', syncFsIcon);
 
-  // Auto-hide da barra em fullscreen
+  // Auto-ocultar a barra (tela cheia e modo janela): fica escondida e
+  // reaparece quando o cursor chega perto do rodapé, sumindo sozinha depois.
   var hideTimer = null;
-  function showNav() {
-    if (!isFullscreen()) return;
+  var navDismissed = false;
+  var REVEAL_ZONE = 130; // px a partir do rodapé que revelam a barra
+  function revealNav() {
+    navDismissed = false;
     document.body.classList.add('nav-visible');
     clearTimeout(hideTimer);
     hideTimer = setTimeout(function () {
       document.body.classList.remove('nav-visible');
-    }, 2000);
+    }, 2500);
   }
-  document.addEventListener('mousemove', showNav);
-  document.addEventListener('touchstart', showNav, { passive: true });
+  function hideNav() {
+    // Fecha a barra na hora e evita que ela reapareça enquanto o cursor
+    // continuar no rodapé (re-arma quando o cursor sai da faixa).
+    navDismissed = true;
+    clearTimeout(hideTimer);
+    document.body.classList.remove('nav-visible');
+  }
+  function activityReveal(y) {
+    var inZone = window.innerHeight - y <= REVEAL_ZONE;
+    if (!inZone) { navDismissed = false; return; }
+    if (navDismissed) return;
+    revealNav();
+  }
+  var navCloseBtn = document.getElementById('navClose');
+  if (navCloseBtn) navCloseBtn.addEventListener('click', hideNav);
+  document.addEventListener('mousemove', function (e) { activityReveal(e.clientY); });
+  document.addEventListener('touchstart', function (e) {
+    var t = e.touches && e.touches[0];
+    activityReveal(t ? t.clientY : 0);
+  }, { passive: true });
+  // Começa oculta no modo janela, mostrando por um instante como dica.
+  document.body.classList.add('nav-autohide');
+  revealNav();
 
   // ── Lousa ─────────────────────────────────
   var canvas = document.getElementById('drawCanvas');
