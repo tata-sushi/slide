@@ -503,7 +503,7 @@ html, body {
 /* Tabela de reclamações trabalhistas (com coluna larga de pedidos) */
 .data-table--reclam { table-layout:fixed; font-size:clamp(9.5px, 1.02vw, 13px); margin-top:clamp(14px, 3vh, 28px); }
 .data-table--reclam th, .data-table--reclam td { padding:.5em .7em; vertical-align:top; }
-.data-table--reclam thead th { letter-spacing:.04em; }
+.data-table--reclam thead th { letter-spacing:.04em; border-bottom:2px solid var(--carbon); color:var(--carbon); font-weight:700; }
 .data-table--reclam th:nth-child(1), .data-table--reclam td:nth-child(1) { width:23%; }
 .data-table--reclam th:nth-child(2), .data-table--reclam td:nth-child(2) { width:8%; }
 .data-table--reclam th:nth-child(3), .data-table--reclam td:nth-child(3) { width:13%; }
@@ -1396,7 +1396,7 @@ body.nav-autohide.nav-visible .nav {
   min-width:2.6em; font-variant-numeric:tabular-nums;
 }
 .funnel-pct { text-align:left; font-family:"DM Sans",sans-serif; font-size:clamp(10px,1.05vw,13.5px); color:var(--t2); font-weight:400; }
-.efc-tables { display:grid; grid-template-columns:1fr 1fr; gap:clamp(22px,3.4vw,52px); width:100%; margin-top:clamp(10px,2vh,20px); align-items:start; }
+.efc-tables { display:grid; grid-template-columns:1fr 1fr; gap:clamp(22px,3.4vw,52px); width:100%; margin-top:clamp(13px,2.6vh,26px); align-items:start; }
 .efc-table-title {
   display:flex; justify-content:space-between; gap:1em; align-items:baseline;
   font-family:"DM Mono",monospace; font-size:clamp(9px,.95vw,11.5px); letter-spacing:.1em;
@@ -1524,16 +1524,17 @@ body.nav-autohide.nav-visible .nav {
 }
 .vs-note strong { color:var(--citric); font-weight:700; }
 /* Tabela comparativa (Esforço de RH — Papila x Tatá) */
-.cmp { width:100%; max-width:clamp(560px, 80%, 880px); margin:clamp(16px, 4vh, 44px) auto 0; }
+.cmp { width:100%; max-width:clamp(560px, 80%, 880px); margin:clamp(19px, 4.8vh, 53px) auto 0; }
 .cmp-row {
   display:grid;
   grid-template-columns:2.2fr 1fr 1fr 1fr;
   gap:1em;
   align-items:baseline;
-  padding:.7em 0;
+  padding:.4em 0;
   border-top:1px solid var(--border);
   font-family:"DM Sans",sans-serif;
-  font-size:clamp(12px, 1.55vw, 19px);
+  font-size:clamp(10px, 1.05vw, 13px);
+  line-height:1.25;
   color:var(--t1);
 }
 .cmp-row > span:not(:first-child) { text-align:center; font-variant-numeric:tabular-nums; font-weight:700; color:var(--carbon); }
@@ -1541,15 +1542,17 @@ body.nav-autohide.nav-visible .nav {
   border-top:none;
   border-bottom:2px solid var(--carbon);
   padding-top:0;
+  margin-bottom:.5em;
   font-family:"DM Mono",monospace;
-  font-size:clamp(10px, 1.1vw, 13px);
+  font-size:clamp(9px, .95vw, 11.5px);
   letter-spacing:.1em;
   text-transform:uppercase;
   color:var(--carbon);
   font-weight:700;
 }
+.cmp-head + .cmp-row { border-top:none; }
 .cmp-head > span:not(:first-child) { color:var(--carbon); font-weight:700; }
-.cmp-notes { max-width:clamp(560px, 80%, 880px); margin:1.5em auto 0; }
+.cmp-notes { max-width:clamp(560px, 80%, 880px); margin:1.725em auto 0; }
 .cmp-notes p {
   margin:.4em 0 0;
   font-family:"DM Sans",sans-serif;
@@ -1678,13 +1681,12 @@ body.nav-autohide.nav-visible .nav {
   white-space:nowrap;
 }
 .turnover-foot {
-  margin:1em auto 0;
-  max-width:88%;
+  margin:1.5em auto 0;
+  max-width:clamp(560px, 80%, 880px);
   font-family:"DM Sans",sans-serif;
-  font-size:clamp(9.5px, 1vw, 12.5px);
+  font-size:clamp(11px, 1.2vw, 15px);
   line-height:1.4;
   color:var(--t2);
-  text-align:center;
 }
 .turnover-foot strong { color:var(--t1); font-weight:700; }
 .turnover-divider { flex:0 0 auto; width:min(560px, 70%); height:1px; background:var(--border); margin:clamp(2px,1vh,10px) auto; }
@@ -2044,10 +2046,10 @@ body.nav-autohide.nav-visible .nav {
             </div>
           </div>
         </div>
-        <ul class="slide-list palestras-topics">
-          <li>Evolução</li>
-          <li>Investimentos: projetor, microfone e fotógrafo</li>
-        </ul>
+        <div class="cmp-notes">
+          <p><strong>Evolução</strong></p>
+          <p><strong>Investimentos:</strong> projetor, microfone e fotógrafo</p>
+        </div>
       </div>
     </section>
 
