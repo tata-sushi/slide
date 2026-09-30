@@ -41,6 +41,28 @@ html, body {
   flex:0 0 auto;
   position:relative;
 }
+/* Botão voltar para a pauta (canto sup. esquerdo dos slides de conteúdo) */
+.back-pauta {
+  position:absolute;
+  top:20px;
+  left:26px;
+  z-index:6;
+  width:30px;
+  height:30px;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:0;
+  border:none;
+  border-radius:8px;
+  background:none;
+  color:var(--t3);
+  cursor:pointer;
+  transition:color .15s ease, background .15s ease;
+}
+.back-pauta svg { width:20px; height:20px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.back-pauta:hover { color:var(--carbon); background:var(--border); }
+.back-pauta.is-visible { display:flex; }
 
 /* ── Slide: card com sombra, empilhado no stage ─── */
 .slide {
@@ -1581,6 +1603,7 @@ body.nav-autohide.nav-visible .nav {
 
 <main class="deck">
   <div class="stage" id="stage">
+    <button id="backPauta" class="back-pauta" type="button" aria-label="Voltar para a pauta" title="Voltar para a pauta"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></button>
 
     <!-- Slide 1 — Capa -->
     <section class="slide slide-cover is-active" aria-label="Slide 1 · Capa">
@@ -1602,6 +1625,7 @@ body.nav-autohide.nav-visible .nav {
           <li data-goto="R&amp;S - Novos formatos de anúncio">R&amp;S - Novos formatos de anúncio</li>
           <li data-goto="R&amp;S - Cargos &amp; Salários">R&amp;S - Cargos &amp; Salários</li>
           <li data-goto="Admissão: Lugarh → Sara">Admissão: Lugarh &rarr; Sara</li>
+          <li data-goto="Avaliações e Feedback">Avaliações e Feedback</li>
           <li data-goto="TATÁ Plus 2.0 e Portal de Governança">TATÁ Plus 2.0 e Portal de Governança</li>
           <li data-goto="Checklist dos Banheiros">Checklist dos Banheiros</li>
           <li data-goto="Tecnologia e AI">Tecnologia e AI</li>
@@ -1612,8 +1636,8 @@ body.nav-autohide.nav-visible .nav {
       </div>
     </section>
 
-    <!-- Slide 3 — Turnover -->
-    <section class="slide slide-light slide-turnover" aria-label="Slide 3 · Turnover">
+    <!-- Slide 3 — R&S - Turnover -->
+    <section class="slide slide-light slide-turnover" aria-label="Slide 3 · R&amp;S - Turnover">
       <div class="slide-inner">
         <h2 class="slide-heading">R&amp;S - <span class="accent">Turnover</span></h2>
         <div class="turnover-center">
@@ -1683,8 +1707,8 @@ body.nav-autohide.nav-visible .nav {
       </div>
     </section>
 
-    <!-- Slide 4 — Esforço de RH -->
-    <section class="slide slide-light" aria-label="Slide 4 · Esforço de RH">
+    <!-- Slide 4 — R&S - Esforço de RH -->
+    <section class="slide slide-light" aria-label="Slide 4 · R&amp;S - Esforço de RH">
       <div class="slide-inner">
         <h2 class="slide-heading">R&amp;S - Esforço de <span class="accent">RH</span></h2>
         <div class="vs-grid">
@@ -1720,8 +1744,8 @@ body.nav-autohide.nav-visible .nav {
       </div>
     </section>
 
-    <!-- Slide 5 — Novos formatos de anúncio -->
-    <section class="slide slide-light" aria-label="Slide 5 · Novos formatos de anúncio">
+    <!-- Slide 5 — R&S - Novos formatos de anúncio -->
+    <section class="slide slide-light" aria-label="Slide 5 · R&amp;S - Novos formatos de anúncio">
       <div class="slide-inner">
         <h2 class="slide-heading">R&amp;S - Novos formatos de <span class="accent">anúncio</span></h2>
         <div class="format-grid">
@@ -1749,6 +1773,7 @@ body.nav-autohide.nav-visible .nav {
             <ul class="timeline-items">
               <li><strong>Custo:</strong> 10.000 un R$699<br>distribuidor R$100&ndash;150/dia</li>
               <li><strong>Onde:</strong> Entrega em pontos de alto fluxo</li>
+              <li><strong>Impacto:</strong> Alto volume, mas grande desperdício</li>
             </ul>
           </div>
           <div class="info-box channel-box format-card format-card--dim">
@@ -1764,7 +1789,7 @@ body.nav-autohide.nav-visible .nav {
             <div class="channel-icon"><svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg></div>
             <p class="timeline-stop-label">Indicação premiada</p>
             <ul class="timeline-items">
-              <li><strong>Custo:</strong> R$100 por indicação</li>
+              <li><strong>Custo:</strong> &uarr; R$100 por indicação</li>
               <li><strong>Onde:</strong> Colaboradores &rarr; Motoboys (R$50) &rarr; Público Geral</li>
               <li><strong>Impacto:</strong> Baixo alcance, mas com qualidade</li>
             </ul>
@@ -1774,7 +1799,7 @@ body.nav-autohide.nav-visible .nav {
             <p class="timeline-stop-label">Portal de vagas</p>
             <ul class="timeline-items">
               <li><strong>Custo:</strong> ~R$125 /mês</li>
-              <li><strong>Onde:</strong> plataformas de currículo - Catho e Infojobs</li>
+              <li><strong>Onde:</strong> plataformas de currículo: Catho e Infojobs</li>
               <li><strong>Impacto:</strong> Maior qualidade, mas vagas específicas</li>
             </ul>
           </div>
@@ -1782,8 +1807,8 @@ body.nav-autohide.nav-visible .nav {
       </div>
     </section>
 
-    <!-- Slide 6 — Cargos & Salários -->
-    <section class="slide slide-light" aria-label="Slide 6 · Cargos & Salários">
+    <!-- Slide 6 — R&S - Cargos & Salários -->
+    <section class="slide slide-light" aria-label="Slide 6 · R&amp;S - Cargos &amp; Salários">
       <div class="slide-inner">
         <h2 class="slide-heading">R&amp;S - Cargos &amp; <span class="accent">Salários</span></h2>
       </div>
@@ -1796,8 +1821,15 @@ body.nav-autohide.nav-visible .nav {
       </div>
     </section>
 
-    <!-- Slide 8 — TATÁ Plus 2.0 e Portal de Governança -->
-    <section class="slide slide-light" aria-label="Slide 8 · TATÁ Plus 2.0 e Portal de Governança">
+    <!-- Slide 8 — Avaliações e Feedback -->
+    <section class="slide slide-light" aria-label="Slide 8 · Avaliações e Feedback">
+      <div class="slide-inner">
+        <h2 class="slide-heading">Avaliações e <span class="accent">Feedback</span></h2>
+      </div>
+    </section>
+
+    <!-- Slide 9 — TATÁ Plus 2.0 e Portal de Governança -->
+    <section class="slide slide-light" aria-label="Slide 9 · TATÁ Plus 2.0 e Portal de Governança">
       <div class="slide-inner">
         <h2 class="slide-heading">TATÁ Plus 2.0 e Portal de <span class="accent">Governança</span></h2>
         <ul class="slide-list">
@@ -1809,22 +1841,22 @@ body.nav-autohide.nav-visible .nav {
       </div>
     </section>
 
-    <!-- Slide 9 — Checklist dos Banheiros -->
-    <section class="slide slide-light" aria-label="Slide 9 · Checklist dos Banheiros">
+    <!-- Slide 10 — Checklist dos Banheiros -->
+    <section class="slide slide-light" aria-label="Slide 10 · Checklist dos Banheiros">
       <div class="slide-inner">
         <h2 class="slide-heading">Checklist dos <span class="accent">Banheiros</span></h2>
       </div>
     </section>
 
-    <!-- Slide 10 — Tecnologia e AI -->
-    <section class="slide slide-light" aria-label="Slide 10 · Tecnologia e AI">
+    <!-- Slide 11 — Tecnologia e AI -->
+    <section class="slide slide-light" aria-label="Slide 11 · Tecnologia e AI">
       <div class="slide-inner">
         <h2 class="slide-heading">Tecnologia e <span class="accent">AI</span></h2>
       </div>
     </section>
 
-    <!-- Slide 11 — Próximas palestras -->
-    <section class="slide slide-light slide-palestras" aria-label="Slide 11 · Próximas palestras">
+    <!-- Slide 12 — Próximas palestras -->
+    <section class="slide slide-light slide-palestras" aria-label="Slide 12 · Próximas palestras">
       <div class="slide-inner">
         <h2 class="slide-heading">Próximas <span class="accent">palestras</span></h2>
         <div class="timeline-track">
@@ -1872,16 +1904,16 @@ body.nav-autohide.nav-visible .nav {
       </div>
     </section>
 
-    <!-- Slide 12 — Reclamações trabalhistas -->
-    <section class="slide slide-light" aria-label="Slide 12 · Reclamações trabalhistas">
+    <!-- Slide 13 — Reclamações trabalhistas -->
+    <section class="slide slide-light" aria-label="Slide 13 · Reclamações trabalhistas">
       <div class="slide-inner">
         <h2 class="slide-heading">Reclamações <span class="accent">trabalhistas</span></h2>
         <p class="slide-text">Acompanhamento das reclamações trabalhistas: volume, evolução e principais causas.</p>
       </div>
     </section>
 
-    <!-- Slide 13 — Jornada Tatá -->
-    <section class="slide slide-light" aria-label="Slide 13 · Jornada Tatá">
+    <!-- Slide 14 — Jornada Tatá -->
+    <section class="slide slide-light" aria-label="Slide 14 · Jornada Tatá">
       <div class="slide-inner">
         <h2 class="slide-heading">Jornada <span class="accent">Tatá</span></h2>
         <ul class="slide-list">
@@ -1894,8 +1926,8 @@ body.nav-autohide.nav-visible .nav {
       </div>
     </section>
 
-    <!-- Slide 14 — Economia RH -->
-    <section class="slide slide-light slide-cost" aria-label="Slide 14 · Economia RH">
+    <!-- Slide 15 — Economia RH -->
+    <section class="slide slide-light slide-cost" aria-label="Slide 15 · Economia RH">
       <div class="slide-inner">
         <h2 class="slide-heading">Economia <span class="accent">RH</span></h2>
         <div class="cost-orbits" role="tablist" aria-label="Frentes de economia de RH">
@@ -1956,8 +1988,8 @@ body.nav-autohide.nav-visible .nav {
       </div>
     </section>
 
-    <!-- Slide 15 — Encerramento -->
-    <section class="slide slide-cover is-dark" aria-label="Slide 15 · Encerramento">
+    <!-- Slide 16 — Encerramento -->
+    <section class="slide slide-cover is-dark" aria-label="Slide 16 · Encerramento">
       <div class="slide-inner">
         <img alt="TATÁ SUSHI" class="cover-logo-full" id="closingLogo">
       </div>
@@ -2109,15 +2141,20 @@ body.nav-autohide.nav-visible .nav {
   var slides = Array.prototype.slice.call(document.querySelectorAll('.stage .slide'));
   var prevBtn = document.getElementById('prev');
   var nextBtn = document.getElementById('next');
+  var backBtn = document.getElementById('backPauta');
   var curEl = document.getElementById('cur');
   var totalEl = document.getElementById('total');
   var idx = 0;
 
   totalEl.textContent = slides.length;
 
+  var pautaIndex = slides.findIndex(function (s) { return !!s.querySelector('.pauta-nav'); });
+  if (backBtn) backBtn.addEventListener('click', function () { if (pautaIndex >= 0) { idx = pautaIndex; render(); } });
+
   function render() {
     slides.forEach(function (s, i) { s.classList.toggle('is-active', i === idx); });
     curEl.textContent = idx + 1;
+    if (backBtn) { var _c = slides[idx]; backBtn.classList.toggle('is-visible', !(_c.classList.contains('slide-cover') || _c.querySelector('.pauta-nav'))); }
     prevBtn.disabled = idx === 0;
     nextBtn.disabled = idx === slides.length - 1;
     var url = new URL(window.location.href);
