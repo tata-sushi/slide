@@ -1497,11 +1497,21 @@ body.nav-autohide.nav-visible .nav {
 }
 .slide-turnover .slide-inner { padding-top:3.6%; padding-bottom:3.6%; }
 .turnover-center .stat-compare { margin:0 auto; }
-.turnover-center .turnover-annual { margin-bottom:clamp(24px, 6vh, 56px); }
+.turnover-center .turnover-annual { margin-bottom:clamp(12px, 3vh, 28px); }
 .turnover-center .stat-compare .stat-value { font-size:clamp(22px, 2.7vw, 36px); }
 .turnover-table-wrap { flex:0 0 auto; width:min(560px, 70%); }
 .turnover-table { margin-top:0; }
 .turnover-table td:first-child { font-weight:700; }
+.turnover-foot {
+  margin:1em auto 0;
+  max-width:88%;
+  font-family:"DM Sans",sans-serif;
+  font-size:clamp(9.5px, 1vw, 12.5px);
+  line-height:1.4;
+  color:var(--t2);
+  text-align:center;
+}
+.turnover-foot strong { color:var(--t1); font-weight:700; }
 .turnover-divider { flex:0 0 auto; width:min(560px, 70%); height:1px; background:var(--border); margin:clamp(2px,1vh,10px) auto; }
 .turnover-chart { flex:0 0 auto; width:min(470px, 60%); }
 .turnover-chart-title {
@@ -1594,31 +1604,36 @@ body.nav-autohide.nav-visible .nav {
               </thead>
               <tbody>
                 <tr><td>1S</td><td>38,78%</td><td>71,88%</td><td>56,52%</td></tr>
-                <tr><td>2S</td><td>50,96%</td><td>65,00%</td><td>—</td></tr>
+                <tr><td>2S</td><td>50,96%</td><td>65,00%</td><td>38,09% <span class="tag-partial">parcial</span></td></tr>
               </tbody>
             </table>
           </div>
           <div class="turnover-chart">
-            <svg viewBox="0 0 620 176" role="img" aria-label="Gráfico de linha da evolução do turnover de 1S 2024 a 1S 2026">
-                <polyline points="30,124.1 171.5,92 313,36.9 454.5,55 596,77.4" fill="none" stroke="#35383F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+            <svg viewBox="0 0 620 176" role="img" aria-label="Gráfico de linha da evolução do turnover de 1S 2024 a 2S 2026, com 2S 2026 parcial">
+                <polyline points="30,124.1 143.2,92 256.4,36.9 369.6,55 482.8,77.4" fill="none" stroke="#35383F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+                <polyline points="482.8,77.4 596,125.9" fill="none" stroke="#35383F" stroke-width="2" stroke-dasharray="4 5" stroke-linecap="round"/>
                 <circle cx="30" cy="124.1" r="3" fill="#35383F"/>
-                <circle cx="171.5" cy="92" r="3" fill="#35383F"/>
-                <circle cx="313" cy="36.9" r="3" fill="#35383F"/>
-                <circle cx="454.5" cy="55" r="3" fill="#35383F"/>
-                <circle cx="596" cy="77.4" r="3" fill="#35383F"/>
+                <circle cx="143.2" cy="92" r="3" fill="#35383F"/>
+                <circle cx="256.4" cy="36.9" r="3" fill="#35383F"/>
+                <circle cx="369.6" cy="55" r="3" fill="#35383F"/>
+                <circle cx="482.8" cy="77.4" r="3" fill="#35383F"/>
+                <circle cx="596" cy="125.9" r="3.5" fill="#FFFFFF" stroke="#35383F" stroke-width="2"/>
                 <text x="30" y="115.1" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.4" font-weight="700" fill="#111111">38,78%</text>
-                <text x="171.5" y="83" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.4" font-weight="700" fill="#111111">50,96%</text>
-                <text x="313" y="27.9" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.4" font-weight="700" fill="#111111">71,88%</text>
-                <text x="454.5" y="46" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.4" font-weight="700" fill="#111111">65,00%</text>
-                <text x="596" y="68.4" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.4" font-weight="700" fill="#111111">56,52%</text>
+                <text x="143.2" y="83" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.4" font-weight="700" fill="#111111">50,96%</text>
+                <text x="256.4" y="27.9" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.4" font-weight="700" fill="#111111">71,88%</text>
+                <text x="369.6" y="46" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.4" font-weight="700" fill="#111111">65,00%</text>
+                <text x="482.8" y="68.4" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.4" font-weight="700" fill="#111111">56,52%</text>
+                <text x="596" y="116.9" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.4" font-weight="700" fill="#999999">38,09%</text>
                 <text x="30" y="163" text-anchor="middle" font-family="DM Mono, monospace" font-size="14" fill="#999999">1S/24</text>
-                <text x="171.5" y="163" text-anchor="middle" font-family="DM Mono, monospace" font-size="14" fill="#999999">2S/24</text>
-                <text x="313" y="163" text-anchor="middle" font-family="DM Mono, monospace" font-size="14" fill="#999999">1S/25</text>
-                <text x="454.5" y="163" text-anchor="middle" font-family="DM Mono, monospace" font-size="14" fill="#999999">2S/25</text>
-                <text x="596" y="163" text-anchor="middle" font-family="DM Mono, monospace" font-size="14" fill="#999999">1S/26</text>
+                <text x="143.2" y="163" text-anchor="middle" font-family="DM Mono, monospace" font-size="14" fill="#999999">2S/24</text>
+                <text x="256.4" y="163" text-anchor="middle" font-family="DM Mono, monospace" font-size="14" fill="#999999">1S/25</text>
+                <text x="369.6" y="163" text-anchor="middle" font-family="DM Mono, monospace" font-size="14" fill="#999999">2S/25</text>
+                <text x="482.8" y="163" text-anchor="middle" font-family="DM Mono, monospace" font-size="14" fill="#999999">1S/26</text>
+                <text x="596" y="163" text-anchor="middle" font-family="DM Mono, monospace" font-size="14" fill="#999999">2S/26*</text>
               </svg>
           </div>
         </div>
+        <p class="turnover-foot"><strong>* 2S/26 parcial</strong> (jul, ago e set, até 28/09): média mensal de <strong>12,7%</strong>, acima do 1S/26 (9,3%) — agosto (13,7%) e setembro (13,2%) puxaram o número. Mantido o ritmo, o 2S/26 fecharia perto de <strong>76%</strong>, no patamar do 1S/25.</p>
       </div>
     </section>
 
