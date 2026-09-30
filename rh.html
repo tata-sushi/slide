@@ -501,7 +501,7 @@ html, body {
 .data-table--indicators th:nth-child(5), .data-table--indicators td:nth-child(5) { width:14%; }
 .data-table--centered-nums th:not(:first-child), .data-table--centered-nums td:not(:first-child) { text-align:center; }
 /* Tabela de reclamações trabalhistas (com coluna larga de pedidos) */
-.data-table--reclam { table-layout:fixed; font-size:clamp(9.5px, 1.02vw, 13px); margin-top:clamp(14px, 3vh, 28px); }
+.data-table--reclam { table-layout:fixed; font-size:clamp(9.5px, 1.02vw, 13px); margin-top:clamp(21px, 4.5vh, 42px); }
 .data-table--reclam th, .data-table--reclam td { padding:.5em .7em; vertical-align:top; }
 .data-table--reclam thead th { letter-spacing:.04em; border-bottom:2px solid var(--carbon); color:var(--carbon); font-weight:700; }
 .data-table--reclam th:nth-child(1), .data-table--reclam td:nth-child(1) { width:23%; }
@@ -1270,7 +1270,7 @@ body.nav-autohide.nav-visible .nav {
   align-items:center;
   margin-top:.5em;
   font-family:"DM Mono",monospace;
-  font-size:clamp(8px, .82vw, 10.5px);
+  font-size:clamp(6.5px, .66vw, 8.4px);
   letter-spacing:.08em;
   text-transform:uppercase;
   font-weight:500;
@@ -1287,38 +1287,10 @@ body.nav-autohide.nav-visible .nav {
   box-shadow:0 8px 22px rgba(53,56,63,.35);
 }
 .cost-orbit--focus .cost-orbit-label { color:var(--t1); font-weight:500; }
-/* CTA para apresentação externa (Avaliações e Feedback) */
-.ext-cta-wrap { align-self:center; display:flex; flex-direction:column; align-items:center; gap:clamp(10px, 1.6vh, 18px); margin-top:clamp(20px, 4vh, 46px); }
-.ext-cta {
-  display:inline-flex;
-  align-items:center;
-  gap:.7em;
-  font-family:"DM Sans",sans-serif;
-  font-weight:600;
-  font-size:clamp(15px, 1.7vw, 22px);
-  color:var(--white);
-  background:var(--carbon);
-  border:2px solid var(--carbon);
-  border-radius:44px;
-  padding:.7em 1.5em;
-  text-decoration:none;
-  box-shadow:0 8px 22px rgba(53,56,63,.22);
-  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
-}
-.ext-cta:hover { transform:translateY(-3px); box-shadow:0 14px 30px rgba(53,56,63,.30); background:#000; }
-.ext-cta-arrow {
-  display:inline-flex;
-  width:1.55em;
-  height:1.55em;
-  border-radius:50%;
-  background:var(--citric);
-  color:var(--carbon);
-  align-items:center;
-  justify-content:center;
-  font-size:.92em;
-  font-weight:700;
-}
-.ext-cta-url { font-family:"DM Mono",monospace; font-size:clamp(11px, 1.2vw, 15px); letter-spacing:.02em; color:var(--t3); }
+/* Link para apresentação externa (Avaliações e Feedback) — mesma formatação do efc-sub */
+.ext-textlink { text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:1px; transition:color .2s ease; }
+a.ext-textlink { margin-top:auto; margin-bottom:auto; }   /* centraliza no espaço do slide */
+.ext-textlink:hover { color:var(--carbon); }
 /* Cards horizontais (linha do tempo / formatos) — portado de avaliacoes-feedback */
 .info-box {
   border:1px solid var(--border);
@@ -1616,7 +1588,7 @@ body.nav-autohide.nav-visible .nav {
 }
 .cmp-notes p strong { color:var(--t1); font-weight:700; }
 /* Papila×Tatá: nota "RH Papila…" desce 40% (só neste slide, via .cmp adjacente) */
-.cmp + .cmp-notes { margin-top:2.415em; }
+.cmp + .cmp-notes { margin-top:3.62em; }
 .note-topics {
   list-style:none;
   margin:0;
@@ -1745,6 +1717,9 @@ body.nav-autohide.nav-visible .nav {
   color:var(--t2);
 }
 .turnover-foot strong { color:var(--t1); font-weight:700; }
+.turnover-foot--nowrap { white-space:nowrap; max-width:none; }
+.turnover-foot--up { margin-top:auto; margin-bottom:auto; }
+.slide-light .slide-list--tight { flex:0 0 auto; overflow:visible; }
 .turnover-divider { flex:0 0 auto; width:min(560px, 70%); height:1px; background:var(--border); margin:clamp(2px,1vh,10px) auto; }
 .turnover-chart { flex:0 0 auto; width:min(470px, 60%); }
 .turnover-chart-title {
@@ -1806,7 +1781,7 @@ body.nav-autohide.nav-visible .nav {
           <li data-goto="Tecnologia e AI">Tecnologia e AI</li>
           <li data-goto="Próximas palestras">Próximas palestras</li>
           <li data-goto="Reclamações trabalhistas">Reclamações trabalhistas</li>
-          <li data-goto="Jornada Tatá - Entrevista de 5 anos">Jornada Tatá - Entrevista de 5 anos</li>
+          <li data-goto="Jornada Tatá: Entrevista de 5 anos">Jornada Tatá: Entrevista de 5 anos</li>
         </ul>
       </div>
     </section>
@@ -1950,7 +1925,7 @@ body.nav-autohide.nav-visible .nav {
               </svg>
           </div>
         </div>
-        <p class="turnover-foot"><strong>(P) 2S/26 parcial</strong> com média mensal de <strong>12,7%</strong> contra 1S/26 (9,3%); puxados por agosto (13,7%) e setembro (13,2%)</p>
+        <p class="turnover-foot turnover-foot--nowrap"><strong>(P) 2S/26 parcial</strong> com média mensal de <strong>12,7%</strong> contra 1S/26 (9,3%); puxados por agosto (13,7%) e setembro (13,2%)</p>
       </div>
     </section>
 
@@ -2028,7 +2003,6 @@ body.nav-autohide.nav-visible .nav {
     <section class="slide slide-light slide-cost" aria-label="Slide 9 · Admissão: Lugarh → Sara">
       <div class="slide-inner">
         <h2 class="slide-heading">Admissão: Lugarh <span class="accent">&rarr; Sara</span></h2>
-        <p class="efc-sub">Otimização de processos e economia</p>
         <div class="cost-orbits" aria-label="Frentes de otimização e economia">
           <div class="cost-orbit cost-orbit--static">
             <span class="cost-orbit-disc">1<span class="cost-orbit-check" aria-hidden="true" title="Concluído">&#10003;</span></span>
@@ -2069,14 +2043,7 @@ body.nav-autohide.nav-visible .nav {
     <section class="slide slide-light" aria-label="Slide 10 · Avaliações e Feedback">
       <div class="slide-inner">
         <h2 class="slide-heading">Avaliações e <span class="accent">Feedback</span></h2>
-        <p class="efc-sub">Apresentação completa em página dedicada.</p>
-        <div class="ext-cta-wrap">
-          <a class="ext-cta" href="https://slide.tatasushi.tech/avaliacoes-feedback.html" target="_blank" rel="noopener">
-            Abrir apresentação
-            <span class="ext-cta-arrow" aria-hidden="true">&rarr;</span>
-          </a>
-          <span class="ext-cta-url">slide.tatasushi.tech/avaliacoes-feedback.html</span>
-        </div>
+        <a class="efc-sub ext-textlink" href="https://slide.tatasushi.tech/avaliacoes-feedback.html" target="_blank" rel="noopener">slide.tatasushi.tech/avaliacoes-feedback.html</a>
       </div>
     </section>
 
@@ -2202,18 +2169,18 @@ body.nav-autohide.nav-visible .nav {
       </div>
     </section>
 
-    <!-- Slide 16 — Jornada Tatá - Entrevista de 5 anos -->
-    <section class="slide slide-light" aria-label="Slide 16 · Jornada Tatá - Entrevista de 5 anos">
+    <!-- Slide 16 — Jornada Tatá: Entrevista de 5 anos -->
+    <section class="slide slide-light" aria-label="Slide 16 · Jornada Tatá: Entrevista de 5 anos">
       <div class="slide-inner">
-        <h2 class="slide-heading">Jornada <span class="accent">Tatá</span> - Entrevista de 5 anos</h2>
-        <ul class="slide-list">
+        <h2 class="slide-heading">Jornada <span class="accent">Tatá</span>: Entrevista de 5 anos</h2>
+        <ul class="slide-list slide-list--tight">
           <li>Como foi o início da Tatá há 5 anos?</li>
           <li>Qual conquista desse período mais te orgulha?</li>
           <li>Qual foi o maior desafio que vocês superaram?</li>
           <li>Como a cultura e a equipe evoluíram nesses 5 anos?</li>
           <li>Como você enxerga a Tatá nos próximos 5 anos?</li>
         </ul>
-        <p class="turnover-foot">Definir roteiro, data e dinâmica.</p>
+        <p class="turnover-foot turnover-foot--up">Definir roteiro, data e dinâmica.</p>
       </div>
     </section>
 
