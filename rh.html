@@ -1502,6 +1502,19 @@ body.nav-autohide.nav-visible .nav {
 .turnover-table-wrap { flex:0 0 auto; width:min(560px, 70%); }
 .turnover-table { margin-top:0; }
 .turnover-table td:first-child { font-weight:700; }
+.turnover-table .cell-val { position:relative; display:inline-block; }
+.turnover-table .parcial-mark {
+  position:absolute;
+  left:100%;
+  top:0;
+  margin-left:.25em;
+  font-family:"DM Mono",monospace;
+  font-size:.62em;
+  font-weight:600;
+  letter-spacing:.04em;
+  color:var(--t3);
+  white-space:nowrap;
+}
 .turnover-foot {
   margin:1em auto 0;
   max-width:88%;
@@ -1604,36 +1617,37 @@ body.nav-autohide.nav-visible .nav {
               </thead>
               <tbody>
                 <tr><td>1S</td><td>38,78%</td><td>71,88%</td><td>56,52%</td></tr>
-                <tr><td>2S</td><td>50,96%</td><td>65,00%</td><td>38,09% <span class="tag-partial">parcial</span></td></tr>
+                <tr><td>2S</td><td>50,96%</td><td>65,00%</td><td><span class="cell-val">38,09%<span class="parcial-mark">(P)</span></span></td></tr>
               </tbody>
             </table>
           </div>
           <div class="turnover-chart">
             <svg viewBox="0 0 620 176" role="img" aria-label="Gráfico de linha da evolução do turnover de 1S 2024 a 2S 2026, com 2S 2026 parcial">
                 <polyline points="30,124.1 143.2,92 256.4,36.9 369.6,55 482.8,77.4" fill="none" stroke="#35383F" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-                <polyline points="482.8,77.4 596,125.9" fill="none" stroke="#35383F" stroke-width="2" stroke-dasharray="4 5" stroke-linecap="round"/>
+                <polyline points="482.8,77.4 596,26.1" fill="none" stroke="#35383F" stroke-width="2" stroke-dasharray="4 5" stroke-linecap="round"/>
                 <circle cx="30" cy="124.1" r="3" fill="#35383F"/>
                 <circle cx="143.2" cy="92" r="3" fill="#35383F"/>
                 <circle cx="256.4" cy="36.9" r="3" fill="#35383F"/>
                 <circle cx="369.6" cy="55" r="3" fill="#35383F"/>
                 <circle cx="482.8" cy="77.4" r="3" fill="#35383F"/>
-                <circle cx="596" cy="125.9" r="3.5" fill="#FFFFFF" stroke="#35383F" stroke-width="2"/>
+                <circle cx="596" cy="26.1" r="3.5" fill="#FFFFFF" stroke="#35383F" stroke-width="2"/>
                 <text x="30" y="115.1" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.4" font-weight="700" fill="#111111">38,78%</text>
                 <text x="143.2" y="83" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.4" font-weight="700" fill="#111111">50,96%</text>
                 <text x="256.4" y="27.9" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.4" font-weight="700" fill="#111111">71,88%</text>
                 <text x="369.6" y="46" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.4" font-weight="700" fill="#111111">65,00%</text>
                 <text x="482.8" y="68.4" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.4" font-weight="700" fill="#111111">56,52%</text>
-                <text x="596" y="116.9" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.4" font-weight="700" fill="#999999">38,09%</text>
+                <text x="596" y="17.1" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10.4" font-weight="700" fill="#999999">~76%</text>
+                <text x="540" y="43" text-anchor="middle" font-family="DM Mono, monospace" font-size="9.5" fill="#999999">projeção</text>
                 <text x="30" y="163" text-anchor="middle" font-family="DM Mono, monospace" font-size="14" fill="#999999">1S/24</text>
                 <text x="143.2" y="163" text-anchor="middle" font-family="DM Mono, monospace" font-size="14" fill="#999999">2S/24</text>
                 <text x="256.4" y="163" text-anchor="middle" font-family="DM Mono, monospace" font-size="14" fill="#999999">1S/25</text>
                 <text x="369.6" y="163" text-anchor="middle" font-family="DM Mono, monospace" font-size="14" fill="#999999">2S/25</text>
                 <text x="482.8" y="163" text-anchor="middle" font-family="DM Mono, monospace" font-size="14" fill="#999999">1S/26</text>
-                <text x="596" y="163" text-anchor="middle" font-family="DM Mono, monospace" font-size="14" fill="#999999">2S/26*</text>
+                <text x="596" y="163" text-anchor="middle" font-family="DM Mono, monospace" font-size="14" fill="#999999">2S/26</text>
               </svg>
           </div>
         </div>
-        <p class="turnover-foot"><strong>* 2S/26 parcial</strong> (jul, ago e set, até 28/09): média mensal de <strong>12,7%</strong>, acima do 1S/26 (9,3%) — agosto (13,7%) e setembro (13,2%) puxaram o número. Mantido o ritmo, o 2S/26 fecharia perto de <strong>76%</strong>, no patamar do 1S/25.</p>
+        <p class="turnover-foot"><strong>(P) 2S/26 parcial</strong> (jul, ago e set, até 28/09): média mensal de <strong>12,7%</strong>, acima do 1S/26 (9,3%) — agosto (13,7%) e setembro (13,2%) puxaram o número. Mantido o ritmo, a <strong>projeção</strong> de fechamento do 2S/26 é de <strong>~76%</strong>, no patamar do 1S/25.</p>
       </div>
     </section>
 
