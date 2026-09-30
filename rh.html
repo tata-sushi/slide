@@ -1233,10 +1233,10 @@ body.nav-autohide.nav-visible .nav {
 .cost-orbit-label {
   font-family:"DM Mono",monospace;
   font-size:clamp(9px, 1vw, 12px);
-  letter-spacing:.12em;
+  letter-spacing:.08em;
   text-transform:uppercase;
   color:var(--t2);
-  max-width:14ch;
+  white-space:nowrap;
   line-height:1.3;
   transition:color .28s ease;
 }
@@ -1265,6 +1265,60 @@ body.nav-autohide.nav-visible .nav {
   line-height:1;
   box-shadow:0 2px 6px rgba(17,17,17,.22);
 }
+.cost-pill {
+  display:inline-flex;
+  align-items:center;
+  margin-top:.5em;
+  font-family:"DM Mono",monospace;
+  font-size:clamp(8px, .82vw, 10.5px);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:#8a5a00;
+  background:#fff3d1;
+  border:1px solid #f0cf7d;
+  border-radius:20px;
+  padding:.34em .8em;
+}
+.cost-orbit--focus .cost-orbit-disc {
+  background:var(--carbon);
+  border-color:var(--carbon);
+  color:var(--citric);
+  box-shadow:0 8px 22px rgba(53,56,63,.35);
+}
+.cost-orbit--focus .cost-orbit-label { color:var(--t1); font-weight:500; }
+/* CTA para apresentação externa (Avaliações e Feedback) */
+.ext-cta-wrap { align-self:center; display:flex; flex-direction:column; align-items:center; gap:clamp(10px, 1.6vh, 18px); margin-top:clamp(20px, 4vh, 46px); }
+.ext-cta {
+  display:inline-flex;
+  align-items:center;
+  gap:.7em;
+  font-family:"DM Sans",sans-serif;
+  font-weight:600;
+  font-size:clamp(15px, 1.7vw, 22px);
+  color:var(--white);
+  background:var(--carbon);
+  border:2px solid var(--carbon);
+  border-radius:44px;
+  padding:.7em 1.5em;
+  text-decoration:none;
+  box-shadow:0 8px 22px rgba(53,56,63,.22);
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.ext-cta:hover { transform:translateY(-3px); box-shadow:0 14px 30px rgba(53,56,63,.30); background:#000; }
+.ext-cta-arrow {
+  display:inline-flex;
+  width:1.55em;
+  height:1.55em;
+  border-radius:50%;
+  background:var(--citric);
+  color:var(--carbon);
+  align-items:center;
+  justify-content:center;
+  font-size:.92em;
+  font-weight:700;
+}
+.ext-cta-url { font-family:"DM Mono",monospace; font-size:clamp(11px, 1.2vw, 15px); letter-spacing:.02em; color:var(--t3); }
 /* Cards horizontais (linha do tempo / formatos) — portado de avaliacoes-feedback */
 .info-box {
   border:1px solid var(--border);
@@ -1561,6 +1615,8 @@ body.nav-autohide.nav-visible .nav {
   color:var(--t2);
 }
 .cmp-notes p strong { color:var(--t1); font-weight:700; }
+/* Papila×Tatá: nota "RH Papila…" desce 40% (só neste slide, via .cmp adjacente) */
+.cmp + .cmp-notes { margin-top:2.415em; }
 .note-topics {
   list-style:none;
   margin:0;
@@ -1707,6 +1763,11 @@ body.nav-autohide.nav-visible .nav {
 /* Painel de custos compacto (cabe sem rolagem) */
 .slide-cost .slide-inner { padding-top:3%; padding-bottom:1.8%; }
 .slide-cost .slide-heading { margin-bottom:1.2%; }
+.slide-cost .cost-orbits { margin:clamp(24px, 4.4vh, 42px) 0 clamp(10px, 1.8vh, 18px); }
+.slide-cost .cost-orbit { gap:.5em; }
+.slide-cost .cost-orbit-disc { width:clamp(68px, 8.6vw, 98px); height:clamp(68px, 8.6vw, 98px); font-size:clamp(20px, 2.6vw, 34px); }
+.slide-cost .cost-orbit-check { width:clamp(19px, 2.4vw, 27px); height:clamp(19px, 2.4vw, 27px); font-size:clamp(10px, 1.3vw, 15px); }
+.slide-cost .cost-panel .cost-panel-list li { padding:.32em 0 .32em 1.5em; }
 .cost-panel .stat-compare { margin:0 auto .5em; max-width:64%; }
 .cost-panel .stat-compare .stat-value { font-size:clamp(18px, 2.3vw, 30px); }
 .cost-panel .cost-panel-list li { padding:.4em 0 .4em 1.5em; }
@@ -1964,9 +2025,43 @@ body.nav-autohide.nav-visible .nav {
     </section>
 
     <!-- Slide 9 — Admissão: Lugarh → Sara -->
-    <section class="slide slide-light" aria-label="Slide 9 · Admissão: Lugarh → Sara">
+    <section class="slide slide-light slide-cost" aria-label="Slide 9 · Admissão: Lugarh → Sara">
       <div class="slide-inner">
         <h2 class="slide-heading">Admissão: Lugarh <span class="accent">&rarr; Sara</span></h2>
+        <p class="efc-sub">Otimização de processos e economia</p>
+        <div class="cost-orbits" aria-label="Frentes de otimização e economia">
+          <div class="cost-orbit cost-orbit--static">
+            <span class="cost-orbit-disc">1<span class="cost-orbit-check" aria-hidden="true" title="Concluído">&#10003;</span></span>
+            <span class="cost-orbit-label">HC / RH</span>
+            <p class="cost-orbit-sum">Estrutura enxuta, mantendo o padrão de qualidade das entregas, com redução de <strong>~R$ 2.000</strong>.</p>
+          </div>
+          <div class="cost-orbit cost-orbit--static">
+            <span class="cost-orbit-disc">2<span class="cost-orbit-check" aria-hidden="true" title="Concluído">&#10003;</span></span>
+            <span class="cost-orbit-label">Uniformes</span>
+            <p class="cost-orbit-sum">Agilidade nas entregas e redução de até <strong>50%</strong> no custo dos uniformes.</p>
+            <span class="cost-pill">Atenção</span>
+          </div>
+          <div class="cost-orbit cost-orbit--static">
+            <span class="cost-orbit-disc">3<span class="cost-orbit-check" aria-hidden="true" title="Concluído">&#10003;</span></span>
+            <span class="cost-orbit-label">Tatá Plus 2.0</span>
+            <p class="cost-orbit-sum">Aplicativo muito superior, integrado e gerando uma economia mensal de <strong>R$ 1.460,00</strong>.</p>
+          </div>
+          <div class="cost-orbit cost-orbit--static cost-orbit--focus">
+            <span class="cost-orbit-disc">4</span>
+            <span class="cost-orbit-label">Lugarh &rarr; Sara</span>
+          </div>
+        </div>
+        <div class="cost-stage">
+          <div class="cost-panel is-active" id="cost-panel-4" role="region" aria-label="Lugarh &rarr; Sara">
+            <ul class="cost-panel-list">
+              <li>Migração do <strong>Lugarh</strong> para o <strong>Sara</strong> (fluxo 100% interno).</li>
+              <li>Customizado e com maior facilidade de uso para os candidatos.</li>
+              <li>Primeiro contato já no ambiente do <strong>Tatá</strong>, sem contato com plataformas de terceiros.</li>
+              <li>Documentos assinados digitalmente, sem necessidade de movimentação.</li>
+              <li>Corte de <strong>~R$ 160/mês</strong>.</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1974,6 +2069,14 @@ body.nav-autohide.nav-visible .nav {
     <section class="slide slide-light" aria-label="Slide 10 · Avaliações e Feedback">
       <div class="slide-inner">
         <h2 class="slide-heading">Avaliações e <span class="accent">Feedback</span></h2>
+        <p class="efc-sub">Apresentação completa em página dedicada.</p>
+        <div class="ext-cta-wrap">
+          <a class="ext-cta" href="https://slide.tatasushi.tech/avaliacoes-feedback.html" target="_blank" rel="noopener">
+            Abrir apresentação
+            <span class="ext-cta-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+          <span class="ext-cta-url">slide.tatasushi.tech/avaliacoes-feedback.html</span>
+        </div>
       </div>
     </section>
 
@@ -2114,45 +2217,8 @@ body.nav-autohide.nav-visible .nav {
       </div>
     </section>
 
-    <!-- Slide 17 — Economia RH -->
-    <section class="slide slide-light slide-cost" aria-label="Slide 17 · Economia RH">
-      <div class="slide-inner">
-        <h2 class="slide-heading">Economia <span class="accent">RH</span></h2>
-        <div class="cost-orbits" aria-label="Frentes de economia de RH">
-          <div class="cost-orbit cost-orbit--static">
-            <span class="cost-orbit-disc">1<span class="cost-orbit-check" aria-hidden="true" title="Concluído">&#10003;</span></span>
-            <span class="cost-orbit-label">HC / RH</span>
-            <p class="cost-orbit-sum">Estrutura enxuta, mantendo o padrão de qualidade e excelência nas entregas.</p>
-          </div>
-          <div class="cost-orbit cost-orbit--static">
-            <span class="cost-orbit-disc">2<span class="cost-orbit-check" aria-hidden="true" title="Concluído">&#10003;</span></span>
-            <span class="cost-orbit-label">Uniformes</span>
-            <p class="cost-orbit-sum">Até <strong>50%</strong> de redução no custo dos uniformes e mais agilidade nas entregas.</p>
-          </div>
-          <div class="cost-orbit cost-orbit--static">
-            <span class="cost-orbit-disc">3<span class="cost-orbit-check" aria-hidden="true" title="Concluído">&#10003;</span></span>
-            <span class="cost-orbit-label">Tatá Plus 2.0</span>
-            <p class="cost-orbit-sum"><strong>R$ 1.560 &rarr; R$ 1.400</strong> (~90%). Comunitive migrada para o nosso ecossistema; base própria (Supabase) por <strong>R$ 100</strong>.</p>
-          </div>
-          <button type="button" class="cost-orbit cost-orbit--action" data-cost="4" aria-expanded="false" aria-controls="cost-panel-4">
-            <span class="cost-orbit-disc">4</span>
-            <span class="cost-orbit-label">Lugarh &rarr; Sara</span>
-            <span class="cost-orbit-cta">clique para ver</span>
-          </button>
-        </div>
-        <div class="cost-stage">
-          <div class="cost-panel" id="cost-panel-4" role="region" aria-label="Lugarh &rarr; Sara">
-            <ul class="cost-panel-list">
-              <li>Migração do <strong>Lugarh</strong> para o <strong>Sara</strong> &mdash; fluxo 100% interno.</li>
-              <li>Documentos assinados digitalmente, sem necessidade de movimentação.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Slide 18 — Encerramento -->
-    <section class="slide slide-cover is-dark" aria-label="Slide 18 · Encerramento">
+    <!-- Slide 17 — Encerramento -->
+    <section class="slide slide-cover is-dark" aria-label="Slide 17 · Encerramento">
       <div class="slide-inner">
         <img alt="TATÁ SUSHI" class="cover-logo-full" id="closingLogo">
       </div>
@@ -2664,7 +2730,7 @@ body.nav-autohide.nav-visible .nav {
     intro.classList.toggle('is-collapsed', anyOpen);
   }, true);
 
-  // Economia RH: círculos 1-3 são fixos; só o 4 abre/fecha o painel.
+  // Slides "cost": se houver um círculo de ação, ele abre/fecha o painel; caso contrário o painel fica sempre visível.
   Array.prototype.forEach.call(document.querySelectorAll('.slide-cost'), function (slide) {
     var action = slide.querySelector('.cost-orbit--action');
     if (!action) return;
