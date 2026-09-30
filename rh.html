@@ -1720,6 +1720,21 @@ a.ext-textlink { margin-top:auto; margin-bottom:auto; }   /* centraliza no espa�
 .turnover-foot--nowrap { white-space:nowrap; max-width:none; }
 .turnover-foot--up { margin-top:auto; margin-bottom:auto; }
 .slide-light .slide-list--tight { flex:0 0 auto; overflow:visible; }
+/* Governança: lista de tópicos com sub-itens legíveis (sentence case) */
+.slide-list.gov-list { font-size:clamp(12px, 1.35vw, 17px); }
+.slide-list.gov-list li { padding-top:.4em; padding-bottom:.4em; }
+.slide-list.gov-list li .note {
+  font-family:"DM Sans",sans-serif;
+  font-size:.74em;
+  font-weight:400;
+  letter-spacing:0;
+  text-transform:none;
+  color:var(--t2);
+  margin-top:.15em;
+}
+/* Tecnologia e AI: figura ocupa o espaço restante */
+.tech-figure { flex:1 1 auto; min-height:0; align-self:center; width:100%; display:flex; align-items:center; justify-content:center; margin:clamp(10px, 2vh, 22px) 0 0; }
+.tech-figure img { max-width:100%; max-height:100%; object-fit:contain; border-radius:8px; box-shadow:0 4px 16px rgba(17,17,17,.10); }
 .turnover-divider { flex:0 0 auto; width:min(560px, 70%); height:1px; background:var(--border); margin:clamp(2px,1vh,10px) auto; }
 .turnover-chart { flex:0 0 auto; width:min(470px, 60%); }
 .turnover-chart-title {
@@ -2051,11 +2066,13 @@ a.ext-textlink { margin-top:auto; margin-bottom:auto; }   /* centraliza no espa�
     <section class="slide slide-light" aria-label="Slide 11 · TATÁ Plus 2.0 e Portal de Governança">
       <div class="slide-inner">
         <h2 class="slide-heading">TATÁ Plus 2.0 e Portal de <span class="accent">Governança</span></h2>
-        <ul class="slide-list">
-          <li>Um aplicativo muito melhor e superior ao anterior.</li>
-          <li>Um único ambiente conecta processos, indicadores e pessoas.</li>
-          <li>Governança de Processos dentro do aplicativo <strong>Tatá Plus</strong>, centralizando controle, acompanhamento e comunicação.</li>
-          <li>O sistema de governança de processos que já existe hoje começa a ser o eixo de gestão.</li>
+        <ul class="slide-list gov-list">
+          <li>Aumento do engajamento<span class="note">Rádio Tatá · Passatempo · Feed · Cardápio · Ranking · Documentos · Agenda · Avaliações</span></li>
+          <li>Lojinha<span class="note">Recompensas · Compras · Jornada</span></li>
+          <li>Liberdade e informações para os líderes<span class="note">Com acompanhamento e auditoria do RH (advertências)</span></li>
+          <li>Documentos assinados digitalmente<span class="note">Com validação digital e sistema de auditoria</span></li>
+          <li>Zero esforço em 95% dos documentos<span class="note">Sem impressão, digitalização, movimentação de pastas ou renomeação</span></li>
+          <li>Investimento em brindes aleatórios</li>
         </ul>
       </div>
     </section>
@@ -2072,6 +2089,13 @@ a.ext-textlink { margin-top:auto; margin-bottom:auto; }   /* centraliza no espa�
     <section class="slide slide-light" aria-label="Slide 13 · Tecnologia e AI">
       <div class="slide-inner">
         <h2 class="slide-heading">Tecnologia e <span class="accent">AI</span></h2>
+        <ul class="slide-list slide-list--tight">
+          <li>Excel &times; SQL</li>
+          <li>Facilidade de acesso às informações</li>
+        </ul>
+        <figure class="tech-figure">
+          <img src="https://media.licdn.com/dms/image/v2/D4D12AQEz-eg-vG5twg/article-inline_image-shrink_1000_1488/B4DZzDyEc6HEAQ-/0/1772811210072?e=2147483647&v=beta&t=EGUlPJn9cm3GvpfxE7uAkbSD86acr-X_N0HK20-bLq8" alt="Comparação entre Excel e SQL" loading="lazy" referrerpolicy="no-referrer">
+        </figure>
       </div>
     </section>
 
