@@ -32,9 +32,13 @@ html, body {
   padding:40px 24px 120px;
 }
 .stage {
-  width:100%;
-  max-width:1120px;
-  aspect-ratio: 16 / 9;
+  /* Tamanho de design fixo (16:9). O slide é sempre montado nessas dimensões,
+     onde o conteúdo cabe, e o JS (fitStage) escala o stage inteiro para caber
+     na viewport — largura e altura. Assim as fontes em vw (menores em telas
+     pequenas) nunca estouram o stage, e nada corta em celular/telas baixas. */
+  width:1120px;
+  height:630px;
+  flex:0 0 auto;
   position:relative;
 }
 
@@ -994,12 +998,8 @@ body.is-drawing .draw-toolbar {
 :-webkit-full-screen body { background:#000; }
 :fullscreen .deck,
 :-webkit-full-screen .deck { padding:0; min-height:100vh; }
-:fullscreen .stage,
-:-webkit-full-screen .stage {
-  width: min(100vw, calc(100vh * 16 / 9));
-  height: min(100vh, calc(100vw * 9 / 16));
-  max-width:none;
-}
+/* Em tela cheia o stage mantém o tamanho de design fixo; o fitStage o escala
+   para preencher a tela (o padding do .deck vira 0 acima). */
 :fullscreen .slide,
 :-webkit-full-screen .slide { border-radius:0; box-shadow:none; }
 :fullscreen .draw-canvas,
@@ -1044,6 +1044,13 @@ body.nav-autohide.nav-visible .nav {
   .draw-toolbar { bottom:70px; padding:6px; gap:4px; }
   .tool-btn { width:32px; height:32px; }
   .color-btn { width:20px; height:20px; }
+}
+
+/* Telas baixas (ex.: celular na horizontal): recupera o espaço vertical do
+   padding para o slide 16:9 ficar maior. O fitStage lê esse padding e escala
+   o stage de acordo. */
+@media (max-height:520px) {
+  .deck { padding:16px 16px 56px; }
 }
 
 /* ── Impressão / exportar PDF ────────────────── */
@@ -2623,14 +2630,50 @@ body.nav-autohide.nav-visible .nav {
     redraw();
   });
 
-  window.addEventListener('resize', fitCanvas);
-  document.addEventListener('fullscreenchange', function () { setTimeout(fitCanvas, 60); });
-  document.addEventListener('webkitfullscreenchange', function () { setTimeout(fitCanvas, 60); });
+  // ── Ajuste do slide 16:9 à altura disponível ──
+  // As fontes usam unidades de viewport (vw), então o layout só "fecha" quando a
+  // largura do stage acompanha a largura da viewport. Em telas baixas (celular na
+  // horizontal) o slide fica mais alto que a tela e cortaria topo/base. Aqui o
+  // stage é medido no tamanho natural (onde o conteúdo cabe) e escalado por
+  // inteiro para caber na altura, preservando o layout. Em tela cheia as regras
+  // CSS :fullscreen já ajustam o stage, então nada é escalado.
+  var stageEl = document.querySelector('.stage');
+  function fitStage() {
+    if (!stageEl) return;
+    stageEl.style.transform = '';
+    stageEl.style.marginTop = stageEl.style.marginBottom = '';
+    stageEl.style.marginLeft = stageEl.style.marginRight = '';
+    var deckEl = stageEl.parentElement;
+    var cs = getComputedStyle(deckEl);
+    var availW = window.innerWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+    var availH = window.innerHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+    var w = stageEl.offsetWidth, h = stageEl.offsetHeight;
+    if (!w || !h) return;
+    // Em tela cheia o slide preenche a tela (pode ampliar); em janela ele nunca
+    // passa do tamanho de design (limite 1), como o antigo max-width:1120.
+    var fs = !!(document.fullscreenElement || document.webkitFullscreenElement);
+    var k = Math.min(availW / w, availH / h);
+    if (!fs) k = Math.min(k, 1);
+    if (k !== 1) {
+      stageEl.style.transformOrigin = 'center center';
+      stageEl.style.transform = 'scale(' + k + ')';
+      // Colapsa o espaço reservado no layout para o stage ficar centralizado
+      // sem sobrar (nem cortar) nas bordas, nos dois eixos.
+      stageEl.style.marginLeft = stageEl.style.marginRight = '-' + (w * (1 - k) / 2) + 'px';
+      stageEl.style.marginTop = stageEl.style.marginBottom = '-' + (h * (1 - k) / 2) + 'px';
+    }
+  }
+
+  window.addEventListener('resize', function () { fitStage(); fitCanvas(); });
+  document.addEventListener('fullscreenchange', function () { setTimeout(function () { fitStage(); fitCanvas(); }, 60); });
+  document.addEventListener('webkitfullscreenchange', function () { setTimeout(function () { fitStage(); fitCanvas(); }, 60); });
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(fitStage); }
 
   // Redraw when the active slide changes
   var origRender = render;
   render = function () {
     origRender();
+    fitStage();
     applyReveals(idx);
     updateNavDisabled();
     runCountUps(idx);
@@ -2681,6 +2724,7 @@ body.nav-autohide.nav-visible .nav {
   }
   fitCanvas();
   render();
+  fitStage();
 })();
 </script>
 
