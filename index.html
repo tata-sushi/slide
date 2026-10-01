@@ -451,6 +451,7 @@ html, body {
 .data-table--centered-nums th:not(:first-child), .data-table--centered-nums td:not(:first-child) { text-align:center; }
 .data-table--nowrap th, .data-table--nowrap td { white-space:nowrap; word-break:normal; overflow-wrap:normal; }
 .data-table--nowrap td, .data-table--nowrap th { padding-left:.6em; padding-right:.6em; }
+.data-table--nowrap td:last-child { font-weight:700; }
 .data-table tr.is-current td { font-weight:700; }
 .data-table td .cell-note {
   display:block;
@@ -1156,87 +1157,8 @@ body.is-drawing .draw-toolbar {
       </div>
     </section>
 
-    <!-- Slide 3 — Vendas -->
-    <section class="slide slide-light" aria-label="Slide 3 · Vendas">
-      <div class="slide-inner">
-        <p class="slide-eyebrow">Reunião de líderes</p>
-        <h2 class="slide-heading">Vendas Salão</h2>
-        <ul class="slide-list">
-          <li class="topic-collapse">
-            <details>
-              <summary>
-                <span>Gorjeta &mdash; Itaim</span>
-                <span class="topic-chevron" aria-hidden="true">›</span>
-              </summary>
-              <div class="topic-cols">
-                <table class="data-table data-table--compact">
-                  <thead>
-                    <tr><th scope="col">M&ecirc;s</th><th scope="col">Gorjeta</th></tr>
-                  </thead>
-                  <tbody>
-                    <tr><td>Agosto</td><td>R$ 63.178</td></tr>
-                    <tr><td>Setembro</td><td>R$ 72.933</td></tr>
-                    <tr><td>Outubro</td><td>R$ 64.916</td></tr>
-                    <tr><td>Novembro</td><td>R$ 75.347</td></tr>
-                    <tr><td>Dezembro</td><td>R$ 80.040</td></tr>
-                    <tr><td>Janeiro</td><td>R$ 63.178</td></tr>
-                  </tbody>
-                </table>
-                <table class="data-table data-table--compact">
-                  <thead>
-                    <tr><th scope="col">M&ecirc;s</th><th scope="col">Gorjeta</th></tr>
-                  </thead>
-                  <tbody>
-                    <tr><td>Fevereiro</td><td>R$ 78.669</td></tr>
-                    <tr><td>Mar&ccedil;o</td><td>R$ 77.423</td></tr>
-                    <tr><td>Abril</td><td>R$ 82.440</td></tr>
-                    <tr><td>Maio</td><td>R$ 73.691</td></tr>
-                    <tr class="is-current"><td>Junho</td><td>R$ 69.416</td></tr>
-                    <tr><td>Julho <span class="tag-partial">Parcial</span></td><td>R$ 24.593<span class="cell-note">R$ 2.235,72 / dia</span></td></tr>
-                  </tbody>
-                </table>
-              </div>
-            </details>
-          </li>
-          <li class="topic-collapse">
-            <details>
-              <summary>
-                <span>Gorjeta &mdash; Pinheiros</span>
-                <span class="topic-chevron" aria-hidden="true">›</span>
-              </summary>
-              <div class="topic-cols">
-                <table class="data-table data-table--compact">
-                  <thead>
-                    <tr><th scope="col">M&ecirc;s</th><th scope="col">Gorjeta</th></tr>
-                  </thead>
-                  <tbody>
-                    <tr><td>Dezembro</td><td>R$ 38.807</td></tr>
-                    <tr><td>Janeiro</td><td>R$ 31.058</td></tr>
-                    <tr><td>Fevereiro</td><td>R$ 41.479</td></tr>
-                    <tr><td>Mar&ccedil;o</td><td>R$ 42.638</td></tr>
-                  </tbody>
-                </table>
-                <table class="data-table data-table--compact">
-                  <thead>
-                    <tr><th scope="col">M&ecirc;s</th><th scope="col">Gorjeta</th></tr>
-                  </thead>
-                  <tbody>
-                    <tr><td>Abril</td><td>R$ 42.958</td></tr>
-                    <tr><td>Maio</td><td>R$ 38.789</td></tr>
-                    <tr class="is-current"><td>Junho</td><td>R$ 37.276</td></tr>
-                    <tr><td>Julho <span class="tag-partial">Parcial</span></td><td>R$ 13.052<span class="cell-note">R$ 1.450,00 / dia</span></td></tr>
-                  </tbody>
-                </table>
-              </div>
-            </details>
-          </li>
-        </ul>
-      </div>
-      <div class="slide-num">03</div>
-    </section>
-
-    <!-- Slide 4 — Vendas 21/08 - 20/09 -->
-    <section class="slide slide-light slide-dense" aria-label="Slide 4 · Vendas 21/08 - 20/09">
+    <!-- Slide 3 — Vendas 21/08 - 20/09 -->
+    <section class="slide slide-light slide-dense" aria-label="Slide 3 · Vendas 21/08 - 20/09">
       <div class="slide-inner">
         <p class="slide-eyebrow">Reunião de líderes</p>
         <h2 class="slide-heading">Vendas 21/08 - 20/09</h2>
@@ -1329,11 +1251,11 @@ body.is-drawing .draw-toolbar {
           </li>
         </ul>
       </div>
-      <div class="slide-num">04</div>
+      <div class="slide-num">03</div>
     </section>
 
-    <!-- Slide 5 — Encerramento -->
-    <section class="slide slide-cover is-dark" aria-label="Slide 5 · Encerramento">
+    <!-- Slide 4 — Encerramento -->
+    <section class="slide slide-cover is-dark" aria-label="Slide 4 · Encerramento">
       <div class="slide-inner">
         <img alt="TATÁ SUSHI" class="cover-logo-full" id="closingLogo">
       </div>
@@ -1350,7 +1272,7 @@ body.is-drawing .draw-toolbar {
   <div class="nav-count" aria-live="polite">
     <span class="current" id="cur">1</span>
     <span> / </span>
-    <span id="total">5</span>
+    <span id="total">4</span>
   </div>
   <button class="nav-btn" id="next" aria-label="Próximo slide" title="Próximo slide (→)">
     <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"></polyline></svg>
