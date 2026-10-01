@@ -162,14 +162,14 @@
      ========================================================= */
   .comunicado{display:flex;flex-direction:column;}
   /* mesma barra/cabeçalho das outras páginas (logo preto à esquerda) */
-  .comunicado .barra-topo{background:var(--verde);height:88px;display:flex;align-items:center;justify-content:center;position:relative;flex:0 0 auto;}
+  .comunicado .barra-topo{background:#b3146a;height:88px;display:flex;align-items:center;justify-content:center;position:relative;flex:0 0 auto;}
   .comunicado .barra-topo .titulo{font-family:var(--fonte-marca);font-size:58px;font-weight:normal;}
-  .comunicado .barra-topo .titulo .verde{color:#0d3d12;}
+  .comunicado .barra-topo .titulo .verde{color:#3d0019;}
   .comunicado .barra-topo .titulo .branco{color:#fff;}
   .comunicado .barra-topo .edicao{position:absolute;right:24px;bottom:8px;color:#fff;font-size:26px;font-family:var(--fonte-marca);}
   .comunicado .barra-topo .ico{position:absolute;left:28px;width:64px;height:64px;object-fit:contain;}
   /* foto de topo, com a base arredondada */
-  .comunicado .foto-topo{width:100%;flex:0 0 auto;background:var(--verde);}
+  .comunicado .foto-topo{width:100%;flex:0 0 auto;background:#b3146a;}
   .comunicado .foto-topo img,
   .comunicado .foto-topo .banner{width:100%;height:430px;object-fit:cover;display:block;
     border-bottom-left-radius:130px;border-bottom-right-radius:130px;}
@@ -189,7 +189,7 @@
   .comunicado .corpo .texto .podcast .tit{font-weight:800;color:#e0007a;font-size:32px;}
   .comunicado .corpo .texto .podcast p{margin:0;}
   /* rodapé verde com redes sociais */
-  .comunicado .rodape{background:var(--verde);color:#fff;flex:0 0 auto;
+  .comunicado .rodape{background:#b3146a;color:#fff;flex:0 0 auto;
     display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:26px 64px;padding:40px 60px;}
   .comunicado .rodape .rede{display:flex;align-items:center;gap:15px;font-family:var(--fonte-texto);font-size:30px;line-height:1;}
   .comunicado .rodape .rede svg{width:42px;height:42px;fill:#fff;flex:0 0 auto;}
@@ -431,23 +431,29 @@
 </script>
 
 <script>
-  /* Mantém cada nome de aniversariante em 1 linha: encolhe a fonte só de quem não couber na coluna. */
+  /* Aniversariantes: mantém TODOS os nomes no mesmo tamanho (uniforme), encolhendo em conjunto
+     só o necessário para o nome mais longo caber na coluna com uma margem — evita desalinho. */
   (function () {
     function ajustarNomes() {
       var nomes = document.querySelectorAll(".capa .item-aniv .nome");
-      for (var i = 0; i < nomes.length; i++) {
-        var el = nomes[i];
-        el.style.fontSize = "";
-        var size = parseFloat(getComputedStyle(el).fontSize);
-        while (el.scrollWidth > el.clientWidth + 1 && size > 22) {
-          size -= 0.5;
-          el.style.fontSize = size + "px";
+      if (!nomes.length) return;
+      for (var i = 0; i < nomes.length; i++) nomes[i].style.fontSize = "";
+      var size = parseFloat(getComputedStyle(nomes[0]).fontSize);
+      function cabeTodos() {
+        for (var i = 0; i < nomes.length; i++) {
+          if (nomes[i].scrollWidth > nomes[i].clientWidth - 14) return false;
         }
+        return true;
+      }
+      for (var guard = 0; guard < 80 && size > 20 && !cabeTodos(); guard++) {
+        size -= 0.5;
+        for (var i = 0; i < nomes.length; i++) nomes[i].style.fontSize = size + "px";
       }
     }
     window.addEventListener("load", ajustarNomes);
     window.addEventListener("resize", ajustarNomes);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(ajustarNomes);
+    ajustarNomes();
   })();
 </script>
 
