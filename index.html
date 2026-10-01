@@ -449,6 +449,8 @@ html, body {
 .data-table--indicators th:nth-child(4), .data-table--indicators td:nth-child(4) { width:24%; }
 .data-table--indicators th:nth-child(5), .data-table--indicators td:nth-child(5) { width:14%; }
 .data-table--centered-nums th:not(:first-child), .data-table--centered-nums td:not(:first-child) { text-align:center; }
+.data-table--nowrap th, .data-table--nowrap td { white-space:nowrap; word-break:normal; overflow-wrap:normal; }
+.data-table--nowrap td, .data-table--nowrap th { padding-left:.6em; padding-right:.6em; }
 .data-table tr.is-current td { font-weight:700; }
 .data-table td .cell-note {
   display:block;
@@ -1245,7 +1247,7 @@ body.is-drawing .draw-toolbar {
                 <span>Pedidos iFood &middot; 2026</span>
                 <span class="topic-chevron" aria-hidden="true">›</span>
               </summary>
-              <table class="data-table data-table--centered-nums">
+              <table class="data-table data-table--centered-nums data-table--nowrap">
                 <thead>
                   <tr>
                     <th scope="col">Pedidos iFood</th>
@@ -1269,7 +1271,7 @@ body.is-drawing .draw-toolbar {
                 <span>Notas iFood</span>
                 <span class="topic-chevron" aria-hidden="true">›</span>
               </summary>
-              <table class="data-table data-table--centered-nums">
+              <table class="data-table data-table--centered-nums data-table--nowrap">
                 <thead>
                   <tr>
                     <th scope="col">Notas iFood</th>
@@ -1296,7 +1298,7 @@ body.is-drawing .draw-toolbar {
               <div class="topic-cols">
                 <div>
                   <p class="group-heading">Itaim</p>
-                  <table class="data-table data-table--compact data-table--centered-nums">
+                  <table class="data-table data-table--compact data-table--centered-nums data-table--nowrap">
                     <thead>
                       <tr><th scope="col">Setor</th><th scope="col">Jun</th><th scope="col">Jul</th><th scope="col">Ago</th><th scope="col">Set</th></tr>
                     </thead>
@@ -1310,7 +1312,7 @@ body.is-drawing .draw-toolbar {
                 </div>
                 <div>
                   <p class="group-heading">Pinheiros</p>
-                  <table class="data-table data-table--compact data-table--centered-nums">
+                  <table class="data-table data-table--compact data-table--centered-nums data-table--nowrap">
                     <thead>
                       <tr><th scope="col">Setor</th><th scope="col">Jun</th><th scope="col">Jul</th><th scope="col">Ago</th><th scope="col">Set</th></tr>
                     </thead>
