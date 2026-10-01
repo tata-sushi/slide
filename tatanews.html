@@ -99,10 +99,10 @@
   .crop-btn.enviando{opacity:.6;pointer-events:none;}
   @media print{ .crop-modal{display:none !important;} }
 
-  .capa .bloco-aniv{background:var(--verde);margin-top:28px;padding:30px 50px 30px;color:#fff;
+  .capa .bloco-aniv{background:var(--verde);margin-top:28px;padding:30px 32px 30px;color:#fff;
     flex:1;display:flex;flex-direction:column;}
   .capa .bloco-aniv h2{text-align:center;font-size:36px;color:#111;font-family:Arial,sans-serif;font-weight:bold;margin-bottom:18px;}
-  .capa .grid-aniv{display:grid;grid-template-columns:repeat(3,1fr);gap:36px 24px;flex:1;align-content:center;}
+  .capa .grid-aniv{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 14px;flex:1;align-content:center;}
   .capa .item-aniv{display:flex;align-items:baseline;gap:10px;}
   .capa .item-aniv > div{flex:1;min-width:0;}
   .capa .item-aniv .dia{font-size:48px;font-weight:bold;font-family:var(--fonte-play);min-width:46px;}
@@ -434,11 +434,11 @@
       var size = parseFloat(getComputedStyle(nomes[0]).fontSize);
       function cabeTodos() {
         for (var i = 0; i < nomes.length; i++) {
-          if (nomes[i].scrollWidth > nomes[i].clientWidth - 14) return false;
+          if (nomes[i].scrollWidth > nomes[i].clientWidth - 6) return false;
         }
         return true;
       }
-      for (var guard = 0; guard < 80 && size > 20 && !cabeTodos(); guard++) {
+      for (var guard = 0; guard < 80 && size > 30 && !cabeTodos(); guard++) {
         size -= 0.5;
         for (var i = 0; i < nomes.length; i++) nomes[i].style.fontSize = size + "px";
       }
