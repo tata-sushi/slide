@@ -173,19 +173,21 @@
   .comunicado .foto-topo img,
   .comunicado .foto-topo .banner{width:100%;height:430px;object-fit:cover;display:block;
     border-bottom-left-radius:130px;border-bottom-right-radius:130px;}
-  /* corpo verde-claro preenche o restante da página */
-  .comunicado .corpo{background:#c9f2c0;flex:1;display:flex;flex-direction:column;justify-content:center;padding:60px 96px 54px;}
-  .comunicado .corpo h1{font-family:var(--fonte-texto);font-size:88px;font-weight:800;color:var(--verde);
-    text-align:center;letter-spacing:1px;line-height:1;margin:0 0 30px;}
-  .comunicado .corpo .texto{font-family:var(--fonte-texto);font-size:27px;line-height:1.5;color:#223522;
+  /* corpo — tema Outubro Rosa */
+  .comunicado .corpo{background:#fde6f1;flex:1;display:flex;flex-direction:column;justify-content:center;padding:56px 96px 50px;}
+  .comunicado .corpo h1{font-family:var(--fonte-texto);font-size:84px;font-weight:800;color:#e0007a;
+    text-align:center;letter-spacing:1px;line-height:1;margin:0 0 26px;}
+  .comunicado .corpo .texto{font-family:var(--fonte-texto);font-size:27px;line-height:1.5;color:#4a2540;
     text-align:justify;}
   .comunicado .corpo .texto p{margin-bottom:15px;}
   .comunicado .corpo .texto ul{margin:-4px 0 15px;padding-left:1.4em;list-style:disc;}
   .comunicado .corpo .texto ul li{margin-bottom:6px;}
   .comunicado .corpo .texto p:last-child{margin-bottom:0;}
   .comunicado .corpo .texto .ola{font-weight:700;}
-  .comunicado .corpo .texto .final{text-align:center;font-weight:700;font-size:44px;color:var(--verde);
-    margin:16px 0 0;}
+  .comunicado .corpo .texto .podcast{background:#ffffff;border-left:10px solid #e0007a;border-radius:12px;
+    padding:20px 26px;margin:24px 0 0;text-align:left;}
+  .comunicado .corpo .texto .podcast .tit{font-weight:800;color:#e0007a;font-size:32px;}
+  .comunicado .corpo .texto .podcast p{margin:0;}
   /* rodapé verde com redes sociais */
   .comunicado .rodape{background:var(--verde);color:#fff;flex:0 0 auto;
     display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:26px 64px;padding:40px 60px;}
@@ -349,46 +351,38 @@
 
   <!-- Banner do topo (arte de marca; pode ser trocado por uma foto real depois) -->
   <div class="foto-topo">
-    <svg class="banner" viewBox="0 0 1414 430" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Comunicado">
+    <svg class="banner" viewBox="0 0 1414 430" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Outubro Rosa">
       <defs>
         <linearGradient id="bgc" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#1f8f4d"/>
-          <stop offset="1" stop-color="#0c5d31"/>
+          <stop offset="0" stop-color="#f368a6"/>
+          <stop offset="1" stop-color="#b3146a"/>
         </linearGradient>
       </defs>
       <rect width="1414" height="430" fill="url(#bgc)"/>
-      <circle cx="120" cy="380" r="210" fill="#ffffff" opacity="0.06"/>
-      <circle cx="1300" cy="60" r="250" fill="#ffffff" opacity="0.06"/>
-      <circle cx="1170" cy="380" r="120" fill="#ffffff" opacity="0.05"/>
-      <circle cx="300" cy="90" r="70" fill="#ffffff" opacity="0.05"/>
-      <!-- badge branco com balão de fala (comunicado) -->
+      <circle cx="120" cy="380" r="210" fill="#ffffff" opacity="0.08"/>
+      <circle cx="1300" cy="60" r="250" fill="#ffffff" opacity="0.08"/>
+      <circle cx="1170" cy="380" r="120" fill="#ffffff" opacity="0.06"/>
+      <circle cx="300" cy="90" r="70" fill="#ffffff" opacity="0.06"/>
+      <!-- laço Outubro Rosa sobre círculo branco -->
       <circle cx="707" cy="215" r="128" fill="#ffffff"/>
-      <rect x="634" y="150" width="146" height="104" rx="26" fill="#4caf52"/>
-      <path d="M683 252 L683 300 L718 254 Z" fill="#4caf52"/>
-      <rect x="700" y="176" width="14" height="44" rx="7" fill="#ffffff"/>
-      <circle cx="707" cy="236" r="8.5" fill="#ffffff"/>
+      <path d="M707 158 C 670 177, 666 227, 707 259 L 741 306" fill="none" stroke="#e0007a" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M707 158 C 744 177, 748 227, 707 259 L 673 306" fill="none" stroke="#e0007a" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </div>
 
   <div class="corpo">
-    <h1>COMUNICADO</h1>
+    <h1>OUTUBRO ROSA</h1>
 
     <!-- EDITAR: texto do comunicado (dados fixos) -->
     <div class="texto">
-      <p class="ola">Olá, pessoal!</p>
-      <p>Informamos que, a partir de <b>01/11/2026</b>, teremos uma alteração na forma e na data de pagamento.</p>
-      <p>Atualmente, o pagamento é realizado em duas etapas:</p>
-      <ul>
-        <li>adiantamento de 40% no dia 20;</li>
-        <li>saldo restante no 5º dia útil do mês seguinte.</li>
-      </ul>
-      <p>Com a mudança, os valores passarão a ser pagos em um <b>único pagamento, todo dia 30 de cada mês</b>.</p>
-      <p>Dessa forma, a partir de novembro, não teremos mais o adiantamento de 40% no dia 20 e o pagamento no 5º dia útil do mês seguinte. Todo o valor será concentrado em um único pagamento mensal.</p>
-      <p>A alteração tem como objetivo simplificar e organizar o processo de pagamento, deixando o calendário mais claro e previsível para todos.</p>
-      <p>A nova regra passa a valer a partir de <b>01/11/2026</b>, com o primeiro pagamento nesse formato em <b>30/11/2026</b>.</p>
-      <p><b>Observação:</b> para apoiar todos durante esse período de mudança e contribuir com uma melhor organização financeira, o adiantamento da 1ª parcela do 13º salário será realizado no dia <b>20/11</b>, e a 2ª parcela será paga no dia <b>20/12</b>. Dessa forma, buscamos facilitar a adaptação ao novo calendário de pagamentos e permitir um melhor planejamento financeiro nesse período.</p>
-      <p>Em caso de dúvidas, conversem com a liderança da unidade ou procurem o RH.</p>
-      <p>Estamos à disposição para ajudar!</p>
+      <p>Outubro é o mês dedicado à conscientização sobre o câncer de mama e à importância dos cuidados com a saúde. A campanha <b>Outubro Rosa</b> busca ampliar o acesso à informação, incentivar a prevenção e reforçar a importância de conhecer o próprio corpo e manter os acompanhamentos de saúde em dia.</p>
+      <p>O câncer de mama é uma das doenças que mais afetam mulheres em todo o mundo, mas a informação e o diagnóstico precoce podem fazer uma grande diferença no tratamento. Por isso, é importante estar atento a mudanças no corpo, manter consultas e exames de rotina conforme orientação profissional e procurar atendimento de saúde sempre que perceber algo diferente.</p>
+      <p>O autocuidado não precisa acontecer apenas quando surge alguma preocupação. Criar uma rotina de atenção à saúde, conversar sobre o tema e compartilhar informações responsáveis também são formas importantes de prevenção e cuidado.</p>
+      <p>Durante o Outubro Rosa, reforçamos também a importância do acolhimento e do apoio. Muitas pessoas convivem de perto com o câncer de mama, seja durante o próprio tratamento ou acompanhando familiares e pessoas queridas. Informação, respeito e empatia fazem parte desse cuidado.</p>
+      <div class="podcast">
+        <p class="tit">🎧 Podcast especial no Tatá Plus</p>
+        <p>Fique de olho no Tatá Plus para acompanhar o lançamento do episódio.</p>
+      </div>
     </div>
   </div>
 
