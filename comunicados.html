@@ -238,6 +238,43 @@
   .comunicado .pen-atencao{margin-top:14px;background:var(--pen-bg);border:2px solid var(--pen-borda);border-radius:14px;
     padding:15px 22px;font-family:var(--fonte-texto);font-size:27px;line-height:1.34;color:var(--com-texto);}
   .comunicado .pen-atencao b{color:var(--pen-txt);}
+
+  /* =========================================================
+     COMUNICADO — Acesso à Câmara Fria
+     Usa o layout denso (refeitório); o parágrafo das medidas
+     disciplinares fica no vermelho das penalidades
+     ========================================================= */
+  .comunicado.camara-pag .corpo{padding-top:490px;}
+  .comunicado .camara .floco{width:130px;color:var(--verde);margin-bottom:20px;}
+  .comunicado .camara .floco svg{width:100%;height:auto;display:block;}
+  .comunicado .camara .titulo-com{font-size:92px;margin-bottom:34px;}
+  .comunicado .camara .sep{margin-bottom:60px;}
+  .comunicado .camara .topicos{gap:48px;max-width:1140px;}
+  .comunicado .camara .topico{align-items:center;}
+  .comunicado .camara .topico p{font-size:36px;line-height:1.42;}
+  .comunicado .camara .topico p b{font-weight:800;color:var(--com-sub);}
+  .comunicado .camara .topico.alerta{background:var(--pen-bg);border:2px solid var(--pen-borda);
+    border-radius:18px;padding:28px 32px;}
+  .comunicado .camara .topico.alerta .ico{color:var(--pen-txt);}
+  .comunicado .camara .topico.alerta p b{color:var(--pen-txt);}
+  .comunicado .camara .fecho{margin-top:90px;}
+
+  /* =========================================================
+     COMUNICADO — Lista de pessoas autorizadas (câmara fria)
+     Tabela: cabeçalho verde + linhas zebradas
+     ========================================================= */
+  .comunicado.lista-pag .logo-topo{width:150px;top:58px;}
+  .comunicado.lista-pag .corpo{justify-content:flex-start;padding:316px 90px 44px;}
+  .comunicado .lista-aut{display:flex;flex-direction:column;align-items:center;width:100%;}
+  .comunicado .lista-aut .titulo-com{font-size:62px;margin-bottom:36px;}
+  .comunicado .tabela-aut{width:100%;border-collapse:separate;border-spacing:0;font-family:var(--fonte-texto);
+    border:2px solid var(--verde);border-radius:18px;overflow:hidden;background:#fff;}
+  .comunicado .tabela-aut th{background:var(--verde);color:#fff;font-size:28px;font-weight:800;letter-spacing:3px;
+    text-transform:uppercase;padding:18px 32px;text-align:left;}
+  .comunicado .tabela-aut td{font-size:30px;line-height:1.3;color:var(--com-texto);padding:6px 32px;}
+  .comunicado .tabela-aut tbody tr:nth-child(even) td{background:rgba(76,175,82,.09);}
+  .comunicado .tabela-aut .dep{width:330px;text-align:center;}
+  .comunicado .tabela-aut td.dep{font-weight:700;color:var(--com-sub);}
 </style>
 </head>
 <body>
@@ -706,6 +743,109 @@
           </ul>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- COMUNICADO 14 — Acesso à Câmara Fria -->
+<div class="pagina comunicado denso camara-pag">
+  <div class="logo-topo"><img src="img/logo-tata-sushi.png?v=1" alt="Tatá Sushi"></div>
+  <div class="corpo">
+    <div class="refeitorio camara">
+      <div class="floco">
+        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M50 50 V8 M39 15 L50 25 L61 15"/>
+          <path d="M50 50 V8 M39 15 L50 25 L61 15" transform="rotate(60 50 50)"/>
+          <path d="M50 50 V8 M39 15 L50 25 L61 15" transform="rotate(120 50 50)"/>
+          <path d="M50 50 V8 M39 15 L50 25 L61 15" transform="rotate(180 50 50)"/>
+          <path d="M50 50 V8 M39 15 L50 25 L61 15" transform="rotate(240 50 50)"/>
+          <path d="M50 50 V8 M39 15 L50 25 L61 15" transform="rotate(300 50 50)"/>
+        </svg>
+      </div>
+      <h2 class="titulo-com">Acesso à<br>Câmara Fria</h2>
+      <div class="sep"></div>
+      <div class="topicos">
+        <div class="topico">
+          <div class="ico">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="22" y="44" width="56" height="44" rx="6"/>
+              <path d="M34 44 v-12 a16 16 0 0 1 32 0 v12"/>
+              <circle cx="50" cy="63" r="5"/><path d="M50 68 v8"/>
+            </svg>
+          </div>
+          <div class="tx">
+            <p>O acesso à câmara fria é permitido <b>somente aos colaboradores que possuem autorização</b> e assinaram o <b>Termo de Acesso à Câmara Fria</b>.</p>
+          </div>
+        </div>
+        <div class="topico">
+          <div class="ico">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="22" y="16" width="56" height="74" rx="6"/>
+              <rect x="37" y="10" width="26" height="12" rx="3"/>
+              <path d="M33 38 h34 M33 51 h34"/>
+              <path d="M33 72 c4-9 8 5 12-2 s7 5 11 0 l11 0"/>
+            </svg>
+          </div>
+          <div class="tx">
+            <p>Para garantir a segurança e o cumprimento do processo estabelecido, todos os colaboradores autorizados devem <b>utilizar e assinar a planilha de controle de acesso</b> sempre que entrarem na câmara fria.</p>
+          </div>
+        </div>
+        <div class="topico alerta">
+          <div class="ico">
+            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M50 12 L92 86 H8 Z"/>
+              <path d="M50 38 v24"/>
+              <circle cx="50" cy="73" r="3" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="tx">
+            <p>O descumprimento dessas orientações poderá resultar em medidas disciplinares, como <b>advertência</b> e, em casos de reincidência, <b>suspensão</b>.</p>
+          </div>
+        </div>
+      </div>
+      <p class="fecho">Contamos com a atenção e o comprometimento de todos para que o acesso seja realizado de forma correta e segura.</p>
+    </div>
+  </div>
+</div>
+
+<!-- COMUNICADO 15 — Lista de pessoas autorizadas a acessar a câmara fria
+     Para incluir ou remover alguém, edite as linhas <tr> da tabela. -->
+<div class="pagina comunicado lista-pag">
+  <div class="logo-topo"><img src="img/logo-tata-sushi.png?v=1" alt="Tatá Sushi"></div>
+  <div class="corpo">
+    <div class="lista-aut">
+      <h2 class="titulo-com">Lista de pessoas autorizadas<br>para acessar a câmara fria</h2>
+      <table class="tabela-aut">
+        <thead>
+          <tr><th>Colaborador</th><th class="dep">Departamento</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Ana Cristina Alves De Macedo</td><td class="dep">Operação</td></tr>
+          <tr><td>Anderson Eder Pasqualino</td><td class="dep">Bar</td></tr>
+          <tr><td>Anna Vitoria Pezavento Porto</td><td class="dep">Qualidade</td></tr>
+          <tr><td>Avani Maria Miranda</td><td class="dep">Salão</td></tr>
+          <tr><td>Carlos Gabriel Da Silva Oliveira</td><td class="dep">Sushibar</td></tr>
+          <tr><td>Carlos Mateus Silva De Oliveira</td><td class="dep">Sushibar</td></tr>
+          <tr><td>Cristiane Ana Feitoza Gomes</td><td class="dep">Cozinha</td></tr>
+          <tr><td>Diomara Das Dores Sousa Duarte</td><td class="dep">Delivery</td></tr>
+          <tr><td>Douglas Lima Barbosa</td><td class="dep">Sushibar</td></tr>
+          <tr><td>Ildefonso Matos Filho</td><td class="dep">Peixaria</td></tr>
+          <tr><td>Jeferson Santos Peixoto</td><td class="dep">Bar</td></tr>
+          <tr><td>Jesse Sousa Duarte</td><td class="dep">Sushibar</td></tr>
+          <tr><td>Kleiton Fideles Dos Santos</td><td class="dep">Cozinha</td></tr>
+          <tr><td>Leandro Carvalho Da Silva</td><td class="dep">Salão</td></tr>
+          <tr><td>Mariana Sampaio Vieira</td><td class="dep">Delivery</td></tr>
+          <tr><td>Paulo Henrique Ventura Dos Santos</td><td class="dep">Salão</td></tr>
+          <tr><td>Paulo Oliveira Da Silva</td><td class="dep">Cozinha</td></tr>
+          <tr><td>Perivaldo Bispo Da Silva</td><td class="dep">Cozinha</td></tr>
+          <tr><td>Rayane Carvalho Da Silva</td><td class="dep">Cozinha</td></tr>
+          <tr><td>Renato Costa De Aquino</td><td class="dep">Salão</td></tr>
+          <tr><td>Vinicius Mendes Silva</td><td class="dep">Sushibar</td></tr>
+          <tr><td>Vitor Hugo Soares Da Silva</td><td class="dep">Cozinha</td></tr>
+          <tr><td>Wesley Monteiro Silva</td><td class="dep">Estoque</td></tr>
+          <tr><td>Williams Koshiro Imamura</td><td class="dep">Cozinha</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
