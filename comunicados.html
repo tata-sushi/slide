@@ -279,8 +279,9 @@
   /* =========================================================
      COMUNICADOS — porta fechada / papel no lixo / horário Tatá House
      ========================================================= */
-  /* porta fechada (paisagem): ícone à esquerda, texto à direita, centralizado abaixo do logo */
-  .pagina.paisagem.porta-pag .corpo{justify-content:center;padding-top:250px;}
+  /* paisagem com conteúdo centralizado na vertical, abaixo do logo (porta fechada, água e café) */
+  .pagina.paisagem.centro-v .corpo{justify-content:center;padding-top:250px;}
+  /* porta fechada (paisagem): ícone à esquerda, texto à direita */
   .comunicado .lado-a-lado{display:flex;align-items:center;justify-content:center;gap:110px;width:100%;margin-top:40px;}
   .comunicado .lado-a-lado .ico-grande{flex:0 0 auto;}
   .comunicado .lado-a-lado .txt-lado{display:flex;flex-direction:column;gap:22px;}
@@ -300,6 +301,9 @@
   .comunicado .turno .nome{font-family:var(--fonte-texto);font-size:46px;font-weight:800;letter-spacing:6px;
     text-transform:uppercase;color:var(--com-sub);}
   .comunicado .turno .hora{font-family:var(--fonte-texto);font-size:92px;font-weight:900;color:var(--verde);line-height:1.05;}
+  /* água e café (paisagem): seta à esquerda; ícones, título e chamada à direita */
+  .comunicado .icones-par{display:flex;gap:40px;color:var(--verde);}
+  .comunicado .icones-par svg{width:150px;height:150px;display:block;}
 </style>
 </head>
 <body>
@@ -876,7 +880,7 @@
 </div>
 
 <!-- COMUNICADO 16 — Mantenha a porta fechada (paisagem) -->
-<div class="pagina comunicado paisagem porta-pag">
+<div class="pagina comunicado paisagem centro-v">
   <div class="logo-topo"><img src="img/logo-tata-sushi.png?v=1" alt="Tatá Sushi"></div>
   <div class="corpo">
     <div class="bloco-c">
@@ -943,6 +947,35 @@
             <div class="hora">16h45 às 18h00</div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COMUNICADO 19 — Água e café, sirva-se à vontade (paisagem)
+     A seta aponta para a esquerda; para inverter, troque o path da seta. -->
+<div class="pagina comunicado paisagem centro-v">
+  <div class="logo-topo"><img src="img/logo-tata-sushi.png?v=1" alt="Tatá Sushi"></div>
+  <div class="corpo">
+    <div class="lado-a-lado">
+      <div class="seta" style="width:440px;">
+        <svg viewBox="0 0 100 60" fill="currentColor" aria-label="à esquerda"><path d="M98 20 V40 H42 V58 L3 30 L42 2 V20 Z"/></svg>
+      </div>
+      <div class="txt-lado">
+        <div class="icones-par">
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-label="Água">
+            <path d="M50 8 C50 8 20 44 20 63 a30 30 0 0 0 60 0 C80 44 50 8 50 8 Z"/>
+            <path d="M35 64 a15 15 0 0 0 15 15"/>
+          </svg>
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" aria-label="Café">
+            <path d="M16 42 H70 V62 a20 20 0 0 1 -20 20 H36 a20 20 0 0 1 -20 -20 Z"/>
+            <path d="M70 48 h5 a9 9 0 0 1 0 18 h-5"/>
+            <path d="M10 92 H82"/>
+            <path d="M32 32 c-5 -6 5 -10 0 -18 M46 32 c-5 -6 5 -10 0 -18 M60 32 c-5 -6 5 -10 0 -18"/>
+          </svg>
+        </div>
+        <h2 class="titulo-com" style="font-size:150px;">Água e café</h2>
+        <p class="lead" style="font-size:82px;">Sirva-se à vontade</p>
       </div>
     </div>
   </div>
