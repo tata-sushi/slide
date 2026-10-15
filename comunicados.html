@@ -337,6 +337,26 @@
   .comunicado .empilhado{display:flex;flex-direction:column;align-items:center;gap:10px;}
   .comunicado .empilhado .titulo-com{font-size:150px;line-height:1;}
   .comunicado .empilhado .lead{font-size:76px;text-transform:uppercase;}
+
+  /* =========================================================
+     COMUNICADOS — RH nas unidades / palestras
+     ========================================================= */
+  .comunicado .rodape-nota{font-family:var(--fonte-texto);font-size:40px;font-weight:500;color:var(--com-mute);}
+  /* RH: um cartão por unidade, com dia e horário */
+  .comunicado .turnos.unidades{gap:32px;max-width:1080px;margin-top:6px;}
+  .comunicado .unidades .turno{padding:28px 52px;gap:42px;}
+  .comunicado .unidades .turno .ico{width:116px;height:116px;}
+  .comunicado .unidades .turno .hora{font-size:62px;}
+  /* palestras: grade 2x2 de temas */
+  .comunicado .temas{display:grid;grid-template-columns:1fr 1fr;gap:28px;width:100%;max-width:1220px;margin-top:6px;}
+  .comunicado .tema{display:flex;align-items:center;gap:26px;background:#fff;border:3px solid var(--verde);
+    border-radius:26px;padding:34px 30px;text-align:left;}
+  .comunicado .tema .ico{flex:0 0 auto;width:124px;height:124px;color:var(--com-sub);}
+  .comunicado .tema .ico svg,.comunicado .tema .data svg{width:100%;height:100%;display:block;}
+  .comunicado .tema h3{font-family:var(--fonte-texto);font-size:42px;font-weight:800;line-height:1.1;color:var(--com-sub);}
+  .comunicado .tema .data{display:flex;align-items:center;gap:14px;margin-top:16px;font-family:var(--fonte-texto);
+    font-size:52px;font-weight:900;color:var(--verde);line-height:1;}
+  .comunicado .tema .data .cal{flex:0 0 auto;width:54px;height:54px;color:var(--verde);}
 </style>
 </head>
 <body>
@@ -1085,6 +1105,87 @@
       <h2 class="empilhado"><span class="titulo-com">Proibido</span><span class="lead">Uso de</span><span class="titulo-com">Celular</span></h2>
       <div class="faixa-escura"><div class="gr" style="color:#fff;font-size:70px;">Na cozinha</div></div>
       <p class="nota" style="font-size:52px;font-weight:800;color:var(--com-sub);max-width:900px;">Mantenha o foco no trabalho, na higiene e na segurança!</p>
+    </div>
+  </div>
+</div>
+
+<!-- COMUNICADO 23 — Precisando falar com o RH? Nós vamos até você (dias por unidade) -->
+<div class="pagina comunicado centro-logo">
+  <div class="logo-topo"><img src="img/logo-tata-sushi.png?v=1" alt="Tatá Sushi"></div>
+  <div class="corpo" style="padding-top:420px;">
+    <div class="bloco-c horario" style="gap:28px;">
+      <div class="tarja">Comunicado</div>
+      <h2 class="titulo-com" style="font-size:96px;line-height:1.05;">Precisando falar<br>com o RH?</h2>
+      <p class="lead" style="font-size:72px;">Nós vamos até você!</p>
+      <p class="rotulo-h">Unidades</p>
+      <div class="turnos unidades">
+        <div class="turno">
+          <div class="ico"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="12" y="18" width="76" height="70" rx="10"/><path d="M12 40 h76 M32 8 v18 M68 8 v18"/><g fill="currentColor" stroke="none"><rect x="26" y="50" width="10" height="9" rx="2"/><rect x="45" y="50" width="10" height="9" rx="2"/><rect x="64" y="50" width="10" height="9" rx="2"/><rect x="26" y="68" width="10" height="9" rx="2"/><rect x="45" y="68" width="10" height="9" rx="2"/><rect x="64" y="68" width="10" height="9" rx="2"/></g></svg></div>
+          <div>
+            <div class="nome">Poke – Pinheiros</div>
+            <div class="hora">Quinta-feira às 14h30</div>
+          </div>
+        </div>
+        <div class="turno">
+          <div class="ico"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="12" y="18" width="76" height="70" rx="10"/><path d="M12 40 h76 M32 8 v18 M68 8 v18"/><g fill="currentColor" stroke="none"><rect x="26" y="50" width="10" height="9" rx="2"/><rect x="45" y="50" width="10" height="9" rx="2"/><rect x="64" y="50" width="10" height="9" rx="2"/><rect x="26" y="68" width="10" height="9" rx="2"/><rect x="45" y="68" width="10" height="9" rx="2"/><rect x="64" y="68" width="10" height="9" rx="2"/></g></svg></div>
+          <div>
+            <div class="nome">Pinheiros</div>
+            <div class="hora">Quinta-feira às 15h20</div>
+          </div>
+        </div>
+        <div class="turno">
+          <div class="ico"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="12" y="18" width="76" height="70" rx="10"/><path d="M12 40 h76 M32 8 v18 M68 8 v18"/><g fill="currentColor" stroke="none"><rect x="26" y="50" width="10" height="9" rx="2"/><rect x="45" y="50" width="10" height="9" rx="2"/><rect x="64" y="50" width="10" height="9" rx="2"/><rect x="26" y="68" width="10" height="9" rx="2"/><rect x="45" y="68" width="10" height="9" rx="2"/><rect x="64" y="68" width="10" height="9" rx="2"/></g></svg></div>
+          <div>
+            <div class="nome">Itaim</div>
+            <div class="hora">Sexta-feira às 15h</div>
+          </div>
+        </div>
+      </div>
+      <p class="rodape-nota">Fiquem atentos às orientações</p>
+    </div>
+  </div>
+</div>
+
+<!-- COMUNICADO 24 — Palestras: confira as datas -->
+<div class="pagina comunicado centro-logo">
+  <div class="logo-topo"><img src="img/logo-tata-sushi.png?v=1" alt="Tatá Sushi"></div>
+  <div class="corpo" style="padding-top:420px;">
+    <div class="bloco-c horario" style="gap:34px;">
+      <div class="tarja">Comunicado</div>
+      <h2 class="titulo-com" style="font-size:150px;line-height:1;">Palestras</h2>
+      <p class="lead" style="font-size:72px;">Confira as datas</p>
+      <p class="rotulo-h">Temas</p>
+      <div class="temas">
+        <div class="tema">
+          <span class="ico"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M34 56 V24 a5 5 0 0 1 10 0 V48 M44 46 V16 a5 5 0 0 1 10 0 V46 M54 46 V20 a5 5 0 0 1 10 0 V48 M64 50 V30 a5 5 0 0 1 10 0 V62 c0 17 -12 30 -28 30 h-2 c-10 0 -17 -4 -23 -12 L14 66 a5.5 5.5 0 0 1 9 -6 l11 12"/></svg></span>
+          <div>
+            <h3>Assédio no Trabalho</h3>
+            <div class="data"><span class="cal"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="12" y="18" width="76" height="70" rx="10"/><path d="M12 40 h76 M32 8 v18 M68 8 v18"/><g fill="currentColor" stroke="none"><rect x="26" y="50" width="10" height="9" rx="2"/><rect x="45" y="50" width="10" height="9" rx="2"/><rect x="64" y="50" width="10" height="9" rx="2"/><rect x="26" y="68" width="10" height="9" rx="2"/><rect x="45" y="68" width="10" height="9" rx="2"/><rect x="64" y="68" width="10" height="9" rx="2"/></g></svg></span>22 e 23/10</div>
+          </div>
+        </div>
+        <div class="tema">
+          <span class="ico"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M36 94 L62 40 C70 22 60 6 50 6 C40 6 30 22 38 40 L64 94" fill="none" stroke="#e8669a" stroke-width="13" stroke-linejoin="round"/></svg></span>
+          <div>
+            <h3>Outubro Rosa</h3>
+            <div class="data"><span class="cal"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="12" y="18" width="76" height="70" rx="10"/><path d="M12 40 h76 M32 8 v18 M68 8 v18"/><g fill="currentColor" stroke="none"><rect x="26" y="50" width="10" height="9" rx="2"/><rect x="45" y="50" width="10" height="9" rx="2"/><rect x="64" y="50" width="10" height="9" rx="2"/><rect x="26" y="68" width="10" height="9" rx="2"/><rect x="45" y="68" width="10" height="9" rx="2"/><rect x="64" y="68" width="10" height="9" rx="2"/></g></svg></span>28 e 29/10</div>
+          </div>
+        </div>
+        <div class="tema">
+          <span class="ico"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M64 96 V82 c9 -6 14 -15 14 -26 c0 -16 -13 -27 -29 -27 c-16 0 -29 12 -29 27 c0 4 1 7 2 10 l-6 9 h7 v8 c0 5 4 8 8 8 h8 v11"/><path d="M30 4 l-5 8 h7 l-5 8 M50 0 l-5 8 h7 l-5 8 M70 4 l-5 8 h7 l-5 8"/></svg></span>
+          <div>
+            <h3>Ansiedade e Estresse</h3>
+            <div class="data"><span class="cal"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="12" y="18" width="76" height="70" rx="10"/><path d="M12 40 h76 M32 8 v18 M68 8 v18"/><g fill="currentColor" stroke="none"><rect x="26" y="50" width="10" height="9" rx="2"/><rect x="45" y="50" width="10" height="9" rx="2"/><rect x="64" y="50" width="10" height="9" rx="2"/><rect x="26" y="68" width="10" height="9" rx="2"/><rect x="45" y="68" width="10" height="9" rx="2"/><rect x="64" y="68" width="10" height="9" rx="2"/></g></svg></span>12 e 13/11</div>
+          </div>
+        </div>
+        <div class="tema">
+          <span class="ico"><svg viewBox="0 0 100 100" aria-hidden="true"><g style="fill:var(--com-sub)"><path d="M44 22 h10 v12 l6 9 v36 a4 4 0 0 1 -4 4 h-14 a4 4 0 0 1 -4 -4 v-36 l6 -9 z"/><rect x="58" y="58" width="24" height="11" rx="5.5" transform="rotate(-35 70 63.5)"/></g><line x1="19" y1="19" x2="81" y2="81" style="stroke:#fff" stroke-width="13"/><circle cx="50" cy="50" r="44" fill="none" style="stroke:var(--verde)" stroke-width="7"/><line x1="19" y1="19" x2="81" y2="81" style="stroke:var(--verde)" stroke-width="7"/></svg></span>
+          <div>
+            <h3>Álcool, Vícios e Drogas</h3>
+            <div class="data"><span class="cal"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="12" y="18" width="76" height="70" rx="10"/><path d="M12 40 h76 M32 8 v18 M68 8 v18"/><g fill="currentColor" stroke="none"><rect x="26" y="50" width="10" height="9" rx="2"/><rect x="45" y="50" width="10" height="9" rx="2"/><rect x="64" y="50" width="10" height="9" rx="2"/><rect x="26" y="68" width="10" height="9" rx="2"/><rect x="45" y="68" width="10" height="9" rx="2"/><rect x="64" y="68" width="10" height="9" rx="2"/></g></svg></span>09 e 10/12</div>
+          </div>
+        </div>
+      </div>
+      <p class="rodape-nota">Fiquem atentos às orientações</p>
     </div>
   </div>
 </div>
