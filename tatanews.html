@@ -162,27 +162,35 @@
      ========================================================= */
   .comunicado{display:flex;flex-direction:column;}
   /* mesma barra/cabeçalho das outras páginas (logo preto à esquerda) */
-  .comunicado .barra-topo{background:#b3146a;height:88px;display:flex;align-items:center;justify-content:center;position:relative;flex:0 0 auto;}
+  .comunicado .barra-topo{background:var(--verde);height:88px;display:flex;align-items:center;justify-content:center;position:relative;flex:0 0 auto;}
   .comunicado .barra-topo .titulo{font-family:var(--fonte-marca);font-size:58px;font-weight:normal;}
-  .comunicado .barra-topo .titulo .verde{color:#3d0019;}
+  .comunicado .barra-topo .titulo .verde{color:#0d3d12;}
   .comunicado .barra-topo .titulo .branco{color:#fff;}
   .comunicado .barra-topo .edicao{position:absolute;right:24px;bottom:8px;color:#fff;font-size:26px;font-family:var(--fonte-marca);}
   .comunicado .barra-topo .ico{position:absolute;left:28px;width:64px;height:64px;object-fit:contain;}
   /* foto de topo, com a base arredondada */
-  .comunicado .foto-topo{width:100%;flex:0 0 auto;background:#b3146a;}
+  .comunicado .foto-topo{width:100%;flex:0 0 auto;background:var(--verde);}
   .comunicado .foto-topo img,
   .comunicado .foto-topo .banner{width:100%;height:430px;object-fit:cover;display:block;
     border-bottom-left-radius:130px;border-bottom-right-radius:130px;}
-  /* corpo — tema Outubro Rosa */
-  .comunicado .corpo{background:#fde6f1;flex:1;display:flex;flex-direction:column;justify-content:center;padding:44px 90px 40px;}
-  .comunicado .corpo h1{font-family:var(--fonte-texto);font-size:78px;font-weight:800;color:#e0007a;
-    text-align:center;letter-spacing:1px;line-height:1;margin:0 0 24px;}
-  .comunicado .corpo .texto{font-family:var(--fonte-texto);font-size:24px;line-height:1.4;color:#4a2540;
+  /* corpo verde-claro */
+  .comunicado .corpo{background:#c9f2c0;flex:1;display:flex;flex-direction:column;justify-content:center;padding:50px 96px 46px;}
+  .comunicado .corpo h1{font-family:var(--fonte-texto);font-size:84px;font-weight:800;color:var(--verde);
+    text-align:center;letter-spacing:1px;line-height:1;margin:0 0 28px;}
+  .comunicado .corpo .texto{font-family:var(--fonte-texto);font-size:30px;line-height:1.5;color:#223522;
     text-align:justify;}
-  .comunicado .corpo .texto p{margin-bottom:12px;}
+  .comunicado .corpo .texto p{margin-bottom:16px;}
   .comunicado .corpo .texto p:last-child{margin-bottom:0;}
+  .comunicado .corpo .texto .ola{font-weight:700;}
+  .comunicado .corpo .texto .agenda-pgto{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:22px 0;}
+  .comunicado .corpo .texto .agenda-pgto .bloco{background:#ffffff;border:2px solid var(--verde);border-radius:14px;padding:20px 26px;}
+  .comunicado .corpo .texto .agenda-pgto .cab{font-weight:800;color:var(--verde);font-size:30px;margin-bottom:12px;text-align:center;}
+  .comunicado .corpo .texto .agenda-pgto ul{list-style:none;}
+  .comunicado .corpo .texto .agenda-pgto li{font-size:26px;line-height:1.4;margin-bottom:9px;padding-left:20px;position:relative;text-align:left;}
+  .comunicado .corpo .texto .agenda-pgto li:before{content:"•";position:absolute;left:0;color:var(--verde);font-weight:bold;}
+  .comunicado .corpo .texto .agenda-pgto li:last-child{margin-bottom:0;}
   /* rodapé verde com redes sociais */
-  .comunicado .rodape{background:#b3146a;color:#fff;flex:0 0 auto;
+  .comunicado .rodape{background:var(--verde);color:#fff;flex:0 0 auto;
     display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:26px 64px;padding:40px 60px;}
   .comunicado .rodape .rede{display:flex;align-items:center;gap:15px;font-family:var(--fonte-texto);font-size:30px;line-height:1;}
   .comunicado .rodape .rede svg{width:42px;height:42px;fill:#fff;flex:0 0 auto;}
@@ -251,11 +259,11 @@
   <div class="cal">
     <table>
       <tr><th>Dom</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sab</th></tr>
-      <!-- Calendário novembro/2026 (1º = domingo). Destaques a confirmar com as datas de pagamento. -->
-      <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
-      <tr><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td></tr>
-      <tr><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td></tr>
-      <tr><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td></tr>
+      <!-- Calendário novembro/2026 (1º = domingo). Destaques = dias da Agenda: 01,06,10,20,27. -->
+      <tr><td><span class="destaque">1</span></td><td>2</td><td>3</td><td>4</td><td>5</td><td><span class="destaque">6</span></td><td>7</td></tr>
+      <tr><td>8</td><td>9</td><td><span class="destaque">10</span></td><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+      <tr><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td><span class="destaque">20</span></td><td>21</td></tr>
+      <tr><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td><span class="destaque">27</span></td><td>28</td></tr>
       <tr><td>29</td><td>30</td><td></td><td></td><td></td><td></td><td></td></tr>
     </table>
   </div>
@@ -267,9 +275,9 @@
     <h3>Pagamentos e comemorações:</h3>
     <ul>
       <li>01 - Liberação do Vale-Transporte</li>
-      <li>06 - Pagamento Salário (setembro/2026)</li>
-      <li>20 - Adiantamento de Salário (outubro/2026)</li>
-      <li>30 - Comemoração aniversariantes do mês</li>
+      <li>06 - Pagamento Salário (outubro/2026)</li>
+      <li>20 - Adiantamento de 13º Salário (1ª parcela)</li>
+      <li>27 - Comemoração aniversariantes do mês</li>
     </ul>
 
     <div class="divisoria"></div>
@@ -339,38 +347,53 @@
 
   <!-- Banner do topo (arte de marca; pode ser trocado por uma foto real depois) -->
   <div class="foto-topo">
-    <svg class="banner" viewBox="0 0 1414 430" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Outubro Rosa">
+    <svg class="banner" viewBox="0 0 1414 430" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Comunicado">
       <defs>
         <linearGradient id="bgc" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#f368a6"/>
-          <stop offset="1" stop-color="#b3146a"/>
+          <stop offset="0" stop-color="#1f8f4d"/>
+          <stop offset="1" stop-color="#0c5d31"/>
         </linearGradient>
       </defs>
       <rect width="1414" height="430" fill="url(#bgc)"/>
-      <circle cx="120" cy="380" r="210" fill="#ffffff" opacity="0.08"/>
-      <circle cx="1300" cy="60" r="250" fill="#ffffff" opacity="0.08"/>
-      <circle cx="1170" cy="380" r="120" fill="#ffffff" opacity="0.06"/>
-      <circle cx="300" cy="90" r="70" fill="#ffffff" opacity="0.06"/>
-      <!-- laço Outubro Rosa sobre círculo branco -->
+      <circle cx="120" cy="380" r="210" fill="#ffffff" opacity="0.06"/>
+      <circle cx="1300" cy="60" r="250" fill="#ffffff" opacity="0.06"/>
+      <circle cx="1170" cy="380" r="120" fill="#ffffff" opacity="0.05"/>
+      <circle cx="300" cy="90" r="70" fill="#ffffff" opacity="0.05"/>
+      <!-- badge branco com balão de fala (comunicado) -->
       <circle cx="707" cy="215" r="128" fill="#ffffff"/>
-      <path d="M707 158 C 670 177, 666 227, 707 259 L 741 306" fill="none" stroke="#e0007a" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M707 158 C 744 177, 748 227, 707 259 L 673 306" fill="none" stroke="#e0007a" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="634" y="150" width="146" height="104" rx="26" fill="#4caf52"/>
+      <path d="M683 252 L683 300 L718 254 Z" fill="#4caf52"/>
+      <rect x="700" y="176" width="14" height="44" rx="7" fill="#ffffff"/>
+      <circle cx="707" cy="236" r="8.5" fill="#ffffff"/>
     </svg>
   </div>
 
   <div class="corpo">
-    <h1>OUTUBRO ROSA</h1>
+    <h1>COMUNICADO</h1>
 
     <!-- EDITAR: texto do comunicado (dados fixos) -->
     <div class="texto">
-      <p>Outubro é o mês dedicado à conscientização sobre o câncer de mama e à importância dos cuidados com a saúde. A campanha <b>Outubro Rosa</b> tem como objetivo ampliar o acesso à informação, incentivar a prevenção e reforçar a importância de conhecer o próprio corpo, observar possíveis mudanças e manter os acompanhamentos de saúde em dia.</p>
-      <p>O câncer de mama está entre os tipos de câncer mais frequentes entre as mulheres e, por isso, falar sobre o tema de forma clara e responsável é fundamental. A informação pode contribuir para que mais pessoas reconheçam sinais de atenção, compreendam a importância dos exames e busquem orientação profissional no momento adequado. O diagnóstico precoce pode ampliar as possibilidades de tratamento e fazer diferença ao longo desse processo.</p>
-      <p>Também é importante lembrar que o cuidado com a saúde não deve acontecer apenas quando surge alguma preocupação. O autocuidado pode estar presente nas pequenas atitudes do dia a dia, como reservar um tempo para observar o próprio corpo, manter consultas e exames de rotina conforme orientação dos profissionais de saúde e procurar atendimento sempre que perceber alguma alteração ou tiver dúvidas.</p>
-      <p>O Outubro Rosa também nos convida a falar sobre prevenção sem medo e sem constrangimento. Quanto mais natural for conversar sobre saúde, mais fácil se torna compartilhar informações confiáveis, incentivar outras pessoas a se cuidarem e construir uma cultura em que buscar orientação e acompanhamento faça parte da rotina.</p>
-      <p>Além da prevenção, esse mês também chama atenção para a importância do acolhimento e do apoio. Muitas pessoas convivem de perto com o câncer de mama, seja durante o próprio diagnóstico e tratamento ou acompanhando familiares, amigos e pessoas queridas. Cada experiência é única e pode envolver diferentes sentimentos, desafios e necessidades.</p>
-      <p>Por isso, atitudes como escutar, respeitar o tempo de cada pessoa, evitar julgamentos e oferecer apoio podem fazer muita diferença. Informação, empatia e cuidado caminham juntos e ajudam a tornar esse processo mais humano e acolhedor.</p>
-      <p>Mais do que uma campanha de um único mês, o Outubro Rosa é um lembrete de que cuidar da saúde deve ser um compromisso durante todo o ano. Falar sobre prevenção, incentivar o acompanhamento profissional e compartilhar informações responsáveis também são formas de cuidar de si e de quem está ao nosso redor.</p>
-      <p><b>🎧 Podcast especial no Tatá Plus</b>: Fique de olho para acompanhar o lançamento do episódio.</p>
+      <p class="ola">Olá, pessoal! Tudo bem?</p>
+      <p>Temos uma novidade importante: a partir de <b>novembro de 2026</b>, o pagamento mensal passa a ser feito em um <b>novo formato</b>.</p>
+      <p>Hoje, o pagamento acontece em duas etapas — adiantamento de 40% no dia 20 e o saldo restante no 5º dia útil do mês seguinte. Com a mudança, essas duas etapas serão <b>unificadas em um único pagamento, no dia 30 de cada mês</b>. E, para ajudar na transição, vamos <b>antecipar a 1ª parcela do 13º salário</b> em novembro.</p>
+      <div class="agenda-pgto">
+        <div class="bloco">
+          <div class="cab">Novembro — 3 pagamentos</div>
+          <ul>
+            <li><b>5º dia útil</b> — referente a outubro (fechamento do mês anterior)</li>
+            <li><b>20/11</b> — adiantamento da 1ª parcela do 13º salário</li>
+            <li><b>30/11</b> — pagamento integral de novembro (novo formato)</li>
+          </ul>
+        </div>
+        <div class="bloco">
+          <div class="cab">Dezembro — 2 pagamentos</div>
+          <ul>
+            <li><b>20/12</b> — 2ª parcela do 13º salário</li>
+            <li><b>30/12</b> — pagamento integral de dezembro (novo formato)</li>
+          </ul>
+        </div>
+      </div>
+      <p>A mudança veio para facilitar o fluxo de pagamentos e reduzir dúvidas sobre descontos. Estamos comunicando com antecedência para que todos possam se organizar. Em caso de dúvidas, procure sua liderança ou o RH.</p>
     </div>
   </div>
 
