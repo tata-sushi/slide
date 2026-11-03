@@ -182,13 +182,8 @@
   .comunicado .corpo .texto p{margin-bottom:16px;}
   .comunicado .corpo .texto p:last-child{margin-bottom:0;}
   .comunicado .corpo .texto .ola{font-weight:700;}
-  .comunicado .corpo .texto .agenda-pgto{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:22px 0;}
-  .comunicado .corpo .texto .agenda-pgto .bloco{background:#ffffff;border:2px solid var(--verde);border-radius:14px;padding:20px 26px;}
-  .comunicado .corpo .texto .agenda-pgto .cab{font-weight:800;color:var(--verde);font-size:30px;margin-bottom:12px;text-align:center;}
-  .comunicado .corpo .texto .agenda-pgto ul{list-style:none;}
-  .comunicado .corpo .texto .agenda-pgto li{font-size:26px;line-height:1.4;margin-bottom:9px;padding-left:20px;position:relative;text-align:left;}
-  .comunicado .corpo .texto .agenda-pgto li:before{content:"•";position:absolute;left:0;color:var(--verde);font-weight:bold;}
-  .comunicado .corpo .texto .agenda-pgto li:last-child{margin-bottom:0;}
+  .comunicado .corpo .texto .pg{text-align:left;}
+  .comunicado .corpo .texto .pg b{color:var(--verde);}
   /* rodapé verde com redes sociais */
   .comunicado .rodape{background:var(--verde);color:#fff;flex:0 0 auto;
     display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:26px 64px;padding:40px 60px;}
@@ -376,23 +371,13 @@
       <p class="ola">Olá, pessoal! Tudo bem?</p>
       <p>Temos uma novidade importante: a partir de <b>novembro de 2026</b>, o pagamento mensal passa a ser feito em um <b>novo formato</b>.</p>
       <p>Hoje, o pagamento acontece em duas etapas — adiantamento de 40% no dia 20 e o saldo restante no 5º dia útil do mês seguinte. Com a mudança, essas duas etapas serão <b>unificadas em um único pagamento, no dia 30 de cada mês</b>. E, para ajudar na transição, vamos <b>antecipar a 1ª parcela do 13º salário</b> em novembro.</p>
-      <div class="agenda-pgto">
-        <div class="bloco">
-          <div class="cab">Novembro — 3 pagamentos</div>
-          <ul>
-            <li><b>5º dia útil</b> — referente a outubro (fechamento do mês anterior)</li>
-            <li><b>20/11</b> — adiantamento da 1ª parcela do 13º salário</li>
-            <li><b>30/11</b> — pagamento integral de novembro (novo formato)</li>
-          </ul>
-        </div>
-        <div class="bloco">
-          <div class="cab">Dezembro — 2 pagamentos</div>
-          <ul>
-            <li><b>20/12</b> — 2ª parcela do 13º salário</li>
-            <li><b>30/12</b> — pagamento integral de dezembro (novo formato)</li>
-          </ul>
-        </div>
-      </div>
+      <p class="pg"><b>Novembro — 3 pagamentos</b><br>
+        5º dia útil — referente a outubro (fechamento do mês anterior)<br>
+        20/11 — adiantamento da 1ª parcela do 13º salário<br>
+        30/11 — pagamento integral de novembro (novo formato)</p>
+      <p class="pg"><b>Dezembro — 2 pagamentos</b><br>
+        20/12 — 2ª parcela do 13º salário<br>
+        30/12 — pagamento integral de dezembro (novo formato)</p>
       <p>A mudança veio para facilitar o fluxo de pagamentos e reduzir dúvidas sobre descontos. Estamos comunicando com antecedência para que todos possam se organizar. Em caso de dúvidas, procure sua liderança ou o RH.</p>
     </div>
   </div>
