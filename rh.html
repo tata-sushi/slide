@@ -1741,6 +1741,18 @@ a.ext-textlink { margin-top:auto; margin-bottom:auto; }   /* centraliza no espa�
 .turnover-foot strong { color:var(--t1); font-weight:700; }
 .turnover-foot--nowrap { white-space:nowrap; max-width:none; }
 .turnover-foot--up { margin-top:auto; margin-bottom:auto; }
+/* ── DP: Férias e Mudança nos pagamentos ── */
+.dp-sub { text-align:left; align-self:flex-start; max-width:92%; margin-top:.5em; color:var(--t2); }
+.dp-tables { margin-top:clamp(16px,3vh,30px); }
+.efc-rows--text .r { grid-template-columns:1fr; font-size:clamp(11px,1.15vw,14.5px); padding:.55em 0; line-height:1.35; }
+.efc-rows--text .r strong { color:var(--carbon); font-weight:700; }
+.efc-rows--date .r { grid-template-columns:auto 1fr; gap:1.2em; font-size:clamp(11px,1.15vw,14.5px); padding:.5em 0; }
+.efc-rows--date .r .v { text-align:left; min-width:6.2em; }
+.efc-rows--date .r .tag { display:inline-block; margin-left:.5em; padding:.1em .5em; border-radius:999px; background:var(--citric); color:var(--carbon); font-family:"DM Mono",monospace; font-size:.72em; font-weight:700; letter-spacing:.08em; text-transform:uppercase; vertical-align:middle; }
+.dp-stats.stat-compare { max-width:80%; margin-top:clamp(14px,2.6vh,26px); margin-bottom:0; }
+.dp-stats .stat-value { font-size:clamp(20px,2.8vw,34px); }
+.dp-stats .stat-detail { color:var(--t2); }
+.dp-foot { margin-top:auto; padding-top:1em; max-width:none; }
 .slide-light .slide-list--tight { flex:0 0 auto; overflow:visible; }
 /* Governança: lista de tópicos com sub-itens legíveis (sentence case) */
 .slide-list.gov-list { font-size:clamp(12px, 1.35vw, 17px); }
@@ -1824,6 +1836,8 @@ a.ext-textlink { margin-top:auto; margin-bottom:auto; }   /* centraliza no espa�
           <li data-goto="Tecnologia e AI">Tecnologia e AI</li>
           <li data-goto="Próximas palestras">Próximas palestras</li>
           <li data-goto="Reclamações trabalhistas">Reclamações trabalhistas</li>
+          <li data-goto="Como funcionam as férias">Como funcionam as férias</li>
+          <li data-goto="Mudança nos pagamentos">Mudança nos pagamentos</li>
           <li data-goto="Jornada Tatá: Entrevista de 5 anos">Jornada Tatá: Entrevista de 5 anos</li>
         </ul>
       </div>
@@ -2264,8 +2278,75 @@ a.ext-textlink { margin-top:auto; margin-bottom:auto; }   /* centraliza no espa�
       </div>
     </section>
 
-    <!-- Slide 16 — Jornada Tatá: Entrevista de 5 anos -->
-    <section class="slide slide-light" aria-label="Slide 16 · Jornada Tatá: Entrevista de 5 anos">
+    <!-- Slide 16 — Como funcionam as férias -->
+    <section class="slide slide-light" aria-label="Slide 16 · Como funcionam as férias">
+      <div class="slide-inner">
+        <h2 class="slide-heading">Como funcionam as <span class="accent">férias</span></h2>
+        <p class="efc-sub dp-sub">Regras da CLT que valem para toda a equipe. Datas sempre alinhadas com a liderança e o RH.</p>
+        <div class="efc-tables dp-tables">
+          <div>
+            <div class="efc-table-title"><span>Direito e prazos</span></div>
+            <div class="efc-rows efc-rows--text">
+              <div class="r"><span><strong>Período aquisitivo:</strong> a cada 12 meses de trabalho, o colaborador tem direito a 30 dias corridos de férias.</span></div>
+              <div class="r"><span><strong>Período concessivo:</strong> a empresa define a data dentro dos 12 meses seguintes, conforme a operação e ouvindo o colaborador.</span></div>
+              <div class="r"><span><strong>Aviso:</strong> comunicação por escrito com pelo menos 30 dias de antecedência.</span></div>
+              <div class="r"><span><strong>Pagamento:</strong> salário + 1/3 constitucional, até 2 dias antes do início das férias.</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="efc-table-title"><span>Fracionamento e regras</span></div>
+            <div class="efc-rows efc-rows--text">
+              <div class="r"><span><strong>Divisão:</strong> até 3 períodos, com concordância do colaborador. Um deles com pelo menos 14 dias e os demais com pelo menos 5 dias.</span></div>
+              <div class="r"><span><strong>Início:</strong> as férias não podem começar nos 2 dias anteriores a feriado ou à folga semanal.</span></div>
+              <div class="r"><span><strong>Abono pecuniário:</strong> é possível vender até 10 dias (1/3), pedindo até 15 dias antes do fim do período aquisitivo.</span></div>
+              <div class="r"><span><strong>Faltas injustificadas:</strong> até 5 faltas mantêm os 30 dias; de 6 a 14 reduzem para 24; de 15 a 23, para 18; de 24 a 32, para 12.</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="turnover-foot dp-foot">Férias não concedidas dentro do período concessivo são pagas <strong>em dobro</strong>. Por isso, cada unidade precisa manter a programação de férias atualizada com o RH.</p>
+      </div>
+    </section>
+
+    <!-- Slide 17 — Mudança nos pagamentos -->
+    <section class="slide slide-light" aria-label="Slide 17 · Mudança nos pagamentos">
+      <div class="slide-inner">
+        <h2 class="slide-heading">Mudança nos <span class="accent">pagamentos</span></h2>
+        <p class="efc-sub dp-sub">A partir de novembro de 2026, o pagamento mensal passa a ser feito em um único dia.</p>
+        <div class="stat-compare dp-stats" aria-label="Comparativo: como era e como fica">
+          <div class="stat">
+            <p class="stat-label">Como era</p>
+            <p class="stat-value">2 etapas</p>
+            <p class="stat-detail">Adiantamento de 40% no dia 20 + saldo no 5º dia útil do mês seguinte</p>
+          </div>
+          <div class="stat">
+            <p class="stat-label">Como fica</p>
+            <p class="stat-value">1 pagamento</p>
+            <p class="stat-detail">Valor integral do mês, sempre no dia 30</p>
+          </div>
+        </div>
+        <div class="efc-tables dp-tables">
+          <div>
+            <div class="efc-table-title"><span>Novembro</span><span class="h">3 pagamentos</span></div>
+            <div class="efc-rows efc-rows--date">
+              <div class="r"><span class="v">5º dia útil</span><span>Pagamento referente a outubro (fechamento do mês anterior)</span></div>
+              <div class="r"><span class="v">20/11</span><span>Adiantamento da 1ª parcela do 13º salário</span></div>
+              <div class="r"><span class="v">30/11</span><span>Pagamento integral de novembro<span class="tag">Novo formato</span></span></div>
+            </div>
+          </div>
+          <div>
+            <div class="efc-table-title"><span>Dezembro</span><span class="h">2 pagamentos</span></div>
+            <div class="efc-rows efc-rows--date">
+              <div class="r"><span class="v">20/12</span><span>2ª parcela do 13º salário</span></div>
+              <div class="r"><span class="v">30/12</span><span>Pagamento integral de dezembro<span class="tag">Novo formato</span></span></div>
+            </div>
+          </div>
+        </div>
+        <p class="turnover-foot dp-foot">A 1ª parcela do 13º foi antecipada para ajudar na transição. O objetivo é <strong>simplificar o fluxo de pagamentos e reduzir dúvidas sobre descontos</strong>. Dúvidas: liderança ou RH.</p>
+      </div>
+    </section>
+
+    <!-- Slide 18 — Jornada Tatá: Entrevista de 5 anos -->
+    <section class="slide slide-light" aria-label="Slide 18 · Jornada Tatá: Entrevista de 5 anos">
       <div class="slide-inner">
         <h2 class="slide-heading">Jornada <span class="accent">Tatá</span>: Entrevista de 5 anos</h2>
         <ul class="slide-list slide-list--tight">
@@ -2279,8 +2360,8 @@ a.ext-textlink { margin-top:auto; margin-bottom:auto; }   /* centraliza no espa�
       </div>
     </section>
 
-    <!-- Slide 17 — Encerramento -->
-    <section class="slide slide-cover is-dark" aria-label="Slide 17 · Encerramento">
+    <!-- Slide 19 — Encerramento -->
+    <section class="slide slide-cover is-dark" aria-label="Slide 19 · Encerramento">
       <div class="slide-inner">
         <img alt="TATÁ SUSHI" class="cover-logo-full" id="closingLogo">
       </div>
